@@ -1,0 +1,16 @@
+{
+    "title": "Alex",
+    "subtitle": "thoughts and notes",
+    "pages": [{
+        "title": "Books",
+        "src": "books"
+    }, {
+        "title": "About",
+        "src": "about"
+    }],
+    "docs": [{
+        "title": "Dawn: My Minimalist Blog System",
+        "date": "2015-03-15",
+        "src": "dawn-my-minimalist-blog-system"
+    }]
+}
