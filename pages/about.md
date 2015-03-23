@@ -11,4 +11,3 @@
 
 * [My Github](https://github.com/syaning)
 * [Older Blogs(2013.06~2015.01)](https://github.com/syaning/older-blogs)
-* [Vida](http://vida.im)
