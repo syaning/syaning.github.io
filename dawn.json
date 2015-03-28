@@ -12,5 +12,9 @@
         "title": "Dawn: My Minimalist Blog System",
         "date": "2015-03-15",
         "src": "dawn-my-minimalist-blog-system"
+    }, {
+        "title": "基于gulp的自动化构建",
+        "date": "2015-03-28",
+        "src": "builing-projects-with-gulp"
     }]
 }

@@ -1,6 +1,6 @@
 # Dawn: My Minimalist Blog System
 
-<p class="date">2015-03-15</p>
+<p class="meta">2015-03-15</p>
 
 To make blogging simple, I developed [**Dawn**](https://github.com/syaning/dawn), a very very simple blog system.
 Why I call it *Dawn*? When I got the idea I was enjoying [the song](http://www.xiami.com/song/2098665?spm=a1z1s.3521865.23309997.1.0toSAM).
