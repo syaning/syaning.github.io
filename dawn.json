@@ -19,5 +19,9 @@
         "title": "基于gulp的自动化构建",
         "date": "2015-03-28",
         "src": "building-projects-with-gulp"
+    }, {
+        "title": "React学习笔记1——入门",
+        "date": "2015-04-05",
+        "src": "react-notebook-1"
     }]
 }
