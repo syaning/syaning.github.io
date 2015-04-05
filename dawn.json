@@ -23,5 +23,9 @@
         "title": "React学习笔记1——入门",
         "date": "2015-04-05",
         "src": "react-notebook-1"
+    }, {
+        "title": "React学习笔记2——JSX",
+        "date": "2015-04-05",
+        "src": "react-notebook-2"
     }]
 }

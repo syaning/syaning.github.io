@@ -37,7 +37,8 @@ npm install -g react-tools
 jsx --watch src/ build/
 ```
 
-这样所有src目录下的脚本都会实时解析，在页面中直接引用build目录下解析好的脚本即可，此时不再需要引入JSXTransformer.js，而且相应的script标签type也不用设置为text/jsx。
+这样所有src目录下的脚本都会实时解析，在页面中直接引用build目录下解析好的脚本即可，此时不再需要引入JSXTransformer.js，
+而且相应的script标签type也不用设置为text/jsx。
 
 解析后的脚本为如下形式：
 
@@ -59,7 +60,7 @@ var Hello = React.createClass({
 	render: function(){
 		return <h1>Hello world!</h1>;
 	}
-})
+});
 
 React.render(
 	<Hello />,
@@ -71,3 +72,7 @@ React.render(
 
 - 组件可以重复利用，同样的一个组件可以用在不同的场景中，与不同的其它组件进行组合
 - 多个简单的组件容易进行管理，也容易进行维护和测试
+
+### 参考
+
+- [http://facebook.github.io/react/docs/getting-started.html](http://facebook.github.io/react/docs/getting-started.html)
