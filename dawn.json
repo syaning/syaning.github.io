@@ -1,7 +1,10 @@
 {
     "title": "Alex",
     "subtitle": "thoughts and notes",
-    "pages": [{
+    "menus": [{
+        "title": "Home",
+        "link": "/#/"
+    }, {
         "title": "Books",
         "src": "books"
     }, {
