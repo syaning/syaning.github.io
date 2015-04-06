@@ -119,7 +119,7 @@ var Title = React.createClass({
 			</div>
 		);
 	}
-})
+});
 
 React.render(
 	<Title role="title" />,
@@ -145,7 +145,7 @@ var Title = React.createClass({displayName: "Title",
 			)
 		);
 	}
-})
+});
 
 React.render(
 	React.createElement(Title, {role: "title"}),
@@ -156,5 +156,37 @@ React.render(
 可以发现，主要使用的方法是`React.createElement`，该方法的第一个参数为标签名，第二个参数为一个对象，
 是该标签的属性的集合，后面的参数为该标签的内容。
 
+### Spread Attributes
+
+有些时候可能对标签属性的设置是动态的，在声明标签的时候并不清楚会设置哪些属性，在这种情况下，可能会想到使用如下方法：
+
+```javascript
+var component = <Component />;
+component.props.foo = x;
+component.props.bar = y;
+```
+
+但是这种方法是非常糟糕的，可能会导致严重的错误。好的做法是使用`Spread Attributes`，如下：
+
+```javascript
+var props = {};
+props.foo = x;
+props.bar = y;
+var component = <Component {...props} />;
+```
+
+还可以多次添加属性，后声明的属性会覆盖之前的声明，通过这种方法可以为属性声明默认值，例如：
+
+```javascript
+var props = {foo: "default foo"};
+var component = <Component {...props} foo="override" />;
+```
+
+### 自定义属性
+
+对原生HTML标签添加的非标准属性并不会被渲染出来，如果需要将其渲染出来，可以使用`data-`的形式。另外对于`aria-`的属性会被正确渲染。
+
 ### 参考
 - [http://facebook.github.io/react/docs/jsx-in-depth.html](http://facebook.github.io/react/docs/jsx-in-depth.html)
+- [http://facebook.github.io/react/docs/jsx-spread.html](http://facebook.github.io/react/docs/jsx-spread.html)
+- [http://facebook.github.io/react/docs/jsx-gotchas.html](http://facebook.github.io/react/docs/jsx-gotchas.html)
