@@ -73,8 +73,7 @@ gulp.task('scripts', ['clean'], function() {
         .pipe(sourcemaps.init())
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-        .pipe(browserify()sr
-            )
+        .pipe(browserify())
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('build'));
