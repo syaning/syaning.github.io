@@ -44,6 +44,7 @@ pre {
     padding: 1em;
     border: 1px dashed #ddd;
     border-left: 2px solid #ddd;
+    overflow-x: scroll;
 }
 code {
     font-family: "Consolas", "Menlo", "Monaco", monospace, serif;

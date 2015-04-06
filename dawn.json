@@ -22,10 +22,14 @@
     }, {
         "title": "React学习笔记1——入门",
         "date": "2015-04-05",
-        "src": "react-notebook-1"
+        "src": "react-note-1"
     }, {
         "title": "React学习笔记2——JSX",
         "date": "2015-04-05",
-        "src": "react-notebook-2"
+        "src": "react-note-2"
+    }, {
+        "title": "React学习笔记3——props，state & refs",
+        "date": "2015-04-06",
+        "src": "react-note-3"
     }]
 }
