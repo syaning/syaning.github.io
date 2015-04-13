@@ -6,6 +6,7 @@ And you can get my older blogs(2013.06~2015.01) [here](https://github.com/syanin
 
 ### Contents
 
+- 2015-04-13 [React学习笔记4——交互](docs/2015-04-13-react-note-4.md)
 - 2015-04-06 [React学习笔记3——props，state & refs](docs/2015-04-06-react-note-3.md)
 - 2015-04-05 [React学习笔记2——JSX](docs/2015-04-05-react-note-2.md)
 - 2015-04-05 [React学习笔记1——入门](docs/2015-04-05-react-note-1.md)

@@ -31,5 +31,9 @@
         "title": "React学习笔记3——props，state & refs",
         "date": "2015-04-06",
         "src": "react-note-3"
+    }, {
+        "title": "React学习笔记4——交互",
+        "date": "2015-04-13",
+        "src": "react-note-4"
     }]
 }
