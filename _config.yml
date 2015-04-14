@@ -1,0 +1,39 @@
+# Site settings
+title:       Alex
+email:       syaning@syaningv.com
+author:      Alex Sun
+description: "thoughts and notes"
+baseurl:     ""
+url:         "http://blog.syaningv.com"
+
+# Google analytics
+google_analytics: UA-56203680-1
+
+# Optional features
+animated:           false
+show_related_posts: false
+show_post_footers:  false
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Social icons
+show_social_icons: false
+github_username: syaning
+stackoverflow_id:
+twitter_username:
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     5
+sass:
+  compressed: true
