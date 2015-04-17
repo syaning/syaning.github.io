@@ -295,3 +295,88 @@ var c = a.then(function (a) {
     });
 });
 ```
+
+要达到以上效果，需要满足以下条件：
+
+- `then`方法返回一个promise对象
+- 返回的promise对象最终必须能够使用回调函数的返回值`resolve`
+- 回调函数的返回值要么是一个最终的结果要么是一个promise对象
+
+下面的方法是将一个变量值转为promise对象：
+
+```javascript
+var ref = function (value) {
+    return {
+        then: function (callback) {
+            callback(value);
+        }
+    };
+};
+```
+
+然而当`value`本身就是一个promise对象的时候是不需要转换的，因此：
+
+```javascript
+var ref = function (value) {
+    if (value && typeof value.then === "function")
+        return value;
+    return {
+        then: function (callback) {
+            callback(value);
+        }
+    };
+};
+```
+
+现在需要将`then`方法的返回值转变为一个promise对象，如下：
+
+```javascript
+var ref = function (value) {
+    if (value && typeof value.then === "function")
+        return value;
+    return {
+        then: function (callback) {
+            return ref(callback(value));
+        }
+    };
+};
+```
+
+此时的defer代码如下：
+
+```javascript
+var defer = function () {
+    var pending = [], value;
+    return {
+        resolve: function (_value) {
+            if (pending) {
+                value = ref(_value); // values wrapped in a promise
+                for (var i = 0, ii = pending.length; i < ii; i++) {
+                    var callback = pending[i];
+                    value.then(callback); // then called instead
+                }
+                pending = undefined;
+            }
+        },
+        promise: {
+            then: function (_callback) {
+                var result = defer();
+                // callback is wrapped so that its return
+                // value is captured and used to resolve the promise
+                // that "then" returns
+                var callback = function (value) {
+                    result.resolve(_callback(value));
+                };
+                if (pending) {
+                    pending.push(callback);
+                } else {
+                    value.then(callback);
+                }
+                return result.promise;
+            }
+        }
+    };
+};
+```
+
+### ES6中的Promise
