@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  深入理解promise
-date:   2015-04-16 14:50:00
+layout:      post
+title:       深入理解promise
+date:        2015-04-16 14:50:00
+update_date: 2015-04-18 12:18:00
 ---
 
 一直以来，对promise也只是有所耳闻，但是并未有过深入的学习和理解。昨天看到了[这篇文章](http://blog.csdn.net/aimingoo/article/details/45014325)，又想到ES6中都提供原生Promise了，因此很有必要深入理解下。
@@ -379,4 +380,59 @@ var defer = function () {
 };
 ```
 
+这段代码比较复杂，要理解它，就需要明白：
+
+- `resolve`方法是通知回调函数执行，并将异步任务的结果作为回调函数的参数传入。
+- `then`方法的作用是添加回调（未resolve），或者添加回调并立即执行（已经resolve）
+- 为了`then`方法可以链式调用，`then`方法需要返回一个promise对象
+
 ### ES6中的Promise
+
+在ES6中，提供了原生的Promise类，其基本用法如下：
+
+```javascript
+var promise = new Promise(function(resolve, reject) {
+	if ( /* condition */ ) {
+		resolve(value);
+	} else {
+		reject(error);
+	}
+});
+promise.then(callback, errback);
+```
+
+例如：
+
+```javascript
+var promise = new Promise(function(resolve, reject) {
+	setTimeout(function() {
+		if (Math.random() > 0.5) {
+			resolve(1);
+		} else {
+			reject('cannot get 1');
+		}
+	}, 1000);
+});
+promise.then(console.log, console.error);
+```
+
+Promise的状态图如下：
+
+![](/images/2015-04-18-promises.png)
+> 图片来源于[https://mdn.mozillademos.org/files/8633/promises.png](https://mdn.mozillademos.org/files/8633/promises.png)
+
+Promise的常用方法有：
+
+- `Promise.prototype.then(onFulfilled, onRejected)`
+- `Promise.prototype.catch(onRejected)`
+- `Promise.all(iterable)` 返回一个promise对象，当iterable中的所有promise都resolve的时候，返回的对象才resolve
+- `Promise.race(iterable)` 返回一个promise对象，当iterable中的任一promise变成resolve或reject的时候，返回的对象就resolve或reject
+- `Promise.reject(reason)` 使用参数中的reason返回一个rejected promise
+- `Promise.resolve(value)` 使用参数中的value返回一个resolved promise
+
+### 参考
+
+- [https://github.com/kriskowal/q/tree/v1/design](https://github.com/kriskowal/q/tree/v1/design)
+- [http://es6.ruanyifeng.com/#docs/promise](http://es6.ruanyifeng.com/#docs/promise)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [http://blog.getify.com/promises-part-1/](http://blog.getify.com/promises-part-1/)
