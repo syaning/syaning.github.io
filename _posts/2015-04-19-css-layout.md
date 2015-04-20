@@ -63,7 +63,7 @@ Visual formatting model（可视化格式模型，以下简称VFM）是CSS中非
 - 在文档树中，元素之间的关系
 - 其它外部信息，例如viewport、图片的固有尺寸等
 
-**(1)包含块**
+**(1)包含块(Containing block)**
 
 许多box的定位和尺寸，取决于一个矩形的边界，该矩形被称作为包含块（containing block）。一般来说，一个元素的所生成的box会作为该元素的后代元素的包含块。同时需要注意的是，一个元素的包含块指的是包含该元素的块，而非由该元素所产生的块。
 
@@ -79,25 +79,32 @@ Visual formatting model（可视化格式模型，以下简称VFM）是CSS中非
     - 否则由祖先元素的padding box所创建。
     - 如果不存在这样的祖先元素，那么其包含块就是初始包含块。
 
-**(2)计算width和margin**
+**(2)控制框(Controlling box)**
 
-- 行内元素（inline）：
+块级元素和块框（Block-level elements and block boxes）
 
-width和height设置无效，由内容撑开。默认的margin-left和margin-right为0。
+- 当一个元素的display值为block、list-item、table的时候，该元素为块级元素。
+- 每个块级元素会生成一个主块框（principal block-level box），主块框会为子孙元素建立包含块，生成内容，并且也是涉及所有定位体系统的框。有些块级元素除了主块框之外还会产生额外的框，例如display为list-item的元素。
+- 除table外，其它块级元素产生的主块框仅包含块框或仅包含行内框。
 
-- 普通文档流中的块级元素：
+行内元素和行内框（Inline-level elements and inline boxes）
 
-首先各个属性满足如下等式：`margin-left`+`border-left-width`+`padding-left`+`width`+`padding-right`+`border-right-width`+`margin-right`=`width of containing block`
+- 当一个元素的display值为inline、inline-table、inline-block的时候，该元素为行内元素。
 
-如果width不为auto且`border-left-width`+`padding-left`+`width`+`padding-right`+`border-right-width`超过了包含块的宽度，margin-left和margin-right的auto值为0。
+**(3)计算width和margin**
 
-如果width、margin-left、margin-right都不为auto，此时margin-left和margin-right将不完全等于设定值。如果包含块的direction是ltr，则margin-right会自动改变以满足等式；如果包含块的direction是rtl，则margin-left会自动改变以满足等式。
+非替换的行内元素（inline）：
 
-如果width、margin-left、margin-right中只有一个是auto，那么该值会自动改变以满足等式。
+- width和height设置无效，由内容撑开。默认的margin-left和margin-right为0。
 
-如果width为auto，name设置为auto的margin-left或margin-right为0，此时width会自动改变以满足等式。
+普通文档流中的非替换的块级元素（block）：
 
-如果margin-left和margin-right都为auto，则这两者会相等，此方法可以用来使内容在包含块中水平居中。
+- 首先各个属性满足如下等式：`margin-left`+`border-left-width`+`padding-left`+`width`+`padding-right`+`border-right-width`+`margin-right`=`width of containing block`
+- 如果width不为auto且`border-left-width`+`padding-left`+`width`+`padding-right`+`border-right-width`超过了包含块的宽度，margin-left和margin-right的auto值为0。
+- 如果width、margin-left、margin-right都不为auto，此时margin-left和margin-right将不完全等于设定值。如果包含块的direction是ltr，则margin-right会自动改变以满足等式；如果包含块的direction是rtl，则margin-left会自动改变以满足等式。
+- 如果width、margin-left、margin-right中只有一个是auto，那么该值会自动改变以满足等式。
+- 如果width为auto，name设置为auto的margin-left或margin-right为0，此时width会自动改变以满足等式。
+- 如果margin-left和margin-right都为auto，则这两者会相等，此方法可以用来使内容在包含块中水平居中。
 
 ### 参考
 
