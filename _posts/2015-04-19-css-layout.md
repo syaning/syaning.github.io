@@ -2,7 +2,7 @@
 layout:      post
 title:       CSS布局
 date:        2015-04-19 23:26:00
-update_date: 2015-04-20 13:15:00
+update_date: 2015-04-21 21:05:00
 ---
 
 ### 1. box-model
@@ -52,7 +52,21 @@ TBD
 
 TBD
 
-### 4. Visual formatting model
+### 4. display、position和float的关系
+
+> 本部分内容参考 [http://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#dis-pos-flo](http://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#dis-pos-flo)
+
+这三个属性会相互作用，从而影响最重盒子的生成。规则如下：
+
+![](/images/2015-04-21-display-position-float.png)
+
+| Specified value     | Computed value     |
+| :------------------ | :----------------- |
+| inline-table        | table              |
+| inline, table-row-group, table-column, table-column-group, table-header-group, table-footer-group, table-row, table-cell, table-caption, inline-block | block |
+| others              | same as specified  |
+
+### 5. Visual formatting model
 
 Visual formatting model（可视化格式模型，以下简称VFM）是CSS中非常重要的一个概念。可以理解为，box model确定了一个元素的自身结构，而VFM用来确定这些box如何排列。
 
