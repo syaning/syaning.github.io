@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-- Alex
+- Alex Sun
 - 2011~Present: [Software School](http://www.software.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/)
 - syaning@syaningv.com
 - Web frontend developer
