@@ -1,10 +1,10 @@
 # Site settings
-title:       Vida
+title:       Syaning
 email:       syaningv@gmail.com
 author:      Alex Sun
 description: "thoughts and notes"
 baseurl:     ""
-url:         "http://vida.im"
+url:         "http://syaningv.com"
 
 # Google analytics
 google_analytics: UA-56203680-1
