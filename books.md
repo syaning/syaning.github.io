@@ -16,3 +16,4 @@ permalink: /books/
 - [D3] D3 Tips and Tricks. Malcolm Maclean.
 - [Git] Pro Git, 2nd Edition. Scott Chacon.
 - [Node] The Node Beginner Book. Manuel Kiessling.
+- [JavaScript] Professional JavaScript for Web Developers, 3rd Edition. Nicholas C. Zakas.
