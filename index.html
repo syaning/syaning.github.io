@@ -3,17 +3,9 @@ layout: default
 ---
 
 <div class="home">
-
-  <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-          <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-          <p class="post-title">{{ post.title }}</p>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
-
-  {% include pagination.html %}
+    <ul class="posts">
+        {% for post in site.posts %}
+        <li><span>{{ post.date | date: site.date_format }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
 </div>

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
-{% include head.html %}
-<body class="{% if site.animated %}animated fade-in-down{% endif %}">
-  <div class="site-wrap">
-    {% include header.html %}
-
-    <div class="post p2 p-responsive wrap" role="main">
-      <div class="measure">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>{{ site.title }}</title>
+</head>
+<body>
+    <main>
+        <header class="site-header">
+            <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+            <nav class="site-nav">
+                <a href="/books/" class="{% if page.url == '/books/' %}active{% endif %}">Books</a>
+                <a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">About</a>
+            </nav>
+        </header>
         {{ content }}
-      </div>
-    </div>
-  </div>
-
-  {% include footer.html %}
+    </main>
+    {% if site.google_analytics %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {% endif %}
 </body>
 </html>

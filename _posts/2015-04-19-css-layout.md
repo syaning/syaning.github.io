@@ -2,7 +2,6 @@
 layout:      post
 title:       CSS布局
 date:        2015-04-19 23:26:00
-update_date: 2015-04-21 21:05:00
 ---
 
 ### 1. box-model
@@ -60,11 +59,29 @@ TBD
 
 ![](/images/2015-04-21-display-position-float.png)
 
-| Specified value     | Computed value     |
-| :------------------ | :----------------- |
-| inline-table        | table              |
-| inline, table-row-group, table-column, table-column-group, table-header-group, table-footer-group, table-row, table-cell, table-caption, inline-block | block |
-| others              | same as specified  |
+<table>
+    <thead>
+        <tr>
+            <th>Specified value</th>
+            <th>Computed value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>inline-table</td>
+            <td>table</td>
+        </tr>
+        <tr>
+            <td>inline, table-row-group, table-column, table-column-group, table-header-group, table-footer-group, table-row, table-cell, table-caption, inline-block</td>
+            <td>block</td>
+        </tr>
+        <tr>
+            <td>others</td>
+            <td>same as specified</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ### 5. Visual formatting model
 
