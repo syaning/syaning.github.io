@@ -1,7 +1,7 @@
 ---
 layout:    page
 title:     Books
-permalink: books
+permalink: /books/
 ---
 
 - [jQuery] Learning jQuery, 4th Edition. Jonathan Chaffer, Karl Swedberg.
