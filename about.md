@@ -18,6 +18,6 @@ The theme is [vida](https://github.com/syaning/vida) designed by myself, and it'
 
 #### Links
 
-- [My Github](https://github.com/syaning)
-- [Older Blogs(2013.06~2015.01)](https://github.com/syaning/older-blogs)
+- [Github](https://github.com/syaning)
+- [npm](https://www.npmjs.com/~syaning)
 - [Hongxing Inviation Link](http://honx.in/i/VUL-BIkWGkmhxeoS)
