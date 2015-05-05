@@ -16,7 +16,7 @@ permalink: /about/
 This site is powered by [Jekyll](http://jekyllrb.com/) and hosted on [Github](https://github.com/).
 The theme is [vida](https://github.com/syaning/vida) designed by myself, and it's under MIT license.
 
-#### Links
+### Links
 
 - [Github](https://github.com/syaning)
 - [npm](https://www.npmjs.com/~syaning)
