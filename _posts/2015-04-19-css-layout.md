@@ -45,7 +45,10 @@ date:        2015-04-19 23:26:00
 
 ### 2. position
 
-TBD
+- static：在普通文档流中，此时设置top，right，bottom和left不起作用。
+- relative：元素相对于其在普通文档流中的位置发生偏移，但是该元素仍然保持它在普通文档流中的位置。
+- absolute：元素脱离普通文档流，相对于其最近的非static祖先元素进行定位。top，right，bottom和left可影响其位置和大小(当未设置width和height的时候)。另外该情况下margin不会发生折叠。
+- fixed：与absolute类似，不过是相对于可视窗口进行定位。当页面滚动的时候，元素相对于窗口位置保持不变。
 
 ### 3. float
 
