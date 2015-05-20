@@ -6,7 +6,7 @@ date:   2015-05-20 22:00:00
 
 本文主要通过是对[Express](http://expressjs.com/)的一个较为深入的分析，至于对Express的源码分析，在我的[Github](https://github.com/syaning/understanding-express)上。本文的分析基于Express 4.12.3.
 
-1. 理解app
+### 1. 理解app
 
 在使用Express的时候，我们通过如下方式创建一个应用：
 
