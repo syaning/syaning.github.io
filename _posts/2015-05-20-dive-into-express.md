@@ -79,4 +79,12 @@ app.listen = function(){
 - `use(path, app)`，会设置`app`的`mountpath`的值
 - `path()`，获取应用的绝对路径值
 
-TBD
+与`_router`相关的方法主要有：
+
+- `route()`，创建一条路由，会调用`Router.route`
+- `METHOD()`，创建一条路由，并调用VERB方法，会调用`Router.route`
+- `all()`，创建一条路由，并调用所有的VERB方法，会调用`Router.route`
+- `param()`，会调用`Router.param`
+- `use()`，会调用`Router.use`
+
+> 由于参数可以有多种形式，因此并未列出参数。
