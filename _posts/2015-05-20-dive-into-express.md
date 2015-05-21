@@ -54,4 +54,29 @@ app.listen = function(){
 
 通过分析application.js的源码，可以归纳出，`app`主要有如下属性和方法：
 
+- `settings`，{}，主要是一些设置信息
+- `cache`，{}
+- `engines`，{}，设置模版引擎
+- `locals`，{}
+- `mountpath`，字符串
+- `_router`，Router对象
+
+其中，与`settings`相关的方法主要有：
+
+- `set(setting, value)`，有`value`的时候进行设置，无`value`的时候进行获取
+- `get(setting)`
+- `enabled(setting)`
+- `disabled(setting)`
+- `enable(setting)`
+- `disable(setting)`
+
+与`engines`相关的方法主要有：
+
+- `engine(ext, fn)`
+
+与`mountpath`相关的方法主要有：
+
+- `use(path, app)`，会设置`app`的`mountpath`的值
+- `path()`，获取应用的绝对路径值
+
 TBD
