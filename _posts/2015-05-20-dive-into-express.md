@@ -54,37 +54,23 @@ app.listen = function(){
 
 通过分析application.js的源码，可以归纳出，`app`主要有如下属性和方法：
 
-- `settings`，{}，主要是一些设置信息
+- `settings`，{}，主要是一些设置信息，相关方法有：
+    - `set(setting, value)`，有`value`的时候进行设置，无`value`的时候进行获取
+    - `get(setting)`
+    - `enabled(setting)`
+    - `disabled(setting)`
+    - `enable(setting)`
+    - `disable(setting)`
 - `cache`，{}
-- `engines`，{}，设置模版引擎
+- `engines`，{}，设置模版引擎，相关方法有：
+    - `engine(ext, fn)`
 - `locals`，{}
-- `mountpath`，字符串
-- `_router`，Router对象
-
-其中，与`settings`相关的方法主要有：
-
-- `set(setting, value)`，有`value`的时候进行设置，无`value`的时候进行获取
-- `get(setting)`
-- `enabled(setting)`
-- `disabled(setting)`
-- `enable(setting)`
-- `disable(setting)`
-
-与`engines`相关的方法主要有：
-
-- `engine(ext, fn)`
-
-与`mountpath`相关的方法主要有：
-
-- `use(path, app)`，会设置`app`的`mountpath`的值
-- `path()`，获取应用的绝对路径值
-
-与`_router`相关的方法主要有：
-
-- `route()`，创建一条路由，会调用`Router.route`
-- `METHOD()`，创建一条路由，并调用VERB方法，会调用`Router.route`
-- `all()`，创建一条路由，并调用所有的VERB方法，会调用`Router.route`
-- `param()`，会调用`Router.param`
-- `use()`，会调用`Router.use`
-
-> 由于参数可以有多种形式，因此并未列出参数。
+- `mountpath`，字符串，相关方法有：
+    - `use(path, app)`，会设置`app`的`mountpath`的值
+    - `path()`，获取应用的绝对路径值
+- `_router`，Router对象，相关方法有（由于参数可以有多种形式，因此并未列出参数）：
+    - `route()`，创建一条路由，会调用`Router.route`
+    - `METHOD()`，创建一条路由，并调用VERB方法，会调用`Router.route`
+    - `all()`，创建一条路由，并调用所有的VERB方法，会调用`Router.route`
+    - `param()`，会调用`Router.param`
+    - `use()`，会调用`Router.use`
