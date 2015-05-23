@@ -7,7 +7,7 @@ date:   2015-03-25 12:00:00
 之前的博客在[https://github.com/syaning/older-blogs](https://github.com/syaning/older-blogs)，其中：
 
 - 2013.06~2014.09，使用的是[Hexo](http://hexo.io/)，包括源文件及生成后的页面
-- 2014.10~2015.01，使用的是Wordpress，但全部转成了PDF格式
+- 2014.10~2015.01，使用的是[Wordpress](https://wordpress.org/)，但全部转成了PDF格式
 
 下面是之前的博文目录（共计58篇）：
 
