@@ -106,11 +106,34 @@ app.listen = function(){
 
 - `path`，string，表示路径
 - `stack`，[]，存放的是`Layer`对象，表示路由处理函数
-- `methods`，{}，表明支持哪些HTTP方法，例如`{ get: true }`
+- `methods`，{}，表明支持哪些HTTP方法，例如`{ get: true }`，如果使用了`all()`，则该属性值为`{ _all: true }`
 
 需要注意的是，`Route`的`stack`与`Router`的`stack`存放的都是`Layer`对象，但是这两种`Layer`之间有少许差别，主要如下：
 
 - 都具有`handle`，`name`，`params`，`path`，`regexp`，`keys`属性，这几个属性都是在`Layer`模块的构造函数中定义的
-- `Router`中的`Layer`对象具有`route`属性，如果该属性不为`undefined`，则表明为一个路由中间件，而`Route`中的`Layer`对象没有`route`属性
-- `Route`中的`Layer`对象具有`method`属性，表明该路由函数的HTTP方法，而`Router`中的`Layer`对象没有`method`属性
+- `Router`中的`Layer`对象具有`route`属性，如果该属性不为`undefined`，则表明为一个路由中间件；而`Route`中的`Layer`对象没有`route`属性
+- `Route`中的`Layer`对象具有`method`属性，表明该路由函数的HTTP方法；而`Router`中的`Layer`对象没有`method`属性
 - `Route`中的`Layer`对象的`keys`属性值均为`[]`，`regexp`属性值均为`/^\/?$/i`，因为在`Route`模块中创建`Layer`对象时使用的是`Layer('/', {}, fn)`
+
+创建路由的主要方法及其调用过程如下：
+
+- `app.METHOD()` → `router.route` → `route.METHOD()`
+- `app.all()` → `router.route` → `route.METHOD()`
+- `app.route()` → `router.route`
+
+例如：
+
+```javascript
+app.all('/users', function() {});
+app.get('/users/:username', function() {});
+app.route('/test').get(function() {}).post(function() {});
+```
+
+对于同一路径的多次路由添加会创建多条路由，例如：
+
+```javascript
+app.get('/users', function test() {});
+app.get('/users', function foo() {}, function bar() {});
+```
+
+该例子会创建两条路由，其中第一条路有一个处理函数，而第二条路由有两个处理函数。
