@@ -68,9 +68,49 @@ app.listen = function(){
 - `mountpath`，字符串，相关方法有：
     - `use(path, app)`，会设置`app`的`mountpath`的值
     - `path()`，获取应用的绝对路径值
-- `_router`，Router对象，相关方法有（由于参数可以有多种形式，因此并未列出参数）：
+- `_router`，`Router`对象，相关方法有（由于参数可以有多种形式，因此并未列出参数）：
     - `route()`，创建一条路由，会调用`Router.route`
     - `METHOD()`，创建一条路由，并调用VERB方法，会调用`Router.route`
     - `all()`，创建一条路由，并调用所有的VERB方法，会调用`Router.route`
     - `param()`，会调用`Router.param`
     - `use()`，会调用`Router.use`
+
+### 2. Router
+
+`app`有一个`_router`属性，事实上就是一个`Router`。`Router`相当于是一个中间件容器，存放着各种各样的中间件，大体上，可以分为路由中间件和其它中间件。`Router`的主要属性和方法有：
+
+- `params`，{}
+    - `param()`
+- `_params`，[]
+- `caseSensitive`，boolean
+- `mergeParam`，boolean
+- `strcit`，boolean
+- `stack`，[]，存放着所有的中间件，相关方法有：
+    - `use()`，使用中间件，本质上是向`stack`中添加一个`Layer`对象
+    - `route()`，创建路由中间件，本质上是创建一个`Route`对象，并使用该`Route`对象创建一个`Layer`对象，将此`layer`对象添加到`stack`中
+    - `METHOD()`，创建路由中间件，并添加处理函数，实际上是调用了`route()`方法
+
+每个中间件都是一个`Layer`对象，`Layer`对象的基本属性有：
+
+- `handle`，function，表示中间件函数
+- `name`，string，中间件函数的名字，如果为匿名函数则为`<anonymous>`
+- `params`，undefined
+- `path`，undefiend
+- `regexp`，RegExp，路径的正则表达形式
+- `keys`，[]，保存的是路径中的参数及其相关的一些其它信息
+- `route`，如果是路由中间件，则该属性为一个`Route`对象，否则为`undefined`。该属性不在`Layer`模块中定义，而是在`Router`模块中生成实例后定义
+
+### 3. 路由机制
+
+在`Router`的`stack`中，存放着多个中间件，每一个中间件都是一个`Layer`对象，如果该中间件是一个路由中间件，则相应的`Layer`对象的`route`属性会指向一个`Route`对象，表示一条路由。`Route`的主要属性和方法有：
+
+- `path`，string，表示路径
+- `stack`，[]，存放的是`Layer`对象，表示路由处理函数
+- `methods`，{}，表明支持哪些HTTP方法，例如`{ get: true }`
+
+需要注意的是，`Route`的`stack`与`Router`的`stack`存放的都是`Layer`对象，但是这两种`Layer`之间有少许差别，主要如下：
+
+- 都具有`handle`，`name`，`params`，`path`，`regexp`，`keys`属性，这几个属性都是在`Layer`模块的构造函数中定义的
+- `Router`中的`Layer`对象具有`route`属性，如果该属性不为`undefined`，则表明为一个路由中间件，而`Route`中的`Layer`对象没有`route`属性
+- `Route`中的`Layer`对象具有`method`属性，表明该路由函数的HTTP方法，而`Router`中的`Layer`对象没有`method`属性
+- `Route`中的`Layer`对象的`keys`属性值均为`[]`，`regexp`属性值均为`/^\/?$/i`，因为在`Route`模块中创建`Layer`对象时使用的是`Layer('/', {}, fn)`
