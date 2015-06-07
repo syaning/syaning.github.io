@@ -137,3 +137,13 @@ app.get('/users', function foo() {}, function bar() {});
 ```
 
 该例子会创建两条路由，其中第一条路有一个处理函数，而第二条路由有两个处理函数。
+
+### 4. 请求处理
+
+当请求到来时，处理过程是`app.handle` → `router.handle`，事实上，`app.handle`调用了`router.handle`，而`router.handle`的过程，则是依次对`router.stack`中存放的中间件进行调用。示例图如下：
+
+![handle request](/images/2015-05-20-handle.png)
+
+`router.stack`中存的是一个个的`Layer`对象，用来管理中间件。如果`Layer`对象表示的是一个路由中间件，则其`route`属性会指向一个`Route`对象，而`route.stack`中存放的也是一个个的`Layer`对象，用来管理路由处理函数。
+
+因此，当一个请求到来的时候，会依次通过`router.stack`中的`Layer`对象，如果遇到路由中间件，则会依次通过`route.stack`中的`Layer`对象。
