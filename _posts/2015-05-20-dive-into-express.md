@@ -94,8 +94,8 @@ app.listen = function(){
 
 - `handle`，function，表示中间件函数
 - `name`，string，中间件函数的名字，如果为匿名函数则为`<anonymous>`
-- `params`，undefined
-- `path`，undefiend
+- `params`，undefined，在执行`match`的时候赋值
+- `path`，undefiend，在执行`match`的时候赋值
 - `regexp`，RegExp，路径的正则表达形式
 - `keys`，[]，保存的是路径中的参数及其相关的一些其它信息
 - `route`，如果是路由中间件，则该属性为一个`Route`对象，否则为`undefined`。该属性不在`Layer`模块中定义，而是在`Router`模块中生成实例后定义
@@ -151,3 +151,5 @@ app.get('/users', function foo() {}, function bar() {});
 对于`router.stack`中的每个`Layer`对象，会先判断是否匹配请求路径，如果不匹配，则跳过，继续下一个。在路径匹配的情况下，如果是非路由中间件，则执行该中间件函数；如果是路由中间件，则继续判断该中间件的路由对象能够处理请求的HTTP方法，如果不能够处理，则跳过继续下一个，如果能够处理则对`route.stack`中的`Layer`对象（与请求的HTTP方法匹配的）依次执行。示例图如下：
 
 ![handle layer](/images/2015-05-20-handle-layer.png)
+
+在中间件函数执行之前，会先对参数进行预处理，即`router.process_params`。对于每个参数的预处理只会进行一次，但是由于每个layer执行之前都会有参数预处理的过程，因此有一个缓存系统，来记录哪些参数已经处理过了。
