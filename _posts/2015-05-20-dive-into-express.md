@@ -147,3 +147,7 @@ app.get('/users', function foo() {}, function bar() {});
 `router.stack`中存的是一个个的`Layer`对象，用来管理中间件。如果`Layer`对象表示的是一个路由中间件，则其`route`属性会指向一个`Route`对象，而`route.stack`中存放的也是一个个的`Layer`对象，用来管理路由处理函数。
 
 因此，当一个请求到来的时候，会依次通过`router.stack`中的`Layer`对象，如果遇到路由中间件，则会依次通过`route.stack`中的`Layer`对象。
+
+对于`router.stack`中的每个`Layer`对象，会先判断是否匹配请求路径，如果不匹配，则跳过，继续下一个。在路径匹配的情况下，如果是非路由中间件，则执行该中间件函数；如果是路由中间件，则继续判断该中间件的路由对象能够处理请求的HTTP方法，如果不能够处理，则跳过继续下一个，如果能够处理则对`route.stack`中的`Layer`对象（与请求的HTTP方法匹配的）依次执行。示例图如下：
+
+![handle layer](/images/2015-05-20-handle-layer.png)
