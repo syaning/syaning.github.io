@@ -50,7 +50,7 @@ app.listen = function(){
 };
 ```
 
-因此，在使用Express的时候，事实上，所有的请求都是交给`app`，通过app.handle`来处理了。
+因此，在使用Express的时候，事实上，所有的请求都是交给`app`，通过`app.handle`来处理了。
 
 通过分析application.js的源码，可以归纳出，`app`主要有如下属性和方法：
 
