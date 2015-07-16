@@ -184,10 +184,10 @@ function angularInit(element, bootstrap) {
 
 例如：
 
-```javascript
+```html
 <div ng-app="MyModule">
     <div ng-controller="ctrl">
-        {{name}}
+        {{ name }}
     </div>
 </div>
 <script>
@@ -204,10 +204,10 @@ function angularInit(element, bootstrap) {
 
 例如：
 
-```
+```html
 <div>
     <div ng-controller="ctrl">
-        {{name}}
+        {{ name }}
     </div>
 </div>
 <script>
@@ -231,12 +231,12 @@ function angularInit(element, bootstrap) {
 ```html
 <div id="app1" ng-app="MyModule1">
     <div ng-controller="ctrl1">
-        \{\{name\}\}
+        {{ name }}
     </div>
 </div>
 <div id="app2" ng-app="MyModule2">
     <div ng-controller="ctrl2">
-        \{\{greeting\}\}
+        {{ greeting }}
     </div>
 </div>
 <script>
