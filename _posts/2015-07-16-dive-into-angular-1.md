@@ -73,7 +73,7 @@ function bindJQuery() {
 - `jqName`是调用`jq()`的返回值，`jq()`的主要作用是遍历文档，找出第一个包含属性`ng-jq`的节点，然后取其属性值；
 - 变量`jQuery`取值为`window.jQuery`，如果加载了jQuery函数库，则其值非空；
 - 在应用了`ng-jq`指令的情况下，如果`jQName`的值不为`null`，则设置变量`jQuery`的值为`window[jqName]`，否则设置为`undefined`
-- 如果`jQuery`变量有效，则使用`jQuery`；否则使用内置实现的`JQLite`。
+- 如果`jQuery`变量有效，则使用`jQuery`变量指定的库；否则使用内置实现的`JQLite`。
 
 总结起来，绑定的jQuery可以的来源有三个：`ng-jq`指定、引入的jQuery库、内置实现的JQLite，其使用流程为：
 
