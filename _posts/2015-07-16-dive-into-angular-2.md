@@ -91,6 +91,7 @@ function() {
     var configBlocks = [];
     var runBlocks = [];
     var config = invokeLater('$injector', 'invoke', 'push', configBlocks);
+
     var moduleInstance = {
         _invokeQueue: invokeQueue,
         _configBlocks: configBlocks,
@@ -138,3 +139,42 @@ function() {
 
 }
 ```
+
+这里主要看下`invokeLater`和`invokeLaterAndSetModuleName`这两个内部方法。`invokeLater`接收四个参数，第四个参数默认为`invokeQueue`这个数组，它返回一个函数，该函数的作用就是将数组`[provider, method, arguments]`添加到第四个参数指明的数组中。`invokeLaterAndSetModuleName`方法与此类似，只不过多了一个设置函数的`$$moduleName`的操作。
+
+看一个简单的例子：
+
+```javascript
+var moduleA = angular.module('ModuleA', []),
+    moduleB = angular.module('ModuleB', []),
+    moduleC = angular.module('ModuleC', ['ModuleA', 'ModuleB']);
+moduleC.config(function myConfig() {})
+    .controller('TestCtrl', ['$scope', function($scope) {}]);
+console.dir(moduleC);
+```
+
+下面是截取的部分查看结果：
+
+```javascript
+// moduleC._configBlocks
+[
+    ['$injecotr', 'invoke', {
+        0: function myConfig() {},
+        length: 1
+    }]
+]
+
+// moduleC._invokeQueue
+[
+    ['$controllerProvider', 'register', {
+        0: 'TestCtrl',
+        1: ['$scope', function test($scope) {}],
+        length: 2
+    }]
+]
+
+// moduleC.requires
+['ModuleA', 'ModuleB']
+```
+
+实际上，在通过`angular.module`注册了一个模块后，得到一个模块实例，之后调用该模块的`controller`、`factory`等方法的时候，参数中的函数并不会立即执行，而是暂时放在了模块的内部数组中了。
