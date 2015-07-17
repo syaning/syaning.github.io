@@ -158,7 +158,7 @@ console.dir(moduleC);
 ```javascript
 // moduleC._configBlocks
 [
-    ['$injecotr', 'invoke', {
+    ['$injector', 'invoke', {
         0: function myConfig() {},
         length: 1
     }]
