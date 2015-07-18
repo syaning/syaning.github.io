@@ -224,3 +224,69 @@ function annotate(fn, strictDi, name) {
     return $inject;
 }
 ```
+
+通过源码可以发现：
+
+- 如果`fn`是一个函数，则通过`toString()`得到其字符串形式，然后取出其中参数放在数组`$inject`中
+- 如果`fn`是一个数组，即`['service', function(service){}]`形式，则将该数组的最后一项剔除，其余部分放在`$inject`数组中
+
+例如：
+
+```javascript
+angular.module('MyModule', [])
+    .factory('service', function() {
+        return {
+            greeting: 'hello world'
+        };
+    })
+    .controller('ctrl', ['$scope', '$injector', function($scope, $injector) {
+        console.log($injector.annotate(function(arg1, arg2, arg3) {}));
+        // ["arg1", "arg2", "arg3"]
+        
+        console.log($injector.annotate(['service', function(arg1) {}]));
+        // ["service"]
+    }]);
+```
+
+（3）invoke
+
+源码如下：
+
+```javascript
+function invoke(fn, self, locals, serviceName) {
+    if (typeof locals === 'string') {
+        serviceName = locals;
+        locals = null;
+    }
+
+    var args = [],
+        $inject = createInjector.$$annotate(fn, strictDi, serviceName),
+        length, i,
+        key;
+
+    for (i = 0, length = $inject.length; i < length; i++) {
+        key = $inject[i];
+        if (typeof key !== 'string') {
+            throw $injectorMinErr('itkn',
+                'Incorrect injection token! Expected service name as string, got {0}', key);
+        }
+        args.push(
+            locals && locals.hasOwnProperty(key) ? locals[key] : getService(key, serviceName)
+        );
+    }
+    if (isArray(fn)) {
+        fn = fn[length];
+    }
+
+    // http://jsperf.com/angularjs-invoke-apply-vs-switch
+    // #5388
+    return fn.apply(self, args);
+}
+```
+
+思路如下：
+
+- 通过`annotate`方法得到需要注入的参数；
+- 通过｀locals`或`getService`依次得到需要注入的参数的实例，放在`args`数组中；
+- 如果`fn`是一个数组，即`['service', function(service){}]`形式，则取数组中最后一项作为执行函数`fn`；
+- 用参数`args`来执行`fn`。
