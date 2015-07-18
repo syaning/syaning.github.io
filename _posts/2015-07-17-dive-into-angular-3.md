@@ -56,7 +56,7 @@ function createInjector(modulesToLoad, strictDi) {
 
 ### 1. createInjector
 
-`createInjector`函数的逻辑主题部分代码如下：
+`createInjector`函数的逻辑主体部分代码如下：
 
 ```javascript
 strictDi = (strictDi === true);
@@ -287,6 +287,8 @@ function invoke(fn, self, locals, serviceName) {
 思路如下：
 
 - 通过`annotate`方法得到需要注入的参数；
-- 通过｀locals`或`getService`依次得到需要注入的参数的实例，放在`args`数组中；
+- 通过`locals`或`getService`依次得到需要注入的参数的实例，放在`args`数组中；
 - 如果`fn`是一个数组，即`['service', function(service){}]`形式，则取数组中最后一项作为执行函数`fn`；
 - 用参数`args`来执行`fn`。
+
+### 3. loadModules
