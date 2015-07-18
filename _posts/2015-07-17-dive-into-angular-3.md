@@ -88,7 +88,6 @@ var INSTANTIATING = {},
             return instanceInjector.invoke(provider.$get, provider, undefined, serviceName);
         }));
 
-
 forEach(loadModules(modulesToLoad), function(fn) {
     if (fn) instanceInjector.invoke(fn);
 });
@@ -105,7 +104,7 @@ return instanceInjector;
 
 ### 2. createInternalInjector
 
-该方法创建一个注射器，最终的返回值为：
+该方法创建一个注射器，接收`cache`（对象）和`factory`（函数）两个参数，最终的返回值为：
 
 ```javascript
 {
@@ -118,3 +117,38 @@ return instanceInjector;
     }
 }
 ```
+
+（1）getService
+
+源码如下：
+
+```javascript
+function getService(serviceName, caller) {
+    if (cache.hasOwnProperty(serviceName)) {
+        if (cache[serviceName] === INSTANTIATING) {
+            throw $injectorMinErr('cdep', 'Circular dependency found: {0}',
+                serviceName + ' <- ' + path.join(' <- '));
+        }
+        return cache[serviceName];
+    } else {
+        try {
+            path.unshift(serviceName);
+            cache[serviceName] = INSTANTIATING;
+            return cache[serviceName] = factory(serviceName, caller);
+        } catch (err) {
+            if (cache[serviceName] === INSTANTIATING) {
+                delete cache[serviceName];
+            }
+            throw err;
+        } finally {
+            path.shift();
+        }
+    }
+}
+```
+
+该方法主要思路是：先在`cache`中检查是否有`serviceName`对应的服务，如果有就直接返回，否则调用`factory`来创建一个，并将其缓存在`cache`中。
+
+（2）annotate
+
+该方法主要用于推断注入。
