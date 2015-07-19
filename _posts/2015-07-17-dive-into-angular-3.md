@@ -292,3 +292,83 @@ function invoke(fn, self, locals, serviceName) {
 - 用参数`args`来执行`fn`。
 
 ### 3. loadModules
+
+该方法主要是用来加载模块，源码如下：
+
+```javascript
+function loadModules(modulesToLoad) {
+    var runBlocks = [],
+        moduleFn;
+    forEach(modulesToLoad, function(module) {
+        if (loadedModules.get(module)) return;
+        loadedModules.put(module, true);
+
+        function runInvokeQueue(queue) {
+            var i, ii;
+            for (i = 0, ii = queue.length; i < ii; i++) {
+                var invokeArgs = queue[i],
+                    provider = providerInjector.get(invokeArgs[0]);
+
+                provider[invokeArgs[1]].apply(provider, invokeArgs[2]);
+            }
+        }
+
+        try {
+            if (isString(module)) {
+                moduleFn = angularModule(module);
+                runBlocks = runBlocks.concat(loadModules(moduleFn.requires)).concat(moduleFn._runBlocks);
+                runInvokeQueue(moduleFn._invokeQueue);
+                runInvokeQueue(moduleFn._configBlocks);
+            } else if (isFunction(module)) {
+                runBlocks.push(providerInjector.invoke(module));
+            } else if (isArray(module)) {
+                runBlocks.push(providerInjector.invoke(module));
+            } else {
+                assertArgFn(module, 'module');
+            }
+        } catch (e) {
+            if (isArray(module)) {
+                module = module[module.length - 1];
+            }
+            if (e.message && e.stack && e.stack.indexOf(e.message) == -1) {
+                // Safari & FF's stack traces don't contain error.message content
+                // unlike those of Chrome and IE
+                // So if stack doesn't contain message, we create a new string that contains both.
+                // Since error.stack is read-only in Safari, I'm overriding e and not e.stack here.
+                /* jshint -W022 */
+                e = e.message + '\n' + e.stack;
+            }
+            throw $injectorMinErr('modulerr', "Failed to instantiate module {0} due to:\n{1}",
+                module, e.stack || e.message || e);
+        }
+    });
+    return runBlocks;
+}
+```
+
+接收的参数`modulesToLoad`是一个数组，表示需要加载的模块。假设定义了一个`MyModule`模块，那么在加载的时候，`modulesToLoad`的值为（相关代码可以参考`bootstrap`函数）：
+
+```javascript
+['ng', ['$provide', function($provide) {
+    $provide.value('$rootElement', element);
+}], 'MyModule']
+```
+
+函数`loadModules`的作用就是针对数组`modulesToLoad`中的每一项，分别进行加载：
+
+- 如果模块是一个字符串，则首先通过`angular.module(moduleName)`取出模块对象，然后加载其依赖模块，并将所有以来模块及其自身的`_runBlocks`放在`runBlocks`数组中，然后依次调用`_invokeQueue`和`_configBlocks`
+- 如果模块是一个函数或者数组，则运行`providerInjector.invoke(module)`，并将结果放在`runBlocks`数组中
+
+`runInvokeQueue`是一个内部方法，参数为一个模块的`_invokeQueue`或`_configBlocks`数组，其结构形式在上一篇中已经有所说明，大致如下：
+
+```javascript
+[
+    ['$controllerProvider', 'register', {
+        0: 'TestCtrl',
+        1: ['$scope', function test($scope) {}],
+        length: 2
+    }]
+]
+```
+
+用`args`表示数组中的每一项，那么`runInvokeQueue`的作用其实就是调用`providerInjector.get(args[0])[args[1]](args[2])`，例如`provicerInjector.get('$controllerProvider').register({/* ... */})`。
