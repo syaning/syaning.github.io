@@ -158,19 +158,14 @@ console.dir(moduleC);
 ```javascript
 // moduleC._configBlocks
 [
-    ['$injector', 'invoke', {
-        0: function myConfig() {},
-        length: 1
-    }]
+    ['$injector', 'invoke', [function myConfig(){}]]
 ]
 
 // moduleC._invokeQueue
 [
-    ['$controllerProvider', 'register', {
-        0: 'TestCtrl',
-        1: ['$scope', function test($scope) {}],
-        length: 2
-    }]
+    ['$controllerProvider', 'register',
+        ['TestCtrl', ['$scope', function test($scope){}]]
+    ]
 ]
 
 // moduleC.requires

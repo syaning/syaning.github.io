@@ -363,11 +363,9 @@ function loadModules(modulesToLoad) {
 
 ```javascript
 [
-    ['$controllerProvider', 'register', {
-        0: 'TestCtrl',
-        1: ['$scope', function test($scope) {}],
-        length: 2
-    }]
+    ['$controllerProvider', 'register',
+        ['TestCtrl', ['$scope', function test($scope) {}]]
+    ]
 ]
 ```
 
