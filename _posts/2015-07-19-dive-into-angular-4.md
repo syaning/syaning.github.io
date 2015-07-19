@@ -216,4 +216,4 @@ providerInjector.invoke(['$provide', function ngModule($provide) {}]);
 ngModule(providerCache.$provide);
 ```
 
-因此，加载`ng`模块的过程，实际上也就是初始化一系列Provider的过程。到此为止，已经将一系列的Provider实例化并缓存在`providerCache`中。
+因此，加载`ng`模块的过程，实际上也就是初始化一系列Provider的过程。到此为止，已经将一系列的Provider缓存在`providerCache`中。
