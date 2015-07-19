@@ -115,3 +115,105 @@ injector.invoke(['$rootScope', '$rootElement', '$compile', '$injector',
 即是一个数组，表示三个模块。接下来在函数`createInjector`中，会使用内部函数`loadModules`依次加载这三个模块。
 
 ### 4. ng模块的加载
+
+在加载`ng`模块的时候，会进入到`loadModules`方法的如下选择语句中：
+
+```javascript
+if (isString(module)) {
+    moduleFn = angularModule(module);
+    runBlocks = runBlocks.concat(loadModules(moduleFn.requires)).concat(moduleFn._runBlocks);
+    runInvokeQueue(moduleFn._invokeQueue);
+    runInvokeQueue(moduleFn._configBlocks);
+}
+```
+
+由于`ng`模块依赖于`ngLocale`模块，因此会先调用`loadModules(['ngLocale'])`加载`ngLocale`模块。
+
+（1）加载ngLocale模块
+
+`ngLocale`模块的定义在`publishExternalAPI`方法中，源码如下：
+
+```javascript
+angularModule('ngLocale', []).provider('$locale', $LocaleProvider);
+```
+
+因此，该模块的结构为：
+
+```javascript
+{
+    _invokeQueue: [
+        ['$provide', 'provider', ['$locale', function $LocaleProvider() {}]]
+    ],
+    _configBlocks: [],
+    _runBlocks: [],
+    requires: [],
+    name: 'ngLocale',
+    // ... ...
+}
+```
+
+在加载`ngLocale`模块的时候，会执行`runInvokeQueue(moduleFn._invokeQueue)`，从而调用：
+
+```javascript
+providerInjector.get('$provide')
+    .provider('$locale', function $LocaleProvider() {});
+
+// 也就是
+
+providerCache.$provide
+    .provider('$locale', function $LocaleProvider() {});
+```
+
+其作用也就是创建了一个`$LocaleProvider`的实例，并将其缓存在`providerCache.$localeProvider`上。
+
+（2）加载ng模块
+
+接下来加载`ng`模块，注册`ng`模块的源码为：
+
+```javascript
+angularModule('ng', ['ngLocale'], ['$provide',
+    function ngModule($provide) {
+        // $$sanitizeUriProvider needs to be before $compileProvider as it is used by it.
+        $provide.provider({
+            $$sanitizeUri: $$SanitizeUriProvider
+        });
+        $provide.provider('$compile', $CompileProvider).
+        directive({
+            a: htmlAnchorDirective,
+            input: inputDirective,
+            textarea: inputDirective,
+            form: formDirective,
+            // other directives ...
+        }).
+        directive({
+            ngInclude: ngIncludeFillContentDirective
+        }).
+        directive(ngAttributeAliasDirectives).
+        directive(ngEventDirectives);
+        $provide.provider({
+            $anchorScroll: $AnchorScrollProvider,
+            $animate: $AnimateProvider,
+            $$animateQueue: $$CoreAnimateQueueProvider,
+            $$AnimateRunner: $$CoreAnimateRunnerProvider,
+            // other providers ...
+        });
+    }
+]);
+```
+
+`ng`模块的结构在之前已经说明，因此会调用：
+
+```javascript
+providerInjector.get('$injector')
+    .invoke(['$provide', function ngModule($provide) {}]);
+
+// 也就是
+
+providerInjector.invoke(['$provide', function ngModule($provide) {}]);
+
+// 即执行
+
+ngModule(providerCache.$provide);
+```
+
+因此，加载`ng`模块的过程，实际上也就是初始化一系列Provider的过程。到此为止，已经将一系列的Provider实例化并缓存在`providerCache`中。
