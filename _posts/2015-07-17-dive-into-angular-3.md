@@ -369,4 +369,4 @@ function loadModules(modulesToLoad) {
 ]
 ```
 
-用`args`表示数组中的每一项，那么`runInvokeQueue`的作用其实就是调用`providerInjector.get(args[0])[args[1]](args[2])`，例如`provicerInjector.get('$controllerProvider').register({/* ... */})`。
+用`args`表示数组中的每一项，那么`runInvokeQueue`的作用其实就是调用`providerInjector.get(args[0])[args[1]](args[2])`，例如`provicerInjector.get('$controllerProvider').register(/* ... */)`。
