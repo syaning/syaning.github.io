@@ -217,3 +217,14 @@ ngModule(providerCache.$provide);
 ```
 
 因此，加载`ng`模块的过程，实际上也就是初始化一系列Provider的过程。到此为止，已经将一系列的Provider缓存在`providerCache`中。
+
+### 5. MyModule`模块的加载
+
+加载`MyModule`模块的时候，实际上就是执行：
+
+```javascript
+providerInjector.get('$controllerProvider')
+    .register('ctrl', ['$scope', function($scope) {}]);
+```
+
+由于在加载`ng`模块的时候已经将`$controllerProvider`挂载到`providerCache`上了，因此这里就是直接调用其`register`方法来注册控制器。
