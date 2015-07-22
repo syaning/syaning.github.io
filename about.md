@@ -7,9 +7,9 @@ permalink: /about/
 ### Me
 
 - Alex Sun
-- 2011~Present: [Software School](http://www.software.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/)
-- syaningv@gmail.com
-- Web frontend developer
+- 2011~2015: [Software School](http://www.software.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/)
+- 2015~Present: Web frontend developer at SAP Labs China
+- syaningv(AT)gmail.com
 
 ### Blog
 
