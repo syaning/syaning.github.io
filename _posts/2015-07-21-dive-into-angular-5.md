@@ -30,21 +30,73 @@ function provider(name, provider_) {
 （1） 如果`provider_`是函数，那么会调用`provider_ = providerInjector.instantiate(provider_)`对其再次赋值，相当于以`provider_`作为构造函数来创建实例。因此在构造函数中，必须要有对`$get`的操作，因此如下形式都是可以的：
 
 ```javascript
-app.provider('provider', function() {
+app.provider('greeting', function() {
 	this.$get = function() {
-		// ... ...
-	}
+		return {
+			sayHello: function() {
+				console.log('hello world');
+			}
+		};
+	};
 });
 
-app.provider('provider', function() {
+// or
+
+app.provider('greeting', function() {
 	return {
 		$get: function() {
-			// ... ...
+			return {
+				sayHello: function() {
+					console.log('hello world');
+				}
+			};
 		}
 	};
 });
 ```
 
 (2) 如果`provider_`是数组，同样的接下来会调用`provider_ = providerInjector.instantiate(provider_)`，所以数组必须是`[desp, fn]`的形式，其中`deps`为依赖，`fn`与（1）中函数的限制相同。例如：
+
+```javascript
+app.provider('greeting', ['$injector', function($injector) {
+	this.$get = function() {
+		return {
+			sayHello: function() {
+				console.log('hello world', $injector);
+			}
+		};
+	};
+}]);
+```
+
+（3）如果`provider_`是一个对象字面量，则它必须要有`$get`属性，例如：
+
+```javascript
+app.provider('greeting', {
+	$get: function() {
+		return {
+			sayHello: function() {
+				console.log('hello world');
+			}
+		};
+	}
+});
+```
+
+接下来讨论对`$get`的约束。在定义`instanceInjector`的时候，代码如下：
+
+```javascript
+instanceInjector = (instanceCache.$injector =
+	createInternalInjector(instanceCache, function(serviceName, caller) {
+		var provider = providerInjector.get(serviceName + providerSuffix, caller);
+		return instanceInjector.invoke(provider.$get, provider, undefined, serviceName);
+	}));
+```
+
+由于会被`invoke`调用，因此`$get`的值必须为一个函数，而该函数的返回值，则可以为原始数据类型、对象、函数等等，并无限制。
+
+总值，在调用`provider(name, provider_)`的时候，会将`(name + 'Provider', {$get:function(){/* ... */}})`键值对缓存在`providerCache`中，在注入的时候，则会调用`$get`函数，将其返回值进行诸如，并缓存在`instanceCache`中。
+
+### 2. factory
 
 TBD
