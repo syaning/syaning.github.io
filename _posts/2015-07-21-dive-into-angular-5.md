@@ -95,7 +95,7 @@ instanceInjector = (instanceCache.$injector =
 
 由于会被`invoke`调用，因此`$get`的值必须为一个函数，而该函数的返回值，则可以为原始数据类型、对象、函数等等，并无限制。
 
-总值，在调用`provider(name, provider_)`的时候，会将`(name + 'Provider', {$get:function(){/* ... */}})`键值对缓存在`providerCache`中，在注入的时候，则会调用`$get`函数，将其返回值进行诸如，并缓存在`instanceCache`中。
+总值，在调用`provider(name, provider_)`的时候，会将`(name + 'Provider', {$get:function(){/* ... */}})`键值对缓存在`providerCache`中，在注入的时候，则会调用`$get`函数，将其返回值进行注入，并缓存在`instanceCache`中。
 
 ### 2. factory
 
