@@ -55,7 +55,7 @@ app.provider('greeting', function() {
 });
 ```
 
-(2) 如果`provider_`是数组，同样的接下来会调用`provider_ = providerInjector.instantiate(provider_)`，所以数组必须是`[desp, fn]`的形式，其中`deps`为依赖，`fn`与（1）中函数的限制相同。例如：
+(2) 如果`provider_`是数组，同样的接下来会调用`provider_ = providerInjector.instantiate(provider_)`，所以数组必须是`[deps, fn]`的形式，其中`deps`为依赖，`fn`与（1）中函数的限制相同。例如：
 
 ```javascript
 app.provider('greeting', ['$injector', function($injector) {
@@ -93,10 +93,72 @@ instanceInjector = (instanceCache.$injector =
 	}));
 ```
 
-由于会被`invoke`调用，因此`$get`的值必须为一个函数，而该函数的返回值，则可以为原始数据类型、对象、函数等等，并无限制。
+由于会被`invoke`调用，因此`$get`的值必须为一个函数或者`[deps, fn]`形式的数组。而函数的返回值，则可以为原始数据类型、对象、函数等等，并无限制。
 
-总值，在调用`provider(name, provider_)`的时候，会将`(name + 'Provider', {$get:function(){/* ... */}})`键值对缓存在`providerCache`中，在注入的时候，则会调用`$get`函数，将其返回值进行注入，并缓存在`instanceCache`中。
+总之，在调用`provider(name, provider_)`的时候，会将`(name + 'Provider', {$get:function(){/* ... */}})`键值对缓存在`providerCache`中，在注入的时候，则会调用`$get`函数，将其返回值进行注入，并缓存在`instanceCache`中。
 
 ### 2. factory
 
-TBD
+源码如下：
+
+```javascript
+function factory(name, factoryFn, enforce) {
+	return provider(name, {
+		$get: enforce !== false ? enforceReturnValue(name, factoryFn) : factoryFn
+	});
+}
+```
+
+可以看到，`factory`事实上是调用了`provider`方法，而第二个参数`factoryFn`，事实上也就是上面的`$get`的值，因此应当符合对`$get`的约束。
+
+因此上面的例子可以这样写：
+
+```javascript
+app.factory('greeting', function() {
+	return {
+		sayHello: function() {
+			console.log('hello world');
+		}
+	};
+});
+```
+
+注意到`factory`的源码中函数有第三个参数`enforce`，也就是说是否强制返回值，如果函数没有返回值（包括显式返回值为`undefined`）且第三个参数不为`false`的时候，就回报错，相关源码如下：
+
+```javascript
+function enforceReturnValue(name, factory) {
+	return function enforcedReturnValue() {
+		var result = instanceInjector.invoke(factory, this);
+		if (isUndefined(result)) {
+			throw $injectorMinErr('undef', "Provider '{0}' must return a value from $get factory method.", name);
+		}
+		return result;
+	};
+}
+```
+
+然而在使用的过程中，会发现，即使显示声明了`enforce`为`false`，还是会报错，例如：
+
+```javascript
+app.factory('greeting', function() {
+	console.log('hello world');
+}, false);
+
+// Error: [$injector:undef] Provider 'greeting' must return a value from $get factory method.
+```
+
+这主要是由`supportObject`引起的，因为`providerCache.$provide.factory`的值实际上是`supportObject(factory)`，而`supportObject`源码如下：
+
+```javascript
+function supportObject(delegate) {
+	return function(key, value) {
+		if (isObject(key)) {
+			forEach(key, reverseParams(delegate));
+		} else {
+			return delegate(key, value);
+		}
+	};
+}
+```
+
+可以发现，经过`supportObject`处理后，函数的有效参数值最多只有两个了，因此第三个参数`false`也就被忽略掉了。
