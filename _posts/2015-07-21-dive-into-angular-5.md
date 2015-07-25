@@ -162,3 +162,114 @@ function supportObject(delegate) {
 ```
 
 可以发现，经过`supportObject`处理后，函数的有效参数值最多只有两个了，因此第三个参数`false`也就被忽略掉了。
+
+### 3. service
+
+源码如下：
+
+```javascript
+function service(name, constructor) {
+	return factory(name, ['$injector', function($injector) {
+		return $injector.instantiate(constructor);
+	}]);
+}
+```
+
+可以看到，实质上是调用了`factory`，第二个参数`constructor`是作为构造函数，最终返回的是该构造函数表示的类的一个实例。由于会调用`$injector.instantiate(constructor)`，因此`constructor`必须是一个函数或者`[deps, fn]`的形式。
+
+因此上面的例子可以写成：
+
+```javascript
+app.service('greeting', function() {
+	this.sayHello = function() {
+		console.log('hello world');
+	};
+});
+
+// or
+
+app.service('greeting', function() {
+	return {
+		sayHello: function() {
+			console.log('hello world');
+		}
+	};
+});
+```
+
+### 4. value
+
+源码如下：
+
+```javascript
+function value(name, val) {
+	return factory(name, valueFn(val), false);
+}
+```
+
+可以看到，也是调用了`factory`。其中`valueFn`的作用是将一个值包装为函数，源码如下：
+
+```javascript
+function valueFn(value) {
+	return function() {
+		return value;
+	};
+}
+```
+
+### 5. constant
+
+源码如下：
+
+```javascript
+function constant(name, value) {
+	assertNotHasOwnProperty(name, 'constant');
+	providerCache[name] = value;
+	instanceCache[name] = value;
+}
+```
+
+可以看到，该方法只是对`providerCache`和`instanceCache`进行了属性设定。
+
+### value & constant
+
+`value`设定的值是可以改变的，例如：
+
+```javascript
+app.value('greeting', 'hello value')
+	.value('greeting', 'hello world ')
+	.controller('ctrl', ['greeting', function(greeting) {
+		console.log(greeting); // hello world
+	}]);
+```
+
+而`constant`设定的值是不可变的，例如：
+
+```javascript
+app.constant('greeting', 'hello constant')
+	.constant('greeting', 'hello world ')
+	.controller('ctrl', ['greeting', function(greeting) {
+		console.log(greeting); // hello constant
+	}]);
+```
+
+实现机制在函数`setUpModuleLoader`中。部分相关源码如下：
+
+```javascript
+var moduleInstance = {
+    _invokeQueue: invokeQueue,
+    value: invokeLater('$provide', 'value'),
+    constant: invokeLater('$provide', 'constant', 'unshift'),
+    // ... ...
+};
+
+function invokeLater(provider, method, insertMethod, queue) {
+    if (!queue) queue = invokeQueue;
+    return function() {
+        queue[insertMethod || 'push']([provider, method, arguments]);
+        return moduleInstance;
+    };
+}
+```
+
+在调用`value`的时候，用的是数组的`push`方法；而调用`constant`的时候，用的是数组的`unshift`方法。在加载模块的时候，会依次执行`_invokeQueue`中的内容。对于通过`value`添加的值，会按照声明的顺序进行设定，因此后面的值会覆盖掉前面的值；而对于通过`constant`添加的值，会按照声明的逆序进行设定，因此最后得到的值为第一次设定的值，从而就实现了常量的效果。
