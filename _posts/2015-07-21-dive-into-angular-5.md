@@ -231,9 +231,9 @@ function constant(name, value) {
 
 可以看到，该方法只是对`providerCache`和`instanceCache`进行了属性设定。
 
-### value & constant
+### 6. value & constant
 
-`value`设定的值是可以改变的，例如：
+（1）`value`设定的值是可以改变的，而`constant`设定的值是不可变的，例如：
 
 ```javascript
 app.value('greeting', 'hello value')
@@ -241,11 +241,9 @@ app.value('greeting', 'hello value')
 	.controller('ctrl', ['greeting', function(greeting) {
 		console.log(greeting); // hello world
 	}]);
-```
 
-而`constant`设定的值是不可变的，例如：
+////////////////////
 
-```javascript
 app.constant('greeting', 'hello constant')
 	.constant('greeting', 'hello world ')
 	.controller('ctrl', ['greeting', function(greeting) {
@@ -273,3 +271,76 @@ function invokeLater(provider, method, insertMethod, queue) {
 ```
 
 在调用`value`的时候，用的是数组的`push`方法；而调用`constant`的时候，用的是数组的`unshift`方法。在加载模块的时候，会依次执行`_invokeQueue`中的内容。对于通过`value`添加的值，会按照声明的顺序进行设定，因此后面的值会覆盖掉前面的值；而对于通过`constant`添加的值，会按照声明的逆序进行设定，因此最后得到的值为第一次设定的值，从而就实现了常量的效果。
+
+（2）在`config`中，`value`不可以被注入，而`constant`可以被注入，例如：
+
+```javascript
+app.constant('greeting', 'hello world')
+	.config(function(greeting) {
+		console.log(greeting); // hello world
+	});
+
+////////////////////
+
+app.value('greeting', 'hello world')
+	.config(function(greeting) {
+		console.log(greeting); // Error: [$injector:unpr] Unknown provider: greeting
+	});
+```
+
+这是因为在使用`value`的时候，实际上是将`greetingProvider`换存在了`providerCache`中；而使用`constant`的时候，则是将`greeting`换存在了`providerCache`中。然后在执行模块的`_configBlocks`的时候，会在`providerCache`中查找注入的依赖`greeting`，因此对于`value`来说，自然是找不到了。
+
+### 7. provider, factory & service
+
+这三者的关系非常密切，看如下例子：
+
+```javascript
+function Greeting() {
+	this.sayHello = function() {
+		console.log('hello world');
+	};
+}
+
+app.provider('greetingFromProvider', function() {
+		this.$get = function() {
+			return new Greeting();
+		}
+	})
+	.factory('greetingFromFactory', function() {
+		return new Greeting();
+	})
+	.service('greetingFromService', Greeting)
+	.controller('ctrl', ['greetingFromProvider', 'greetingFromFactory', 'greetingFromService',
+		function(gp, gf, gs) {
+			gp.sayHello();
+			gf.sayHello();
+			gs.sayHello();
+		}
+	]);
+```
+
+可以简单理解为`service`接收的参数是构造函数，`factory`接收的参数是工厂函数，而该工厂函数是作为`provider`中的`$get`属性而存在的。但是`provider`比`factory`更加灵活可配置，因此可以理解为可配置的工厂函数。例如：
+
+```javascript
+app.provider('greeting', function() {
+		var name = 'world';
+
+		this.$get = function() {
+			return {
+				sayHello: function() {
+					console.log('hello ' + name);
+				}
+			};
+		};
+
+		this.setName = function(newName) {
+			name = newName;
+		};
+	})
+	.config(function(greetingProvider) {
+		greetingProvider.setName('alex');
+	})
+	.controller('ctrl', function(greeting) {
+		greeting.sayHello(); // hello alex
+	});
+```
