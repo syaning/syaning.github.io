@@ -9,7 +9,9 @@ date:   2015-07-16 10:00:00
 参考资料有：
 
 - [AngularJS API Docs](https://docs.angularjs.org/api)
+- [AngularJS Developer Guide](https://docs.angularjs.org/guide)
 - [AngularJS实战](http://www.imooc.com/learn/156)
+- [Service vs provider vs factory](http://stackoverflow.com/questions/15666048/service-vs-provider-vs-factory)
 
 ### 1. 整体结构
 
