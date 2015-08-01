@@ -110,5 +110,89 @@ function compile($compileNodes, transcludeFn, maxPriority, ignoreDirective,
 
 接下来分析`compileNodes`函数。
 
-### compileNodes
+### 3. compileNodes
 
+该函数代源码简化如下：
+
+```javascript
+function compileNodes(nodeList, transcludeFn, $rootElement, maxPriority, ignoreDirective, previousCompileContext) {
+    var linkFns = [],
+        attrs, directives, nodeLinkFn, childNodes, childLinkFn, linkFnFound, nodeLinkFnFound;
+
+    for (var i = 0; i < nodeList.length; i++) {
+        attrs = new Attributes();
+
+        // we must always refer to nodeList[i] since the nodes can be replaced underneath us.
+        directives = collectDirectives(nodeList[i], [], attrs, i === 0 ? maxPriority : undefined,
+            ignoreDirective);
+
+        nodeLinkFn = (directives.length) ? applyDirectivesToNode(directives, nodeList[i], attrs, transcludeFn, $rootElement,
+            null, [], [], previousCompileContext) : null;
+
+        // ... ...
+
+        childLinkFn = (nodeLinkFn && nodeLinkFn.terminal ||
+            !(childNodes = nodeList[i].childNodes) ||
+            !childNodes.length) ? null : compileNodes(childNodes,
+            nodeLinkFn ? (
+                (nodeLinkFn.transcludeOnThisElement || !nodeLinkFn.templateOnThisElement) && nodeLinkFn.transclude) : transcludeFn);
+
+        if (nodeLinkFn || childLinkFn) {
+            linkFns.push(i, nodeLinkFn, childLinkFn);
+            linkFnFound = true;
+            nodeLinkFnFound = nodeLinkFnFound || nodeLinkFn;
+        }
+
+        //use the previous context only for the first element in the virtual group
+        previousCompileContext = null;
+    }
+
+    return linkFnFound ? compositeLinkFn : null;
+
+    function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn) {
+        // ... ...
+    }
+}
+```
+
+其主要逻辑是：
+
+- 对参数`nodeList`进行遍历，对其中的每一项执行如下操作：
+    - 调用`collectDirectives`搜集该节点上所应用的所有指令
+    - 如果没有指令，则为`nodeLinkFn`赋值`null`；否则调用`applyDirectivesToNode`来对节点应用指令，并将返回值赋给`nodeLinkFn`
+    - 如果需要，对子节点调用`compileNodes`，并将返回值赋给`childLinkFn`。这是一个递归的过程
+    - 如果nodeLinkFn`或者`childLinkFn`有效，则将`(i, nodeLinkFn, childLinkFn)`这样的一组值加入到`linkFns`数组中；并设置标志`linkFnFound`为`true`，表示找到有link函数
+- 如果`linkFnFound`为`true`，则返回函数`compositeLinkFn`，否则返回`null`
+
+接下来看`compositeLinkFn`的逻辑。返回的`compositeLinkFn`使用了闭包，主要涉及到`nodeLinkFnFound`和`linkFns`这两个变量。源码简化如下：
+
+```javascript
+function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn) {
+    var nodeLinkFn, childLinkFn, node, childScope, i, ii, idx, childBoundTranscludeFn;
+    var stableNodeList;
+
+    // ... ...
+
+    for (i = 0, ii = linkFns.length; i < ii;) {
+        node = stableNodeList[linkFns[i++]];
+        nodeLinkFn = linkFns[i++];
+        childLinkFn = linkFns[i++];
+
+        if (nodeLinkFn) {
+            // ... ..
+
+            nodeLinkFn(childLinkFn, childScope, node, $rootElement, childBoundTranscludeFn,
+                nodeLinkFn);
+
+        } else if (childLinkFn) {
+            childLinkFn(scope, node.childNodes, undefined, parentBoundTranscludeFn);
+        }
+    }
+}
+```
+
+在对`compileNodes`的分析中，可以知道数组`linkFns`中，每三个元素为一组值。因此在该函数的for循环中，每次取出三个值。如果`nodeLinkFn`不为空，则执行它；然后如果`childLinkFn`不为空，也执行它。
+
+需要注意的是，`nodeLinkFn`为`applyDirectivesToNode`的返回值；而`childLinkFn`则为`compileNodes`的返回值，也就是函数`compositeLinkFn`。因此调用`childLinkFn`，其实也就是`compositeLinkFn`的递归调用，只不过每次传入的参数以及通过闭包所引用到的`nodeLinkFnFound`和`linkFns`这两个值不同而已。
+
+关于此过程，在[第三篇参考资料](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)中，作者给了一个很好的例子，并画了一幅[非常详细的图](http://gtms01.alicdn.com/tps/i1/TB1fTSPGXXXXXcgapXXCv8sVVXX-1727-1606.jpg)，对于理解整个过程非常有帮助。
