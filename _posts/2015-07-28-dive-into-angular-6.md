@@ -8,6 +8,9 @@ date:   2015-07-28 20:55:00
 
 - [Creating Custom Directives](https://docs.angularjs.org/guide/directive)
 - [HTML Compiler](https://docs.angularjs.org/guide/compiler)
+- [angularjs1.3.0源码解析之directive](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)
+
+> 注：本部分源码比较多且逻辑复杂，我也没有完全通读并理解，因此分析过程中难免有不当或错误之处，还请指出。
 
 ### 1. 注册指令
 
@@ -60,4 +63,52 @@ app.directive({
 })
 ```
 
-TBD
+### 2. compile
+
+首先在函数`bootstrap`中，有如下代码：
+
+```javascript
+injector.invoke(['$rootScope', '$rootElement', '$compile', '$injector',
+    function bootstrapApply(scope, element, compile, injector) {
+        scope.$apply(function() {
+            element.data('$injector', injector);
+            compile(element)(scope);
+        });
+    }
+]);
+```
+
+其中最核心的一句是`compile(element)(scope)`，`compile`便是`$CompileProvider`的一个实例，在`$CompileProvider`源码中，`this.$get`最终执行返回的便是`compile`函数。其源码结构如下：
+
+```javascript
+function compile($compileNodes, transcludeFn, maxPriority, ignoreDirective,
+    previousCompileContext) {
+
+    // ... ...
+    var compositeLinkFn = compileNodes($compileNodes, transcludeFn,
+        $compileNodes, maxPriority, ignoreDirective, previousCompileContext);
+    // ... ...
+
+    return function publicLinkFn(scope, cloneConnectFn, options) {
+        // ... ...
+        var $linkNode;
+        // ... ...
+
+        compile.$$addScopeInfo($linkNode, scope);
+
+        if (cloneConnectFn) cloneConnectFn($linkNode, scope);
+        if (compositeLinkFn) compositeLinkFn(scope, $linkNode, $linkNode, parentBoundTranscludeFn);
+        return $linkNode;
+    };
+}
+```
+
+其主要逻辑是：
+
+- compile阶段：调用`compileNodes`来对节点进行编译，从而得到`compositeLinkFn`
+- link阶段：返回函数`publicLinkFn`，在该函数中主要进行了scope的绑定等操作
+
+接下来分析`compileNodes`函数。
+
+### compileNodes
+
