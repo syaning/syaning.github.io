@@ -8,6 +8,7 @@ date:   2015-07-28 20:55:00
 
 - [Creating Custom Directives](https://docs.angularjs.org/guide/directive)
 - [HTML Compiler](https://docs.angularjs.org/guide/compiler)
+- [$compile](https://docs.angularjs.org/api/ng/service/$compile)
 - [angularjs1.3.0源码解析之directive](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)
 
 > 注：本部分源码比较多且逻辑复杂，我也没有完全通读并理解，因此分析过程中难免有不当或错误之处，还请指出。
@@ -161,7 +162,7 @@ function compileNodes(nodeList, transcludeFn, $rootElement, maxPriority, ignoreD
     - 调用`collectDirectives`搜集该节点上所应用的所有指令
     - 如果没有指令，则为`nodeLinkFn`赋值`null`；否则调用`applyDirectivesToNode`来对节点应用指令，并将返回值赋给`nodeLinkFn`
     - 如果需要，对子节点调用`compileNodes`，并将返回值赋给`childLinkFn`。这是一个递归的过程
-    - 如果nodeLinkFn`或者`childLinkFn`有效，则将`(i, nodeLinkFn, childLinkFn)`这样的一组值加入到`linkFns`数组中；并设置标志`linkFnFound`为`true`，表示找到有link函数
+    - 如果`nodeLinkFn`或者`childLinkFn`有效，则将`(i, nodeLinkFn, childLinkFn)`这样的一组值加入到`linkFns`数组中；并设置标志`linkFnFound`为`true`，表示找到有link函数
 - 如果`linkFnFound`为`true`，则返回函数`compositeLinkFn`，否则返回`null`
 
 接下来看`compositeLinkFn`的逻辑。返回的`compositeLinkFn`使用了闭包，主要涉及到`nodeLinkFnFound`和`linkFns`这两个变量。源码简化如下：
@@ -195,4 +196,4 @@ function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn)
 
 需要注意的是，`nodeLinkFn`为`applyDirectivesToNode`的返回值；而`childLinkFn`则为`compileNodes`的返回值，也就是函数`compositeLinkFn`。因此调用`childLinkFn`，其实也就是`compositeLinkFn`的递归调用，只不过每次传入的参数以及通过闭包所引用到的`nodeLinkFnFound`和`linkFns`这两个值不同而已。
 
-关于此过程，在[第三篇参考资料](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)中，作者给了一个很好的例子，并画了一幅[非常详细的图](http://gtms01.alicdn.com/tps/i1/TB1fTSPGXXXXXcgapXXCv8sVVXX-1727-1606.jpg)，对于理解整个过程非常有帮助。
+关于此过程，在[第四篇参考资料](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)中，作者给了一个很好的例子，并画了一幅[非常详细的图](http://gtms01.alicdn.com/tps/i1/TB1fTSPGXXXXXcgapXXCv8sVVXX-1727-1606.jpg)，对于理解整个过程非常有帮助。
