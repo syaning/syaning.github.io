@@ -197,3 +197,34 @@ function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn)
 需要注意的是，`nodeLinkFn`为`applyDirectivesToNode`的返回值；而`childLinkFn`则为`compileNodes`的返回值，也就是函数`compositeLinkFn`。因此调用`childLinkFn`，其实也就是`compositeLinkFn`的递归调用，只不过每次传入的参数以及通过闭包所引用到的`nodeLinkFnFound`和`linkFns`这两个值不同而已。
 
 关于此过程，在[第四篇参考资料](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)中，作者给了一个很好的例子，并画了一幅[非常详细的图](http://gtms01.alicdn.com/tps/i1/TB1fTSPGXXXXXcgapXXCv8sVVXX-1727-1606.jpg)，对于理解整个过程非常有帮助。
+
+### 4. applyDirectivesToNode
+
+该函数源码比较长，而且其中细节逻辑较为复杂，因此并没有完全搞清楚，仅做一个大概的分析。源码结构简化如下：
+
+```javascript
+function applyDirectivesToNode(directives, compileNode, templateAttrs, transcludeFn,
+    jqCollection, originalReplaceDirective, preLinkFns, postLinkFns,
+    previousCompileContext) {
+
+    // ... ...
+
+    // executes all directives on the current element
+    for (var i = 0, ii = directives.length; i < ii; i++) {
+        // ... ...
+    }
+
+    // ... ...
+
+    // might be normal or delayed nodeLinkFn depending on if templateUrl is present
+    return nodeLinkFn;
+
+    // ... ...
+
+    function nodeLinkFn(childLinkFn, scope, linkNode, $rootElement, boundTranscludeFn, thisLinkFn) {
+        // ... ...
+    }
+}
+```
+
+可以看到，该函数主要就是某个节点的所有指令，依次应用到该节点上，最后返回函数`nodeLinkFn`。
