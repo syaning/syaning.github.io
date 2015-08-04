@@ -227,4 +227,65 @@ function applyDirectivesToNode(directives, compileNode, templateAttrs, transclud
 }
 ```
 
-可以看到，该函数主要就是某个节点的所有指令，依次应用到该节点上，最后返回函数`nodeLinkFn`。
+可以看到，该函数主要就是某个节点的所有指令，依次应用到该节点上，最后返回函数`nodeLinkFn`。应用指令的过程比较繁琐，相关代码主要都在for循环中。这里主要看下指令的compile和link相关逻辑。
+
+通过[API文档](https://docs.angularjs.org/api/ng/service/$compile#-compile-)，可以知道：
+
+- 如果定义了`compile`，则`link`无效
+- 如果`compile`返回的是一个函数，则作为`postLink`函数；如果返回的是一个对象，则其`pre`属性作为`preLink`，`post`属性作为`postLink`
+
+首先，在注册指令的时候，即`registerDirective`函数中，有如下代码段：
+
+```javascript
+if (isFunction(directive)) {
+    directive = {
+        compile: valueFn(directive)
+    };
+} else if (!directive.compile && directive.link) {
+    directive.compile = valueFn(directive.link);
+}
+```
+
+即：
+
+- 如果定义的指令是一个函数，则将其作为`compile`的返回值
+- 如果没有定义`compile`函数但是定义了`link`，则将`link`作为`compile`函数的返回值
+
+然后，在`applyDirectivesToNode`的循环体中，有如下代码段：
+
+```javascript
+if (directive.templateUrl) {
+    // ... ...
+} else if (directive.compile) {
+    try {
+        linkFn = directive.compile($compileNode, templateAttrs, childTranscludeFn);
+        if (isFunction(linkFn)) {
+            addLinkFns(null, linkFn, attrStart, attrEnd);
+        } else if (linkFn) {
+            addLinkFns(linkFn.pre, linkFn.post, attrStart, attrEnd);
+        }
+    } catch (e) {
+        $exceptionHandler(e, startingTag($compileNode));
+    }
+}
+```
+
+其中函数`addLinkFns`为：
+
+```javascript
+function addLinkFns(pre, post, attrStart, attrEnd) {
+    if (pre) {
+        // ... ...
+        preLinkFns.push(pre);
+    }
+    if (post) {
+        // ... ...
+        postLinkFns.push(post);
+    }
+}
+```
+
+因此：
+
+- 首先执行`directive.compile`，并将值赋给`linkFn`
+- 如果`linkFn`是一个函数，则将其添加到`postLinkFns`数组中；否则将其`pre`属性添加到`preLinkFns`数组中，将其`post`属性添加到`postLinkFns`数组中
