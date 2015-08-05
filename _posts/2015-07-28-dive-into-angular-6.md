@@ -192,7 +192,7 @@ function compositeLinkFn(scope, nodeList, $rootElement, parentBoundTranscludeFn)
 }
 ```
 
-在对`compileNodes`的分析中，可以知道数组`linkFns`中，每三个元素为一组值。因此在该函数的for循环中，每次取出三个值。如果`nodeLinkFn`不为空，则执行它；然后如果`childLinkFn`不为空，也执行它。
+在对`compileNodes`的分析中，可以知道数组`linkFns`中，每三个元素为一组值。因此在该函数的for循环中，每次取出三个值。如果`nodeLinkFn`不为`null`，则执行`nodeLinkFn`；如果`nodeLinkFn`为`null`但`childLinkFn`不为`null`，则执行`childLinkFn`。
 
 需要注意的是，`nodeLinkFn`为`applyDirectivesToNode`的返回值；而`childLinkFn`则为`compileNodes`的返回值，也就是函数`compositeLinkFn`。因此调用`childLinkFn`，其实也就是`compositeLinkFn`的递归调用，只不过每次传入的参数以及通过闭包所引用到的`nodeLinkFnFound`和`linkFns`这两个值不同而已。
 
@@ -289,3 +289,128 @@ function addLinkFns(pre, post, attrStart, attrEnd) {
 
 - 首先执行`directive.compile`，并将值赋给`linkFn`
 - 如果`linkFn`是一个函数，则将其添加到`postLinkFns`数组中；否则将其`pre`属性添加到`preLinkFns`数组中，将其`post`属性添加到`postLinkFns`数组中
+
+### 5. nodeLinkFn
+
+`nodeLinkFn`是函数`applyDirectivesTiNode`的返回值，是一个闭包函数，其源码简化如下：
+
+```javascript
+function nodeLinkFn(childLinkFn, scope, linkNode, $rootElement, boundTranscludeFn, thisLinkFn) {
+    // ... ...
+
+    // PRELINKING
+    for (i = 0, ii = preLinkFns.length; i < ii; i++) {
+        linkFn = preLinkFns[i];
+        invokeLinkFn(linkFn,
+            linkFn.isolateScope ? isolateScope : scope,
+            $element,
+            attrs,
+            linkFn.require && getControllers(linkFn.directiveName, linkFn.require, $element, elementControllers),
+            transcludeFn
+        );
+    }
+
+    // RECURSION
+    // We only pass the isolate scope, if the isolate directive has a template,
+    // otherwise the child elements do not belong to the isolate directive.
+    var scopeToChild = scope;
+    if (newIsolateScopeDirective && (newIsolateScopeDirective.template || newIsolateScopeDirective.templateUrl === null)) {
+        scopeToChild = isolateScope;
+    }
+    childLinkFn && childLinkFn(scopeToChild, linkNode.childNodes, undefined, boundTranscludeFn);
+
+    // POSTLINKING
+    for (i = postLinkFns.length - 1; i >= 0; i--) {
+        linkFn = postLinkFns[i];
+        invokeLinkFn(linkFn,
+            linkFn.isolateScope ? isolateScope : scope,
+            $element,
+            attrs,
+            linkFn.require && getControllers(linkFn.directiveName, linkFn.require, $element, elementControllers),
+            transcludeFn
+        );
+    }
+
+    // ... ...
+}
+```
+
+其主要逻辑为：
+
+- 依次执行`preLinkFns`
+- 执行`childLinkFn`
+- 逆序依次执行`postLinkFns`
+
+### 6. 案例分析
+
+以[第四篇参考资料](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)中的例子为例，假设DOM结构如下：
+
+```html
+<A><!--has directives-->
+    <B></B><!--has directives-->
+    <C><!--no directives-->
+        <E></E><!--has directives-->
+        <F><!--no directives-->
+            <G></G><!--no directives-->
+        </F>
+    </C>
+    <D></D><!--has directives-->
+</A>
+```
+
+其中节点A，B，E，D有指令，节点C，F，G无指令，则`compile(A)`的整体调用过程如下：
+
+```javascript
+compile(A)
+    compileNodes([A])
+        collectiveDirectives(A) // A.directives = [...]
+        applyDirectivesToNode(A.directives, A) // A.nodeLinkFn; A.childLinkFn = BCD.compostiteLinkFn
+        compileNodes([B, C, D])
+            collectiveDirectives(B) // B.directives = [...]
+            applyDirectivesToNode(B.directives, B) // B.nodeLinkFn; B.childLinkFn = null
+            collectiveDirectives(C) // C.directives = []
+            applyDirectivesToNode(C.directives, C) // C.nodeLinkFn = null; C.childLinkFn = EF.compositeLinkFn
+            compileNodes([E, F])
+                collectiveDirectives(E) // E.directives = [...]
+                applyDirectivesToNode(E.directives, E) // E.nodeLinkFn; E.childLinkFn = null
+                collectiveDirectives(F) // F.directives = []
+                applyDirectivesToNode(F.directives, F) // F.nodeLinkFn = null; F.childLinkFn = null
+                compileNodes([G])
+                    collectiveDirectives(G) // G.directives = []
+                    applyDirectivesToNode(G.directives, G) // G.nodeLinkFn = null; G.childLinkFn = null
+                    return null // G.linkFns = []
+                return EF.compositeLinkFn //EF.linkFns = [0, E.nodeLinkFn, null]
+            collectiveDirectives(D) // D.directives = [...]
+            applyDirectivesToNode(D.directives, D) // D.nodeLinkFn; D.childLinkFn = null
+            return BCD.compositeLinkFn // BCD.linkFns = [0, B.nodeLinkFn, null, 1, null, EF.compositeLinkFn, 2, D.nodeLinkFn, null]
+        return A.compositeLinkFn // A.linkFns = [0, A.nodeLinkFn, BCD.compositeLinkFn]
+    return publicLinkFn
+```
+
+在`compile(A)`结束后，最终返回的是函数`publicLinkFn`，该函数有一句非常重要的代码，即：
+
+```javascript
+if (compositeLinkFn) compositeLinkFn(scope, $linkNode, $linkNode, parentBoundTranscludeFn);
+```
+
+而在这里，`compositeLinkFn`也就是`compileNodes([A])`的结果，即`A.compositeLinkFn`。在上面已经对函数`compositeLinkFn`的执行逻辑进行了分析，因此此时调用过程为：
+
+```javascript
+A.compositeLinkFn()
+    A.nodeLinkFn(BCD.compositeLinkFn)
+        A.preLinkFns()
+        BCD.compositeLinkFn()
+            B.nodeLinkFn(null)
+                B.preLinkFns()
+                B.postLinkFns()
+            EF.compositeLinkFn()
+                E.nodeLinkFn(null)
+                    E.preLinkFns()
+                    E.postLinkFns()
+            D.nodeLinkFn(null)
+                D.preLinkFns()
+                D.postLinkFns()
+        A.postLinkFns()
+```
+
+这里可以看出link过程中`preLinkFns`和`postLinkFns`的执行顺序。

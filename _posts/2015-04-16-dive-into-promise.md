@@ -102,7 +102,7 @@ var maybeOneOneSecondLater = function () {
 };
 ```
 
-在这个例子中，promise有了两个状态，完成（`resolved`）和未完成（`pending`）。通过`pending`这个变量来表示promise的状态，如果为完成，那么就将新的回调函数加入到回调函数列表（即`pending`）中，一旦状态为完成，也就是回调函数结果返回，那么依次执行回调函数，并且将`pending`设置为`undefined`，如果在这之后还有新的回调函数，由于已经完成，因此新的回调函数将会立即执行。
+在这个例子中，promise有了两个状态，完成（`resolved`）和未完成（`pending`）。通过`pending`这个变量来表示promise的状态，如果未完成，那么就将新的回调函数加入到回调函数列表（即`pending`）中，一旦状态为完成，也就是回调函数结果返回，那么依次执行回调函数，并且将`pending`设置为`undefined`，如果在这之后还有新的回调函数，由于已经完成，因此新的回调函数将会立即执行。
 
 基于上面的理念，可以抽象出一个`defer`对象。一个`defer`对象由两部分组成：注册回调（`then`）和通知回调（`resolve`）。例如：
 
