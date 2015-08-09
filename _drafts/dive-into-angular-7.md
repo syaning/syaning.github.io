@@ -146,3 +146,194 @@ function createChildScopeClass(parent) {
 ```
 
 这里主要就是让`ChildScope`的原型指向`parent`，从而达到Scope继承的效果。
+
+### 4. $watch, $watchGroup
+
+(1) $watch
+
+源码如下：
+
+```javascript
+function(watchExp, listener, objectEquality, prettyPrintExpression) {
+    var get = $parse(watchExp);
+
+    if (get.$$watchDelegate) {
+        return get.$$watchDelegate(this, listener, objectEquality, get, watchExp);
+    }
+    var scope = this,
+        array = scope.$$watchers,
+        watcher = {
+            fn: listener,
+            last: initWatchVal,
+            get: get,
+            exp: prettyPrintExpression || watchExp,
+            eq: !!objectEquality
+        };
+
+    lastDirtyWatch = null;
+
+    if (!isFunction(listener)) {
+        watcher.fn = noop;
+    }
+
+    if (!array) {
+        array = scope.$$watchers = [];
+    }
+    // we use unshift since we use a while loop in $digest for speed.
+    // the while loop reads in reverse order.
+    array.unshift(watcher);
+    incrementWatchersCount(this, 1);
+
+    return function deregisterWatch() {
+        if (arrayRemove(array, watcher) >= 0) {
+            incrementWatchersCount(scope, -1);
+        }
+        lastDirtyWatch = null;
+    };
+}
+```
+
+这里主要就是使用传进来的参数构建一个`watcher`对象，并将其添加到`scope.$$watchers`数组中，然后调用`incrementWatchersCount(this, 1)`来增加观察者的数量。最后返回的是一个函数，用于取消该观察者。
+
+(2) $watchGroup
+
+源码如下：
+
+```javascript
+function(watchExpressions, listener) {
+    var oldValues = new Array(watchExpressions.length);
+    var newValues = new Array(watchExpressions.length);
+    var deregisterFns = [];
+    var self = this;
+    var changeReactionScheduled = false;
+    var firstRun = true;
+
+    // ... ...
+
+    forEach(watchExpressions, function(expr, i) {
+        var unwatchFn = self.$watch(expr, function watchGroupSubAction(value, oldValue) {
+            newValues[i] = value;
+            oldValues[i] = oldValue;
+            if (!changeReactionScheduled) {
+                changeReactionScheduled = true;
+                self.$evalAsync(watchGroupAction);
+            }
+        });
+        deregisterFns.push(unwatchFn);
+    });
+
+    function watchGroupAction() {
+        changeReactionScheduled = false;
+
+        if (firstRun) {
+            firstRun = false;
+            listener(newValues, newValues, self);
+        } else {
+            listener(newValues, oldValues, self);
+        }
+    }
+
+    return function deregisterWatchGroup() {
+        while (deregisterFns.length) {
+            deregisterFns.shift()();
+        }
+    };
+}
+```
+
+第一个参数`watchExpressions`是一个数组。该函数的主要作用也就是对`watchExpressions`中的每一项进行观察，并注册观察的回调函数`watchGroupSubAction`，一旦值发生变化，则设置`changeReactionScheduled`为`true`，并执行函数`watchGroupAction`。在`watchGroupAction`中，则主要是调用了`listener`。因此，一旦数组`watchExpressions`中任意一项的值发生变化，都会触发`listener`执行。
+
+### 5. $digest
+
+`$digest`用来进行脏值检测，主要代码是两层`do`循环，外层循环如下：
+
+```javascript
+do { // "while dirty" loop
+    dirty = false;
+    current = target;
+
+    while (asyncQueue.length) {
+        try {
+            asyncTask = asyncQueue.shift();
+            asyncTask.scope.$eval(asyncTask.expression, asyncTask.locals);
+        } catch (e) {
+            $exceptionHandler(e);
+        }
+        lastDirtyWatch = null;
+    }
+
+    traverseScopesLoop:
+        do {
+            // ... ...
+        } while ((current = next));
+
+    // `break traverseScopesLoop;` takes us to here
+
+    if ((dirty || asyncQueue.length) && !(ttl--)) {
+        clearPhase();
+        throw $rootScopeMinErr('infdig',
+            '{0} $digest() iterations reached. Aborting!\n' +
+            'Watchers fired in the last 5 iterations: {1}',
+            TTL, watchLog);
+    }
+
+} while (dirty || asyncQueue.length);
+```
+
+每次检测到脏值的话会让`ttl`减去1，默认的`ttl`为10。因此如果遇到振荡问题（例如a的变化引起b的变化，b的变化又引起a的变化），检测到10次脏值变化后就会报错。默认`TTL`的值可以通过`$rootScopeProvider`的`digestTtl`方法来设置。
+
+内层循环代码如下：
+
+```javascript
+traverseScopesLoop:
+    do { // "traverse the scopes" loop
+        if ((watchers = current.$$watchers)) {
+            // process our watches
+            length = watchers.length;
+            while (length--) {
+                try {
+                    watch = watchers[length];
+                    // Most common watches are on primitives, in which case we can short
+                    // circuit it with === operator, only when === fails do we use .equals
+                    if (watch) {
+                        if ((value = watch.get(current)) !== (last = watch.last) &&
+                            !(watch.eq ? equals(value, last) : (typeof value === 'number' && typeof last === 'number' && isNaN(value) && isNaN(last)))) {
+                            dirty = true;
+                            lastDirtyWatch = watch;
+                            watch.last = watch.eq ? copy(value, null) : value;
+                            watch.fn(value, ((last === initWatchVal) ? value : last), current);
+                            if (ttl < 5) {
+                                logIdx = 4 - ttl;
+                                if (!watchLog[logIdx]) watchLog[logIdx] = [];
+                                watchLog[logIdx].push({
+                                    msg: isFunction(watch.exp) ? 'fn: ' + (watch.exp.name || watch.exp.toString()) : watch.exp,
+                                    newVal: value,
+                                    oldVal: last
+                                });
+                            }
+                        } else if (watch === lastDirtyWatch) {
+                            // If the most recently dirty watcher is now clean, short circuit since the remaining watchers
+                            // have already been tested.
+                            dirty = false;
+                            break traverseScopesLoop;
+                        }
+                    }
+                } catch (e) {
+                    $exceptionHandler(e);
+                }
+            }
+        }
+
+        // Insanity Warning: scope depth-first traversal
+        // yes, this code is a bit crazy, but it works and we have tests to prove it!
+        // this piece should be kept in sync with the traversal in $broadcast
+        if (!(next = ((current.$$watchersCount && current.$$childHead) ||
+                (current !== target && current.$$nextSibling)))) {
+            while (current !== target && !(next = current.$$nextSibling)) {
+                current = current.$parent;
+            }
+        }
+    } while ((current = next));
+```
+
+主要就是通过对`$$watchers`中的每一项进行检测，看值是否发生变化。并深度优先遍历整个Scope数对每个Scope进行检测。
