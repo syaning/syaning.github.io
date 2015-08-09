@@ -7,6 +7,7 @@ date:   2015-08-08 21:00
 参考资料：
 
 - [Scopes](https://docs.angularjs.org/guide/scope)
+- [angularjs1.3.0源码解析之scope](http://www.html-js.com/article/2365)
 
 ### 1. $RootScopeProvider
 
@@ -337,3 +338,31 @@ traverseScopesLoop:
 ```
 
 主要就是通过对`$$watchers`中的每一项进行检测，看值是否发生变化。并深度优先遍历整个Scope数对每个Scope进行检测。
+
+### 6. $on, $emit & $broadcast
+
+`Scope`中实现了一套事件机制，其核心方法为`$on`，`$emit`和`$broadcast`。本质上来说，也就是一个EventEmitter类的实现，一般而言，一个最简单的EventEmitter类实现如下：
+
+```javascript
+function EventEmitter() {
+    this.listeners = {};
+}
+
+EventEmitter.prototype.on = function(name, listener) {
+    var listeners = this.listeners[name];
+    if (!listeners) {
+        this.listeners[name] = listeners = [];
+    }
+    listeners.push(listener);
+}
+
+EventEmitter.prototype.emit = function(name) {
+    var listeners = this.listeners[name] || [],
+        args = [].slice.call(arguments, 1);
+    listeners.forEach(function(listener) {
+        listener.apply(null, args);
+    });
+}
+```
+
+`Scope`中的实现于此大同小异，主要的区别是：由于scope之间的继承关系构成了一个树状结构，类似DOM树，因此事件可以向上向下传播。在这里，`$emit`发出的事件可以向上传播，`$broadcast`发出的事件可以向下传播。源码比较简单，不再赘述。
