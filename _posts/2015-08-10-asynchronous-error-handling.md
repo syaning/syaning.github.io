@@ -38,7 +38,7 @@ try {
 // Uncaught Error: async error
 ```
 
-这是因为异步调用是立即返回的，因此当发成异常的时候，已经脱离了`try..catch..`的上下文了，所以异常无法被捕获。
+这是因为异步调用是立即返回的，因此当发生异常的时候，已经脱离了`try..catch..`的上下文了，所以异常无法被捕获。
 
 下面来介绍异步编程下几种常用的异常处理方法。
 
@@ -49,15 +49,11 @@ try {
 ```javascript
 function async(callback, errback) {
 	setTimeout(function() {
-		try {
-			var rand = Math.random();
-			if (rand < 0.5) {
-				throw new Error('async error');
-			} else {
-				callback(rand);
-			}
-		} catch (err) {
-			errback(err);
+		var rand = Math.random();
+		if (rand < 0.5) {
+			errback('async error');
+		} else {
+			callback(rand);
 		}
 	}, 1000);
 }
@@ -65,7 +61,7 @@ function async(callback, errback) {
 async(function(result) {
 	console.log('scucess:', result);
 }, function(err) {
-	console.log('fail:', err.message);
+	console.log('fail:', err);
 });
 ```
 
@@ -76,22 +72,18 @@ async(function(result) {
 ```javascript
 function async(callback) {
 	setTimeout(function() {
-		try {
-			var rand = Math.random();
-			if (rand < 0.5) {
-				throw new Error('async error');
-			} else {
-				callback(null, rand);
-			}
-		} catch (err) {
-			callback(err);
+		var rand = Math.random();
+		if (rand < 0.5) {
+			callback('async error');
+		} else {
+			callback(null, rand);
 		}
 	}, 1000);
 }
 
 async(function(err, result) {
 	if (err) {
-		console.log('fail:', err.message);
+		console.log('fail:', err);
 		return;
 	}
 	console.log('success:', result);
@@ -101,3 +93,7 @@ async(function(err, result) {
 这里`err`作为回调函数的第一个参数，如果`async`调用成功，则`err`为一个falsy值（可以是`null`或`undefined`等，在该例子中使用`null`）；如果`async`调用失败，则`err`为抛出的异常。
 
 当调用回调函数的时候，先判断`err`是否为falsy。如果为falsy，则进行异常处理；否则执行成功的回调。
+
+### 2. promise
+
+使用回调函数的方式来处理错误虽然比较简单，但是当遇到多个回调嵌套的时候，会引起回调金字塔问题，并且这个时候，代码的可读性也会大打折扣。此时，通过promise的方式会好很多。
