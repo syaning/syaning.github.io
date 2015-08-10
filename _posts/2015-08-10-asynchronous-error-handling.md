@@ -90,10 +90,33 @@ async(function(err, result) {
 });
 ```
 
-这里`err`作为回调函数的第一个参数，如果`async`调用成功，则`err`为一个falsy值（可以是`null`或`undefined`等，在该例子中使用`null`）；如果`async`调用失败，则`err`为抛出的异常。
-
-当调用回调函数的时候，先判断`err`是否为falsy。如果为falsy，则进行异常处理；否则执行成功的回调。
+这里`err`作为回调函数的第一个参数，如果`async`调用成功，则`err`为一个falsy值（可以是`null`或`undefined`等，在该例子中使用`null`）；如果`async`调用失败，则`err`为抛出的异常。当调用回调函数的时候，先判断`err`是否为falsy。如果为falsy，则进行异常处理；否则执行成功的回调。
 
 ### 2. promise
 
-使用回调函数的方式来处理错误虽然比较简单，但是当遇到多个回调嵌套的时候，会引起回调金字塔问题，并且这个时候，代码的可读性也会大打折扣。此时，通过promise的方式会好很多。
+上面的例子，使用promise的话，代码如下：
+
+```javascript
+function async() {
+	return new Promise(function(resolve, reject) {
+		setTimeout(function() {
+			var rand = Math.random();
+			if (rand < 0.5) {
+				reject(rand);
+			} else {
+				resolve(rand);
+			}
+		}, 1000);
+	});
+}
+
+async().then(function(result) {
+	console.log('success:', result);
+}, function(err) {
+	console.log('fail:', err);
+});
+```
+
+使用promise的好处是执行流程直观，但是理解起来比回调函数要麻烦一些。
+
+TBD
