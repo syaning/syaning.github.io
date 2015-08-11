@@ -215,3 +215,32 @@ async().then(onResolved)
 ```
 
 ### 3. domain
+
+在Node中，有一个[`domain`](https://nodejs.org/api/domain.html)模块（在io.js中该模块已经标记为deprecated），可以用来处理异步操作异常。示例代码如下：
+
+```javascript
+var domain = require('domain');
+
+function async(callback) {
+	setTimeout(function() {
+		var rand = Math.random();
+		if (rand < 0.5) {
+			throw 'async error';
+		} else {
+			callback(rand);
+		}
+	}, 1000);
+}
+
+var d = domain.create();
+d.on('error', function(err) {
+	console.log('fail:', err);
+});
+d.run(function() {
+	async(function(result) {
+		console.log('success:', result);
+	});
+});
+```
+
+`Domain`类继承自`EventEmitter`，所以它本质上就是一个事件发生器。
