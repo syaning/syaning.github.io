@@ -84,13 +84,52 @@ function async(callback) {
 async(function(err, result) {
 	if (err) {
 		console.log('fail:', err);
-		return;
+	} else {
+		console.log('success:', result);
 	}
-	console.log('success:', result);
 });
 ```
 
 这里`err`作为回调函数的第一个参数，如果`async`调用成功，则`err`为一个falsy值（可以是`null`或`undefined`等，在该例子中使用`null`）；如果`async`调用失败，则`err`为抛出的异常。当调用回调函数的时候，先判断`err`是否为falsy。如果为falsy，则进行异常处理；否则执行成功的回调。
+
+然而在多异步串行的情况下，使用回调函数的方式，就会出现所谓的回调金字塔问题，代码可读性也会大打折扣。例如：
+
+```javascript
+function async(callback) {
+	setTimeout(function() {
+		var rand = Math.random();
+		if (rand < 0.2) {
+			callback('async error');
+		} else {
+			callback(null, rand);
+		}
+	}, 1000);
+}
+
+async(function(err, result) {
+	if (err) {
+		console.log('fail:', err);
+	} else {
+		console.log('success:', result);
+		async(function(err, result) {
+			if (err) {
+				console.log('fail:', err);
+			} else {
+				console.log('success:', result);
+				async(function(err, result) {
+					if (err) {
+						console.log('fail:', err);
+					} else {
+						console.log('success:', result);
+					}
+				});
+			}
+		});
+	}
+});
+```
+
+在这里，回调函数一层嵌一层，而且每一层都要判读是否出错。不仅代码可读性差，维护起来也非常不方便。
 
 ### 2. promise
 
@@ -102,7 +141,7 @@ function async() {
 		setTimeout(function() {
 			var rand = Math.random();
 			if (rand < 0.5) {
-				reject(rand);
+				reject('async error');
 			} else {
 				resolve(rand);
 			}
@@ -117,6 +156,62 @@ async().then(function(result) {
 });
 ```
 
+或者使用`catch`的方式，代码如下：
+
+```javascript
+function async() {
+	return new Promise(function(resolve, reject) {
+		setTimeout(function() {
+			var rand = Math.random();
+			if (rand < 0.5) {
+				reject('async error');
+			} else {
+				resolve(rand);
+			}
+		}, 1000);
+	});
+}
+
+async().then(function(result) {
+		console.log('success:', result);
+	})
+	.catch(function(err) {
+		console.log('fail:', err);
+	});
+```
+
 使用promise的好处是执行流程直观，但是理解起来比回调函数要麻烦一些。
 
-TBD
+对于多异步操作串行的问题，使用promise的方式会使得代码简洁优雅，可读性也很强。代码如下：
+
+```javascript
+function async() {
+	return new Promise(function(resolve, reject) {
+		setTimeout(function() {
+			var rand = Math.random();
+			if (rand < 0.2) {
+				reject('async error');
+			} else {
+				resolve(rand);
+			}
+		}, 1000);
+	});
+}
+
+function onResolved(result) {
+	console.log('success:', result);
+}
+
+function onRejected(err) {
+	console.log('fail:', err);
+}
+
+async().then(onResolved)
+	.then(async)
+	.then(onResolved)
+	.then(async)
+	.then(onResolved)
+	.catch(onRejected);
+```
+
+### 3. domain
