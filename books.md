@@ -24,3 +24,5 @@ permalink: /books/
 - [Data Mining] Mining the Social Web. Matthew A. Russell.
 - [JavaScript] JavaScript: The Good Parts. Douglas Crockford.
 - [JavaScript] Maintainable JavaScript. Nicholas C. Zakas.
+- [JavaScript] JavaScript Patterns. Stoyan Stefanov.
+- [JavaScript] High Performance JavaScript. Nicholas C. Zakas.
