@@ -4,6 +4,10 @@ title:  webpack入门教程
 date:   2015-08-15 21:00:00
 ---
 
+> 注：本文内容比较基础，供初学者快速入门参考。
+>
+> 更多详细信息请参考[官方文档](http://webpack.github.io/docs/)。 
+
 ### 1. 安装
 
 ```
@@ -188,3 +192,33 @@ define("app", ["angular"], function( /* ... */ ) {
 ```
 
 通过配置`output.libraryTarget`，可以自定义输出的模块类型，包括AMD，CommonJS，变量等多种输出类型。具体可以参考[configuration#output](http://webpack.github.io/docs/configuration.html#output)。
+
+### 7. 多文件
+
+现在假如项目目录结构如下：
+
+```
+/app
+  |--components.js
+  |--index.html
+  |--main.js
+  |--mymodule.js
+```
+
+其中`mymodule.js`被`main.js`和`components.js`所使用。假如我们希望`main.js`输出为`app.js`，而`components`输出为`app.components.js`，则可以修改配置文件如下：
+
+```javascript
+entry: {
+	app: './main.js',
+	'app.coomponents': './components.js'
+},
+output: {
+	filename: '[name].js'
+}
+```
+
+更多信息参考：
+
+- [Multiple entry points](http://webpack.github.io/docs/multiple-entry-points.html)
+- [configuration#entry](http://webpack.github.io/docs/configuration.html#entry)
+- [Code Splitting](http://webpack.github.io/docs/code-splitting.html#multiple-entry-chunks)
