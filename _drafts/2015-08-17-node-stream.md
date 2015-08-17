@@ -176,6 +176,83 @@ stream end
 
 其本质上，是在`pipe()`函数中进行了`data`事件的监听，以及`read()`等一系列操作。
 
-TODO:
-- _read
-- source code
+上面的几个例子中，我们都是通过`push()`方法手动地向Readable stream中写入数据。然而在实际情况下，如果要实现一个自定义的Readable stream类，往往是通过定义其`_read`方法来进行数据的处理。看如下例子：
+
+```javascript
+var Readable = require('stream').Readable;
+
+function MyReadable(data, options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(data, options);
+	}
+	Readable.call(this, options);
+	this.data = data || [];
+	this.index = 0;
+}
+
+MyReadable.prototype.__proto__ = Readable.prototype;
+
+MyReadable.prototype._read = function() {
+	if (this.index >= this.data.length) {
+		this.push(null);
+	} else {
+		setTimeout(function() {
+			this.push(this.data[this.index++]);
+		}.bind(this), 1000);
+	}
+};
+
+var data = ['California Dreaming', 'Hotel California', 'Californication'];
+var rs = MyReadable(data);
+
+rs.on('data', function(chunk) {
+	console.log('get data:', chunk.toString());
+});
+```
+
+在这里我们实现了一个`MyReadable`的类，并让其继承自`Readable`。`MyReadable`的参数`data`是一个字符串数组。然后定义了其`_read()`方法，每次从数组`data`中取出一项进行`push()`操作，如果遍历完了数组，则执行`push(null)`。
+
+但是可以发现这样一个问题，也就是`push(chunk)`中的参数必须为字符串或者`Buffer`对象，否则就会报错。在上面的例子中，可以看到，`MyReadable`实际上是接受两个参数的，第二个参数为`options`，这个参数实际上被`Readable`所使用。通过在`options`中设置`objectMode: true`，就可以使`push()`操作支持对象、数字等其它类型了。例如：
+
+```javascript
+var Readable = require('stream').Readable;
+
+function MyReadable(data, options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(data, options);
+	}
+	Readable.call(this, options);
+	this.data = data || [];
+	this.index = 0;
+}
+
+MyReadable.prototype.__proto__ = Readable.prototype;
+
+MyReadable.prototype._read = function() {
+	if (this.index >= this.data.length) {
+		this.push(null);
+	} else {
+		setTimeout(function() {
+			this.push(this.data[this.index++]);
+		}.bind(this), 1000);
+	}
+};
+
+var data = [{
+	music: 'California Dreaming',
+	artist: 'The Mamas & The Papas'
+}, {
+	music: 'Hotel California',
+	artist: 'Eagles'
+}, {
+	music: 'Californication',
+	artist: 'Red Hot Chili Peppers'
+}];
+var rs = MyReadable(data, {
+	objectMode: true
+});
+
+rs.on('data', function(chunk) {
+	console.log('%s - %s', chunk.artist, chunk.music);
+});
+```
