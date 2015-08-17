@@ -125,17 +125,21 @@ require('style!css!./style.css');
 但是假如有多个css文件的话，每个`require`语句都需要加上loader说明，很不方便，因此可以在`webpack.config.js`文件中进行配置，配置如下：
 
 ```javascript
-loaders: [{
-	test: /\.css$/,
-	loader: 'style!css'
-}]
+module: {
+	loaders: [{
+		test: /\.css$/,
+		loader: 'style!css'
+	}]
+}
 
 // or
 
-loaders: [{
-	test: /\.css$/,
-	loaders: ['style', 'css']
-}]
+module: {
+	loaders: [{
+		test: /\.css$/,
+		loaders: ['style', 'css']
+	}]
+}
 ```
 
 关于loader的更多信息，可以参考：
