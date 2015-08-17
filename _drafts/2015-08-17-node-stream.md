@@ -8,6 +8,7 @@ date:   2015-08-17 14:15:00
 
 - [Stream Documentation](https://nodejs.org/api/stream.html)
 - [stream-handbook](https://github.com/substack/stream-handbook)
+- [Readable, Writable, and Transform Streams in Node.js](http://www.sandersdenardi.com/readable-writable-transform-streams-node/)
 
 ### 1. 什么是stream
 
@@ -256,3 +257,44 @@ rs.on('data', function(chunk) {
 	console.log('%s - %s', chunk.artist, chunk.music);
 });
 ```
+
+在上面的例子中，我们是通过在`_read()`函数中使用`setTimeout`来保证数据的产生速率。其实，也可以通过`pause()`和`resume()`来控制数据流，例如：
+
+```javascript
+var Readable = require('stream').Readable;
+
+function MyReadable(data, options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(data, options);
+	}
+	Readable.call(this, options);
+	this.data = data || [];
+	this.index = 0;
+}
+
+MyReadable.prototype.__proto__ = Readable.prototype;
+
+MyReadable.prototype._read = function() {
+	if (this.index >= this.data.length) {
+		this.push(null);
+	} else {
+		this.push(this.data[this.index++]);
+	}
+};
+
+var data = ['California Dreaming', 'Hotel California', 'Californication'];
+var rs = MyReadable(data);
+
+rs.on('data', function(chunk) {
+	console.log('get data:', chunk.toString());
+	rs.pause();
+	setTimeout(function() {
+		rs.resume();
+	}, 1000);
+});
+```
+
+在这里，每次监听到`data`事件后，执行`pause()`，然后过1秒后再执行`resume()`。在该例子中，在此过程中`_read`依然在产生数据，只不过此时的`push()`操作并不会触发`data`事件，数据暂时存放在内部的缓存中。当执行了`resume()`后，才会继续在内部调用`read()`读取数据。
+
+### 3. Writable stream
+
