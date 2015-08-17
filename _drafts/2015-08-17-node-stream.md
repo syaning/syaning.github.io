@@ -29,7 +29,7 @@ ls -l | grep key | less
 readStream.pipe(writeStream);
 ```
 
-在Node中，stream分为多种，包括[Readable stream](https://nodejs.org/api/stream.html#stream_class_stream_readable)，[Writable stream](https://nodejs.org/api/stream.html#stream_class_stream_writable)，[Duplex stream](https://nodejs.org/api/stream.html#stream_class_stream_duplex)和[Transform stream](https://nodejs.org/api/stream.html#stream_class_stream_transform)。
+在Node中，stream分为多种，包括[Readable](https://nodejs.org/api/stream.html#stream_class_stream_readable)，[Writable](https://nodejs.org/api/stream.html#stream_class_stream_writable)，[Duplex](https://nodejs.org/api/stream.html#stream_class_stream_duplex)和[Transform](https://nodejs.org/api/stream.html#stream_class_stream_transform)。
 
 通常，可以通过如下方式来创建stream：
 
@@ -61,3 +61,121 @@ function Stream() {
 ```
 
 可以看到，`Stream`继承自`EventEmitter`，而`Readable`，`Writable`等具体的stream都挂载在`Stream`下面。
+
+### 2. Readable stream
+
+`Readable`是可以流出数据的流，简单来说，它可以作为我们的数据源。常见的Readable stream有如下几种：
+
+- [http response](https://nodejs.org/api/http.html#http_http_incomingmessage)(客户端)
+- [http request](https://nodejs.org/api/http.html#http_http_incomingmessage)(服务器端)
+- [fs.ReadStream](https://nodejs.org/api/fs.html#fs_class_fs_readstream)
+- [zlib](https://nodejs.org/api/zlib.html)
+- [crypto](https://nodejs.org/api/crypto.html)
+- [net.Socket](https://nodejs.org/api/net.html#net_class_net_socket)
+- [child precess的stdout和stderr](https://nodejs.org/api/child_process.html#child_process_child_stdout)
+- [process.stdin](https://nodejs.org/api/process.html#process_process_stdin)
+
+Readable stream有两种模式：
+
+- flowing：在该模式下，会尽快获取数据向外输出。因此如果没有事件监听，也没有`pipe()`来引导数据流向，数据可能会丢失。
+- paused：默认模式。在该模式下，需要手动调用`stream.read()`来获取数据。
+
+可以通过以下几种方法切换到following模式：
+
+- 为`data`事件添加监听器
+- 调用`resume()`
+- 调用`pipe()`
+
+可以通过以下几种方法切换到paused模式：
+
+- 如果没有`pipe`，则调用`pause()`即可
+- 如果有`pipe`，那么需要移除`data`事件的所有监听器，并通过`unpipe()`移除所有的`pipe`
+
+下面，来看一个简单的例子：
+
+```javascript
+var Readable = require('stream').Readable;
+var rs = new Readable();
+
+rs.on('readable', function() {
+	var chunk = rs.read();
+	console.log('get data:', chunk ? chunk.toString() : null);
+});
+
+rs.on('end', function() {
+	console.log('stream end');
+});
+
+rs.push('hello stream');
+rs.push('hello alex');
+rs.push(null);
+```
+
+输出为：
+
+```
+get data: hello streamhello alex
+stream end
+```
+
+在这里，我们创建了一个Readable stream，并监听其`readable`和`end`事件，然后通过`push`手动地向其中写入数据。在这里，stream为paused模式，当调用`push(null)`后，才会触发`readable`事件，之前的`push(chunk)`操作会将数据先放在内部的缓存中。当监听到`readable`事件后，需要手动调用`rs.read()`读取数据，同时该操作会触发`end`事件；如果在监听到`readable`事件后不进行`read()`操作，那么数据就会丢失。
+
+如果我们监听`data`事件，那么就会自动切换为flowing模式。代码如下：
+
+```javascript
+var Readable = require('stream').Readable;
+var rs = new Readable();
+
+rs.on('data', function(chunk) {
+	console.log('get data:', chunk.toString());
+});
+
+rs.on('end', function() {
+	console.log('stream end');
+});
+
+rs.push('hello stream');
+rs.push('hello alex');
+rs.push(null);
+```
+
+此时输出为：
+
+```
+get data: hello stream
+get data: hello alex
+stream end
+```
+
+因为是flowing模式，因此每次`push(chunk)`操作都会触发`data`事件。当调用`push(null)`时，同样会触发`readable`事件，只不过此时通过`read()`操作读取不到任何数据而已。而在每次触发`data`事件的时候，会在内部调用`read()`方法，因此最终`end`事件依然会触发。
+
+当然，我们也可以不监听`data`事件，而是通过`pipe()`来进入flowing模式。代码如下：
+
+```javascript
+var Readable = require('stream').Readable;
+var rs = new Readable();
+
+rs.on('end', function() {
+	console.log('stream end');
+});
+
+rs.push('hello stream\n');
+rs.push('hello alex\n');
+rs.push(null);
+
+rs.pipe(process.stdout);
+```
+
+输出为：
+
+```
+hello stream
+hello alex
+stream end
+```
+
+其本质上，是在`pipe()`函数中进行了`data`事件的监听，以及`read()`等一系列操作。
+
+TODO:
+- _read
+- source code
