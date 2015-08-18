@@ -386,3 +386,110 @@ ws.write({
 ws.end(100);
 ```
 
+### 4. pipe
+
+下面来了解一下`pipe()`操作的基本原理。首先我们定义`MyReadable`和`MyWritable`两个类：
+
+```javascript
+var util = require('util'),
+	stream = require('stream'),
+	Readable = stream.Readable,
+	Writable = stream.Writable;
+
+function MyReadable(options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(options);
+	}
+	Readable.call(this, options);
+	this._cur = 1;
+	this._max = 20000;
+}
+
+util.inherits(MyReadable, Readable);
+
+MyReadable.prototype._read = function() {
+	if (this._cur > this._max) {
+		this.push(null);
+	} else {
+		this.push('' + this._cur++);
+	}
+}
+
+function MyWritable(options) {
+	if (!(this instanceof MyWritable)) {
+		return new MyWritable(options);
+	}
+	Writable.call(this, options);
+}
+
+util.inherits(MyWritable, Writable);
+
+MyWritable.prototype._write = function(chunk, encoding, cb) {
+	setTimeout(function() {
+		console.log('write data:', chunk.toString());
+		cb();
+	}.bind(this), 100);
+};
+```
+
+其中`MyReadable`的`_read()`操作是依次生成1到20000的数字；`MyWritable`的`_write()`操作是将收到的数据打印在控制台上，这里通过`setTimeout`来限制`MyWritable`的写入速度。
+
+如果我们希望`MyReadable`的数据流入`MyWritable`，代码可能是这样子：
+
+```javascript
+var rs = MyReadable(),
+	ws = MyWritable();
+
+rs.on('data', function(chunk) {
+	ws.write('chunk');
+});
+```
+
+不过考虑到当监听了`data`事件时，`rs`处于flowing模式，此时数据会源源不断地产生，又由于`ws`的写入速度远低于`rs`的读取速度，因此会有大量的数据缓存在内存中。此时，我们需要对数据流进行一定的管理。如下：
+
+```javascript
+var rs = MyReadable(),
+	ws = MyWritable();
+
+rs.on('data', function(chunk) {
+	if (!ws.write(chunk)) {
+		rs.pause();
+	}
+});
+
+ws.on('drain', function() {
+	rs.resume();
+});
+```
+
+因为`write()`操作会返回一个boolean值，用来说明是否可以继续写下去。如果内存中已经缓存了较多的数据，就会返回`false`。当`ws.write(chunk)`返回值是`false`的时候，执行`rs.pause()`暂停读取流；然后当接收到`drain`事件的时候，执行`rs.resume()`重新开启读取流。
+
+我们也可以这样子写：
+
+```javascript
+var rs = MyReadable(),
+	ws = MyWritable();
+
+function pipe(rs, ws) {
+	rs.on('data', function(chunk) {
+		if (!ws.write(chunk)) {
+			rs.pause();
+		}
+	});
+
+	ws.on('drain', function() {
+		rs.resume();
+	});
+}
+
+pipe(rs, ws);
+```
+
+这其实就是`pipe()`的基本逻辑。更简单地，我们可以直接使用`pipe()`来自动管理数据流：
+
+```javascript
+var rs = MyReadable(),
+	ws = MyWritable();
+
+rs.pipe(ws);
+```
