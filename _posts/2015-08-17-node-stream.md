@@ -493,3 +493,128 @@ var rs = MyReadable(),
 
 rs.pipe(ws);
 ```
+
+### 5. Duplex
+
+`Duplex`既是Readable stream同时又是Writable Stream，常见的Duplex stream有：
+
+- [zlib](https://nodejs.org/api/zlib.html)
+- [crypto](https://nodejs.org/api/crypto.html)
+- [net.Socket](https://nodejs.org/api/net.html#net_class_net_socket)
+
+如果要实现一个Duplex stream，需要实现它的`_read()`和`_write()`方法。
+
+如下例子，实现了一个比较简单的双向流：
+
+```javascript
+var util = require('util'),
+	stream = require('stream'),
+	Readable = stream.Readable,
+	Duplex = stream.Duplex;
+
+function MyReadable(options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(options);
+	}
+	Readable.call(this, options);
+	this._cur = 1;
+	this._max = 20;
+}
+
+util.inherits(MyReadable, Readable);
+
+MyReadable.prototype._read = function() {
+	if (this._cur > this._max) {
+		this.push(null);
+	} else {
+		this.push('' + this._cur++);
+	}
+}
+
+function MyDuplex(options) {
+	if (!(this instanceof MyDuplex)) {
+		return new MyDuplex(options);
+	}
+	Duplex.call(this, options);
+	this._data = [];
+}
+
+util.inherits(MyDuplex, Duplex);
+
+MyDuplex.prototype._read = function() {
+	if (this._data.length) {
+		this.push(this._data.shift());
+		this.push('\n');
+	} else {
+		this.push(null);
+	}
+}
+
+MyDuplex.prototype._write = function(chunk, encoding, cb) {
+	console.log('write data:', chunk.toString());
+	this._data.push(chunk);
+	cb();
+};
+
+var rs = MyReadable(),
+	ds = MyDuplex();
+
+rs.pipe(ds).pipe(process.stdout);
+```
+
+### 6. Transform
+
+`Transform`是一种特殊的Duplex stream，它可以对数据进行转换，也就是说，它的输出是将输入根据某种规则计算而成的。常见的Transform stream有：
+
+- [zlib](https://nodejs.org/api/zlib.html)
+- [crypto](https://nodejs.org/api/crypto.html)
+
+如果要实现一个Transform stream，需要实现它的`_transform()`方法。
+
+如下例子，实现了一个比较简单的转换流：
+
+```javascript
+var util = require('util'),
+	stream = require('stream'),
+	Readable = stream.Readable,
+	Transform = stream.Transform;
+
+function MyReadable(options) {
+	if (!(this instanceof MyReadable)) {
+		return new MyReadable(options);
+	}
+	Readable.call(this, options);
+	this._cur = 1;
+	this._max = 20;
+}
+
+util.inherits(MyReadable, Readable);
+
+MyReadable.prototype._read = function() {
+	if (this._cur > this._max) {
+		this.push(null);
+	} else {
+		this.push('' + this._cur++);
+	}
+}
+
+function MyTransform(options) {
+	if (!(this instanceof MyTransform)) {
+		return new MyTransform(options);
+	}
+	Transform.call(this, options);
+}
+
+util.inherits(MyTransform, Transform);
+
+MyTransform.prototype._transform = function(chunk, encoding, cb) {
+	var val = Number(chunk.toString());
+	this.push('' + val * 2 + '\n');
+	cb();
+};
+
+var rs = MyReadable(),
+	ts = MyTransform();
+
+rs.pipe(ts).pipe(process.stdout);
+```
