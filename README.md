@@ -24,6 +24,7 @@
 - 2015-05-20 [深入理解Express](_posts/2015-05-20-dive-into-express.md)
 - 2015-04-19 [CSS布局](_posts/2015-04-19-css-layout.md)
 - 2015-04-18 [React学习笔记5——组件的生命周期](_posts/2015-04-18-react-note-5.md)
+- 2015-04-16 [深入理解promise](_posts/2015-04-16-dive-into-promise.md)
 - 2015-04-15 [体验ES6](_posts/2015-04-15-using-es6.md)
 - 2015-04-13 [React学习笔记4——交互](_posts/2015-04-13-react-note-4.md)
 - 2015-04-06 [React学习笔记3——props，state & refs](_posts/2015-04-06-react-note-3.md)
