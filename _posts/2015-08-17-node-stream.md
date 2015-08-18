@@ -20,7 +20,7 @@ stream（流）是Node中一个非常重要的概念，几乎所有的I/O操作�
 
 流的理念源于Unix中的[Pipeline](https://en.wikipedia.org/wiki/Pipeline_(Unix))，简单地说，就是上一个程序的输出可以作为下一个程序的输入。数据在不同的程序之间流动，就像水流在水管中一样，这是一个十分形象的比喻。通过管道符`|`可以十分方便地将各个程序连接起来，为数据的流动提供管道，例如：
 
-```shell
+```sh
 ls -l | grep key | less
 ```
 
