@@ -2,6 +2,12 @@
 
 [http://syaningv.com](http://syaningv.com)
 
+### pages
+
+- [Index](http://syaningv.com)
+- [Books](books.md)
+- [About](about.md)
+
 ### posts
 
 - 2015-08-15 [webpack入门教程](_posts/2015-08-15-webpack-tutorials.md)
