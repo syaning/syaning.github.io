@@ -298,3 +298,91 @@ rs.on('data', function(chunk) {
 
 ### 3. Writable stream
 
+`Writable`是可以流入数据的流，简单来说，我们可以将数据输入给它。常见的Writable stream有如下几种：
+
+- [http request](https://nodejs.org/api/http.html#http_class_http_clientrequest)(客户端)
+- [http response](https://nodejs.org/api/http.html#http_class_http_serverresponse)(服务器端)
+- [fs.WriteStream](https://nodejs.org/api/fs.html#fs_class_fs_writestream)
+- [zlib](https://nodejs.org/api/zlib.html)
+- [crypto](https://nodejs.org/api/crypto.html)
+- [net.Socket](https://nodejs.org/api/net.html#net_class_net_socket)
+- [child process的stdin](https://nodejs.org/api/child_process.html#child_process_child_stdin)
+- [process.stdout](https://nodejs.org/api/process.html#process_process_stdout)
+- [process.stderr](https://nodejs.org/api/process.html#process_process_stderr)
+
+当创建一个Writable stream的时候，我们需要实现其`_write()`方法。看下面例子：
+
+```javascript
+var Writable = require('stream').Writable;
+
+var ws = Writable();
+
+ws._write = function(chunk, encoding, cb) {
+	console.log(chunk.toString());
+	cb();
+}
+
+ws.on('finish', function() {
+	console.log('on finish');
+});
+
+ws.write('hello world');
+ws.write('hello alex');
+ws.end();
+```
+
+当然，我们也可以通过继承`Writable`来创建一个新的stream类，例如：
+
+```javascript
+var Writable = require('stream').Writable;
+
+function MyWritable(options) {
+	if (!(this instanceof MyWritable)) {
+		return new MyWritable(options);
+	}
+	Writable.call(this, options);
+}
+
+MyWritable.prototype.__proto__ = Writable.prototype;
+
+MyWritable.prototype._write = function(chunk, encoding, cb) {
+	console.log(chunk.toString());
+	cb();
+};
+
+var ws = MyWritable();
+
+ws.write('hello world');
+ws.end('the end');
+```
+
+在上面的例子中，`write()`操作依然是只能够写字符串或者`Buffer`对象。同样地，可以通过设置`objectMode: true`来实现其它数据类型的写入。例如;
+
+```javascript
+var Writable = require('stream').Writable;
+
+function MyWritable(options) {
+	if (!(this instanceof MyWritable)) {
+		return new MyWritable(options);
+	}
+	Writable.call(this, options);
+}
+
+MyWritable.prototype.__proto__ = Writable.prototype;
+
+MyWritable.prototype._write = function(chunk, encoding, cb) {
+	console.log(chunk);
+	cb();
+};
+
+var ws = MyWritable({
+	objectMode: true
+});
+
+ws.write({
+	music: 'California Dreaming',
+	artist: 'The Mamas & The Papas'
+});
+ws.end(100);
+```
+
