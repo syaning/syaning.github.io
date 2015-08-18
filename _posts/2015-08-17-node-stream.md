@@ -402,7 +402,7 @@ function MyReadable(options) {
 	}
 	Readable.call(this, options);
 	this._cur = 1;
-	this._max = 20000;
+	this._max = 200;
 }
 
 util.inherits(MyReadable, Readable);
@@ -432,7 +432,7 @@ MyWritable.prototype._write = function(chunk, encoding, cb) {
 };
 ```
 
-其中`MyReadable`的`_read()`操作是依次生成1到20000的数字；`MyWritable`的`_write()`操作是将收到的数据打印在控制台上，这里通过`setTimeout`来限制`MyWritable`的写入速度。
+其中`MyReadable`的`_read()`操作是依次生成1到200的数字；`MyWritable`的`_write()`操作是将收到的数据打印在控制台上，这里通过`setTimeout`来限制`MyWritable`的写入速度。
 
 如果我们希望`MyReadable`的数据流入`MyWritable`，代码可能是这样子：
 
@@ -445,11 +445,30 @@ rs.on('data', function(chunk) {
 });
 ```
 
-不过考虑到当监听了`data`事件时，`rs`处于flowing模式，此时数据会源源不断地产生，又由于`ws`的写入速度远低于`rs`的读取速度，因此会有大量的数据缓存在内存中。此时，我们需要对数据流进行一定的管理。如下：
+此时输出为：
+
+```
+read data: 1
+read data: 2
+... ...
+read data: 199
+read data: 200
+write data: 1
+write data: 2
+... ...
+write data: 199
+write data: 200
+```
+
+此时监听了`data`事件，`rs`处于flowing模式，因此数据会源源不断地产生。又由于`ws`的写入速度远低于`rs`的读取速度，因此产生的数据会缓存在内存中，然后才会进行写操作。如果例子中`_max`的值不是200，而是一个非常大的数字的话，就会严重耗费内存。因此，我们需要对数据流进行一定的管理。如下：
 
 ```javascript
-var rs = MyReadable(),
-	ws = MyWritable();
+var rs = MyReadable({
+		highWaterMark: 10
+	}),
+	ws = MyWritable({
+		highWaterMark: 10
+	});
 
 rs.on('data', function(chunk) {
 	if (!ws.write(chunk)) {
@@ -462,14 +481,38 @@ ws.on('drain', function() {
 });
 ```
 
+> 由于例子中的数据量比较小，我们通过设置`highWaterMark`为一个比较小的值来模拟实现此效果。
+
 因为`write()`操作会返回一个boolean值，用来说明是否可以继续写下去。如果内存中已经缓存了较多的数据，就会返回`false`。当`ws.write(chunk)`返回值是`false`的时候，执行`rs.pause()`暂停读取流；然后当接收到`drain`事件的时候，执行`rs.resume()`重新开启读取流。
+
+此时输出可能为：
+
+```
+read data: 1
+... ... 
+read data: 15
+write data: 1
+... ...
+write data: 10
+read data: 16
+... ...
+read data: 20
+write data: 11
+... ...
+write data: 15
+... ...
+... ...
+read data: 197
+... ...
+read data: 200
+write data: 193
+... ...
+write data: 200
+```
 
 我们也可以这样子写：
 
 ```javascript
-var rs = MyReadable(),
-	ws = MyWritable();
-
 function pipe(rs, ws) {
 	rs.on('data', function(chunk) {
 		if (!ws.write(chunk)) {
@@ -488,9 +531,6 @@ pipe(rs, ws);
 这其实就是`pipe()`的基本逻辑。更简单地，我们可以直接使用`pipe()`来自动管理数据流：
 
 ```javascript
-var rs = MyReadable(),
-	ws = MyWritable();
-
 rs.pipe(ws);
 ```
 
