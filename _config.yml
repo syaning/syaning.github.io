@@ -10,3 +10,7 @@ markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
+
+# gems
+gems:
+  - jekyll-feed
