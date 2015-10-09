@@ -20,4 +20,3 @@ The theme is [vida](https://github.com/syaning/vida) designed by myself, and it'
 
 - [Github](https://github.com/syaning)
 - [npm](https://www.npmjs.com/~syaning)
-- [Hongxing Inviation Link](http://honx.in/i/VUL-BIkWGkmhxeoS)
