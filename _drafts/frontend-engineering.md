@@ -94,11 +94,6 @@ JSP允许在HTML代码中嵌入Java代码，非常强大，但是使用起来也
 
 现在的前端开发，远非当年随便写写样式，脚本和页面的时代了。其涉及的范围非常广泛，从设计、交互，到编码、测试，以及网络通信，都会有所触及。在这里，仅仅讨论前端工程化所涉及的一些方面。大致列举如下：
 
-- 库/框架选择
-	- [bootstrap](http://getbootstrap.com/)
-	- [jQuery](https://jquery.com/)
-	- [AngularJS](https://angularjs.org/)
-	- [React](https://facebook.github.io/react/)
 - 依赖管理
 	- [npm](https://www.npmjs.com/)
 	- [bower](http://bower.io/)
@@ -132,5 +127,12 @@ JSP允许在HTML代码中嵌入Java代码，非常强大，但是使用起来也
 	- [Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html)
 	- [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en)
 - 任务管理
-	- [grunt](http://gruntjs.com/)
-	- [gulp](http://gulpjs.com/)
+	- [Grunt](http://gruntjs.com/)
+	- [Gulp](http://gulpjs.com/)
+
+### 3. 项目的自动化构建
+
+想必大多数前端程序员都经历过这样一个阶段：当项目需要某个依赖库时，去它的官网下载依赖文件，然后手动导入到项目中；以后每当该依赖包需要升级的时候，都要再次手动执行一次该过程。当然，现在我们通过npm或bower几行命令就能轻松搞定。考虑到开发的其它相关方面，例如代码的质量检测，文件的合并与压缩等过程，如果每个过程都是手动来处理，可以想象，该是多么的耗时耗力。通过自动化构建工具，我们可以让这一切过程自动执行，从而在很大程度上提高开发效率。
+
+下面看一个简单的例子：
+
