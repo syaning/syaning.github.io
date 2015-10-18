@@ -92,7 +92,7 @@ JSP允许在HTML代码中嵌入Java代码，非常强大，但是使用起来也
 
 ### 2. 前端工程化涉及范畴
 
-现在的前端开发，远非当年随便写写样式，脚本和页面的时代了。其涉及的范围非常广泛，从设计、交互，到编码、测试，以及网络通信，都会有所触及。在这里，仅仅讨论前端工程化所涉及的一些方面。大致列举如下：
+现在的前端开发，远非当年随便写写样式，脚本和页面的时代了。其包含的范围非常广泛，从设计、交互，到编码、测试，以及网络通信，都会有所涉及。在这里，仅仅讨论前端工程化所涉及的一些方面。大致列举如下：
 
 - 依赖管理
 	- [npm](https://www.npmjs.com/)
@@ -136,3 +136,77 @@ JSP允许在HTML代码中嵌入Java代码，非常强大，但是使用起来也
 
 下面看一个简单的例子：
 
+```
+/--app
+   /--build
+   /--node_modules
+   /--src
+      /--css
+         /--a.less
+         /--b.less
+         /--c.less
+         /--style.less
+      /--js
+         /--a.js
+         /--b.js
+         /--c.js
+         /--script.js
+   /--gulpfile.js
+   /--index.html
+   /--package.json
+```
+
+style.less代码为：
+
+```less
+@import "./a";
+@import "./b";
+@import "./c";
+```
+
+script.js代码为：
+
+```javascript
+var a = require('./a'),
+	b = require('./b'),
+	c = require('./c');
+
+// ... ...
+```
+
+gulpfile.js代码为：
+
+```javascript
+var gulp = require('gulp'),
+	sourcemaps = require('gulp-sourcemaps'),
+	uglify = require('gulp-uglify'),
+	jshint = require('gulp-jshint'),
+	browserify = require('gulp-browserify'),
+	less = require('gulp-less');
+
+gulp.task('style', function() {
+	gulp.src('./src/css/style.less')
+		.pipe(less())
+		.pipe(gulp.dest('./build'));
+});
+
+gulp.task('script', function() {
+	gulp.src('./src/js/script.js')
+		.pipe(sourcemaps.init())
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(browserify())
+		.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('./build'));
+});
+
+gulp.task('watch', function() {
+	gulp.watch('./src/css/**/*.less', ['style']);
+	gulp.watch('./src/js/**/*.js', ['script']);
+});
+
+gulp.task('default', ['watch', 'style', 'script']);
+```
+
+这里通过Gulp及其插件来自动化完成代码的检测、合并、压缩等一系列流程。当然，这只是一个非常简单的示例，不过到这一步，也算是前端工程化入门了。
