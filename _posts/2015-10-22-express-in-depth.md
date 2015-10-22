@@ -179,30 +179,81 @@ this.stack.push(layer);
 
 ```javascript
 // app.METHOD --> router.route --> route.METHOD
-app.get('/user', function(req, res) {
-	// do something
-});
+app.get('/user', function(req, res) {});
 
 // app.all --> router.route --> route.METHOD
-app.all('/user', function(req, res) {
-	// do something
-});
+app.all('/user', function(req, res) {});
 
 // app.route --> router.route --> route.METHOD
 app.route('/user')
-	.get(function(req, res) {
-		// do something
-	})
-	.post(function(req, res) {
-		// do something
-	});
+	.get(function(req, res) {})
+	.post(function(req, res) {});
 
 // router.METHOD/all --> router.route --> route.METHOD/all
-router.get('/user', function(req, res) {
-	// do something
-});
+router.get('/user', function(req, res) {});
 ```
 
-可以看到，无论是哪一种方法添加路由中间件，都需要通过`router.route()`来创建一条新的路由，然后调用`route.METHOD()/all()`来注册相关的处理函数。
+可以看到，无论是哪一种方法添加路由中间件，都需要通过`router.route()`来创建一条新的路由，然后调用`route.METHOD()/all()`来注册相关的处理函数。因此，首先需要了解Route（源码在`router/route.js`）对象。
+
+Route可以简单理解为存放路由处理函数的容器，它也有一个`stack`属性，为一个数组，其中的每一项也是一个Layer对象，是对路由处理函数的包装。下面来看当执行`router.route()`的时候发生了什么：
+
+```javascript
+// in router/index.j
+proto.route = function route(path) {
+	var route = new Route(path);
+
+	var layer = new Layer(path, {
+		sensitive: this.caseSensitive,
+		strict: this.strict,
+		end: true
+	}, route.dispatch.bind(route));
+
+	layer.route = route;
+
+	this.stack.push(layer);
+	return route;
+};
+```
+
+也就是说，当调用`router.route()`的时候，实际上是新建了一个`layer`放在`router.stack`中；并设置`layer.route`为新建的Route对象。
+
+下面来看`route.METHOD`的时候发生了什么：
+
+```javascript
+// in router/route.js
+var layer = Layer('/', {}, handle);
+layer.method = method;
+
+this.methods[method] = true;
+this.stack.push(layer);
+```
+
+即，当调用`route.METHOD()`的时候，新建一个`layer`放在`route.stack`中。
+
+通过上面的分析可以发现，Router其实是一个二维的结构。例如，一个可能的`router.stack`结构如下所示：
+
+```
+----------------
+|    layer1    |
+----------------
+        ↓
+---------------- layer2.route.stack  ------------   ------------   ------------
+|    layer2    | ------------------> | layer2-1 |-->| layer2-2 |-->| layer2-3 |
+----------------                     ------------   ------------   ------------
+        ↓
+---------------- layer3.route.stack  ------------   ------------
+|    layer3    | ------------------> | layer3-1 |-->| layer3-2 |
+----------------                     ------------   ------------
+        ↓
+----------------
+|    ......    |
+----------------
+        ↓
+----------------
+|    layerN    |
+----------------
+```
+
+### 四、参数预处理
 
 TBD
