@@ -10,6 +10,7 @@
 
 ### posts
 
+- 2015-10-22 [Express深入解读](_posts/2015-10-22-express-in-depth.md)
 - 2015-08-17 [Node中的stream](_posts/2015-08-17-node-stream.md)
 - 2015-08-15 [webpack入门教程](_posts/2015-08-15-webpack-tutorials.md)
 - 2015-08-10 [异步编程中的异常处理](_posts/2015-08-10-asynchronous-error-handling.md)

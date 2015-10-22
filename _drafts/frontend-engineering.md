@@ -8,6 +8,7 @@ date:   2015-10-15
 - [Web 研发模式演变](https://github.com/lifesinger/lifesinger.github.io/issues/184)
 - [前端MV*框架的意义](http://www.ituring.com.cn/article/59237)
 - [2015前端组件化框架之路](http://div.io/topic/908)
+- [前端工程——基础篇](https://github.com/fouber/blog/issues/10)
 
 ### 1. 前端开发模式的变迁
 
