@@ -360,3 +360,57 @@ app.param('name', function(req, res, next, val) {
 - 如果是路由中间件，则判断HTTP请求方法是否匹配，如果匹配，则进行参数处理，并执行中间件函数（该中间件函数实际上是`route.dispatch()`）；否则跳过该中间件
 
 会发现，如果有多个中间件匹配的话，在每个中间件函数执行之前，都有一个参数处理的过程，那么，参数与处理函数会不会被多次执行呢？事实上，在`router.handle()`的时候，针对参数的处理，引入了缓存机制，因此，每个参数的处理函数只会执行一次，并将结果保存在缓存中。在处理同一个请求的过程中，如果需要处理某个参数，会首先检查缓存，如果缓存中不存在，才会执行其处理函数。
+
+### 六、内置中间件
+
+在初始化`app._router`的时候，就加载了`middleware/query.js`和`middleware/init.js`这两个中间件：
+
+```javascript
+// in application.js
+app.lazyrouter = function lazyrouter() {
+	if (!this._router) {
+		this._router = new Router({
+			caseSensitive: this.enabled('case sensitive routing'),
+			strict: this.enabled('strict routing')
+		});
+
+		this._router.use(query(this.get('query parser fn')));
+		this._router.use(middleware.init(this));
+	}
+};
+```
+
+第一个中间件的作用是设置URL query的解析器。代码比较简单，不做赘述。
+
+第二个中间件的作用主要是将`req`和`res`分别暴漏给对方，并且让它们分别继承自`app.request`和`app.response`。涉及到的相关源码为：
+
+```javascript
+// in middleware/init.js
+exports.init = function(app) {
+	return function expressInit(req, res, next) {
+		// ... ...
+		req.res = res;
+		res.req = req;
+		req.next = next;
+
+		req.__proto__ = app.request;
+		res.__proto__ = app.response;
+
+		// ... ...
+	};
+};
+
+// in express.js
+function createApplication() {
+	// ... ...
+
+	app.request = { __proto__: req, app: app };
+	app.response = { __proto__: res, app: app };
+
+	// ... ...
+}
+```
+
+因此，其实是让`req`和`res`分别继承自了`request.js`和`response.js`的导出对象，简单来说，就是对`req`和`res`进行了属性和方法的扩展。
+
+另外，Express中还有一个内置的中间件，即`express.static`，它依赖的是[serve-static](https://github.com/expressjs/serve-static)模块，主要用于创建静态资源服务。
