@@ -382,7 +382,7 @@ app.lazyrouter = function lazyrouter() {
 
 第一个中间件的作用主要是解析URL query。`query(this.get('query parser fn'))`的作用是设置URL query的解析器，并返回相应的中间件函数。该部分代码比较简单，不做赘述。
 
-第二个中间件的作用主要是将`req`和`res`分别暴漏给对方，并且让它们分别继承自`app.request`和`app.response`。涉及到的相关源码为：
+第二个中间件的作用主要是将`req`和`res`分别暴露给对方，并且让它们分别继承自`app.request`和`app.response`。涉及到的相关源码为：
 
 ```javascript
 // in middleware/init.js
