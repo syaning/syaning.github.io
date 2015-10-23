@@ -256,4 +256,43 @@ this.stack.push(layer);
 
 ### 四、参数预处理
 
+在很多时候，路由中是带有参数的，尤其是Restful风格的API。例如`/user/name`，可能`name`是个动态的值，从而去数据库中查询出相关的用户。因此，在Router中，通常会涉及到参数的处理。
+
+先看如下例子：
+
+```javascript
+app.get('/user/:name', function(req, res, next) {
+	res.send(req.user);
+});
+
+app.param('name', function(req, res, next, val) {
+	queryUser(val, function(err, user) {
+		if (err) {
+			return next(err);
+		}
+		req.user = user;
+		next();
+	});
+});
+```
+
+通过`app.param()`可以注册参数预处理函数，事实上，`app.param()`调用了`router.param()`。Router有一个`params`属性，其值是一个对象，用来存储参数的预处理函数。例如，一个可能的`router.params`如下：
+
+```javascript
+{
+	name: [processName, queryName],
+	id: [queryId]
+}
+```
+
+其中`processName`，`queryName`，`queryId`表示的都是函数，即通过`app.param()`或`router.param()`所注册的参数预处理函数。
+
+然后在处理客户端请求的时候，会使用相应的与处理函数对请求URL中的参数进行预处理。
+
+### 五、请求处理
+
+前面所提到的，无论是添加中间件，还是参数预处理，都是应用的构建过程。当应用构建好了之后，客户端发起请求，这个时候，应用就开始使用前面的中间件和参数预处理，来处理客户端的请求。
+
+前面提到，所有的请求，都是由`app.handle()`来处理的，通过看源码，可以发现，其实`app.handle()`是调用了`router.handle()`。
+
 TBD
