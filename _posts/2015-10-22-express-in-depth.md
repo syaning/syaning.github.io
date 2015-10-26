@@ -425,6 +425,6 @@ app.get('/user', function(req, res) {
 });
 ```
 
-其实，`res.render()`调用了`app.render()`。在`app.render()`中，先创建一个`view`对象（相关源码为`view.js`），然后调用`view.render()`。如果允许缓存，即`app.enabled('view cache')`的话，则会有限检查缓存，如果缓存中已有相关视图，则直接取出；否则才会新创建一个视图对象。
+其实，`res.render()`调用了`app.render()`。在`app.render()`中，先创建一个`view`对象（相关源码为`view.js`），然后调用`view.render()`。如果允许缓存，即`app.enabled('view cache')`的话，则会优先检查缓存，如果缓存中已有相关视图，则直接取出；否则才会新创建一个视图对象。
 
 该部分比较简单，不做赘述。
