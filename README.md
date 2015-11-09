@@ -10,6 +10,7 @@
 
 ### posts
 
+- 2015-11-09 [使用gulp进行React任务的构建](_posts/2015-11-09-gulp-react-task-build.md)
 - 2015-11-02 [koa的中间件机制](_posts/2015-11-02-koa-middleware.md)
 - 2015-10-22 [Express深入解读](_posts/2015-10-22-express-in-depth.md)
 - 2015-08-17 [Node中的stream](_posts/2015-08-17-node-stream.md)
