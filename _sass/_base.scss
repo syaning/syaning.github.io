@@ -1,65 +1,191 @@
-@charset "utf-8";
-body {
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
     margin: 0;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
+    background-color: $background-color;
 }
-p {
-    text-align: justify;
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure, table,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
 }
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $base-font-weight;
+}
+
+
+
+/**
+ * Links
+ */
 a {
-    color: $link-color;
+    color: $brand-color;
     text-decoration: none;
+
     &:hover {
         text-decoration: underline;
     }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 300;
-}
+
+
+
+/**
+ * Blockquotes
+ */
 blockquote {
+    color: $grey-color;
+    padding-left: $spacing-unit / 2;
+    border-left: 2px solid $grey-color-light;
     font-style: italic;
-    padding-left: 1rem;
-    border-left: 3px solid $border-color;
+    font-size: $small-font-size;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
-img {
-    max-width: 100%;
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    border: 1px solid $grey-color-light;
+    border-radius: 2px;
+    background-color: #fcfcfc;
 }
+
+code {
+    padding: 1px 5px;
+    font-family: $code-font-family;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Table
+ */
 table {
+    width: 100%;
+    max-width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    max-width: 100%;
-    width: 100%;
+    table-layout: fixed;
 }
+
 th,
 td {
     padding: 0.5rem;
     line-height: inherit;
 }
+
 th {
     text-align: left;
     vertical-align: bottom;
-    border-bottom: 2px solid $border-color;
+    border-bottom: 2px solid $grey-color-light;
 }
+
 td {
     vertical-align: top;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $grey-color-light;
 }
-pre {
-    padding: 1.25rem;
-    overflow-x: auto;
-}
-code {
-    font-family: 'Courier New',Consolas,monopace;
-}
+
+
+/**
+ * Horizontal rule
+ */
 hr {
     border: none;
-    border-top: 2px solid $border-color;
+    border-top: 2px solid $grey-color-light;
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }

@@ -1,21 +1,53 @@
 ---
-# The scss file which include files from _sass/
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
-
 @charset "utf-8";
 
-$base-font-family: Merriweather, Helvetica, Arial, sans-serif;
+
+// Our variables
+$base-font-family: "Cutive Mono", Lora, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-font-family: "Courier New", Consolas, monopace;
 $base-font-size:   16px;
+$base-font-weight: 400;
 $small-font-size:  0.875rem;
 $base-line-height: 1.5;
 
-$text-color:   #333;
-$link-color:   #0074d9;
-$meta-color:   #a0a0a0;
-$border-color: #ddd;
+$spacing-unit:     2rem;
 
-@import url(http://fonts.useso.com/css?family=Merriweather:400,400italic,700);
-@import "color";
-@import "base";
-@import "layout";
-@import "syntax";
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+// @import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+@import
+		url(https://fonts.googleapis.com/css?family=Cutive+Mono),
+        "base",
+        "layout",
+        "syntax-highlighting"
+;

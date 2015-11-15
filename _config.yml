@@ -1,16 +1,14 @@
-title: Syaning
-
-date_format: "%Y-%m-%d"
-
-google_analytics: UA-56203680-1
-disqus_shortname: zztf
+# Site settings
+title: syaning
+baseurl: ""
+url: "http://syaningv.com"
 
 # Build settings
-markdown:     redcarpet
+markdown: redcarpet
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
+  extensions: ["smart", "tables", "with_toc_data"]
+permalink: pretty
 
-# gems
-gems:
-  - jekyll-feed
+# Third-party services
+google_analytics: UA-56203680-1
+disqus_shortname: ""
