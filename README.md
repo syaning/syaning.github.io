@@ -1,3 +1,3 @@
 # My Blog
 
-[http://syaningv.com](http://syaningv.com)
+[http://syaning.com](http://syaning.com)
