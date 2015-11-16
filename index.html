@@ -3,15 +3,18 @@ layout: default
 ---
 <div class="home">
 	<section>
-		<h2>about</h2>
+		<h2 class="smallcap">about</h2>
 		<p>Hi, I'm Alex. I graduated from <a href="http://www.software.fudan.edu.cn/" target="_blank">SS</a>, <a href="http://www.fudan.edu.cn/" target="_blank">FDU</a> in July 2015, and now work at SAP Labs China as a frontend developer.</p>
-		<p>You will find me at github <a href="https://github.com/syaning">@syaning</a>. Or you can email me at syaningv(at)gmail.com</p>
+		<p>You will find me on github <a href="https://github.com/syaning">@syaning</a>. Or you can email me at syaningv(at)gmail.com.</p>
 	</section>
 	<section>
-		<h2>posts</h2>
-		<ul>
+		<h2 class="smallcap">posts</h2>
+		<ul class="post-list">
 			{% for post in site.posts limit:5 %}
-			<li><span>{{ post.date | date: "%b %d, %Y" }}</span>&nbsp;<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+			<li>
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</li>
 			{% endfor %}
 		</ul>
 		<p><a href="{{ "/archives/" | prepend: site.baseurl }}">view more...</a></p>

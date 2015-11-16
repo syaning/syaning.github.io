@@ -34,22 +34,31 @@
 
 
 /**
- * Home page
+ * Pages
  */
 .home {
-    section {
-        h2 {
-            text-transform: lowercase;
-            font-variant: small-caps;
-
-            &::first-letter {
-                text-transform: uppercase;
-            }
-        }
-    }
-
     section + section {
         margin-top: $spacing-unit;
+    }
+}
+
+.smallcap {
+    text-transform: lowercase;
+    font-variant: small-caps;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.post-list > li {
+    margin-bottom: $spacing-unit / 4;
+
+    @include media-query($on-palm) {
+        span {
+            display: block;
+            font-size: $small-font-size;
+        }
     }
 }
 
