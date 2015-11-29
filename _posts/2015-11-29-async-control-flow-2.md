@@ -201,7 +201,7 @@ every(files, function(file, callback) {
 `sortBy`的思路是：
 
 - 首先通过`async.map`将数组映射为一个新的数组，新数组中得每一项结构为`{value: x, criteria: criteria}`
-	- `x`为原数组中得元素
+	- `x`为原数组中的元素
 	- `criteria`为需要比较的标准
-- 新的数组会作为第二个参数传给`async.map`的回调函数，在该回调函数中，以criteria对新数组进行排序
+- 新的数组会作为第二个参数传给`async.map`的回调函数，在该回调函数中，以`criteria`对新数组进行排序
 - 从排好序的数组中收集所有的`value`作为最终的结果集传递给`sortBy`的回调函数
