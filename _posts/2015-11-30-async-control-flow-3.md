@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  [未完成]JS异步控制流及async实现细节分析(3)
+title:  JS异步控制流及async实现细节分析(3)(未完成)
 date:   2015-11-30 13:45:00 +0800
 ---
 
