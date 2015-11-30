@@ -360,6 +360,8 @@ function eachOfSeries(arr, fn, callback) {
 
 在`done`中对`sync`进行判断，如果`sync`为`true`，则说明`fn`是一个同步操作，此时需要`setImmediate(next)`，将下一次调用变为异步操作。
 
+当然，这样做更重要的一个原因是为了避免过多的同步调用导致栈溢出（`RangeError: Maximum call stack size exceeded`）,后面在提到`async.ensureAsync`的时候会详细讲解。
+
 在async中，提供了如下方法：
 
 ```javascript
