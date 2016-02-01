@@ -87,19 +87,19 @@ nodes.on('dblclick', function(d) {
 
 ```javascript
 nodes.on('click', function(d) {
-		if (d._clickid) {
-			clearTimeout(d._clickid);
-			d._clickid = null;
-			// process double click
+	if (d._clickid) {
+		clearTimeout(d._clickid);
+		d._clickid = null;
+		// process double click
+		// ...
+	} else {
+		d._clickid = setTimeout(function() {
+			// process simple click
 			// ...
-		} else {
-			d._clickid = setTimeout(function() {
-				// process simple click
-				// ...
-				d._clickid = null;
-			}.bind(this), 350);
-		}
-	});
+			d._clickid = null;
+		}.bind(this), 350);
+	}
+});
 ```
 
 这种情形便是典型的[throttle function](https://www.nczonline.net/blog/2007/11/30/the-throttle-function/)。
