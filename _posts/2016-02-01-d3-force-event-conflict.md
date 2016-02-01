@@ -45,7 +45,7 @@ force.drag()
 svg.on('dblclick.zoom', null);
 ```
 
-3. drag和click
+### 3. drag和click
 
 如果对node同时监听了drag事件和click事件。那么当拖动的时候，会同时触发click事件。此时的解决方法是：
 
@@ -58,7 +58,7 @@ nodes.on('click', function(d) {
 });
 ```
 
-4. click与dblclick
+### 4. click与dblclick
 
 如果对node同时添加了click与dblclick事件，那么在双击的时候会触发两次click事件。
 
