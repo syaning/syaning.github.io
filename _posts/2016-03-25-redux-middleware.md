@@ -168,7 +168,7 @@ function dispatch(action) {
 
 通过前面的源码分析，我们可以知道，每个中间件所接收到的`store`参数，其实是真正Store的一个子集，只有`dispatch`和`getState`方法。那么，如果在某个中间件中调用了`dispatch(action)`，岂不是就陷入无限循环了？事实上，中间件拿到`dispatch`，主要是用于异步操作。
 
-下面看一个例子（[完整源码](https://github.com/syaning/simplest-redux-async-action-demo)）。
+下面看一个例子（[完整源码](https://github.com/simplest-demos/simplest-redux-async-action-demo)）。
 
 ```javascript
 // action.js
