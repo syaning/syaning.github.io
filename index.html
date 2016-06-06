@@ -2,47 +2,47 @@
 layout: default
 ---
 <div class="home">
-	<section>
-		<h2 class="smallcap">about</h2>
-		<p>Hi, I'm Alex. I graduated from <a href="http://www.software.fudan.edu.cn/" target="_blank">SS</a>, <a href="http://www.fudan.edu.cn/" target="_blank">FDU</a> in July 2015, and now work at SAP Labs China as a frontend developer.</p>
-		<p>You will find me on github <a href="https://github.com/syaning">@syaning</a> and npm <a href="https://www.npmjs.com/~syaning">@syaning</a>. Or you can email me at syaningv(at)gmail.com.</p>
-	</section>
-	<section>
-		<h2 class="smallcap">posts</h2>
-		<ul class="post-list">
-			{% for post in site.posts limit:5 %}
-			<li>
-				<span>{{ post.date | date: "%b %d, %Y" }}</span>
-				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-			</li>
-			{% endfor %}
-		</ul>
-		<p><a href="{{ "/archives/" | prepend: site.baseurl }}">view more...</a></p>
-	</section>
-	<section>
-		<h2 class="smallcap">projects</h2>
-		<ul class="post-list">
-			<li>
-				<a href="https://github.com/syaning/zhihu-api" target="_blank">zhihu-api</a>
-				<div>Unoffocial API for <a href="https://zhihu.com" target="_blank">zhihu</a>. It implements the basic data APIs so you can use it to build your own crawler/spider.</div>
-			</li>
-			<li>
-				<a href="https://github.com/syaning/dict-en-zh" target="_blank">dict-en-zh</a>
-				<div>An English-Chinese dictionary, both cli and a node module.</div>
-			</li>
-			<li>
-				<a href="https://github.com/syaning/slim" target="_blank">slim</a>
-				<div>Just a slim jekyll theme.</div>
-			</li>
-			<li>
-				<a href="https://github.com/syaning/vida" target="_blank">vida</a>
-				<div>A simple and beautiful jekyll theme.</div>
-			</li>
-		</ul>
-	</section>
-	<section>
-		<h2 class="smallcap">site</h2>
-		<p>This site is powered by <a href="http://jekyllrb.com/" target="_blank">jekyll</a> and hosted on <a href="https://github.com/" target="_blank">github</a>. The theme is <a href="https://github.com/syaning/slim" target="_blank">slim</a> created by myself.</p>
-		<p>Subscribe to the <a href="http://feeds.feedburner.com/syaning" target="_blank">feed</a>, or the <a href="http://syaning.com/feed.xml" target="_blank">alternative</a> for users behind the Wall.</p>
-	</section>
+  <section>
+    <h2 class="smallcap">about</h2>
+    <p>Hi, I'm Alex. I graduated from <a href="http://www.software.fudan.edu.cn/" target="_blank">SS</a>, <a href="http://www.fudan.edu.cn/" target="_blank">FDU</a> in July 2015, and now work at SAP Labs China as a frontend developer.</p>
+    <p>You will find me on github <a href="https://github.com/syaning">@syaning</a> and npm <a href="https://www.npmjs.com/~syaning">@syaning</a>. Or you can email me at syaningv(at)gmail.com.</p>
+  </section>
+  <section>
+    <h2 class="smallcap">posts</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+      <li>
+        <span>{{ post.date | date: "%b %d, %Y" }}</span>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ "/archives/" | prepend: site.baseurl }}">view more...</a></p>
+  </section>
+  <section>
+    <h2 class="smallcap">projects</h2>
+    <ul class="post-list">
+      <li>
+        <a href="https://github.com/syaning/zhihu-api" target="_blank">zhihu-api</a>
+        <div>Unoffocial API for <a href="https://zhihu.com" target="_blank">zhihu</a>. It implements the basic data APIs so you can use it to build your own crawler/spider.</div>
+      </li>
+      <li>
+        <a href="https://github.com/syaning/dict-en-zh" target="_blank">dict-en-zh</a>
+        <div>An English-Chinese dictionary, both cli and a node module.</div>
+      </li>
+      <li>
+        <a href="https://github.com/syaning/slim" target="_blank">slim</a>
+        <div>Just a slim jekyll theme.</div>
+      </li>
+      <li>
+        <a href="https://github.com/syaning/vida" target="_blank">vida</a>
+        <div>A simple and beautiful jekyll theme.</div>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="smallcap">site</h2>
+    <p>This site is powered by <a href="http://jekyllrb.com/" target="_blank">jekyll</a> and hosted on <a href="https://github.com/" target="_blank">github</a>. The theme is <a href="https://github.com/syaning/slim" target="_blank">slim</a> created by myself.</p>
+    <p>Subscribe to the <a href="http://feeds.feedburner.com/syaning" target="_blank">feed</a>, or the <a href="http://syaning.com/feed.xml" target="_blank">alternative</a> for users behind the Wall.</p>
+  </section>
 </div>
