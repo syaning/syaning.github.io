@@ -55,9 +55,10 @@ date:   2016-06-28 13:00:00 +0800
 - Referer检测：通过设置Referer header
 - 访问频率限制：如果是针对同一账号的频率限制，则可以使用多个账号轮流发请求；如果针对IP，可通过IP代理；还可以为相邻的两个请求设置合适的时间间隔来，减小请求频率，从而避免被服务端认定为爬虫。
 
-TODO：
+### 七、其它
 
-- 容错机制，自动重启
-- 数据存储
-- Selenium，PhantomJS
-- 常用工具和框架
+1. 动态内容：对于许多网页的动态内容，通过[DevTools](https://developer.chrome.com/devtools)进行查看就可以解决。对于更为复杂的动态内容，可以考虑使用[Selenium](http://www.seleniumhq.org/)和[Phantomjs](http://phantomjs.org/)。
+2. 数据存储：对于多媒体文件，直接存文件。对于JSON格式的数据，使用[MongoDB](https://www.mongodb.com/)会很方便。
+3. 容错机制：请求失败可能会有多种情况。如果是访问频率过快，可以考虑暂停一段时间，或者换账号，换IP等手段。如果是404，可以直接跳过该次抓取。然而有些站点返回的HTTP状态码并不一定符合其本意，因此也可以考虑统一的容错处理，例如重试n次，如果不行就丢弃。
+4. 大规模分布式抓取：暂时没有过多研究，之后可能会新开一篇文章来介绍。
+5. 常用工具：Python的话[requests](http://docs.python-requests.org/en/master/)和[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)，Node的话[request](https://github.com/request/request)和[cheerio](https://github.com/cheeriojs/cheerio)。
