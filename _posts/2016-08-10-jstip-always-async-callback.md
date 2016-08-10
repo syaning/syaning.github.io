@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  JS Tip: 强制异步回调
+title:  JS Tip——强制异步回调
 date:   2016-08-10 13:30:00 +0800
 ---
 
