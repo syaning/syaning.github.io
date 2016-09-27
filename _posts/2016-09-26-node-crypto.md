@@ -102,4 +102,34 @@ console.log(decrypted)
 
 ### Sign & Verify
 
-todo
+Sign用于数字签名，Verify用于验证签名。数字签名原理如图：
+
+![Signature]({{site.baseurl}}/images/2016-09-27-signature.svg)
+
+> 图片来源：[https://upload.wikimedia.org/wikipedia/commons/2/2b/Digital_Signature_diagram.svg](https://upload.wikimedia.org/wikipedia/commons/2/2b/Digital_Signature_diagram.svg)
+
+在之前的非对称加密中，使用公钥进行加密，私钥进行解密。在生成和验证数字签名的时候，会使用私钥进行签名，公钥进行验证。
+
+通过openssl来生成一对密钥：
+
+```sh
+$ openssl genrsa -out rsa_private.key 2048
+$ openssl rsa -pubout -in rsa_private.key -out rsa_public.key
+```
+
+下面是一个签名及验证的例子：
+
+```js
+const sign = crypto.createSign('RSA-SHA256')
+sign.update('input')
+const private_key = fs.readFileSync('rsa_private.key', 'utf8')
+const signature = sign.sign(private_key, 'hex')
+console.log(signature)
+// => b9b339491522843e11cf0cc4a2de1ccccc2bff7d0......
+
+const verify = crypto.createVerify('RSA-SHA256')
+verify.update('input')
+const public_key = fs.readFileSync('rsa_public.key', 'utf8')
+console.log(verify.verify(public_key, signature, 'hex'))
+// => true
+```

@@ -90,8 +90,7 @@ gulp.task('watch', function() {
 gulp.task('default', ['watch', 'scripts']);
 ```
 
-gulp的构建过程以task为基本单位，默认task为default，通过这种方式，可以很方便地定义构建任务。在上面
-的代码中，主要有如下任务：
+gulp的构建过程以task为基本单位，默认task为default，通过这种方式，可以很方便地定义构建任务。在上面的代码中，主要有如下任务：
 
 - clean 清除之前的build代码
 - scripts 脚本构建任务，包括测试、检查、合并以及压缩等
