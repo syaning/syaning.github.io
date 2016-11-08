@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  使用gulp进行React任务的构建
-date:   2015-11-09
+date:   2015-11-09 12:00:00 +0800
 ---
 
 > 例子中的React版本为[v0.14.2](https://github.com/facebook/react/tree/v0.14.2).

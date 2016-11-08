@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Node中的stream
-date:   2015-08-17 14:15:00
+date:   2015-08-17 14:15:00 +0800
 ---
 
 参考资料：

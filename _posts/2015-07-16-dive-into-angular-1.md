@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  AngularJS深入(1)——加载启动
-date:   2015-07-16 10:00:00
+date:   2015-07-16 10:00:00 +0800
 ---
 
 本系列文章的分析基于[AngularJS](http://angularjs.org/) v1.4.2.

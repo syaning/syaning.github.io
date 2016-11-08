@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  AngularJS深入(7)——scope
-date:   2015-08-08 21:00
+date:   2015-08-08 21:00:00 +0800
 ---
 
 参考资料：

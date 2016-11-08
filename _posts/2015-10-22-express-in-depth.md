@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Express深入解读
-date:   2015-10-22
+date:   2015-10-22 12:00:00 +0800
 ---
 
 > 本文基于[Express 4.13.3](https://github.com/strongloop/express/tree/4.13.3)。
