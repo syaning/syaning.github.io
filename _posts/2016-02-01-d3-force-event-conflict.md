@@ -62,7 +62,7 @@ nodes.on('click', function(d) {
 
 如果对node同时添加了click与dblclick事件，那么在双击的时候会触发两次click事件。
 
-可以在click事件的处理函数中，判断两次点击的时间差。如果小于某个值，则认为是双击事件，不过处理；否则是单击事件，正常处理。代码如下：
+可以在click事件的处理函数中，判断两次点击的时间差。如果小于某个值，则认为是双击事件，不做处理；否则是单击事件，正常处理。代码如下：
 
 ```javascript
 nodes.on('dblclick', function(d) {
