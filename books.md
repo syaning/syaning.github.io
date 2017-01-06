@@ -5,6 +5,7 @@ title:  Books
 
 Here lists technical books I have read.
 
+- Pro React. 2015. Cássio de Sousa Antonio.
 - [The Go Programming Language](http://www.gopl.io/). 2016. Alan A. A. Donovan, Brian W. Kernighan.
 - [The Little Go Book](http://openmymind.net/The-Little-Go-Book/). [Karl Seguin](http://openmymind.net/).
 - CSS Secrets. 2015. [Lea Verou](http://lea.verou.me/).
