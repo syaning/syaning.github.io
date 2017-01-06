@@ -9,11 +9,11 @@ Here lists technical books I have read.
 - The Mobile Web Handbook. [Peter-Paul Koch](http://www.quirksmode.org/).
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/). [阮一峰](http://www.ruanyifeng.com/blog/).
 - [Pro Git, 2nd Edition](https://git-scm.com/book/en/v2). Scott Chacon.
-- AngularJS. Brad Green, Shyam Sechadri.
-- The Node Beginner Book. Manuel Kiessling.
-- Learning Node. Shelley Powers.
-- Node Up and Running. Tom Hughes-Croucher, Mike Wilson.
-- Learning Node.js - A Hands-On Guide to Building Web Applications in JavaScript. Marc Wandschneider.
+- AngularJS. 2013. Brad Green, Shyam Sechadri.
+- [The Node Beginner Book](http://www.nodebeginner.org/). Manuel Kiessling.
+- Learning Node. 2012. Shelley Powers.
+- Node: Up and Running. 2012. Tom Hughes-Croucher, Mike Wilson.
+- Learning Node.js - A Hands-On Guide to Building Web Applications in JavaScript. 2013. Marc Wandschneider.
 - Data Visualization with D3.js Cookbook. 2013. [Nick Qi Zhu](http://nzhu.blogspot.ca/).
 - Interactive Data Visualization for the Web. 2013. [Scott Murray](http://alignedleft.com/).
 - D3 Tips and Tricks. 2014. Malcolm Maclean.
