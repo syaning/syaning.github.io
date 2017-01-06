@@ -157,8 +157,8 @@ module.exports = connect(selectItems)(App)
 
 其中`connect(selectItems)(App)`的作用是：
 
-- 将所需要的state属性挂载到组建的`props`上
-- 为组建的`props`添加`dispatch`方法
+- 将所需要的state属性挂载到组件的`props`上
+- 为组件的`props`添加`dispatch`方法
 
 于是，在`addItem()`中，才有：
 
@@ -281,7 +281,7 @@ function myCreateStore(reducer, initialState) {
 
 - 内部保存了`state`和`listeners`两个变量
 - `subscribe(listener)`操作就是向`listeners`中添加监听函数
-- `dispatch(action)`操作会计算新的`state`，并以此执行监听函数
+- `dispatch(action)`操作会计算新的`state`，并依次执行监听函数
 - `replaceReducer(nextReducer)`可以更换Reducer，同时触发初始化Action
 
 在Redux的源码中，`subscribe(listener)`的实现如下：
