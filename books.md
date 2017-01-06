@@ -5,10 +5,14 @@ title:  Books
 
 Here lists technical books I have read.
 
+- [The Go Programming Language](http://www.gopl.io/). 2016. Alan A. A. Donovan, Brian W. Kernighan.
+- [The Little Go Book](http://openmymind.net/The-Little-Go-Book/). [Karl Seguin](http://openmymind.net/).
 - CSS Secrets. 2015. [Lea Verou](http://lea.verou.me/).
 - The Mobile Web Handbook. [Peter-Paul Koch](http://www.quirksmode.org/).
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/). [阮一峰](http://www.ruanyifeng.com/blog/).
 - [Pro Git, 2nd Edition](https://git-scm.com/book/en/v2). Scott Chacon.
+- HTTP: The Definitive Guide. 2002. David Gourley, Brian Totty.
+- Testable JavaScript. 2013. Mark Ethan Trostler.
 - AngularJS. 2013. Brad Green, Shyam Sechadri.
 - [The Node Beginner Book](http://www.nodebeginner.org/). Manuel Kiessling.
 - Learning Node. 2012. Shelley Powers.
