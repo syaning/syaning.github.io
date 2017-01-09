@@ -5,6 +5,7 @@ title:  Books
 
 Here lists technical books I have read.
 
+- ReactJS by Example - Building Modern Web Applications with React. 2016. Vipul A M, Prathamesh Sonpatki.
 - Pro React. 2015. Cássio de Sousa Antonio.
 - [The Go Programming Language](http://www.gopl.io/). 2016. Alan A. A. Donovan, Brian W. Kernighan.
 - [The Little Go Book](http://openmymind.net/The-Little-Go-Book/). [Karl Seguin](http://openmymind.net/).
