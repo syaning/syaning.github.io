@@ -45,7 +45,7 @@ console.log(hash)
 HMAC即Hash-based Message Authentication Code，即使用一个Hash函数作为MAC算法。例如：
 
 ```js
-var hmac = crypto.createHmac('sha256','secret')
+var hmac = crypto.createHmac('sha256', 'secret')
   .update('message')
   .digest('hex')
 
