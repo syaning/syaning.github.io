@@ -5,6 +5,7 @@ title:  Books
 
 Here lists technical books I have read.
 
+- 大型网站技术架构：核心原理与案例分析. 2013. 李智慧.
 - Docker: Up and Running. 2015. Karl Matthias, Sean P.Kane.
 - Think Python, 2nd Edition. 2016. [Allen B. Downey](http://www.allendowney.com/).
 - ReactJS by Example - Building Modern Web Applications with React. 2016. Vipul A M, Prathamesh Sonpatki.
