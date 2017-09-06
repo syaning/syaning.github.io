@@ -11,7 +11,7 @@ $$ h_\theta(x)=\theta_0+\theta_1x $$
 
 则 cost function 为：
 
-$$ J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^\left(i\right))-y^\left(i\right))^2 $$
+$$ J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2 $$
 
 我们的目标是：
 
@@ -51,3 +51,30 @@ $$ \theta_j:=\theta_j-\frac{\partial}{\partial\theta_j}J(\theta) $$
 即对于 $$ j=0,1,2,...,n $$：
 
 $$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^\left(i\right))-y^\left(i\right))x_j^\left(i\right) $$
+
+假设有 m 个样本，每个样本有 n 个特征，即：
+
+$$
+X=\left( \begin{array}{}
+1 & x_1^{(1)} & ... & x_n^{(1)} \\
+1 & x_1^{(2)}  & ... & x_n^{(2)} \\
+... & ... & ... & ... \\
+1 & x_1^{(m)}  & ... & x_n^{(m)}
+\end{array}\right),
+\Theta=\left(\begin{array}{}
+\theta_0\\\theta_1\\...\\\theta_n\end{array}\right),
+Y=\left(\begin{array}{}
+y^{(1)}\\y^{(2)}\\...\\y^{(m)}\end{array}\right)
+$$
+
+则每次梯度下降运行后：
+
+$$ \Theta:=\Theta-X^T(X\Theta-Y) $$
+
+### 3. 特征标准化
+
+$$ x'=\frac{x-\overline{x}}{\sigma} $$
+
+其中 $$ \sigma $$ 为标准差：
+
+$$ \sigma=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}{(x^{(i)}-\overline{x})}^2} $$
