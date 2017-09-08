@@ -10,7 +10,7 @@ date:   2017-09-08 17:30:00 +0800
 
 ![]({{site.baseurl}}/images/stanford-ml/logistic-regression-1.png)
 
-需要注意的是，虽然绘图是在二维平面内，但是数据其实是有三个维度：x1，x2 和 y。假设：
+需要注意的是，虽然绘图是在二维平面内，但是数据其实是有三个维度：$$x_1$$，$$x_2$$ 和 $$y$$。假设：
 
 $$ f_\theta(x)=\theta^Tx=\theta_0+\theta_1x_1+\theta_2x_2 $$
 
@@ -108,3 +108,15 @@ $$
 因此对于 $$ j=0,1,...n $$：
 
 $$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} $$
+
+与线性回归的形式是一致的。
+
+### 3. 多类分类
+
+假如一共有 $$k$$ 类，如果求某个样本属于第 $$i$$ 类的可能性，则将 $$i$$ 类作为是 $$y=1$$，其它 $$k-1$$ 类作为是 $$y=0$$。因此：
+
+$$ h_\theta^{(i)}(x)=P(y=i|x;\theta)\space\space\space\space\space\space(i=1,2,...,k) $$
+
+对于一个样本 $$x$$，选取最大的 $$h_\theta^{(i)}(x)$$，则该样本属于第 $$i$$ 类。
+
+
