@@ -1,6 +1,7 @@
 ---
-layout:     post
-title:      Logistic Regression
+layout: post
+title:  Stanford机器学习笔记——Logistic Regression
+date:   2017-09-08 17:30:00 +0800
 ---
 
 ### 1. Sigmoid
@@ -106,4 +107,4 @@ $$
 
 因此对于 $$ j=0,1,...n $$：
 
-$$ \theta_j:=\theta_j-\alpha\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} $$
+$$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} $$

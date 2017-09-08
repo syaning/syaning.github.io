@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Stanford机器学习笔记——线性回归
+title:  Stanford机器学习笔记——Linear Regression
 date:   2017-09-06 23:30:00 +0800
 ---
 
