@@ -36,8 +36,6 @@ $$
 - $$\alpha$$ 过小，梯度下降缓慢
 - $$\alpha$$ 过大，则可能跳过最小值，导致收敛失败，甚至发散
 
----
-
 ### 2. 多变量线性回归
 
 假设：
@@ -58,28 +56,24 @@ $$ \theta_j:=\theta_j-\frac{\partial}{\partial\theta_j}J(\theta) $$
 
 即对于 $$ j=0,1,2,...,n $$：
 
-$$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^\left(i\right))-y^\left(i\right))x_j^\left(i\right) $$
+$$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)} $$
 
 假设有 m 个样本，每个样本有 n 个特征，即：
 
 $$
-X=\left( \begin{array}{}
+X=\left[\begin{array}{}
 1 & x_1^{(1)} & ... & x_n^{(1)} \\
 1 & x_1^{(2)}  & ... & x_n^{(2)} \\
 ... & ... & ... & ... \\
 1 & x_1^{(m)}  & ... & x_n^{(m)}
-\end{array}\right),
-\theta=\left(\begin{array}{}
-\theta_0\\\theta_1\\...\\\theta_n\end{array}\right),
-y=\left(\begin{array}{}
-y^{(1)}\\y^{(2)}\\...\\y^{(m)}\end{array}\right)
+\end{array}\right],
+\theta=\left[\begin{array}{}\theta_0\\\theta_1\\...\\\theta_n\end{array}\right],
+y=\left[\begin{array}{}y^{(1)}\\y^{(2)}\\...\\y^{(m)}\end{array}\right]
 $$
 
 则每次梯度下降运行后：
 
 $$ \theta:=\theta-X^T(X\theta-y) $$
-
----
 
 ### 3. 特征标准化
 
@@ -88,8 +82,6 @@ $$ x'=\frac{x-\overline{x}}{\sigma} $$
 其中 $$ \sigma $$ 为标准差：
 
 $$ \sigma=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}{(x^{(i)}-\overline{x})}^2} $$
-
----
 
 ### 4. Normal Equation
 

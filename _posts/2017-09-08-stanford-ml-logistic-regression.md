@@ -44,8 +44,6 @@ y = \begin{cases}
 \end{array}
 $$
 
----
-
 ### 2. Cost Function
 
 令：
