@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-109.73148 -84.75 356.2315 236.5926" width="356.2315pt" height="236.5926pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-11 08:52:00 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="STIXGeneral" font-size="16" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="8" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-2e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" viewBox="-1 -4 8 8" markerWidth="8" markerHeight="8" color="black">
+      <g>
+        <path d="M 5.866667 0 L 0 0 M 0 -2.2 L 5.866667 0 L 0 2.2" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" width="356.2315" height="236.5926"/>
+    <g>
+      <title>Layer 1</title>
+      <circle cx="-87.5" cy="1" r="20.000032" fill="white"/>
+      <circle cx="-87.5" cy="1" r="20.000032" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(-98.5 -11.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="5.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.552" y="21" textLength="4">1</tspan>
+      </text>
+      <circle cx="-87.5" cy="66" r="20.000032" fill="white"/>
+      <circle cx="-87.5" cy="66" r="20.000032" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(-98.5 53.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="5.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.552" y="21" textLength="4">2</tspan>
+      </text>
+      <circle cx="-88.98148" cy="129.7037" r="20.000032" fill="white"/>
+      <circle cx="-88.98148" cy="129.7037" r="20.000032" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(-99.98148 117.2037)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="5.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.552" y="21" textLength="4">3</tspan>
+      </text>
+      <circle cx="31.5" cy=".9074074" r="20.000032" fill="white"/>
+      <circle cx="31.5" cy=".9074074" r="20.000032" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(20.5 -11.592593)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x=".328" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="8.344" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.344" y="12" textLength="9.328">(2)</tspan>
+      </text>
+      <circle cx="144.5" cy="66" r="20.000032" fill="white"/>
+      <circle cx="144.5" cy="66" r="20.000032" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(133.5 53.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x=".328" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="8.344" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.344" y="12" textLength="9.328">(3)</tspan>
+      </text>
+      <circle cx="31.5" cy="131.0926" r="20.000032" fill="white"/>
+      <circle cx="31.5" cy="131.0926" r="20.000032" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(20.5 118.59259)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x=".328" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="8.344" y="21" textLength="4">3</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.344" y="12" textLength="9.328">(2)</tspan>
+      </text>
+      <circle cx="32.24074" cy="66.74074" r="20.000032" fill="white"/>
+      <circle cx="32.24074" cy="66.74074" r="20.000032" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(21.24074 54.24074)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x=".328" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="8.344" y="21" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.344" y="12" textLength="9.328">(2)</tspan>
+      </text>
+      <line x1="-67.124996" y1=".9841464" x2="-.2750006" y2=".9321312" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-65.93339" y1=".9832193" x2="2.867822" y2="60.331604" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-65.93168" y1=".9832179" x2="5.707066" y2="122.40377" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-67.12538" y1="66.12604" x2=".4663361" y2="66.54418" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-66.66536" y1="66.12889" x2="1.6423736" y2="8.290542" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-66.29525" y1="66.867335" x2="2.7713447" y2="124.88938" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-68.61283" y1="130.21423" x2=".10357922" y2="131.93658" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-66.75144" y1="130.26089" x2="4.5055654" y2="10.716226" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-66.37687" y1="130.99245" x2="2.7311438" y2="73.58102" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="52" y1=".5925926" x2="116.09564" y2="59.33465" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="52.61531" y1="66.6063" x2="112.72568" y2="66.20966" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="52.74074" y1="132.96296" x2="114.72423" y2="73.999275" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="164.5" y1="66.24074" x2="193.10065" y2="66.545285" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <text transform="translate(209.5 56)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".232" y="17" textLength="8">h</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="#111" x="8.232" y="21" textLength="5.776">Θ</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x="14.008" y="17" textLength="17.76">(x)</tspan>
+      </text>
+      <circle cx="-87.5" cy="-64" r="20.000032" fill="white"/>
+      <path d="M -73.35788 -78.14212 C -65.54736 -70.33164 -65.54736 -57.66836 -73.35788 -49.85788 C -81.16836 -42.04736 -93.83164 -42.04736 -101.64212 -49.85788 C -109.45264 -57.66836 -109.45264 -70.33164 -101.64212 -78.14212 C -93.83164 -85.95264 -81.16836 -85.95264 -73.35788 -78.14212" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text transform="translate(-98.5 -76.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="5.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.552" y="21" textLength="4">0</tspan>
+      </text>
+      <circle cx="32.24074" cy="-64" r="20.000032" fill="white"/>
+      <path d="M 46.38286 -78.14212 C 54.19338 -70.33164 54.19338 -57.66836 46.38286 -49.85788 C 38.57238 -42.04736 25.9091 -42.04736 18.09862 -49.85788 C 10.288101 -57.66836 10.288101 -70.33164 18.09862 -78.14212 C 25.9091 -85.95264 38.57238 -85.95264 46.38286 -78.14212" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text transform="translate(21.24074 -76.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x=".328" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="8.344" y="21" textLength="4">0</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="12.344" y="12" textLength="9.328">(2)</tspan>
+      </text>
+      <line x1="-66.29525" y1="-63.28283" x2=".50646" y2="-6.461439" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-65.285145" y1="-62.27273" x2="5.6547026" y2="56.50893" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="-64.275044" y1="-61.262626" x2="7.351274" y2="122.05848" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line x1="53.0101" y1="-64.29293" x2="120.03288" y2="58.049134" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
