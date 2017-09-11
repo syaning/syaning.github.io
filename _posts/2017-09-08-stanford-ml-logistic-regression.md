@@ -19,7 +19,7 @@ $$ f_\theta(x)=\theta^Tx=\theta_0+\theta_1x_1+\theta_2x_2 $$
 $$
 \begin{array}{}
 y = \begin{cases}
-1 & {\text{if}}\ f_\theta(x)≥0 \\
+1 & {\text{if}}\ f_\theta(x)\geq0 \\
 0 & {\text{if}}\ f_\theta(x)<0 \\ 
 \end{cases}
 \end{array}
@@ -38,7 +38,7 @@ $$ h_\theta(x)=g(f_\theta(x))=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}} $$
 $$
 \begin{array}{}
 y = \begin{cases}
-1 & {\text{if}}\ h_\theta(x)≥0.5 \\
+1 & {\text{if}}\ h_\theta(x)\geq0.5 \\
 0 & {\text{if}}\ h_\theta(x)<0.5 \\ 
 \end{cases}
 \end{array}
