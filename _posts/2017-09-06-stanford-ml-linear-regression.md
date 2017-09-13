@@ -73,7 +73,7 @@ $$
 
 则每次梯度下降运行后：
 
-$$ \theta:=\theta-X^T(X\theta-y) $$
+$$ \theta:=\theta-\alpha\frac{1}{m}X^T(X\theta-y) $$
 
 ### 3. 特征标准化
 
