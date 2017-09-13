@@ -5,6 +5,8 @@ title:  svm
 
 ### 1. 优化目标
 
+SVM 即支持向量机（Support Vector Machines），是一种大间距分类算法。
+
 回顾在逻辑回归中，一个样本的损失函数为：
 
 $$ Cost(h_\theta(x),y)=-ylog(h_\theta(x))-(1-y)log(1-h_\theta(x)) $$
@@ -69,3 +71,17 @@ $$ \theta^Tx = p\Vert\theta\Vert $$
 
 其中 $$ p $$ 表示 $$ x $$ 在 $$ \theta $$ 方向的投影长度。我们知道 $$ \theta $$ 为分界线的法向量反向，因此 $$ p $$ 可以在一定程度上反映 $$ x $$ 到分割线的距离。因此我们希望 $$ p $$ 尽量大，也就是 $$ \Vert\theta\Vert $$ 尽量小。而：$$ \Vert\theta\Vert^2=\sum_{j=1}^{n}\theta_j^2 $$，因此这也就与前面的优化目标相一致了。
 
+### 3. Gaussian Kernel
+
+上面的分析我们假设都是线性可分的，然而实际上许多情况并非是线性可分。在这种情况下，我们可以通过将样本特征通过一定的函数映射，转化为线性可分。这里以高斯核为例。
+
+将样本的 $$ n $$ 个特征映射为新的 $$ k $$ 个特征 $$ f_1,f_2,...,f_k $$。首先我们先选择 $$ k $$ 个点 $$ l^{(1)},l^{(2)},...,l^{(k)} $$，定义：
+
+$$ f_i=similarity(x,l^{(i)})=e^{-\frac{\Vert{x-l^{(i)}\Vert^2}}{2\sigma^2}}=e^{-\frac{\sum_{j=1}^{n}(x_j-l_j^{(i)})^2}{2\sigma^2}} $$
+
+- 若 $$ x\approx{l^{(i)}} $$，则 $$ f_i\approx1 $$
+- 若 $$ x $$ 离 $$ l^{(i)} $$ 很远，则 $$ f_i\approx0 $$
+
+下面是当 $$ l^{(1)}=\left[\begin{array}{}3 \\ 5 \\\end{array}\right] $$ 时，$$ f_1 $$ 的图像：
+
+![]({{site.baseurl}}/images/stanford-ml/svm-4.png)
