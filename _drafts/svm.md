@@ -85,3 +85,9 @@ $$ f_i=similarity(x,l^{(i)})=e^{-\frac{\Vert{x-l^{(i)}\Vert^2}}{2\sigma^2}}=e^{-
 下面是当 $$ l^{(1)}=\left[\begin{array}{}3 \\ 5 \\\end{array}\right] $$ 时，$$ f_1 $$ 的图像：
 
 ![]({{site.baseurl}}/images/stanford-ml/svm-4.png)
+
+在得到这些新的特征后，我们对这些新的特征使用 SVM。
+
+在实际过程中，如何选择参照点 $$ l^{(i)} $$ 呢？实际上，可以直接将 $$ m $$ 个样本点作为 $$ m $$ 个参照点，即：
+
+$$ l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},...,l^{(m)}=x^{(m)} $$
