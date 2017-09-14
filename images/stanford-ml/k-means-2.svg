@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="246.7 370.81765 634.777 563.4692" width="634.777pt" height="563.4692pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-14 07:50:28 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 7</title>
+    <rect fill="white" width="634.777" height="563.4692"/>
+    <g>
+      <title>Layer 1</title>
+      <line x1="260" y1="764.8516" x2="493.25625" y2="764.8516" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="260" y1="764.8516" x2="260" y2="543.9" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="432.5871" cy="683.9871" r="3.7871154" fill="black"/>
+      <circle cx="432.5871" cy="683.9871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="290.1871" cy="698.5871" r="3.7871154" fill="black"/>
+      <circle cx="290.1871" cy="698.5871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="314.9871" cy="672.9871" r="3.7871154" fill="black"/>
+      <circle cx="314.9871" cy="672.9871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="334.9871" cy="708.3871" r="3.7871154" fill="black"/>
+      <circle cx="334.9871" cy="708.3871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="303.7871" cy="727.7871" r="3.7871154" fill="black"/>
+      <circle cx="303.7871" cy="727.7871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="412.3871" cy="694.7871" r="3.7871154" fill="black"/>
+      <circle cx="412.3871" cy="694.7871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="412.3871" cy="724.9871" r="3.7871154" fill="black"/>
+      <circle cx="412.3871" cy="724.9871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="449.3871" cy="730.5871" r="3.7871154" fill="black"/>
+      <circle cx="449.3871" cy="730.5871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="471.7871" cy="694.7871" r="3.7871154" fill="black"/>
+      <circle cx="471.7871" cy="694.7871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="381.57813" cy="570.3871" r="3.7871154" fill="black"/>
+      <circle cx="381.57813" cy="570.3871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="357.5871" cy="583.9871" r="3.7871154" fill="black"/>
+      <circle cx="357.5871" cy="583.9871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="353.9871" cy="613.1871" r="3.7871154" fill="black"/>
+      <circle cx="353.9871" cy="613.1871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="384.1871" cy="623.7871" r="3.7871154" fill="black"/>
+      <circle cx="384.1871" cy="623.7871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="404.1871" cy="596.9871" r="3.7871154" fill="black"/>
+      <circle cx="404.1871" cy="596.9871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="377.5871" cy="602.3871" r="3.7871154" fill="black"/>
+      <circle cx="377.5871" cy="602.3871" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <line x1="623.88235" y1="614.9692" x2="857.1386" y2="614.9692" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="623.88235" y1="614.9692" x2="623.88235" y2="394.01765" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="796.4695" cy="534.10477" r="3.7871154" fill="lime"/>
+      <circle cx="796.4695" cy="534.10477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="654.0695" cy="548.70477" r="3.7871154" fill="#0096ff"/>
+      <circle cx="654.0695" cy="548.70477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="678.8695" cy="523.10477" r="3.7871154" fill="#0096ff"/>
+      <circle cx="678.8695" cy="523.10477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="698.8695" cy="558.5048" r="3.7871154" fill="#0096ff"/>
+      <circle cx="698.8695" cy="558.5048" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="667.6695" cy="577.9048" r="3.7871154" fill="#0096ff"/>
+      <circle cx="667.6695" cy="577.9048" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="776.2695" cy="544.90477" r="3.7871154" fill="lime"/>
+      <circle cx="776.2695" cy="544.90477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="776.2695" cy="575.1048" r="3.7871154" fill="lime"/>
+      <circle cx="776.2695" cy="575.1048" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="813.2695" cy="580.7048" r="3.7871154" fill="lime"/>
+      <circle cx="813.2695" cy="580.7048" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="835.6695" cy="544.90477" r="3.7871154" fill="lime"/>
+      <circle cx="835.6695" cy="544.90477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="745.4605" cy="420.50476" r="3.7871154" fill="#ff4040"/>
+      <circle cx="745.4605" cy="420.50476" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="721.4695" cy="434.10477" r="3.7871154" fill="#ff4040"/>
+      <circle cx="721.4695" cy="434.10477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="717.8695" cy="463.30477" r="3.7871154" fill="#ff4040"/>
+      <circle cx="717.8695" cy="463.30477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="748.0695" cy="473.90477" r="3.7871154" fill="#ff4040"/>
+      <circle cx="748.0695" cy="473.90477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="768.0695" cy="447.10477" r="3.7871154" fill="#ff4040"/>
+      <circle cx="768.0695" cy="447.10477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="741.4695" cy="452.50477" r="3.7871154" fill="#ff4040"/>
+      <circle cx="741.4695" cy="452.50477" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <line x1="625.02075" y1="918.0869" x2="858.277" y2="918.0869" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="625.02075" y1="918.0869" x2="625.02075" y2="697.1353" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="797.6079" cy="837.2224" r="3.7871154" fill="red"/>
+      <circle cx="797.6079" cy="837.2224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="655.2079" cy="851.8224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="655.2079" cy="851.8224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="680.0079" cy="826.2224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="680.0079" cy="826.2224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="700.0079" cy="861.6224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="700.0079" cy="861.6224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="668.8079" cy="881.0224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="668.8079" cy="881.0224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="777.4079" cy="848.0224" r="3.7871154" fill="red"/>
+      <circle cx="777.4079" cy="848.0224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="777.4079" cy="878.2224" r="3.7871154" fill="red"/>
+      <circle cx="777.4079" cy="878.2224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="814.4079" cy="883.8224" r="3.7871154" fill="lime"/>
+      <circle cx="814.4079" cy="883.8224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="836.8079" cy="848.0224" r="3.7871154" fill="lime"/>
+      <circle cx="836.8079" cy="848.0224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="746.5989" cy="723.6224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="746.5989" cy="723.6224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="722.6079" cy="737.2224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="722.6079" cy="737.2224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="719.0079" cy="766.4224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="719.0079" cy="766.4224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="749.2079" cy="777.0224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="749.2079" cy="777.0224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="769.2079" cy="750.2224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="769.2079" cy="750.2224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="742.6079" cy="755.6224" r="3.7871154" fill="#0096ff"/>
+      <circle cx="742.6079" cy="755.6224" r="3.7871154" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <path d="M 737.0689 444.3087 L 742.6644 444.3087 L 742.6644 438.71316 L 748.2566 438.71316 L 748.2566 444.3087 L 753.8521 444.3087 L 753.8521 449.90085 L 748.2566 449.90085 L 748.2566 455.49637 L 742.6644 455.49637 L 742.6644 449.90085 L 737.0689 449.90085 Z" fill="#ff4040"/>
+      <path d="M 737.0689 444.3087 L 742.6644 444.3087 L 742.6644 438.71316 L 748.2566 438.71316 L 748.2566 444.3087 L 753.8521 444.3087 L 753.8521 449.90085 L 748.2566 449.90085 L 748.2566 455.49637 L 742.6644 455.49637 L 742.6644 449.90085 L 737.0689 449.90085 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 670.93236 550.2101 L 676.2248 550.2101 L 676.2248 544.91766 L 681.5141 544.91766 L 681.5141 550.2101 L 686.8066 550.2101 L 686.8066 555.4994 L 681.5141 555.4994 L 681.5141 560.7919 L 676.2248 560.7919 L 676.2248 555.4994 L 670.93236 555.4994 Z" fill="#0096ff"/>
+      <path d="M 670.93236 550.2101 L 676.2248 550.2101 L 676.2248 544.91766 L 681.5141 544.91766 L 681.5141 550.2101 L 686.8066 550.2101 L 686.8066 555.4994 L 681.5141 555.4994 L 681.5141 560.7919 L 676.2248 560.7919 L 676.2248 555.4994 L 670.93236 555.4994 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 793.1824 556.4101 L 798.4748 556.4101 L 798.4748 551.11765 L 803.7641 551.11765 L 803.7641 556.4101 L 809.0566 556.4101 L 809.0566 561.6994 L 803.7641 561.6994 L 803.7641 566.9919 L 798.4748 566.9919 L 798.4748 561.6994 L 793.1824 561.6994 Z" fill="lime"/>
+      <path d="M 793.1824 556.4101 L 798.4748 556.4101 L 798.4748 551.11765 L 803.7641 551.11765 L 803.7641 556.4101 L 809.0566 556.4101 L 809.0566 561.6994 L 803.7641 561.6994 L 803.7641 566.9919 L 798.4748 566.9919 L 798.4748 561.6994 L 793.1824 561.6994 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 712.4118 803.5278 L 717.7042 803.5278 L 717.7042 798.2353 L 722.9935 798.2353 L 722.9935 803.5278 L 728.286 803.5278 L 728.286 808.81705 L 722.9935 808.81705 L 722.9935 814.1095 L 717.7042 814.1095 L 717.7042 808.81705 L 712.4118 808.81705 Z" fill="#0096ff"/>
+      <path d="M 712.4118 803.5278 L 717.7042 803.5278 L 717.7042 798.2353 L 722.9935 798.2353 L 722.9935 803.5278 L 728.286 803.5278 L 728.286 808.81705 L 722.9935 808.81705 L 722.9935 814.1095 L 717.7042 814.1095 L 717.7042 808.81705 L 712.4118 808.81705 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 780.4118 851.8308 L 786.0073 851.8308 L 786.0073 846.2353 L 791.59945 846.2353 L 791.59945 851.8308 L 797.195 851.8308 L 797.195 857.423 L 791.59945 857.423 L 791.59945 863.0185 L 786.0073 863.0185 L 786.0073 857.423 L 780.4118 857.423 Z" fill="#ff4040"/>
+      <path d="M 780.4118 851.8308 L 786.0073 851.8308 L 786.0073 846.2353 L 791.59945 846.2353 L 791.59945 851.8308 L 797.195 851.8308 L 797.195 857.423 L 791.59945 857.423 L 791.59945 863.0185 L 786.0073 863.0185 L 786.0073 857.423 L 780.4118 857.423 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 819.4118 863.5278 L 824.7042 863.5278 L 824.7042 858.2353 L 829.9935 858.2353 L 829.9935 863.5278 L 835.286 863.5278 L 835.286 868.817 L 829.9935 868.817 L 829.9935 874.1095 L 824.7042 874.1095 L 824.7042 868.817 L 819.4118 868.817 Z" fill="lime"/>
+      <path d="M 819.4118 863.5278 L 824.7042 863.5278 L 824.7042 858.2353 L 829.9935 858.2353 L 829.9935 863.5278 L 835.286 863.5278 L 835.286 868.817 L 829.9935 868.817 L 829.9935 874.1095 L 824.7042 874.1095 L 824.7042 868.817 L 819.4118 868.817 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="486" y1="620.25" x2="547.6419" y2="573.01355" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="486" y1="620.25" x2="548.4304" y2="681.4519" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
