@@ -34,7 +34,7 @@ $$ Cost(x,y)=-ylog\frac{1}{1+e^{-\theta^Tx}}-(1-y)log(1-\frac{1}{1+e^{-\theta^Tx
 
 因此：
 
-- 当 $$ y=1 $$ 时，需要 $$ \theta^Tx\geq-1 $$
+- 当 $$ y=1 $$ 时，需要 $$ \theta^Tx\geq1 $$
 - 当 $$ y=0 $$ 时，需要 $$ \theta^Tx\leq-1 $$
 
 我们记 $$ y=1 $$ 的损失函数为 $$ cost_1 $$，记 $$ y=0 $$ 的损失函数为 $$ cost_0 $$。令 SVM 的优化目标为：
