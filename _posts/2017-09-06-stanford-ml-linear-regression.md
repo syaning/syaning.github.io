@@ -81,7 +81,7 @@ $$ x'=\frac{x-\overline{x}}{\sigma} $$
 
 其中 $$ \sigma $$ 为标准差：
 
-$$ \sigma=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}{(x^{(i)}-\overline{x})}^2} $$
+$$ \sigma=\sqrt{\frac{1}{m-1}\sum_{i=1}^{m}{(x^{(i)}-\overline{x})}^2} $$
 
 ### 4. Normal Equation
 
