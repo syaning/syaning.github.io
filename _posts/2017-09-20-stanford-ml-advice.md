@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  advice
+title:  Stanford机器学习笔记——机器学习建议
+date:   2017-09-20 00:25:00 +0800
 ---
 
 ### 1. 模型选择
@@ -66,3 +67,30 @@ bias 为偏差，variance 为方差。下图：
 在过拟合的情况下，随着样本数增加，训练集误差虽然会增加，但是一直处于相对较小的状态，交叉验证集误差会逐渐下降，但是误差会相对较大。在这种情况下，如果继续增加样本数，交叉验证集误差会继续减小。因此在过拟合情况下，增加样本数是可以在一定程度上解决问题的。如图所示：
 
 ![]({{site.baseurl}}/images/stanford-ml/advice-6.png)
+
+### 3. 偏斜类
+
+假设通过逻辑回归来预测病人是否有癌症。$$ y=0 $$ 表示没有癌症，$$ y=1 $$ 表示有癌症。如果我们在测试集进行测试，得到最终只有 1% 的错误率，可能会认为是一个不错的结果。但是考虑到如下情况：癌症的样本数只有 0.5%。那么即使我们忽略样本的特征，直接返回 $$ y=0 $$，也才只有 0.5% 的错误率。因此在正负样本比例悬殊的情况下，就会产生偏斜类的问题。
+
+在有偏斜类的情况下，使用 $$ Precision $$ 和 $$ Recall $$ 来计算模型的准确率。
+
+|           | Actual 1       | Actual 0       |
+|-----------|----------------|----------------|
+| Predict 1 | True Positive  | False Positive |
+| Predict 0 | False Negative | True Negative  |
+
+则 $$ Precision $$ 可以表示在预测的有癌症患者中，有多少人是真的有癌症的。即：
+
+$$ Precision=\frac{True{\space}Positive}{True{\space}Positive+False{\space}Positive} $$
+
+$$ Recall $$ 表示的是在所有患有癌症的病人中，预测出患有癌症的比例是多少。即：
+
+$$ Recall=\frac{True{\space}Positive}{True{\space}Positive+False{\space}Negative} $$
+
+在具体的案例中，会选择不同的 $$ threshold $$，当 $$ h_\theta(x)\geq{threshold} $$ 的时候，才会预测 $$ y=1 $$。
+
+针对不同的模型，为了比较它们的准确度，使用 $$ F Score $$：
+
+$$ F{\space}Score=2\frac{PR}{P+R} $$
+
+其中 $$ P $$ 表示 $$ Precision $$，$$ R $$ 表示 $$ Recall $$。
