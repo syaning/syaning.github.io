@@ -52,7 +52,7 @@ $$ min_\left(\theta\right)J(\theta) $$
 
 更新 $$ \theta $$：
 
-$$ \theta_j:=\theta_j-\frac{\partial}{\partial\theta_j}J(\theta) $$
+$$ \theta_j:=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta) $$
 
 即对于 $$ j=0,1,2,...,n $$：
 
