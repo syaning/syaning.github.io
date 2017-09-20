@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="2027.7 -529.2 194.28672 179.52173" width="194.28672pt" height="179.52173pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-20 06:28:11 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 15</title>
+    <g>
+      <title>Layer 1</title>
+      <line x1="2041" y1="-366.21875" x2="2186.9926" y2="-366.21875" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2041" y1="-366.21875" x2="2041" y2="-503.1" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="2090" cy="-446.51515" r="3.5000056" fill="lime"/>
+      <circle cx="2090" cy="-446.51515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2107.1934" cy="-452.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2107.1934" cy="-452.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2124.6934" cy="-446.51515" r="3.5000056" fill="lime"/>
+      <circle cx="2124.6934" cy="-446.51515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2110.6934" cy="-433.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2110.6934" cy="-433.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2077.6934" cy="-416.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2077.6934" cy="-416.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2097.6934" cy="-433.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2097.6934" cy="-433.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2094.1934" cy="-416.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2094.1934" cy="-416.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2117.5" cy="-425.26515" r="3.5000056" fill="lime"/>
+      <circle cx="2117.5" cy="-425.26515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2117.5" cy="-404.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2117.5" cy="-404.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2131.5" cy="-416.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2131.5" cy="-416.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2136.6934" cy="-433.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2136.6934" cy="-433.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2159.5" cy="-460.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2159.5" cy="-460.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2154.5" cy="-482.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2154.5" cy="-482.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2131.5" cy="-476.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2131.5" cy="-476.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2107.1934" cy="-465.51515" r="3.5000056" fill="lime"/>
+      <circle cx="2107.1934" cy="-465.51515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2138" cy="-460.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2138" cy="-460.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2154.5" cy="-438.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2154.5" cy="-438.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2074" cy="-394.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2074" cy="-394.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2097.6934" cy="-399.01515" r="3.5000056" fill="lime"/>
+      <circle cx="2097.6934" cy="-399.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="2154.5" cy="-394.01515" r="3.5000056" fill="red"/>
+      <circle cx="2154.5" cy="-394.01515" r="3.5000056" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <path d="M 2162.843 -456.78765 C 2168.4203 -484.0027 2152.3016 -497.0554 2126.8409 -485.94165 C 2101.3801 -474.82805 2076.219 -443.7566 2070.6418 -416.5416 C 2065.0645 -389.32655 2081.1832 -376.27387 2106.644 -387.3876 C 2132.1047 -398.5012 2157.266 -429.57266 2162.843 -456.78765" stroke="#00fa00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 2164.17 -476.1486 C 2187.8615 -452.32665 2187.8615 -413.70365 2164.17 -389.8817 C 2140.4787 -366.0596 2102.0675 -366.0596 2078.3762 -389.8817 C 2054.6847 -413.70365 2054.6847 -452.32665 2078.3762 -476.1486 C 2102.0675 -499.9707 2140.4787 -499.9707 2164.17 -476.1486" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="8,5"/>
+    </g>
+  </g>
+</svg>

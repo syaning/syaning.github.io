@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  异常检测
+title:  Stanford机器学习笔记——异常检测
+date:   2017-09-20 14:55:00 +0800
 ---
 
 ### 1. 正态分布（高斯分布）
@@ -47,3 +48,26 @@ x_j{\leftarrow}x_j^c \\
 $$
 
 ### 3. 多元高斯分布
+
+上面的方法是假设所有的特征都符合相对独立的正态分布。如图所示：
+
+![]({{site.baseurl}}/images/stanford-ml/anomaly-detection-2.svg)
+
+然而事实上，许多情况下，不同特征之间是有着一定的关系的，并不是完全独立，因此上面的方法不再适用。如下图所示：
+
+![]({{site.baseurl}}/images/stanford-ml/anomaly-detection-3.svg)
+
+如果按照特征相对独立的方式来检测异常，将会是红色的圈，那么检测不到红色的点为异常。然而实际上应该是绿色的圈，这样才能检测到红色的点为异常。
+
+此时需要计算协方差。即：
+
+$$
+\begin{array}{}
+\mu=\frac{1}{m}\sum_{i=1}^{m}x^{(i)} \\
+\Sigma=\frac{1}{m}\sum_{i=1}^{m}(x^{(i)}-\mu)(x^{(i)}-\mu)^T
+\end{array}
+$$
+
+然后：
+
+$$ p(x)=\frac{1}{(2\pi)^{\frac{n}{2}}\vert\Sigma\vert^{\frac{1}{2}}}e^{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)} $$
