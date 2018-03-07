@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="1170 -945.2 285.46053 190.98125" width="285.46053pt" height="190.98125pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2018-02-25 11:22:18 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Arial" font-size="14" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="500">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 11</title>
+    <g>
+      <title>Layer 1</title>
+      <line x1="1216" y1="-782.21875" x2="1361.9926" y2="-782.21875" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="1216" y1="-782.21875" x2="1216" y2="-919.1" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 1224.329 -909.7763 C 1224.329 -909.7763 1227.9429 -854.1615 1263.8026 -820.9605 C 1299.6623 -787.7596 1326.2287 -800.6238 1350.9053 -792.5848 L 1350.9053 -792.5848" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 1232 -909.7763 C 1232 -909.7763 1241.197 -828.8528 1278.7237 -825.6842 C 1316.2504 -822.5157 1340.1708 -877.9369 1364.4605 -898.5921 L 1364.4605 -898.5921" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(1327 -775.9478)" fill="black">
+        <tspan font-family="Arial" font-size="14" font-weight="500" x=".09667969" y="13" textLength="56.80664">iterations</tspan>
+      </text>
+      <text transform="translate(1175 -929.229)" fill="black">
+        <tspan font-family="Arial" font-size="14" font-weight="500" x=".22070312" y="13" textLength="29.558594">error</tspan>
+      </text>
+      <text transform="translate(1371.4605 -917.729)" fill="black">
+        <tspan font-family="Arial" font-size="14" font-weight="500" x=".20703125" y="13" textLength="78.58594">dev set error</tspan>
+      </text>
+      <text transform="translate(1342.5 -814.6153)" fill="black">
+        <tspan font-family="Arial" font-size="14" font-weight="500" x=".37597656" y="13" textLength="83.24805">train set error</tspan>
+      </text>
+      <line x1="1276.8784" y1="-875.7646" x2="1275.3077" y2="-782.21875" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="8,5"/>
+      <text transform="translate(1260.5 -780.6775)" fill="#b1001c">
+        <tspan font-family="Arial" font-size="14" font-weight="500" fill="#b1001c" x=".26904297" y="13" textLength="26.461914">stop</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
