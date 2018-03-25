@@ -20,6 +20,8 @@ date:   2018-03-15 23:30:00 +0800
 
 ![]({{site.baseurl}}/images/deeplearning/7-2.png)
 
+> 输入应该是 $227\times227\times3$，论文中的图片标注有误。
+
 ## 3. VGG
 
 论文参考[Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)。
