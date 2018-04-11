@@ -148,7 +148,7 @@ function createChildScopeClass(parent) {
 
 这里主要就是让`ChildScope`的原型指向`parent`，从而达到Scope继承的效果。
 
-### 4. $watch, $watchGroup
+### 4. `$watch`, `$watchGroup`
 
 (1) $watch
 
@@ -339,7 +339,7 @@ traverseScopesLoop:
 
 主要就是通过对`$$watchers`中的每一项进行检测，看值是否发生变化。并深度优先遍历整个Scope数对每个Scope进行检测。
 
-### 6. $on, $emit & $broadcast
+### 6. `$on`, `$emit` & `$broadcast`
 
 `Scope`中实现了一套事件机制，其核心方法为`$on`，`$emit`和`$broadcast`。本质上来说，也就是一个EventEmitter类的实现，一般而言，一个最简单的EventEmitter类实现如下：
 
