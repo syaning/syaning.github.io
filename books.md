@@ -5,6 +5,7 @@ title:  Books
 
 Here lists technical books I have read.
 
+- Python Unlocked. 2015. Arun Tigeraniya.
 - 大型网站技术架构：核心原理与案例分析. 2013. 李智慧.
 - Docker: Up and Running. 2015. Karl Matthias, Sean P.Kane.
 - Think Python, 2nd Edition. 2016. [Allen B. Downey](http://www.allendowney.com/).
