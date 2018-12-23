@@ -325,7 +325,7 @@ class Watcher {
     if (typeof expOrFn === 'function') {
       this.getter = expOrFn
     } else {
-      this.getter = parsePath(exp)
+      this.getter = parsePath(expOrFn)
     }
     this.value = this.get()
   }
@@ -347,3 +347,149 @@ vm.height = 5
 示意图如下：
 
 ![]({{site.baseurl}}/images/vue/reactive-3.svg)
+
+### 3. 支持watch数组
+
+以上只是支持了对 object 的观察，如果是数组的话，需要对数组每一项做观察，改造如下：
+
+```js
+class Watcher {
+  // ...
+
+  update() {
+    const value = this.get()
+    // 如果调用了数组的push等方法，则value === this.value依然成立，但是数组的元素已经发生了变化
+    if (value !== this.value || Array.isArray(this.value)) {
+      const oldValue = this.value
+      this.value = value
+      this.cb.call(this.vm, value, oldValue)
+    }
+  }
+}
+
+
+// 对数组的方法做拦截，当调用这些方法的时候，会触发watcher
+const arrayMethods = Object.create(Array.prototype)
+const methodsToPatch = [
+  'push',
+  'pop',
+  'shift',
+  'unshift',
+  'splice',
+  'sort',
+  'reverse'
+]
+
+methodsToPatch.forEach(method => {
+  const original = arrayMethods[method]
+  Object.defineProperty(arrayMethods, method, {
+    value: function(...args) {
+      const result = original.apply(this, args)
+      const ob = this.__ob__
+      let inserted
+      switch (method) {
+        case 'push':
+        case 'unshift':
+          inserted = args
+          break
+        case 'splice':
+          inserted = args.slice(2)
+          break
+      }
+      if (inserted) {
+        ob.observeArray(inserted)
+      }
+      ob.dep.notify()
+      return result
+    }
+  })
+})
+
+class Observer {
+  constructor(value) {
+    this.value = value
+    this.dep = new Dep()
+    Object.defineProperty(value, '__ob__', {
+      value: this,
+      enumerable: false
+    })
+    if (Array.isArray(value)) {
+      // 对数组遍历watch
+      value.__proto__ = arrayMethods
+      this.observeArray(value)
+    } else {
+      this.walk(value)
+    }
+  }
+
+  walk(obj) {
+    Object.keys(obj).forEach(key => {
+      defineReactive(obj, key)
+    })
+  }
+
+  observeArray(items) {
+    items.forEach(item => observe(item))
+  }
+}
+
+function observe(value) {
+  const isObject = obj => obj !== null && typeof obj === 'object'
+  if (!isObject(value)) {
+    return
+  }
+  let ob
+  if (Object.hasOwnProperty(value, '__ob__') && value.__ob__ instanceof Observer) {
+    // 避免重复watch
+    ob = value.__ob__
+  } else {
+    ob = new Observer(value)
+  }
+  return ob
+}
+
+function defineReactive(obj, key) {
+  const dep = new Dep()
+  let val = obj[key]
+
+  let childOb = observe(val)
+
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter() {
+      const value = val
+      if (Dep.target) {
+        dep.depend()
+        if (childOb) {
+          childOb.dep.depend()
+        }
+      }
+      return value
+    },
+    set: function reactiveSetter(newVal) {
+      val = newVal
+      childOb = observe(newVal)
+      dep.notify()
+    }
+  })
+}
+```
+
+此时：
+
+```js
+const vm = createVM({
+  items: [1, 2]
+})
+
+watcher = new Watcher(vm, 'items', (newVal, oldVal) => {
+  console.log(`value changed: new value is '${newVal}'`)
+})
+
+vm.items.push(3)
+// value changed: new value is '1,2,3'
+
+vm.items.unshift(0)
+// value changed: new value is '0,1,2,3'
+```
