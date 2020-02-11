@@ -4,10 +4,8 @@ title:  AngularJS深入(7)——scope
 date:   2015-08-08 21:00:00 +0800
 ---
 
-参考资料：
-
-- [Scopes](https://docs.angularjs.org/guide/scope)
-- [angularjs1.3.0源码解析之scope](http://www.html-js.com/article/2365)
+* TOC
+{:toc}
 
 ### 1. $RootScopeProvider
 
@@ -366,3 +364,8 @@ EventEmitter.prototype.emit = function(name) {
 ```
 
 `Scope`中的实现于此大同小异，主要的区别是：由于scope之间的继承关系构成了一个树状结构，类似DOM树，因此事件可以向上向下传播。在这里，`$emit`发出的事件可以向上传播，`$broadcast`发出的事件可以向下传播。源码比较简单，不再赘述。
+
+### 7. 参考资料
+
+- [Scopes](https://docs.angularjs.org/guide/scope)
+- [angularjs1.3.0源码解析之scope](http://www.html-js.com/article/2365)

@@ -4,11 +4,8 @@ title:  Node中的stream
 date:   2015-08-17 14:15:00 +0800
 ---
 
-参考资料：
-
-- [Stream Documentation](https://nodejs.org/api/stream.html)
-- [stream-handbook](https://github.com/substack/stream-handbook)
-- [Readable, Writable, and Transform Streams in Node.js](http://www.sandersdenardi.com/readable-writable-transform-streams-node/)
+* TOC
+{:toc}
 
 ### 1. 什么是stream
 
@@ -658,3 +655,9 @@ var rs = MyReadable(),
 
 rs.pipe(ts).pipe(process.stdout);
 ```
+
+### 7. 参考资料
+
+- [Stream Documentation](https://nodejs.org/api/stream.html)
+- [stream-handbook](https://github.com/substack/stream-handbook)
+- [Readable, Writable, and Transform Streams in Node.js](http://www.sandersdenardi.com/readable-writable-transform-streams-node/)

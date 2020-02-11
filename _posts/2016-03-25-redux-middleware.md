@@ -4,19 +4,15 @@ title:  Redux中间件
 date:   2016-03-25 13:40:00 +0800
 ---
 
-### 参考资料
-
-- [Middleware](http://redux.js.org/docs/advanced/Middleware.html)
-- [redux-thunk](https://github.com/gaearon/redux-thunk)
-
----
+* TOC
+{:toc}
 
 Redux也有Middleware的概念，类似于[Express](http://expressjs.com/)或者[Koa](http://koajs.com/)。事实上，Redux的中间件模型更接近Koa的，都是洋葱模型，而Express的中间件模型则是瀑布流模型。
 
 > 关于Express和Koa的中间件机制，可以参考我之前的文章：
 > 
-> - [Express深入解读](http://syaning.com/2015/10/22/express-in-depth/)
-> - [koa的中间件机制](http://syaning.com/2015/11/02/koa-middleware/)
+> - [Express深入解读]({{site.baseurl}}/2015/10/22/express-in-depth/)
+> - [koa的中间件机制]({{site.baseurl}}/2015/11/02/koa-middleware/)
 
 [官方文档](http://redux.js.org/docs/advanced/Middleware.html)对中间件已经有了比较详细的解释。或者参考这个[非常简单的例子](https://github.com/simplest-demos/simplest-redux-middleware-demo)来初步了解Redux中间件的使用。
 
@@ -222,3 +218,8 @@ function dispatch(action) {
 ```
 
 可以看到，如果一个异步action的话，被thunk中间件捕获后，就不会执行到后面的logger部分。然后`action(dispatch, getState)`会重新dispatch一个同步action。
+
+### 5. 参考资料
+
+- [Middleware](http://redux.js.org/docs/advanced/Middleware.html)
+- [redux-thunk](https://github.com/gaearon/redux-thunk)

@@ -4,6 +4,9 @@ title:  Stanford机器学习笔记——K-Means
 date:   2017-09-14 16:25:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. K-Means
 
 K-Means 是一种聚类算法，属于无监督学习。其算法非常简单。

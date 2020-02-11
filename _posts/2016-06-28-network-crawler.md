@@ -4,6 +4,9 @@ title:  网络爬虫的一些总结
 date:   2016-06-28 13:00:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 一、引言
 
 最早接触爬虫，是发现了一个叫做『豆瓣妹子』的网站，写了一个简单的程序可以批量下载图片。后来陆陆续续抓取过[豆瓣电影](https://movie.douban.com/)，[Google+](https://plus.google.com/)，[facejoking](http://www.facejoking.com/)等网站。毕设的选题也是抓取[新浪微博](http://weibo.com/)，然后分析博文的传播情况。最近一直对知乎的数据感兴趣，于是开发了Node模块[zhihu-api](https://github.com/syaning/zhihu-api)，用于简化数据的抓取。

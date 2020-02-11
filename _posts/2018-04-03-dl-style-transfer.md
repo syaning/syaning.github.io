@@ -4,6 +4,9 @@ title:  DeepLearning笔记(12)——风格迁移
 date:   2018-04-03 14:30:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ## 1. 风格迁移
 
 ![]({{site.baseurl}}/images/deeplearning/12-1.png)

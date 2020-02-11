@@ -4,12 +4,8 @@ title:  AngularJS深入(6)——指令
 date:   2015-07-28 20:55:00 +0800
 ---
 
-参考资料：
-
-- [Creating Custom Directives](https://docs.angularjs.org/guide/directive)
-- [HTML Compiler](https://docs.angularjs.org/guide/compiler)
-- [$compile](https://docs.angularjs.org/api/ng/service/$compile)
-- [angularjs1.3.0源码解析之directive](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)
+* TOC
+{:toc}
 
 > 注：本部分源码比较多且逻辑复杂，我也没有完全通读并理解，因此分析过程中难免有不当或错误之处，还请指出。
 
@@ -414,3 +410,10 @@ A.compositeLinkFn()
 ```
 
 这里可以看出link过程中`preLinkFns`和`postLinkFns`的执行顺序。
+
+### 7. 参考资料
+
+- [Creating Custom Directives](https://docs.angularjs.org/guide/directive)
+- [HTML Compiler](https://docs.angularjs.org/guide/compiler)
+- [$compile](https://docs.angularjs.org/api/ng/service/$compile)
+- [angularjs1.3.0源码解析之directive](http://www.html-js.com/article/Front-end-source-code-analysis-directive-angularjs130-source-code-analysis-of-the-original)

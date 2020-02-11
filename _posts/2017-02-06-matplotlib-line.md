@@ -4,6 +4,9 @@ title:  matplotlib绘图——折线图
 date:   2017-02-06 17:20:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. line chart
 
 ```py

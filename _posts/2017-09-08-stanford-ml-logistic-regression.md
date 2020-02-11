@@ -4,6 +4,9 @@ title:  Stanford机器学习笔记——Logistic Regression
 date:   2017-09-08 17:30:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. Sigmoid
 
 线性回归针对的是连续值，逻辑回归则是针对离散的分类问题。如图所示：

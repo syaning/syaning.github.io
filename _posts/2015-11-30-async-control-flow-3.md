@@ -4,6 +4,9 @@ title:  JS异步控制流及async实现细节分析(3)
 date:   2015-11-30 13:45:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 8. series/parallel/parallelLimit
 
 `async.eachOfSeries(arr, iterator, callback)`是对`arr`中的每一项，调用`iterator`函数，最终调用`callback`。也就是说，所有的异步任务都是同一种类型，只是传入的参数不同。例如对于一个目录下的所有文件，统计每个文件的size。

@@ -4,6 +4,9 @@ title:  理解Vue响应式原理
 date:   2018-12-16 23:00:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ## 一、基本实现
 
 关于Vue的响应式原理，可以参考 [Reactivity in Depth](https://vuejs.org/v2/guide/reactivity.html)。

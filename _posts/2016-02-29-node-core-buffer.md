@@ -4,6 +4,9 @@ title:  Node核心模块之buffer
 date:   2016-02-29 11:00:00 +0800
 ---
 
+* TOC
+{:toc}
+
 > 本文所使用的Node版本为5.7.0
 
 ### 1. ArrayBuffer，TypedArray，DataView

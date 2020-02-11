@@ -4,6 +4,9 @@ title:       CSS布局
 date:        2015-04-19 23:26:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. box-model
 
 盒模型基本结构如图所示：
@@ -140,7 +143,7 @@ Visual formatting model（可视化格式模型，以下简称VFM）是CSS中非
 - 如果width为auto，name设置为auto的margin-left或margin-right为0，此时width会自动改变以满足等式。
 - 如果margin-left和margin-right都为auto，则这两者会相等，此方法可以用来使内容在包含块中水平居中。
 
-### 参考
+### 6. 参考
 
 - [http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html](http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html)
 - [http://www.w3help.org/zh-cn/kb/006/](http://www.w3help.org/zh-cn/kb/006/)

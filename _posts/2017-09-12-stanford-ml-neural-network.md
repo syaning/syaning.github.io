@@ -4,6 +4,9 @@ title:  Stanford机器学习笔记——Neural Network
 date:   2017-09-12 16:55:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. Neural Network
 
 ![]({{site.baseurl}}/images/stanford-ml/neural-network-1.svg)

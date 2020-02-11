@@ -4,6 +4,9 @@ title:  koa的中间件机制
 date:   2015-11-02 12:00:00 +0800
 ---
 
+* TOC
+{:toc}
+
 > 本文基于[koa v1.1.1](https://github.com/koajs/koa/tree/1.1.1)。
 
 ### 一、简单示例

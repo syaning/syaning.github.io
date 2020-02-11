@@ -4,6 +4,9 @@ title:  Stanford机器学习笔记——SVM
 date:   2017-09-14 10:45:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ### 1. 优化目标
 
 SVM 即支持向量机（Support Vector Machines），是一种大间距分类算法。

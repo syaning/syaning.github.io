@@ -4,9 +4,8 @@ title:  Redux入门
 date:   2016-03-23 11:40:00 +0800
 ---
 
-### 参考资料
-
-- [Redux](http://redux.js.org/)
+* TOC
+{:toc}
 
 ### 1. Redux的核心组成
 
@@ -337,3 +336,7 @@ store.dispatch({ type: 'INCREASE_COUNTER' })
 store.dispatch({ type: 'INCREASE_COUNTER' })
 // hello
 ```
+
+### 6. 参考资料
+
+- [Redux](http://redux.js.org/)

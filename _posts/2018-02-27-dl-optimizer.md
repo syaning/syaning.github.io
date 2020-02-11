@@ -4,6 +4,9 @@ title:  DeepLearning笔记(4)——优化算法
 date:   2018-02-27 20:00:00 +0800
 ---
 
+* TOC
+{:toc}
+
 ## 1. BGD
 
 BGD即批量梯度下降（Batch Gradient Descent），是最原始的梯度下降形式，即每次使用所有训练样本来进行梯度下降。
