@@ -14,4 +14,4 @@ disqus_shortname:
 
 # Utils
 mathjax: true
-sponsor: true
+sponsor: false
