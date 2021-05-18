@@ -35,7 +35,7 @@ network:
         - 192.168.0.151/24
       gateway4: 192.168.0.1
       nameservers:
-        addresses: [192.168.0.1]
+        addresses: [8.8.8.8, 114.114.114.114]
 ```
 
 然后执行 `sudo netplan apply` 即可。
