@@ -35,7 +35,7 @@ network:
         - 192.168.0.151/24
       gateway4: 192.168.0.1
       nameservers:
-        addresses: [8.8.8.8, 114.114.114.114]
+        addresses: [114.114.114.114]
 ```
 
 然后执行 `sudo netplan apply` 即可。
@@ -89,8 +89,24 @@ sudo apt install privoxy
 
 # 3. 重启
 sudo systemctl restart privoxy
-
-# 4. 配置环境变量 ~/.bashrc 添加如下配置
-export HTTP_PROXY='http://localhost:8118'
-export HTTPS_PROXY='https://localhost:8118'
 ```
+
+以上配置是设置了全局代理，如果希望以 PAC 模式进行代理，可以参考 [gfwlist2privoxy](https://github.com/zfl9/gfwlist2privoxy)，此时上面第 2 步中不用添加 `forward-socks5  /   127.0.0.1:1080 .`。
+
+> 最好是不要用全局代理，而是设置为 PAC 模式，这样对于一些正常网站访问会比较快。
+
+然后在 `~/.bashrc` 添加：
+
+```shell
+function enable_ss() {
+  export HTTP_PROXY="http://127.0.0.1:8118"
+  export HTTPS_PROXY="http://127.0.0.1:8118"
+}
+
+function disable_ss() {
+  unset HTTP_PROXY
+  unset HTTPS_PROXY
+}
+```
+
+这样就可以通过 `enable_ss` 来开启代理，通过 `disable_ss` 来关闭代理。
