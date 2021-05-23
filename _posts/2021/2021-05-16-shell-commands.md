@@ -33,6 +33,26 @@ if test -t 1; then # if terminal
 fi
 ```
 
+## Generate Random String
+
+参考 [bash generate random alphanumeric string](https://gist.github.com/earthgecko/3089509).
+
+```shell
+# bash generate random 32 character alphanumeric string (upper and lowercase) and 
+NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+
+# bash generate random 32 character alphanumeric string (lowercase only)
+cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+
+# Random numbers in a range, more randomly distributed than $RANDOM which is not
+# very random in terms of distribution of numbers.
+
+# bash generate random number between 0 and 9
+cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1
+```
+
+如果报错 `head: illegal option -- -`，加环境变量 `LC_CTYPE=C` 即可。
+
 ## Crontab
 
 - [crontab guru](https://crontab.guru/) - The quick and simple editor for cron schedule expressions.
