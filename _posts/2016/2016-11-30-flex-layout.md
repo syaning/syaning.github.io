@@ -4,7 +4,7 @@ title:  Flex Layout 思维导图
 date:   2016-11-30 14:00:00 +0800
 ---
 
-![Flex Layout]({{site.baseurl}}/images/2016/11/30/flex-layout.svg)
+![Flex Layout]({{site.baseurl}}/assets/img/2016/11/30/flex-layout.svg)
 
 更多资料可参考：
 

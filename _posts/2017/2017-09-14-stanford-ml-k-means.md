@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——K-Means
-date:   2017-09-14 16:25:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——K-Means
+date:    2017-09-14 16:25:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -25,7 +26,7 @@ K-Means 是一种聚类算法，属于无监督学习。其算法非常简单。
 
 可视化过程如图：
 
-![]({{site.baseurl}}/images/2017/09/14/k-means-1.gif)
+![]({{site.baseurl}}/assets/img/2017/09/14/k-means-1.gif)
 
 ### 2. 优化目标
 
@@ -52,7 +53,7 @@ $$ \underset{c^{(1)},...,c^{(m)},\mu_1,...,\mu_K}{min}J(c^{(1)},...,c^{(m)},\mu_
 
 通常会从样本中随机选择 $$ K $$ 个作为初始的聚类中心。但是不同的初始化可能导致不同的结果。例如：
 
-![]({{site.baseurl}}/images/2017/09/14/k-means-2.svg)
+![]({{site.baseurl}}/assets/img/2017/09/14/k-means-2.svg)
 
 也就是说，有可能只是得到了局部最优，而没有得到全局最优。
 
@@ -67,4 +68,4 @@ $$ \underset{c^{(1)},...,c^{(m)},\mu_1,...,\mu_K}{min}J(c^{(1)},...,c^{(m)},\mu_
 
 “肘部法则”即通过 $$ K $$ 和 $$ J(c^{(1)},...,c^{(m)},\mu_1,...,\mu_K) $$ 的关系图，来找到明显的拐点（如下图左 $$ K=3 $$），但是有时候并没有明显的拐点（如下图右）。在实际场景中，很多情况下是根据聚类后的数据需求，来人工手动设置聚类数目。
 
-![]({{site.baseurl}}/images/2017/09/14/k-means-3.png)
+![]({{site.baseurl}}/assets/img/2017/09/14/k-means-3.png)

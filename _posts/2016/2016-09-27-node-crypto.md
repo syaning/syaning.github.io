@@ -41,7 +41,7 @@ console.log(hash)
 
 发送方使用MAC算法将消息和密钥进行计算，得到MAC值，然后将消息和MAC值发送出去。接收方拿到数据后，通过相同的MAC算法把消息和密钥进行计算，和收到的MAC值进行比较。如果一致，则说明消息在发送过程中没有被篡改。
 
-![MAC]({{site.baseurl}}/images/2016/09/27/mac.svg)
+![MAC]({{site.baseurl}}/assets/img/2016/09/27/mac.svg)
 
 > 图片来源：[https://upload.wikimedia.org/wikipedia/commons/0/08/MAC.svg](https://upload.wikimedia.org/wikipedia/commons/0/08/MAC.svg)
 
@@ -64,7 +64,7 @@ Cipher用于加密，Decipher用于解密。加密分为对称加密和非对称
 
 对称加密指的是加密和解密使用相同的密钥。例如A向B发消息，A使用密钥进行加密发送给B，B收到密文后使用相同的密钥进行解密从而得到消息明文。由于加密和解密使用的是相同的密钥，因此加入密钥泄露，那么别人截获了消息同样可以进行解密。
 
-![Symmetric key cryptography]({{site.baseurl}}/images/2016/09/27/symmetric.gif)
+![Symmetric key cryptography]({{site.baseurl}}/assets/img/2016/09/27/symmetric.gif)
 
 > 图片来源：[http://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10500_.htm](http://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10500_.htm)
 
@@ -88,7 +88,7 @@ console.log(decrypted)
 
 非对称加密指的是加密和解密使用不同的密钥。通常会有一对公钥和私钥，经过公钥加密的消息只有使用私钥才能解密，经过私钥加密的消息只有经过公钥才能解密。例如A向B发消息，A使用B的公钥加密消息发送出去，B收到密文后使用自己的私钥进行解密。由于B的私钥只有B拥有，因此如果别人截获了密文，也是无法解析的。
 
-![Asymmetric key cryptography]({{site.baseurl}}/images/2016/09/27/asymmetric.gif)
+![Asymmetric key cryptography]({{site.baseurl}}/assets/img/2016/09/27/asymmetric.gif)
 
 > 图片来源：[http://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10500_.htm](http://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10500_.htm)
 
@@ -128,7 +128,7 @@ console.log(decryptedData) // hello world
 
 Sign用于数字签名，Verify用于验证签名。数字签名原理如图：
 
-![Signature]({{site.baseurl}}/images/2016/09/27/signature.svg)
+![Signature]({{site.baseurl}}/assets/img/2016/09/27/signature.svg)
 
 > 图片来源：[https://upload.wikimedia.org/wikipedia/commons/2/2b/Digital_Signature_diagram.svg](https://upload.wikimedia.org/wikipedia/commons/2/2b/Digital_Signature_diagram.svg)
 

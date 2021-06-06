@@ -11,7 +11,7 @@ date:        2015-04-19 23:26:00 +0800
 
 盒模型基本结构如图所示：
 
-![]({{site.baseurl}}/images/2015/04/19/box-model.png)
+![]({{site.baseurl}}/assets/img/2015/04/19/box-model.png)
 
 > 图片来源于[http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html](http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html)
 
@@ -63,7 +63,7 @@ TBD
 
 这三个属性会相互作用，从而影响最重盒子的生成。规则如下：
 
-![]({{site.baseurl}}/images/2015/04/19/display-position-float.png)
+![]({{site.baseurl}}/assets/img/2015/04/19/display-position-float.png)
 
 <table>
     <thead>

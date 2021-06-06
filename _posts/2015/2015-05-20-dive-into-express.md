@@ -145,7 +145,7 @@ app.get('/users', function foo() {}, function bar() {});
 
 当请求到来时，处理过程是`app.handle` → `router.handle`，事实上，`app.handle`调用了`router.handle`，而`router.handle`的过程，则是依次对`router.stack`中存放的中间件进行调用。示例图如下：
 
-![handle request]({{site.baseurl}}/images/2015/05/20/handle.png)
+![handle request]({{site.baseurl}}/assets/img/2015/05/20/handle.png)
 
 `router.stack`中存的是一个个的`Layer`对象，用来管理中间件。如果`Layer`对象表示的是一个路由中间件，则其`route`属性会指向一个`Route`对象，而`route.stack`中存放的也是一个个的`Layer`对象，用来管理路由处理函数。
 
@@ -153,6 +153,6 @@ app.get('/users', function foo() {}, function bar() {});
 
 对于`router.stack`中的每个`Layer`对象，会先判断是否匹配请求路径，如果不匹配，则跳过，继续下一个。在路径匹配的情况下，如果是非路由中间件，则执行该中间件函数；如果是路由中间件，则继续判断该中间件的路由对象能够处理请求的HTTP方法，如果不能够处理，则跳过继续下一个，如果能够处理则对`route.stack`中的`Layer`对象（与请求的HTTP方法匹配的）依次执行。示例图如下：
 
-![handle layer]({{site.baseurl}}/images/2015/05/20/handle-layer.png)
+![handle layer]({{site.baseurl}}/assets/img/2015/05/20/handle-layer.png)
 
 在中间件函数执行之前，会先对参数进行预处理，即`router.process_params`。对于每个参数的预处理只会进行一次，但是由于每个layer执行之前都会有参数预处理的过程，因此有一个缓存系统，来记录哪些参数已经处理过了。

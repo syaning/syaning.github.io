@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——PCA
-date:   2017-09-15 17:50:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——PCA
+date:    2017-09-15 17:50:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -16,11 +17,11 @@ date:   2017-09-15 17:50:00 +0800
 
 例如将二维数据 $$ x_1,x_2 $$ 用一维数据 $$ u_1 $$ 来表示：
 
-![]({{site.baseurl}}/images/2017/09/15/pca-1.svg)
+![]({{site.baseurl}}/assets/img/2017/09/15/pca-1.svg)
 
 将三维数据映射到二维：
 
-![]({{site.baseurl}}/images/2017/09/15/pca-2.png)
+![]({{site.baseurl}}/assets/img/2017/09/15/pca-2.png)
 
 ### 2. PCA
 
@@ -85,7 +86,7 @@ $$ X_{approx}=ZU_{reduce}^T $$
 
 之所以用 $$ X_{approx} $$，是因为恢复后的数据会有一定的误差。如下图所示，左边为原始数据，右边为恢复后的数据。
 
-![]({{site.baseurl}}/images/2017/09/15/pca-3.svg)
+![]({{site.baseurl}}/assets/img/2017/09/15/pca-3.svg)
 
 ### 4. 选择主成分数量
 

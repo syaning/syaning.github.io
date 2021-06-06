@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(7)——经典网络
-date:   2018-03-15 23:30:00 +0800
+layout:  post
+title:   DeepLearning笔记(7)——经典网络
+date:    2018-03-15 23:30:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -13,7 +14,7 @@ date:   2018-03-15 23:30:00 +0800
 
 网络结构如图：
 
-![]({{site.baseurl}}/images/2018/03/15/7-1.png)
+![]({{site.baseurl}}/assets/img/2018/03/15/7-1.png)
 
 ## 2. AlexNet
 
@@ -21,7 +22,7 @@ date:   2018-03-15 23:30:00 +0800
 
 网络结构如图：
 
-![]({{site.baseurl}}/images/2018/03/15/7-2.png)
+![]({{site.baseurl}}/assets/img/2018/03/15/7-2.png)
 
 > 输入应该是 $227\times227\times3$，论文中的图片标注有误。
 
@@ -31,11 +32,11 @@ date:   2018-03-15 23:30:00 +0800
 
 VGG16网络结构如图：
 
-![]({{site.baseurl}}/images/2018/03/15/7-3.png)
+![]({{site.baseurl}}/assets/img/2018/03/15/7-3.png)
 
 下图是论文中的网络结构表示，其中D那一列为VGG16，E那一列为VGG19。
 
-![]({{site.baseurl}}/images/2018/03/15/7-4.png)
+![]({{site.baseurl}}/assets/img/2018/03/15/7-4.png)
 
 用Keras实现VGG16代码如下：
 
@@ -98,7 +99,7 @@ features = model.predict(x)
 print(decode_predictions(features))
 ```
 
-![]({{site.baseurl}}/images/2018/03/15/7-5.jpeg)
+![]({{site.baseurl}}/assets/img/2018/03/15/7-5.jpeg)
 
 输出：
 

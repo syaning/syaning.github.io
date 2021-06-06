@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(12)——风格迁移
-date:   2018-04-03 14:30:00 +0800
+layout:  post
+title:   DeepLearning笔记(12)——风格迁移
+date:    2018-04-03 14:30:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -9,7 +10,7 @@ date:   2018-04-03 14:30:00 +0800
 
 ## 1. 风格迁移
 
-![]({{site.baseurl}}/images/2018/04/03/12-1.png)
+![]({{site.baseurl}}/assets/img/2018/04/03/12-1.png)
 
 ## 2. 算法
 

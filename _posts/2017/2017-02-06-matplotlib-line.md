@@ -26,7 +26,7 @@ plt.ylabel('y')
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/06/line_1.png)
+![]({{site.baseurl}}/assets/img/2017/02/06/line_1.png)
 
 ### 2. 图例
 
@@ -45,7 +45,7 @@ plt.legend()
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/06/line_2.png)
+![]({{site.baseurl}}/assets/img/2017/02/06/line_2.png)
 
 `legend`方法可接受一个`loc`关键字参数来设定图例的位置，可取值为数字或字符串：
 
@@ -106,7 +106,7 @@ plt.plot(x, y2, c='#526922', ls='-.')
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/06/line_3.png)
+![]({{site.baseurl}}/assets/img/2017/02/06/line_3.png)
 
 ### 4. marker
 
@@ -158,7 +158,7 @@ plt.plot(x, y2, marker='*', ms=10)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/06/line_4.png)
+![]({{site.baseurl}}/assets/img/2017/02/06/line_4.png)
 
 另外，`marker`关键字参数可以和`color`以及`linestyle`这两个关键字参数合并为一个字符串。例如：
 
@@ -174,4 +174,4 @@ plt.plot(x, y2, 'g*:', ms=10)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/06/line_5.png)
+![]({{site.baseurl}}/assets/img/2017/02/06/line_5.png)

@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  InfluxDB+Grafana搭建监控系统
-date:   2018-08-10 00:30:00 +0800
+layout:  post
+title:   InfluxDB+Grafana搭建监控系统
+date:    2018-08-10 00:30:00 +0800
+mathjax: true
 ---
 
 InfluxDB是一个时序型数据库，主要用于存储时序型相关的数据，例如实时的温度、湿度，计算机的CPU使用率、内存使用率等。时序型数据的一些主要特点有：
@@ -90,12 +91,12 @@ $ influxdb
 
 接下来浏览器打开 localhost:3000，登录Grafana，首先配置数据源：
 
-![]({{site.baseurl}}/images/2018/08/10/datasource.png)
+![]({{site.baseurl}}/assets/img/2018/08/10/datasource.png)
 
 然后新建dashboard，配置图表：
 
-![]({{site.baseurl}}/images/2018/08/10/metrics.png)
+![]({{site.baseurl}}/assets/img/2018/08/10/metrics.png)
 
 然后就可以看到统计图了：
 
-![]({{site.baseurl}}/images/2018/08/10/grafana.png)
+![]({{site.baseurl}}/assets/img/2018/08/10/grafana.png)

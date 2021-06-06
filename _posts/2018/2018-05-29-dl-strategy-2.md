@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(19)——机器学习策略2
-date:   2018-05-29 18:50:00 +0800
+layout:  post
+title:   DeepLearning笔记(19)——机器学习策略2
+date:    2018-05-29 18:50:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -58,7 +59,7 @@ Human-Level Error ---
 
 即将已经训练好的模型的参数应用到新模型的训练上。因为很多低层次的特征是相对通用的，例如边缘检测等。通常的做法是将训练好的模型的输出层去掉，然后后面加上一层或多层网络结构接着训练。如图所示：
 
-![]({{site.baseurl}}/images/2018/05/29/19-1.png)
+![]({{site.baseurl}}/assets/img/2018/05/29/19-1.png)
 
 ## 5. 多任务学习
 
@@ -66,4 +67,4 @@ Human-Level Error ---
 
 ## 6. 端到端的深度学习
 
-![]({{site.baseurl}}/images/2018/05/29/19-2.png)
+![]({{site.baseurl}}/assets/img/2018/05/29/19-2.png)

@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(11)——人脸识别
-date:   2018-04-03 14:30:00 +0800
+layout:  post
+title:   DeepLearning笔记(11)——人脸识别
+date:    2018-04-03 14:30:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -30,7 +31,7 @@ $$d(x^{(1)},x^{(2)})=\mid\mid{f(x^{(1)})-f(x^{(2)})}\mid\mid^2$$
 
 ## 4. Triplet 损失
 
-![]({{site.baseurl}}/images/2018/04/03/11-1.png)
+![]({{site.baseurl}}/assets/img/2018/04/03/11-1.png)
 
 其中：
 
@@ -64,7 +65,7 @@ $$J=\sum_{i=1}^m\mathcal{L}(A^{(i)},P^{(i)},N^{(i)})$$
 
 也可以将人脸识别当做一个二分类的问题。
 
-![]({{site.baseurl}}/images/2018/04/03/11-2.png)
+![]({{site.baseurl}}/assets/img/2018/04/03/11-2.png)
 
 如图所示，两张图片 $x^{(i)},x^{(j)}$ 分别经过同一个卷积网络得到编码 $f(x^{(i)}),f(x^{(j)})$ （假设编码是128维的向量），然后令：
 

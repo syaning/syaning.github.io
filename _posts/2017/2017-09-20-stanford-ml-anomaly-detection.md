@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——异常检测
-date:   2017-09-20 14:55:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——异常检测
+date:    2017-09-20 14:55:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -19,7 +20,7 @@ $$ p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 
 图像如下：
 
-![]({{site.baseurl}}/images/2017/09/20/anomaly-detection-1.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/anomaly-detection-1.png)
 
 如果 $$ \mu=0,\sigma=1 $$，则为标准正态分布。
 
@@ -54,11 +55,11 @@ $$
 
 上面的方法是假设所有的特征都符合相对独立的正态分布。如图所示：
 
-![]({{site.baseurl}}/images/2017/09/20/anomaly-detection-2.svg)
+![]({{site.baseurl}}/assets/img/2017/09/20/anomaly-detection-2.svg)
 
 然而事实上，许多情况下，不同特征之间是有着一定的关系的，并不是完全独立，因此上面的方法不再适用。如下图所示：
 
-![]({{site.baseurl}}/images/2017/09/20/anomaly-detection-3.svg)
+![]({{site.baseurl}}/assets/img/2017/09/20/anomaly-detection-3.svg)
 
 如果按照特征相对独立的方式来检测异常，将会是红色的圈，那么检测不到红色的点为异常。然而实际上应该是绿色的圈，这样才能检测到红色的点为异常。
 

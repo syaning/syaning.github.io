@@ -421,7 +421,7 @@ promise.then(console.log, console.error);
 
 Promise的状态图如下：
 
-![]({{site.baseurl}}/images/2015/04/16/promise.png)
+![]({{site.baseurl}}/assets/img/2015/04/16/promise.png)
 > 图片来源于[https://mdn.mozillademos.org/files/8633/promises.png](https://mdn.mozillademos.org/files/8633/promises.png)
 
 Promise的常用方法有：

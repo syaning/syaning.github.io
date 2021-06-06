@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——Neural Network
-date:   2017-09-12 16:55:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——Neural Network
+date:    2017-09-12 16:55:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -9,7 +10,7 @@ date:   2017-09-12 16:55:00 +0800
 
 ### 1. Neural Network
 
-![]({{site.baseurl}}/images/2017/09/12/neural-network-1.svg)
+![]({{site.baseurl}}/assets/img/2017/09/12/neural-network-1.svg)
 
 - $$ a_i^{(j)}$$：第 $$j$$ 层的第 $$i$$ 个单元
 - $$ \Theta^{(j)} $$：第 $$j$$ 层到第 $$j+1$$ 层映射的权重矩阵
@@ -38,7 +39,7 @@ $$ J(\Theta)=-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}[y_k^{(i)}log(h_\Theta(x^{(
 
 假设只有一个样本 $$(x,y)$$ 的情况，神经网络如下：
 
-![]({{site.baseurl}}/images/2017/09/12/neural-network-2.svg)
+![]({{site.baseurl}}/assets/img/2017/09/12/neural-network-2.svg)
 
 在 forward propagation 阶段：
 
@@ -99,13 +100,13 @@ $$ \frac{\partial}{\partial\Theta_{ij}^{(l)}}J(\Theta)=\frac{\partial J(\Theta)}
 
 ### 4. 直观理解
 
-![]({{site.baseurl}}/images/2017/09/12/neural-network-3.svg)
+![]({{site.baseurl}}/assets/img/2017/09/12/neural-network-3.svg)
 
 在 forward propagation 阶段：
 
 $$ a_1^{(3)}=g(\Theta_{11}^{(2)}a_1^{(2)}+\Theta_{12}^{(2)}a_2^{(2)}) $$
 
-![]({{site.baseurl}}/images/2017/09/12/neural-network-4.svg)
+![]({{site.baseurl}}/assets/img/2017/09/12/neural-network-4.svg)
 
 在 backpropagation 阶段:
 

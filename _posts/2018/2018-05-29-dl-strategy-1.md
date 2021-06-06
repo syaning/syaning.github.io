@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(18)——机器学习策略1
-date:   2018-05-29 15:40:00 +0800
+layout:  post
+title:   DeepLearning笔记(18)——机器学习策略1
+date:    2018-05-29 15:40:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -227,7 +228,7 @@ $$
 
 ## 7. 人的表现
 
-![]({{site.baseurl}}/images/2018/05/29/18-1.png)
+![]({{site.baseurl}}/assets/img/2018/05/29/18-1.png)
 
 如图所示，在训练初期，模型的准确度可以很快的提高，在超过人的表现之后，增长缓慢。模型能达到的上限（理论最优）称为贝叶斯最优。
 
@@ -237,4 +238,4 @@ $$
 
 ## 8. 改善模型的表现
 
-![]({{site.baseurl}}/images/2018/05/29/18-2.png)
+![]({{site.baseurl}}/assets/img/2018/05/29/18-2.png)

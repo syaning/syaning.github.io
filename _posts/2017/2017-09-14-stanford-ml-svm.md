@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——SVM
-date:   2017-09-14 10:45:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——SVM
+date:    2017-09-14 10:45:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -24,7 +25,7 @@ $$ Cost(x,y)=-ylog\frac{1}{1+e^{-\theta^Tx}}-(1-y)log(1-\frac{1}{1+e^{-\theta^Tx
 
 函数图像如下：
 
-![]({{site.baseurl}}/images/2017/09/14/svm-1.png)
+![]({{site.baseurl}}/assets/img/2017/09/14/svm-1.png)
 
 回顾在逻辑回归中：
 
@@ -33,7 +34,7 @@ $$ Cost(x,y)=-ylog\frac{1}{1+e^{-\theta^Tx}}-(1-y)log(1-\frac{1}{1+e^{-\theta^Tx
 
 现在我们用另一个图像来近似拟合上面的损失函数，来得到一个更加严格的约束：
 
-![]({{site.baseurl}}/images/2017/09/14/svm-2.png)
+![]({{site.baseurl}}/assets/img/2017/09/14/svm-2.png)
 
 因此：
 
@@ -56,7 +57,7 @@ $$ \underset{\theta}{min}\frac{1}{2}\sum_{j=1}^{n}\theta_j^2 $$
 
 SVM 能够很好地进行大间距分类。如图：
 
-![]({{site.baseurl}}/images/2017/09/14/svm-3.svg)
+![]({{site.baseurl}}/assets/img/2017/09/14/svm-3.svg)
 
 图中，三条线都能够将两类分开，但是很明显，实线比另外两条虚线划分的更好。因为两个类别的样本到实线的距离相对较大，而到虚线的距离相对较小，因此容易误判。
 
@@ -88,7 +89,7 @@ $$ f_i=similarity(x,l^{(i)})=e^{-\frac{\Vert{x-l^{(i)}\Vert^2}}{2\sigma^2}}=e^{-
 
 下面是当 $$ l^{(1)}=\left[\begin{array}{}3 \\ 5 \\\end{array}\right] $$ 时，$$ f_1 $$ 的图像：
 
-![]({{site.baseurl}}/images/2017/09/14/svm-4.png)
+![]({{site.baseurl}}/assets/img/2017/09/14/svm-4.png)
 
 在得到这些新的特征后，我们对这些新的特征使用 SVM。
 

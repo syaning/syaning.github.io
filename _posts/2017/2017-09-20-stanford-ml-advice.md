@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——机器学习建议
-date:   2017-09-20 00:25:00 +0800
+layout:  post
+title:   Stanford机器学习笔记——机器学习建议
+date:    2017-09-20 00:25:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -32,7 +33,7 @@ $$
 
 bias 为偏差，variance 为方差。下图：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-1.svg)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-1.svg)
 
 - 左图为欠拟合，会导致偏差很大
 - 中间图为刚好拟合
@@ -42,7 +43,7 @@ bias 为偏差，variance 为方差。下图：
 
 下面是随着多项式次数的变化，$$ J(\theta) $$ 的变化情况：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-2.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-2.png)
 
 最左边是欠拟合状态，因此训练集和验证集的误差都很大；右边是过拟合状态，训练集的误差很小，而验证集的误差很大。
 
@@ -55,21 +56,21 @@ bias 为偏差，variance 为方差。下图：
 
 图像如下：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-3.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-3.png)
 
 （3）样本数
 
 在样本数很小的情况下，模型很容易就拟合的很好，因此训练集误差很小，但是由于这样很难泛化，因此交叉验证集误差很大。随着样本数逐渐增多，训练集误差逐渐增大，交叉验证误差也逐渐减小。如图所示：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-4.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-4.png)
 
 在欠拟合的情况下，随着样本数的增加，训练集和交叉验证集的误差都会相对较大，并且训练集误差会趋近于交叉验证集误差。在这种情况下，随着样本数增加，交叉验证集的误差会逐渐平缓。因此在欠拟合情况下，增加样本数并不能解决问题。如图所示：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-5.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-5.png)
 
 在过拟合的情况下，随着样本数增加，训练集误差虽然会增加，但是一直处于相对较小的状态，交叉验证集误差会逐渐下降，但是误差会相对较大。在这种情况下，如果继续增加样本数，交叉验证集误差会继续减小。因此在过拟合情况下，增加样本数是可以在一定程度上解决问题的。如图所示：
 
-![]({{site.baseurl}}/images/2017/09/20/advice-6.png)
+![]({{site.baseurl}}/assets/img/2017/09/20/advice-6.png)
 
 ### 3. 偏斜类
 

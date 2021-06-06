@@ -18,7 +18,7 @@ plt.bar(range(len(data)), data)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_1.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_1.png)
 
 `plt.bar`函数签名为：
 
@@ -42,7 +42,7 @@ plt.bar([0.3, 1.7, 4, 6, 7], data, width=0.6, bottom=[10, 0, 5, 0, 5])
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_2.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_2.png)
 
 ### 2. 设置柱体样式
 
@@ -59,7 +59,7 @@ plt.bar(range(len(data)), data, fc='g')
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_3.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_3.png)
 
 通过`color`关键字参数 可以一次性设置多个颜色，例如：
 
@@ -72,7 +72,7 @@ plt.bar(range(len(data)), data, color='rgb') # or `color=['r', 'g', 'b']`
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_4.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_4.png)
 
 （2）描边
 
@@ -93,7 +93,7 @@ plt.bar(range(len(data)), data, ec='r', ls='--', lw=2)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_5.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_5.png)
 
 （3）填充
 
@@ -108,7 +108,7 @@ plt.bar(range(len(data)), data, ec='k', lw=1, hatch='o')
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_6.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_6.png)
 
 ### 3. 设置tick label
 
@@ -122,7 +122,7 @@ plt.bar(range(len(data)), data, tick_label=labels)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_7.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_7.png)
 
 ### 4. 堆叠柱状图
 
@@ -143,7 +143,7 @@ plt.legend()
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_8.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_8.png)
 
 ### 5. 并列柱状图
 
@@ -170,7 +170,7 @@ plt.legend()
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_9.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_9.png)
 
 ### 6. 条形图
 
@@ -185,7 +185,7 @@ plt.barh(range(len(data)), data)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_10.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_10.png)
 
 `plt.barh`方法的签名为：
 
@@ -209,4 +209,4 @@ plt.barh(range(len(b)), -b)
 plt.show()
 ```
 
-![]({{site.baseurl}}/images/2017/02/07/bar_11.png)
+![]({{site.baseurl}}/assets/img/2017/02/07/bar_11.png)

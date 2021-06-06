@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  DeepLearning笔记(10)——对象检测
-date:   2018-03-25 22:45:00 +0800
+layout:  post
+title:   DeepLearning笔记(10)——对象检测
+date:    2018-03-25 22:45:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -9,7 +10,7 @@ date:   2018-03-25 22:45:00 +0800
 
 ## 1. 目标定位
 
-![]({{site.baseurl}}/images/2018/03/25/10-1.jpg)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-1.jpg)
 
 - 图片左上角为$(0,0)$，图片右下角为$(1,1)$
 - 目标中心点为$(b_x,b_y)$，宽度为$b_w$，高度为$b_h$
@@ -82,11 +83,11 @@ $$
 
 为了在卷积网络中使用滑动窗口，首先要将全连接层转换为卷积层。如图所示：
 
-![]({{site.baseurl}}/images/2018/03/25/10-2.png)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-2.png)
 
 在应用滑动窗口的过程中，不是每个窗口单独去计算的，而是一次性计算多个窗口，这样许多计算都是可以共享的，如下图所示：
 
-![]({{site.baseurl}}/images/2018/03/25/10-3.svg)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-3.svg)
 
 上半部分是针对一个窗口的计算，下面是同时计算了四个窗口，每个窗口大小为 $14\times14$。因此只需要把图片整体计算一遍就可以了。
 
@@ -98,7 +99,7 @@ $$
 
 论文参考[You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)。
 
-![]({{site.baseurl}}/images/2018/03/25/10-4.png)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-4.png)
 
 如图所示，将图片分成一个个网格，对每个格子应用目标定位算法。针对每一个格子，其标签形式都是：
 
@@ -121,7 +122,7 @@ $$
 
 IOU（Intersection Over Union）即交并比，即计算两个边界框的交集和并集之比，如图所示：
 
-![]({{site.baseurl}}/images/2018/03/25/10-5.svg)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-5.svg)
 
 对检测出的边界框和实际的边界框求IOU，一般认为大于等于0.5的时候，检测是正确的。
 
@@ -129,7 +130,7 @@ IOU（Intersection Over Union）即交并比，即计算两个边界框的交集
 
 缩写NMS，即非极大值抑制。在进行目标检测的时候，可能会对同一个目标检测多次，如图所示：
 
-![]({{site.baseurl}}/images/2018/03/25/10-6.png)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-6.png)
 
 该算法用于保证对同一只对象只检测一次。算法流程是：
 
@@ -141,11 +142,11 @@ IOU（Intersection Over Union）即交并比，即计算两个边界框的交集
 
 在上面介绍的算法中，一个网格只能检测出一个对象，但是有些情况下，可能多个对象都会落到同一个网格中，如图所示：
 
-![]({{site.baseurl}}/images/2018/03/25/10-7.png)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-7.png)
 
 预先定义一些 anchor box 的形状，例如：
 
-![]({{site.baseurl}}/images/2018/03/25/10-8.png)
+![]({{site.baseurl}}/assets/img/2018/03/25/10-8.png)
 
 然后
 

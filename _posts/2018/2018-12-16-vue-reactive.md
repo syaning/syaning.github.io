@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  理解Vue响应式原理
-date:   2018-12-16 23:00:00 +0800
+layout:  post
+title:   理解Vue响应式原理
+date:    2018-12-16 23:00:00 +0800
+mathjax: true
 ---
 
 * TOC
@@ -195,7 +196,7 @@ get() {
 
 用图示例如下：
 
-![]({{site.baseurl}}/images/2018/12/16/reactive-1.svg)
+![]({{site.baseurl}}/assets/img/2018/12/16/reactive-1.svg)
 
 ## 二、功能增强
 
@@ -298,7 +299,7 @@ vm.user = { password: 'admin' }
 
 此时示意图如下：
 
-![]({{site.baseurl}}/images/2018/12/16/reactive-2.svg)
+![]({{site.baseurl}}/assets/img/2018/12/16/reactive-2.svg)
 
 ### 2. Watcher支持函数
 
@@ -349,7 +350,7 @@ vm.height = 5
 
 示意图如下：
 
-![]({{site.baseurl}}/images/2018/12/16/reactive-3.svg)
+![]({{site.baseurl}}/assets/img/2018/12/16/reactive-3.svg)
 
 ### 3. 支持watch数组
 
