@@ -26,6 +26,7 @@ date:   2021-05-29 14:30:00 +0800
 
 ## 常用插件
 
+- ConvertToUTF8
 - Dockerfile Syntax Highlighting
 - EditorConfig
 - Emmet
