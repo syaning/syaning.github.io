@@ -45,5 +45,17 @@ date:   2021-05-29 14:30:00 +0800
 }
 ```
 - LESS
-- Pretty JSON
+- Pretty JSON，配置参考如下：
+```js
+{
+    "brace_newline": false,
+    "bracket_newline": false
+}
+```
+配置快捷键绑定：
+```js
+[
+	{ "keys": ["super+ctrl+j"], "command": "pretty_json" }
+]
+```
 - SCSS
