@@ -34,7 +34,7 @@ export default {
       { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
     ],
     footer: {
-      copyright: `Copy &copy; 2013~${new Date().getFullYear()} Alex Sun`
+      copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`
     },
     outline: [2, 3]
   },
