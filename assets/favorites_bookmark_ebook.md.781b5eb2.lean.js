@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as a,a as t}from"./app.9c5b3fde.js";const d=JSON.parse('{"title":"\u7535\u5B50\u4E66","description":"","frontmatter":{},"headers":[],"relativePath":"favorites/bookmark/ebook.md"}'),o={name:"favorites/bookmark/ebook.md"},l=t("",2),n=[l];function i(s,f,h,b,_,c){return r(),a("div",null,n)}const p=e(o,[["render",i]]);export{d as __pageData,p as default};

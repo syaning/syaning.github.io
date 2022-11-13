@@ -1,0 +1,1 @@
+import{_ as e,o as n,c as a,a as s}from"./app.b589b59a.js";const h=JSON.parse('{"title":"Event","description":"","frontmatter":{},"headers":[],"relativePath":"learn/kubernetes/resources/event.md"}'),t={name:"learn/kubernetes/resources/event.md"},c=s("",4),l=[c];function o(p,i,r,d,_,u){return n(),a("div",null,l)}const v=e(t,[["render",o]]);export{h as __pageData,v as default};
