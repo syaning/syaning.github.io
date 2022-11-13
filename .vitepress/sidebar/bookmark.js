@@ -3,7 +3,7 @@ import { loadItems } from './helper'
 export default {
   '/favorites/bookmark/': [
     {
-      text: '书签',
+      text: 'Bookmarks',
       items: loadItems([
         '/favorites/bookmark/ebook',
         '/favorites/bookmark/resources',

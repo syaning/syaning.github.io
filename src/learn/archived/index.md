@@ -1,4 +1,8 @@
-# 已归档
+# Archived
+
+::: tip
+下列项目或文档已经归档，不再更新。
+:::
 
 - [DeepLearning](https://github.com/syaning/deeplearning-notes)
 - [Standord Machine Learning](https://github.com/syaning/stanford-machine-learning)
