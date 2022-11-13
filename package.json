@@ -1,0 +1,20 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "My notes.",
+  "main": "index.js",
+  "repository": "https://github.com/syaning/notes.git",
+  "author": "Alex Sun",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "NODE_OPTIONS=--max_old_space_size=8192 vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.27",
+    "vue": "^3.2.41",
+    "gray-matter": "^4.0.3",
+    "markdown-it-mathjax3": "^4.3.2"
+  }
+}
