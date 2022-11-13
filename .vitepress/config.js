@@ -23,14 +23,18 @@ const nav = [{
 }]
 
 export default {
-  title: 'Alex Sun\'s Homepage',
+  title: '🌵',
+  titleTemplate: 'Alex Sun\'s Homepage',
+  description: 'Alex Sun\'s homepage, blog and notes.',
   base: '/',
   srcDir: 'src',
   lastUpdated: false,
+  head: [
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     nav,
     sidebar,
-    siteTitle: '🌵',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
     ],
