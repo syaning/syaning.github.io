@@ -10,7 +10,7 @@ function extractTitle(f) {
 /**
  * Load all items from directory.
  *
- * @param dir directory from `src` child. e.g. /learn/leetcode
+ * @param dir directory from `src` child. e.g. /notes/leetcode
  */
 export function loadAllItems(dir) {
   const realDir = path.join('./src', dir)

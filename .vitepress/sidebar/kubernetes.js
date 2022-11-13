@@ -1,80 +1,80 @@
 import { loadItems } from './helper'
 
 export default {
-  '/learn/kubernetes/': [{
+  '/notes/kubernetes/': [{
     text: 'Resources',
     items: [{
       text: '集群信息',
       items: loadItems([
-        '/learn/kubernetes/resources/node',
-        '/learn/kubernetes/resources/namespace',
-        '/learn/kubernetes/resources/component-status',
-        '/learn/kubernetes/resources/event',
+        '/notes/kubernetes/resources/node',
+        '/notes/kubernetes/resources/namespace',
+        '/notes/kubernetes/resources/component-status',
+        '/notes/kubernetes/resources/event',
       ])
     }, {
       text: 'Controller',
       items: loadItems([
-        '/learn/kubernetes/resources/replica-set',
-        '/learn/kubernetes/resources/deployment',
-        '/learn/kubernetes/resources/stateful-set',
-        '/learn/kubernetes/resources/daemon-set',
+        '/notes/kubernetes/resources/replica-set',
+        '/notes/kubernetes/resources/deployment',
+        '/notes/kubernetes/resources/stateful-set',
+        '/notes/kubernetes/resources/daemon-set',
       ])
     }, {
       text: 'Pod',
       items: loadItems([
-        '/learn/kubernetes/resources/pod',
-        '/learn/kubernetes/resources/horizontal-pod-autoscaler',
+        '/notes/kubernetes/resources/pod',
+        '/notes/kubernetes/resources/horizontal-pod-autoscaler',
       ])
     }, {
       text: '服务',
       items: loadItems([
-        '/learn/kubernetes/resources/service',
-        '/learn/kubernetes/resources/endpoints',
-        '/learn/kubernetes/resources/ingress',
+        '/notes/kubernetes/resources/service',
+        '/notes/kubernetes/resources/endpoints',
+        '/notes/kubernetes/resources/ingress',
       ])
     }, {
       text: '配置',
       items: loadItems([
-        '/learn/kubernetes/resources/configmap',
-        '/learn/kubernetes/resources/secret',
+        '/notes/kubernetes/resources/configmap',
+        '/notes/kubernetes/resources/secret',
       ])
     }, {
       text: '存储',
       items: loadItems([
-        '/learn/kubernetes/resources/persistent-volume',
-        '/learn/kubernetes/resources/persistent-volume-claim',
-        '/learn/kubernetes/resources/storage-class',
+        '/notes/kubernetes/resources/persistent-volume',
+        '/notes/kubernetes/resources/persistent-volume-claim',
+        '/notes/kubernetes/resources/storage-class',
       ])
     }, {
       text: '作业',
       items: loadItems([
-        '/learn/kubernetes/resources/job',
-        '/learn/kubernetes/resources/cronjob',
+        '/notes/kubernetes/resources/job',
+        '/notes/kubernetes/resources/cronjob',
       ])
     }, {
       text: '资源管理',
       items: loadItems([
-        '/learn/kubernetes/resources/resource-quota',
-        '/learn/kubernetes/resources/pod-disruption-budget',
+        '/notes/kubernetes/resources/resource-quota',
+        '/notes/kubernetes/resources/pod-disruption-budget',
       ])
     }, {
       text: '权限管理',
       items: loadItems([
-        '/learn/kubernetes/resources/service-account',
-        '/learn/kubernetes/resources/role',
-        '/learn/kubernetes/resources/cluster-role',
-        '/learn/kubernetes/resources/role-binding',
-        '/learn/kubernetes/resources/cluster-role-binding',
+        '/notes/kubernetes/resources/service-account',
+        '/notes/kubernetes/resources/role',
+        '/notes/kubernetes/resources/cluster-role',
+        '/notes/kubernetes/resources/role-binding',
+        '/notes/kubernetes/resources/cluster-role-binding',
       ])
     }]
   }, {
     text: 'Guides',
     items: loadItems([
-      '/learn/kubernetes/guides/components',
-      '/learn/kubernetes/guides/api',
-      '/learn/kubernetes/guides/pod-schedule',
-      '/learn/kubernetes/guides/rbac',
-      '/learn/kubernetes/guides/gpu',
+      '/notes/kubernetes/guides/components',
+      '/notes/kubernetes/guides/api',
+      '/notes/kubernetes/guides/pod-schedule',
+      '/notes/kubernetes/guides/rbac',
+      '/notes/kubernetes/guides/gpu',
     ])
   }]
 }

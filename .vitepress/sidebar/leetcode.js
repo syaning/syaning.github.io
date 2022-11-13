@@ -1,10 +1,10 @@
 import { loadAllItems } from './helper'
 
 export default {
-  '/learn/leetcode/': [
+  '/notes/leetcode/': [
     {
       text: 'Leetcode',
-      items: loadAllItems('/learn/leetcode')
+      items: loadAllItems('/notes/leetcode')
     }
   ]
 }

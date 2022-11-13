@@ -10,9 +10,9 @@ const nav = [{
 }, {
   text: '📒 Notes',
   items: [
-    { text: 'Kubernetes', link: '/learn/kubernetes/resources/node' },
-    { text: 'Leetcode', link: '/learn/leetcode/1' },
-    { text: 'Archived', link: '/learn/archived/' }
+    { text: 'Kubernetes', link: '/notes/kubernetes/resources/node' },
+    { text: 'Leetcode', link: '/notes/leetcode/1' },
+    { text: 'Archived', link: '/notes/archived/' }
   ]
 }, {
   text: '❤️ Favorites',
