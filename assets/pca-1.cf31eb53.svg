@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="218 164.5 298 295.5" width="298pt" height="295.5pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-15 03:49:41 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="STIXGeneral" font-size="16" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="8" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-2e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 8</title>
+    <g>
+      <title>Layer 1</title>
+      <line x1="218.5" y1="322.65" x2="491.75625" y2="322.65" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="355.5" y1="459.5" x2="355.5" y2="190.4" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="250.5" y1="428.0156" x2="463.01527" y2="215.50036" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <ellipse cx="439.5" cy="232.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="439.5" cy="232.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="431" cy="257.25" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="431" cy="257.25" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="409.5" cy="262.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="409.5" cy="262.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="439.5" cy="247.25" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="439.5" cy="247.25" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="310.5" cy="356.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="310.5" cy="356.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="302.5" cy="386.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="302.5" cy="386.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="281" cy="389.05" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="281" cy="389.05" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="338.5" cy="332.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="338.5" cy="332.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <ellipse cx="378.5" cy="308.75" rx="4.500007" ry="4.7500076" fill="#f26077"/>
+      <ellipse cx="378.5" cy="308.75" rx="4.500007" ry="4.7500076" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <text transform="translate(499 320.25)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" x="7.552" y="21" textLength="4">1</tspan>
+      </text>
+      <text transform="translate(332.5 169.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" x="7.552" y="21" textLength="4">2</tspan>
+      </text>
+      <text transform="translate(475.0156 196.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x="0" y="17" textLength="8">u</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" x="8" y="21" textLength="4">1</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

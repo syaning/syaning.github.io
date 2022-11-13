@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="2283.5 -619.4547 994.5 165.5694" width="994.5pt" height="165.5694pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2018-02-25 09:48:20 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="STIXGeneral" font-size="16" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="10" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1600" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 17</title>
+    <rect fill="white" width="994.5" height="165.5694"/>
+    <g>
+      <title>Layer 1</title>
+      <circle cx="2399" cy="-559.5" r="15.000024" fill="white"/>
+      <circle cx="2399" cy="-559.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2399" cy="-516" r="15.000024" fill="white"/>
+      <circle cx="2399" cy="-516" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2399" cy="-472.5" r="15.000024" fill="white"/>
+      <circle cx="2399" cy="-472.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2399" cy="-603" r="15.000024" fill="white"/>
+      <circle cx="2399" cy="-603" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2506.5" cy="-559.5" r="15.000024" fill="white"/>
+      <circle cx="2506.5" cy="-559.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2506.5" cy="-516" r="15.000024" fill="white"/>
+      <circle cx="2506.5" cy="-516" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2506.5" cy="-472.5" r="15.000024" fill="white"/>
+      <circle cx="2506.5" cy="-472.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2506.5" cy="-603" r="15.000024" fill="white"/>
+      <circle cx="2506.5" cy="-603" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2614" cy="-559.5" r="15.000024" fill="white"/>
+      <circle cx="2614" cy="-559.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2614" cy="-516" r="15.000024" fill="white"/>
+      <circle cx="2614" cy="-516" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2614" cy="-472.5" r="15.000024" fill="white"/>
+      <circle cx="2614" cy="-472.5" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2614" cy="-603" r="15.000024" fill="white"/>
+      <circle cx="2614" cy="-603" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(2288.5 -588)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <text transform="translate(2288.5 -550)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <text transform="translate(2288.5 -512)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <circle cx="2720.5" cy="-536" r="15.000024" fill="white"/>
+      <circle cx="2720.5" cy="-536" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line x1="2306.5" y1="-571.5" x2="2374.8914" y2="-600.6215" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2307.5" y1="-570.5" x2="2374.2008" y2="-560.90904" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2308.5" y1="-569.5" x2="2375.9476" y2="-521.2593" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2309.5" y1="-568.5" x2="2378.0087" y2="-478.38123" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2308.5" y1="-534.5" x2="2377.6486" y2="-596.8693" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2309.5" y1="-533.5" x2="2374.653" y2="-556.2379" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2310.5" y1="-532.5" x2="2374.3546" y2="-517.7309" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2311.5" y1="-531.5" x2="2376.4247" y2="-476.8737" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2306.5" y1="-496.5" x2="2380.06" y2="-594.58" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2307.5" y1="-495.5" x2="2376.4068" y2="-553.14754" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2308.5" y1="-494.5" x2="2374.462" y2="-512.84707" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2309.5" y1="-493.5" x2="2374.5405" y2="-473.42037" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2414" y1="-600" x2="2481.1133" y2="-602.17665" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2415" y1="-599" x2="2480.9757" y2="-560.0345" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2416" y1="-598" x2="2482.9145" y2="-522.89193" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2417" y1="-597" x2="2484.5478" y2="-480.0724" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2416" y1="-555.5" x2="2481.0015" y2="-597.1063" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2417" y1="-554.5" x2="2479.6002" y2="-554.9317" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2418" y1="-553.5" x2="2480.758" y2="-520.1461" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2419" y1="-552.5" x2="2483.0004" y2="-478.9676" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2416.5" y1="-515.5" x2="2483.888" y2="-593.9343" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2417.5" y1="-514.5" x2="2480.3088" y2="-548.75936" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2418.5" y1="-513.5" x2="2479.601" y2="-514.3606" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2419.5" y1="-512.5" x2="2480.527" y2="-475.6204" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2415.8397" y1="-470.5" x2="2486.366" y2="-591.88344" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2416.8397" y1="-469.5" x2="2482.9567" y2="-544.5706" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2417.8397" y1="-468.5" x2="2481.1688" y2="-509.15204" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2418.8397" y1="-467.5" x2="2479.109" y2="-470.07707" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2523" y1="-602" x2="2589.4414" y2="-603.2563" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2524" y1="-601" x2="2589.9757" y2="-562.0345" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2525" y1="-600" x2="2591.9145" y2="-524.89193" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2526" y1="-599" x2="2593.5478" y2="-482.0724" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2525" y1="-557.5" x2="2589.3157" y2="-598.1252" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2526" y1="-556.5" x2="2588.6002" y2="-556.9317" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2527" y1="-555.5" x2="2589.758" y2="-522.1461" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2528" y1="-554.5" x2="2592.0004" y2="-480.9676" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2525.5" y1="-517.5" x2="2592.888" y2="-595.9343" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2526.5" y1="-516.5" x2="2589.3088" y2="-550.75936" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2527.5" y1="-515.5" x2="2588.601" y2="-516.3606" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2528.5" y1="-514.5" x2="2589.527" y2="-477.6204" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2524.8397" y1="-472.5" x2="2595.366" y2="-593.88344" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2525.8397" y1="-471.5" x2="2591.9567" y2="-546.5706" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2526.8397" y1="-470.5" x2="2590.1688" y2="-511.15204" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2527.8397" y1="-469.5" x2="2588.109" y2="-472.07707" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2629.5" y1="-600" x2="2697.522" y2="-540.9876" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2630.5" y1="-559.5" x2="2696.6395" y2="-536.7235" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2631.5" y1="-515.5" x2="2697.3418" y2="-530.3253" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2631.5" y1="-471.5" x2="2700.21" y2="-525.3903" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="2940.5" cy="-558.25" r="15.000024" fill="white"/>
+      <circle cx="2940.5" cy="-558.25" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2940.5" cy="-471.25" r="15.000024" fill="white"/>
+      <circle cx="2940.5" cy="-471.25" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="2940.5" cy="-601.75" r="15.000024" fill="white"/>
+      <path d="M 2951.1066 -612.3566 C 2956.9645 -606.4987 2956.9645 -597.0013 2951.1066 -591.1434 C 2945.2487 -585.2855 2935.7513 -585.2855 2929.8934 -591.1434 C 2924.0355 -597.0013 2924.0355 -606.4987 2929.8934 -612.3566 C 2935.7513 -618.2145 2945.2487 -618.2145 2951.1066 -612.3566" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+      <circle cx="3048" cy="-558.25" r="15.000024" fill="white"/>
+      <circle cx="3048" cy="-558.25" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="3048" cy="-514.75" r="15.000024" fill="white"/>
+      <circle cx="3048" cy="-514.75" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="3048" cy="-471.25" r="15.000024" fill="white"/>
+      <path d="M 3058.6066 -481.8566 C 3064.4645 -475.99873 3064.4645 -466.50127 3058.6066 -460.6434 C 3052.7487 -454.7855 3043.2513 -454.7855 3037.3934 -460.6434 C 3031.5355 -466.50127 3031.5355 -475.99873 3037.3934 -481.8566 C 3043.2513 -487.7145 3052.7487 -487.7145 3058.6066 -481.8566" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+      <circle cx="3048" cy="-601.75" r="15.000024" fill="white"/>
+      <path d="M 3058.6066 -612.3566 C 3064.4645 -606.4987 3064.4645 -597.0013 3058.6066 -591.1434 C 3052.7487 -585.2855 3043.2513 -585.2855 3037.3934 -591.1434 C 3031.5355 -597.0013 3031.5355 -606.4987 3037.3934 -612.3566 C 3043.2513 -618.2145 3052.7487 -618.2145 3058.6066 -612.3566" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+      <circle cx="3155.5" cy="-558.25" r="15.000024" fill="white"/>
+      <circle cx="3155.5" cy="-558.25" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="3155.5" cy="-514.75" r="15.000024" fill="white"/>
+      <path d="M 3166.1066 -525.3566 C 3171.9645 -519.4987 3171.9645 -510.0013 3166.1066 -504.1434 C 3160.2487 -498.2855 3150.7513 -498.2855 3144.8934 -504.1434 C 3139.0355 -510.0013 3139.0355 -519.4987 3144.8934 -525.3566 C 3150.7513 -531.2145 3160.2487 -531.2145 3166.1066 -525.3566" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+      <circle cx="3155.5" cy="-471.25" r="15.000024" fill="white"/>
+      <circle cx="3155.5" cy="-471.25" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <circle cx="3155.5" cy="-601.75" r="15.000024" fill="white"/>
+      <path d="M 3166.1066 -612.3566 C 3171.9645 -606.4987 3171.9645 -597.0013 3166.1066 -591.1434 C 3160.2487 -585.2855 3150.7513 -585.2855 3144.8934 -591.1434 C 3139.0355 -597.0013 3139.0355 -606.4987 3144.8934 -612.3566 C 3150.7513 -618.2145 3160.2487 -618.2145 3166.1066 -612.3566" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+      <text transform="translate(2830 -586.75)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <text transform="translate(2830 -548.75)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <text transform="translate(2830 -510.75)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x=".448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="10" font-style="italic" font-weight="500" x="7.552" y="23" textLength="5">1</tspan>
+      </text>
+      <circle cx="3262" cy="-534.75" r="15.000024" fill="white"/>
+      <circle cx="3262" cy="-534.75" r="15.000024" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line x1="2849" y1="-569.25" x2="2915.7008" y2="-559.65904" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2851" y1="-567.25" x2="2919.5087" y2="-477.13123" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2851" y1="-532.25" x2="2916.153" y2="-554.9879" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2853" y1="-530.25" x2="2917.9247" y2="-475.6237" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2849" y1="-494.25" x2="2917.907" y2="-551.89754" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2851" y1="-492.25" x2="2916.0405" y2="-472.17037" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2959.5" y1="-552.25" x2="3022.258" y2="-518.8961" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2957.3397" y1="-469.25" x2="3022.5518" y2="-509.08887" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2958.3397" y1="-468.25" x2="3024.4567" y2="-543.3206" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3068" y1="-515.25" x2="3130.809" y2="-549.50936" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3070" y1="-513.25" x2="3131.027" y2="-476.3704" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3172" y1="-558.25" x2="3238.1395" y2="-535.4735" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3173" y1="-470.25" x2="3241.71" y2="-524.1403" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="2959.5" y1="-552.25" x2="3022.243" y2="-549.9727" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3065.1364" y1="-552.95455" x2="3130.7364" y2="-553.0928" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="3066.2727" y1="-551.8182" x2="3132.8414" y2="-478.57615" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="2941.3397" cy="-516.5" r="15.000024" fill="white"/>
+      <path d="M 2951.9463 -527.1066 C 2957.804 -521.2487 2957.804 -511.7513 2951.9463 -505.8934 C 2946.0884 -500.0355 2936.591 -500.0355 2930.733 -505.8934 C 2924.8752 -511.7513 2924.8752 -521.2487 2930.733 -527.1066 C 2936.591 -532.9645 2946.0884 -532.9645 2951.9463 -527.1066" stroke="#f89109" stroke-opacity=".5983715" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="1,4"/>
+    </g>
+  </g>
+</svg>

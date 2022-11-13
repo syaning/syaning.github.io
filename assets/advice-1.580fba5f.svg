@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="972.7 -1147.2 670.3 180.30298" width="670.3pt" height="180.30298pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-19 09:01:14 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 10</title>
+    <g>
+      <title>Layer 1</title>
+      <line x1="986" y1="-984.2188" x2="1131.9926" y2="-984.2188" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="986" y1="-984.2188" x2="986" y2="-1121.1" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="999.5" cy="-1004.7188" r="5.000008" fill="#ff4040"/>
+      <circle cx="999.5" cy="-1004.7188" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1014.5" cy="-1035.2188" r="5.000008" fill="#ff4040"/>
+      <circle cx="1014.5" cy="-1035.2188" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1038" cy="-1070.2188" r="5.000008" fill="#ff4040"/>
+      <circle cx="1038" cy="-1070.2188" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1081" cy="-1091.2188" r="5.000008" fill="#ff4040"/>
+      <circle cx="1081" cy="-1091.2188" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1117.5" cy="-1103.7188" r="5.000008" fill="#ff4040"/>
+      <circle cx="1117.5" cy="-1103.7188" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <line x1="1214.5" y1="-983.4375" x2="1360.4926" y2="-983.4375" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="1214.5" y1="-983.4375" x2="1214.5" y2="-1120.3187" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="1228" cy="-1003.9375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1228" cy="-1003.9375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1243" cy="-1034.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1243" cy="-1034.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1266.5" cy="-1069.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1266.5" cy="-1069.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1309.5" cy="-1090.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1309.5" cy="-1090.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1346" cy="-1102.9375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1346" cy="-1102.9375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <line x1="1445.5" y1="-983.4375" x2="1591.4926" y2="-983.4375" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="1445.5" y1="-983.4375" x2="1445.5" y2="-1120.3188" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="1459" cy="-1003.9375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1459" cy="-1003.9375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1474" cy="-1034.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1474" cy="-1034.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1497.5" cy="-1069.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1497.5" cy="-1069.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1540.5" cy="-1090.4375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1540.5" cy="-1090.4375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <circle cx="1577" cy="-1102.9375" r="5.000008" fill="#ff4040"/>
+      <circle cx="1577" cy="-1102.9375" r="5.000008" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+      <line x1="990.5" y1="-1002.0781" x2="1115.8281" y2="-1117.2188" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path d="M 1227.6719 -994.7188 C 1227.6719 -994.7188 1237.9939 -1041.5552 1273.5 -1072.7188 C 1309.0061 -1103.8823 1353 -1104.7188 1353 -1104.7188" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path d="M 1421 -1017.2188 C 1421 -1017.2188 1442.9848 -997.2619 1458 -1002.0781 C 1473.0152 -1006.8943 1461.393 -1014.6309 1474 -1034.2188 C 1486.607 -1053.8066 1482.2437 -1055.0704 1502.5 -1071.2188 C 1522.7563 -1087.3671 1522.9773 -1081.728 1545.5 -1091.2188 C 1568.0227 -1100.7095 1561.177 -1106.1353 1582 -1104.7188 C 1602.823 -1103.3022 1602.0017 -1099.6757 1619 -1086.2188 C 1635.9983 -1072.7618 1642 -1057.2188 1642 -1057.2188" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

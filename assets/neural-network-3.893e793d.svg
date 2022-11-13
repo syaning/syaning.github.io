@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-225 102 593 158" width="593pt" height="158pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-09-12 08:24:01 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="STIXGeneral" font-size="16" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="8" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-2e3" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Lucida Grande" font-size="16" panose-1="2 11 6 0 4 5 2 2 2 4" units-per-em="1000" underline-position="-97.65625" underline-thickness="48.828125" slope="0" x-height="530.27344" cap-height="722.65625" ascent="966.7969" descent="-210.9375" font-weight="500">
+      <font-face-src>
+        <font-face-name name="LucidaGrande"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="17.64" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-907.0295" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="17.64" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-907.0295" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#666">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker_2" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="#0432ff">
+      <g>
+        <path d="M 4.8 0 L 0 0 M 0 -1.8 L 4.8 0 L 0 1.8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="STIXGeneral" font-size="16" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="450" cap-height="662" ascent="1055.0021" descent="-455.0009" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Regular"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 3</title>
+    <rect fill="white" width="593" height="158"/>
+    <g>
+      <title>Layer 1</title>
+      <ellipse cx="-4.5" cy="131.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="-4.5" cy="131.5" rx="47.500076" ry="28.500046" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(-37.5 105.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="4.552" y="17" textLength="6.224">z</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="10.776" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="14.776" y="12" textLength="9.328">(2)</tspan>
+        <tspan font-family="Lucida Grande" font-size="16" font-weight="500" fill="black" x="24.104" y="17" textLength="16">→</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="40.104" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="48.12" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="52.12" y="12" textLength="9.328">(2)</tspan>
+        <tspan font-family="STIXGeneral" font-size="17.64" font-style="italic" font-weight="500" fill="black" x="22.2788" y="44" textLength="8.1144">δ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="30.3932" y="48" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.3932" y="39" textLength="9.328">(2)</tspan>
+      </text>
+      <ellipse cx="-4.5" cy="230.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="-4.5" cy="230.5" rx="47.500076" ry="28.500046" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(-37.5 204.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="4.552" y="17" textLength="6.224">z</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="10.776" y="21" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="14.776" y="12" textLength="9.328">(2)</tspan>
+        <tspan font-family="Lucida Grande" font-size="16" font-weight="500" fill="black" x="24.104" y="17" textLength="16">→</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="40.104" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="48.12" y="21" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="52.12" y="12" textLength="9.328">(2)</tspan>
+        <tspan font-family="STIXGeneral" font-size="17.64" font-style="italic" font-weight="500" fill="black" x="22.2788" y="44" textLength="8.1144">δ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="30.3932" y="48" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.3932" y="39" textLength="9.328">(2)</tspan>
+      </text>
+      <ellipse cx="-176.5" cy="131.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="-176.5" cy="131.5" rx="47.500076" ry="28.500046" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(-209.5 119)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="27.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.552" y="21" textLength="4">1</tspan>
+      </text>
+      <ellipse cx="-176.5" cy="230.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="-176.5" cy="230.5" rx="47.500076" ry="28.500046" stroke="#005493" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(-209.5 218)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" x="27.448" y="17" textLength="7.104">x</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" x="34.552" y="21" textLength="4">2</tspan>
+      </text>
+      <ellipse cx="167.5" cy="131.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="167.5" cy="131.5" rx="47.500076" ry="28.500046" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(134.5 105.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="4.552" y="17" textLength="6.224">z</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="10.776" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="14.776" y="12" textLength="9.328">(3)</tspan>
+        <tspan font-family="Lucida Grande" font-size="16" font-weight="500" fill="black" x="24.104" y="17" textLength="16">→</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="40.104" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="48.12" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="52.12" y="12" textLength="9.328">(3)</tspan>
+        <tspan font-family="STIXGeneral" font-size="17.64" font-style="italic" font-weight="500" fill="black" x="22.2788" y="44" textLength="8.1144">δ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="30.3932" y="48" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.3932" y="39" textLength="9.328">(3)</tspan>
+      </text>
+      <ellipse cx="167.5" cy="230.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="167.5" cy="230.5" rx="47.500076" ry="28.500046" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(134.5 204.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="4.552" y="17" textLength="6.224">z</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="10.776" y="21" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="14.776" y="12" textLength="9.328">(3)</tspan>
+        <tspan font-family="Lucida Grande" font-size="16" font-weight="500" fill="black" x="24.104" y="17" textLength="16">→</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="40.104" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="48.12" y="21" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="52.12" y="12" textLength="9.328">(3)</tspan>
+        <tspan font-family="STIXGeneral" font-size="17.64" font-style="italic" font-weight="500" fill="black" x="22.2788" y="44" textLength="8.1144">δ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="30.3932" y="48" textLength="4">2</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.3932" y="39" textLength="9.328">(3)</tspan>
+      </text>
+      <ellipse cx="319.5" cy="178.5" rx="47.500076" ry="28.500046" fill="white"/>
+      <ellipse cx="319.5" cy="178.5" rx="47.500076" ry="28.500046" stroke="#ff9300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <text transform="translate(286.5 152.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="4.552" y="17" textLength="6.224">z</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="10.776" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="14.776" y="12" textLength="9.328">(4)</tspan>
+        <tspan font-family="Lucida Grande" font-size="16" font-weight="500" fill="black" x="24.104" y="17" textLength="16">→</tspan>
+        <tspan font-family="STIXGeneral" font-size="16" font-style="italic" font-weight="500" fill="black" x="40.104" y="17" textLength="8.016">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="48.12" y="21" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="52.12" y="12" textLength="9.328">(4)</tspan>
+        <tspan font-family="STIXGeneral" font-size="17.64" font-style="italic" font-weight="500" fill="black" x="22.2788" y="44" textLength="8.1144">δ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="30.3932" y="48" textLength="4">1</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="34.3932" y="39" textLength="9.328">(4)</tspan>
+      </text>
+      <line x1="-129" y1="130.86598" x2="-62.39821" y2="131.20515" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="-129" y1="230" x2="-62.398894" y2="230.26747" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="43" y1="131" x2="106.60113" y2="131.25543" marker-end="url(#StickArrow_Marker_2)" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line x1="43" y1="230" x2="109.6011" y2="230.26747" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="215" y1="131" x2="264.38073" y2="171.96752" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="216.03093" y1="228.80412" x2="264.5832" y2="185.8771" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="-127.96907" y1="131.8969" x2="-60.80095" y2="222.34937" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="-127.96907" y1="231.03093" x2="-60.732815" y2="139.23032" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="43.571843" y1="134.63241" x2="111.22855" y2="222.45563" marker-end="url(#StickArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="44.03093" y1="231.03093" x2="110.57701" y2="141.6495" marker-end="url(#StickArrow_Marker_2)" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <rect x="55.926134" y="112.63023" width="39" height="37" fill="white"/>
+      <text transform="translate(60.926134 117.63023)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-weight="500" fill="black" x="0" y="19" textLength="11.552">Θ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="11.552" y="23" textLength="8">11</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="19.552" y="14" textLength="9.328">(2)</tspan>
+      </text>
+      <rect x="58.459534" y="166.95969" width="39" height="37" fill="white"/>
+      <text transform="translate(63.459534 171.95969)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="16" font-weight="500" fill="black" x="0" y="19" textLength="11.552">Θ</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="11.552" y="23" textLength="8">12</tspan>
+        <tspan font-family="STIXGeneral" font-size="8" font-style="italic" font-weight="500" fill="black" x="19.552" y="14" textLength="9.328">(2)</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

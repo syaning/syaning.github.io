@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="257.5 139 409.3789 176.375" width="409.3789pt" height="176.375pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2018-03-14 14:10:00 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="STIXGeneral" font-size="20" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-800" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="STIXGeneral" font-size="12" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="-1333.3333" x-height="428" cap-height="653" ascent="1055.0021" descent="-455.0009" font-style="italic" font-weight="500">
+      <font-face-src>
+        <font-face-name name="STIXGeneral-Italic"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>Canvas 2</title>
+    <rect fill="white" width="409.3789" height="176.375"/>
+    <g>
+      <title>Layer 1</title>
+      <circle cx="393.5" cy="198" r="16.000026" fill="white"/>
+      <circle cx="393.5" cy="198" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="393.5" cy="243" r="16.000026" fill="white"/>
+      <circle cx="393.5" cy="243" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="393.5" cy="288" r="16.000026" fill="white"/>
+      <circle cx="393.5" cy="288" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="369" y="171.125" width="49" height="143.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="526.5" cy="198" r="16.000026" fill="white"/>
+      <circle cx="526.5" cy="198" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="526.5" cy="243" r="16.000026" fill="white"/>
+      <circle cx="526.5" cy="243" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="526.5" cy="288" r="16.000026" fill="white"/>
+      <circle cx="526.5" cy="288" r="16.000026" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="502" y="171.125" width="49" height="143.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="294.5" y1="242.5" x2="343.9789" y2="242.5" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="433.1211" y1="242.5" x2="482.6" y2="242.5" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="560.5" y1="242.5" x2="609.9789" y2="242.5" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(262.5 228)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="20" font-style="italic" font-weight="500" x=".154" y="21" textLength="10.02">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="12" font-style="italic" font-weight="500" x="10.174" y="13" textLength="12.672">[l]</tspan>
+      </text>
+      <text transform="translate(624.8789 228)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="20" font-style="italic" font-weight="500" x=".104" y="21" textLength="10.02">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="12" font-style="italic" font-weight="500" x="10.124" y="13" textLength="26.772">[l+2]</tspan>
+      </text>
+      <text transform="translate(441.5 209.5)" fill="black">
+        <tspan font-family="STIXGeneral" font-size="20" font-style="italic" font-weight="500" x=".104" y="21" textLength="10.02">a</tspan>
+        <tspan font-family="STIXGeneral" font-size="12" font-style="italic" font-weight="500" x="10.124" y="13" textLength="26.772">[l+1]</tspan>
+      </text>
+      <path d="M 322.58594 242.5 L 322.58594 230.6 L 322.58594 139.5 L 353.8789 139.5 L 527.96484 139.5 L 527.96484 161.225" marker-end="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
