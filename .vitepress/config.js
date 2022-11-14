@@ -11,6 +11,7 @@ const nav = [{
   text: '📒 Notes',
   items: [
     { text: 'Kubernetes', link: '/notes/kubernetes/resources/node' },
+    { text: 'Rust', link: '/notes/rust/1-hello-world/hello-world' },
     { text: 'Leetcode', link: '/notes/leetcode/1' },
     { text: 'Archived', link: '/notes/archived/' }
   ]
