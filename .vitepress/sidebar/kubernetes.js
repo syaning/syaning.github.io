@@ -3,6 +3,7 @@ import { loadItems } from './helper'
 export default {
   '/notes/kubernetes/': [{
     text: 'Resources',
+    collapsible: true,
     items: [{
       text: '集群信息',
       items: loadItems([
@@ -69,6 +70,7 @@ export default {
     }]
   }, {
     text: 'Guides',
+    collapsible: true,
     items: loadItems([
       '/notes/kubernetes/guides/components',
       '/notes/kubernetes/guides/api',
