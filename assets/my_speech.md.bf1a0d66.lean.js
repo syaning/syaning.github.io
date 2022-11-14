@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as t,a}from"./app.17d1564c.js";const m=JSON.parse('{"title":"Speeches","description":"","frontmatter":{},"headers":[],"relativePath":"my/speech.md"}'),s={name:"my/speech.md"},n=a("",2),c=[n];function o(i,_,p,h,l,d){return r(),t("div",null,c)}const x=e(s,[["render",o]]);export{m as __pageData,x as default};
