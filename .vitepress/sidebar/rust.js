@@ -26,5 +26,27 @@ export default {
       '/notes/rust/3-ownership/references-and-borrowing',
       '/notes/rust/3-ownership/slice',
     ])
+  }, {
+    text: '4. Struct',
+    collapsible: true,
+    items: loadItems([
+      '/notes/rust/4-struct/struct',
+      '/notes/rust/4-struct/method',
+    ])
+  }, {
+    text: '5. Enum',
+    collapsible: true,
+    items: loadItems([
+      '/notes/rust/5-enum/enum',
+      '/notes/rust/5-enum/match',
+    ])
+  }, {
+    text: '6. Data Structure',
+    collapsible: true,
+    items: loadItems([
+      '/notes/rust/6-data-structure/string',
+      '/notes/rust/6-data-structure/vector',
+      '/notes/rust/6-data-structure/hashmap',
+    ])
   }]
 }
