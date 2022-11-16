@@ -12,7 +12,7 @@ export function loadPosts(dir) {
       const fm = matter.default(content).data
       const date = new Date(fm.date)
       const text = `${formatDate(date)} ${fm.title}`
-      return { date, text, link: `${dir}/${f}` }
+      return { date, text, link: `${dir}/${f.slice(0, -3)}` }
     })
     .sort((a, b) => b.date - a.date)
 
@@ -36,5 +36,5 @@ export function loadPosts(dir) {
 }
 
 export default {
-  '/my/post': loadPosts('/my/post')
+  '/my/post/': loadPosts('/my/post')
 }

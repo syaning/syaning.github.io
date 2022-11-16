@@ -1,1 +1,1 @@
-# Posts
+<NavPage navPath="/my/post/" />

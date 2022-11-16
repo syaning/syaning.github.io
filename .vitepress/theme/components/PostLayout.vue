@@ -1,7 +1,7 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
-import { formatDate } from '../sidebar/helper'
+import { formatDate } from '../../sidebar/helper'
 
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
