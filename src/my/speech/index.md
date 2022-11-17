@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 <script setup>
 const speeches = [{
   cover: './img/2022-09-09-tid.jpg',
