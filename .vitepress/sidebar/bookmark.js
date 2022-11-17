@@ -8,6 +8,7 @@ export default {
         'ebook',
         'resources',
         'design',
+        'awesome',
         'utils',
       ])
     }

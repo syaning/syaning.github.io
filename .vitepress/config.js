@@ -18,7 +18,7 @@ const nav = [{
 }, {
   text: '❤️ Favorites',
   items: [
-    { text: 'Bookmarks', link: '/favorites/bookmark/ebook' },
+    { text: 'Bookmarks', link: '/favorites/bookmark/' },
     { text: 'macOS Apps', link: '/favorites/apps/' }
   ]
 }]
