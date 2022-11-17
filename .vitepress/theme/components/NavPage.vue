@@ -1,3 +1,18 @@
+<script setup>
+import { computed } from 'vue'
+import { useData } from 'vitepress'
+
+const data = useData()
+
+const props = defineProps({
+  navPath: String
+})
+
+const collections = computed(() => {
+  return data.theme.value.sidebar[props.navPath] || []
+})
+</script>
+
 <template>
   <div v-for="{ text, items } in collections">
     <h1>{{ text }}</h1>
@@ -16,20 +31,3 @@
     </ul>
   </div>
 </template>
-
-<script>
-import { useData } from 'vitepress'
-
-export default {
-  props: {
-    navPath: String
-  },
-  computed: {
-    collections() {
-      const data = useData()
-      return data.theme.value.sidebar[this.navPath] || []
-    }
-  }
-}
-</script>
-
