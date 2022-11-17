@@ -1,9 +1,17 @@
 <template>
-  <div v-for="{ text, items } in postCollections">
+  <div v-for="{ text, items } in collections">
     <h1>{{ text }}</h1>
     <ul>
-      <li v-for="post in items">
-        <a :href="post.link">{{ post.text }}</a>
+      <li v-for="item in items">
+        <a v-if="item.link" :href="item.link">{{ item.text }}</a>
+        <template v-if="item.items">
+          <div>{{ item.text }}</div>
+          <ul>
+            <li v-for="subItem in item.items">
+              <a :href="subItem.link">{{ subItem.text }}</a>
+            </li>
+          </ul>
+        </template>
       </li>
     </ul>
   </div>
@@ -17,7 +25,7 @@ export default {
     navPath: String
   },
   computed: {
-    postCollections() {
+    collections() {
       const data = useData()
       return data.theme.value.sidebar[this.navPath] || []
     }

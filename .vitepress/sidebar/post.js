@@ -1,18 +1,12 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import * as matter from 'gray-matter'
-import { formatDate } from './helper'
+import { loadAllFiles, formatDate, filters } from './helper'
 
 export function loadPosts(dir) {
-  const realDir = path.join('./src', dir)
-  const posts = fs.readdirSync(realDir)
-    .filter( f => f.endsWith('.md'))
-    .map(f => {
-      const content = fs.readFileSync(path.join(realDir, f), 'utf8')
-      const fm = matter.default(content).data
-      const date = new Date(fm.date)
-      const text = `${formatDate(date)} ${fm.title}`
-      return { date, text, link: `${dir}/${f.slice(0, -3)}` }
+  const posts = loadAllFiles(dir, filters.allMdButIndex)
+    .map(meta => {
+      const { link, frontmatter } = meta
+      const date = new Date(frontmatter.date)
+      const text = `${formatDate(date)} ${frontmatter.title}`
+      return { text, link, date }
     })
     .sort((a, b) => b.date - a.date)
 
