@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as a,a as t}from"./app.d9deb4d4.js";const d=JSON.parse('{"title":"Awesome","description":"","frontmatter":{},"headers":[],"relativePath":"favorites/bookmark/awesome.md"}'),o={name:"favorites/bookmark/awesome.md"},n=t("",2),l=[n];function s(i,_,c,h,f,p){return r(),a("div",null,l)}const m=e(o,[["render",s]]);export{d as __pageData,m as default};

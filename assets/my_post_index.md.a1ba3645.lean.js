@@ -1,0 +1,1 @@
+import{_ as t,r as a,o,c as n,b as s}from"./app.d9deb4d4.js";const v=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"my/post/index.md"}'),r={name:"my/post/index.md"};function c(p,d,m,_,i,l){const e=a("NavPage");return o(),n("div",null,[s(e,{navPath:"/my/post/"})])}const x=t(r,[["render",c]]);export{v as __pageData,x as default};
