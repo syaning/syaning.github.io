@@ -15,6 +15,7 @@
 - [方正字库 FounderType](https://www.foundertype.com/)
 - [字由](https://www.hellofont.cn/home)
 - [DaFont](https://www.dafont.com/)
+- [Free Font Family](https://freefontsfamily.com/)
 
 ## Icon
 
