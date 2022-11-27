@@ -1,10 +1,17 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
-import { formatDate } from '../../sidebar/helper'
+import dayjs from 'dayjs'
 
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
+
+const formatDate = (date) => {
+  if (typeof date === 'string') {
+    date = date.replace(/-/g, '/')
+  }
+  return dayjs(date).format('YYYY-MM-DD')
+}
 </script>
 
 <template>
@@ -13,7 +20,7 @@ const { frontmatter } = useData()
       <div class="vp-doc">
         <h1>{{ frontmatter.title }}</h1>
         <div class="post-meta">
-          <time>{{ formatDate(new Date(frontmatter.date)) }}</time>
+          <time>{{ formatDate(frontmatter.date) }}</time>
         </div>
       </div>
     </template>

@@ -12,9 +12,10 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.27",
-    "vue": "^3.2.41",
+    "dayjs": "^1.11.6",
     "gray-matter": "^4.0.3",
-    "markdown-it-mathjax3": "^4.3.2"
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.0.0-alpha.27",
+    "vue": "^3.2.41"
   }
 }

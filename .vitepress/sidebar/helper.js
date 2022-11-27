@@ -1,12 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import * as matter from 'gray-matter'
+import dayjs from 'dayjs'
 
 export function formatDate(date) {
-  const y = date.getFullYear()
-  const m = `0${date.getMonth() + 1}`.slice(-2)
-  const d = `0${date.getDate()}`.slice(-2)
-  return `${y}-${m}-${d}`
+  return dayjs(date).format('YYYY-MM-DD')
 }
 
 function tryExtractTitle(content) {
