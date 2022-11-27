@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as t,a}from"./app.d9deb4d4.js";const d=JSON.parse('{"title":"Utils","description":"","frontmatter":{},"headers":[],"relativePath":"favorites/bookmark/utils.md"}'),i={name:"favorites/bookmark/utils.md"},o=a("",2),l=[o];function s(n,_,h,c,f,m){return r(),t("div",null,l)}const g=e(i,[["render",s]]);export{d as __pageData,g as default};
