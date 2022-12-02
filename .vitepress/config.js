@@ -34,6 +34,7 @@ export default {
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
+    logo: '/logo.svg',
     nav,
     sidebar,
     socialLinks: [

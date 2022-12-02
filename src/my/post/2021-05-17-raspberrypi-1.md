@@ -12,8 +12,6 @@ date:   2021-05-17 22:30:00 +0800
 
 参考 [How to install Ubuntu Server on your Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi) 安装 Ubuntu 20.04.
 
-> 注意：启动的时候，电源稳定很重要。我最开始打开风扇，导致每次都无法启动。后来拔掉风扇，就可以启动了。启动之后再插上风扇就一切正常。应该是电源质量不太行。
-
 ## 3. 配置静态IP
 
 如果没有该需求，可以直接跳过。

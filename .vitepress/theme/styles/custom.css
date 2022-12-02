@@ -5,6 +5,10 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+a.title {
+  font-size: 0 !important;
+}
+
 mjx-container.MathJax {
   display: inline-block;
 }
