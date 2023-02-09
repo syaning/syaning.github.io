@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"303. Range Sum Query - Immutable","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/303.md"}'),o={name:"notes/leetcode/303.md"},p=l("",3),t=[p];function e(c,r,y,F,i,D){return n(),a("div",null,t)}const u=s(o,[["render",e]]);export{C as __pageData,u as default};

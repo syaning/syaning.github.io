@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const f=JSON.parse('{"title":"237. Delete Node in a Linked List","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/237.md"}'),e={name:"notes/leetcode/237.md"},t=l("",3),o=[t];function p(c,i,r,y,d,D){return n(),a("div",null,o)}const A=s(e,[["render",p]]);export{f as __pageData,A as default};

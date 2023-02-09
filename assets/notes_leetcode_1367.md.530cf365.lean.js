@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"1367. Linked List in Binary Tree","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/1367.md"}'),o={name:"notes/leetcode/1367.md"},p=l("",3),t=[p];function e(c,r,y,i,F,D){return n(),a("div",null,t)}const f=s(o,[["render",e]]);export{C as __pageData,f as default};

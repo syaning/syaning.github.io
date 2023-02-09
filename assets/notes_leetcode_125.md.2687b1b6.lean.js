@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"125. Valid Palindrome","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/125.md"}'),o={name:"notes/leetcode/125.md"},p=l("",3),t=[p];function e(c,r,y,D,F,i){return a(),n("div",null,t)}const d=s(o,[["render",e]]);export{C as __pageData,d as default};

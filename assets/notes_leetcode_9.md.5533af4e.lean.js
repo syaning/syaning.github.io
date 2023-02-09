@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const A=JSON.parse('{"title":"9. Palindrome Number","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/9.md"}'),p={name:"notes/leetcode/9.md"},o=l("",3),e=[o];function t(c,r,y,D,F,C){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};

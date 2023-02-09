@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const A=JSON.parse('{"title":"Slice","description":"","frontmatter":{},"headers":[],"relativePath":"notes/rust/3-ownership/slice.md"}'),o={name:"notes/rust/3-ownership/slice.md"},p=l("",3),e=[p];function t(c,r,D,F,y,i){return a(),n("div",null,e)}const d=s(o,[["render",t]]);export{A as __pageData,d as default};

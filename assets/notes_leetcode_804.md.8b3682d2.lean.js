@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"804. Unique Morse Code Words","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/804.md"}'),o={name:"notes/leetcode/804.md"},p=l("",3),e=[p];function t(c,F,r,D,y,C){return n(),a("div",null,e)}const E=s(o,[["render",t]]);export{i as __pageData,E as default};

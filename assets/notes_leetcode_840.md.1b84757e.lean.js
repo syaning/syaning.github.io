@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"840. Magic Squares In Grid","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/840.md"}'),p={name:"notes/leetcode/840.md"},o=l("",3),t=[o];function e(c,r,F,y,D,C){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{i as __pageData,u as default};
