@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"24. Swap Nodes in Pairs","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/24.md"}'),p={name:"notes/leetcode/24.md"},o=l("",3),e=[o];function t(c,r,y,D,F,i){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{C as __pageData,d as default};

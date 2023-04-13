@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const A=JSON.parse('{"title":"292. Nim Game","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/292.md"}'),t={name:"notes/leetcode/292.md"},o=l("",3),e=[o];function p(c,r,i,y,F,D){return a(),n("div",null,e)}const d=s(t,[["render",p]]);export{A as __pageData,d as default};

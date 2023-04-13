@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const A=JSON.parse('{"title":"28. Implement strStr()","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/28.md"}'),t={name:"notes/leetcode/28.md"},e=l("",3),o=[e];function p(c,r,i,y,F,D){return a(),n("div",null,o)}const C=s(t,[["render",p]]);export{A as __pageData,C as default};

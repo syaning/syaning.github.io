@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"58. Length of Last Word","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/58.md"}'),o={name:"notes/leetcode/58.md"},t=l("",3),p=[t];function e(c,r,y,i,F,D){return a(),n("div",null,p)}const d=s(o,[["render",e]]);export{C as __pageData,d as default};

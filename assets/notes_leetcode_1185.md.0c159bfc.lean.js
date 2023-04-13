@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as l,a as n}from"./app.c83dc632.js";const d=JSON.parse('{"title":"1185. Day of the Week","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/1185.md"}'),o={name:"notes/leetcode/1185.md"},t=n("",3),p=[t];function e(c,y,r,i,F,D){return a(),l("div",null,p)}const C=s(o,[["render",e]]);export{d as __pageData,C as default};
