@@ -13,16 +13,21 @@ date:   2021-05-29 14:30:00 +0800
 
 ```js
 {
-	"always_show_minimap_viewport": true,
-	"enable_tab_scrolling": false,
-	"font_face": "Courier New",
-	"font_size": 18,
-	"show_encoding": true,
-	"index_exclude_patterns": ["*.log", "node_modules/**", "vendor/**"],
-	"binary_file_patterns": [
-		"*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip",
-		"node_modules/**", "vendor/**"
-	]
+  "always_show_minimap_viewport": true,
+  "enable_tab_scrolling": false,
+  "font_face": "Courier New",
+  "font_size": 18,
+  "show_encoding": true,
+  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".Trash", ".Trash-*", "node_modules"],
+  "index_exclude_patterns": ["*.log", "node_modules/**", "vendor/**"],
+  "binary_file_patterns": [
+    "*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip",
+    "node_modules/**", "vendor/**"
+  ],
+  "ignored_packages":
+  [
+    "Vintage",
+  ]
 }
 ```
 
