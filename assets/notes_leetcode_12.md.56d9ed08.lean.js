@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"12. Integer to Roman","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/12.md"}'),p={name:"notes/leetcode/12.md"},o=l("",3),t=[o];function e(c,D,r,F,y,C){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{i as __pageData,u as default};

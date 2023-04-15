@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s,a}from"./app.c83dc632.js";const f=JSON.parse('{"title":"195. Tenth Line","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/195.md"}'),n={name:"notes/leetcode/195.md"},l=a("",3),o=[l];function c(p,r,i,d,_,h){return t(),s("div",null,o)}const m=e(n,[["render",c]]);export{f as __pageData,m as default};

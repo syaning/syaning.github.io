@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as o,a}from"./app.c83dc632.js";const m=JSON.parse('{"title":"183. Customers Who Never Order","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/183.md"}'),r={name:"notes/leetcode/183.md"},t=a("",3),n=[t];function l(c,p,d,C,i,_){return s(),o("div",null,n)}const u=e(r,[["render",l]]);export{m as __pageData,u as default};
