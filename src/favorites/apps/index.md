@@ -49,6 +49,7 @@
 - [Maccy](https://github.com/p0deje/Maccy) - Lightweight clipboard manager for macOS.
 - [KeePassXC](https://keepassxc.org/) - Cross-Platform Password Manager.
 - [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
+- [Shottr](https://shottr.cc/) - Screenshot annotation app for mac.
 
 ## Posts
 
