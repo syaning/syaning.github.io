@@ -8,6 +8,7 @@
 - [StockSnap](https://stocksnap.io/)
 - [GIPHY](https://giphy.com/)
 - [WLPPR](https://wlppr.co/)
+- [Pexels](https://www.pexels.com/)
 
 ## Video
 
