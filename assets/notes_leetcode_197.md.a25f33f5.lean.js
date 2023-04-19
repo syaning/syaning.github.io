@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as a,a as t}from"./app.c83dc632.js";const h=JSON.parse('{"title":"197. Rising Temperature","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/197.md"}'),n={name:"notes/leetcode/197.md"},o=t("",3),r=[o];function l(p,c,i,d,_,C){return s(),a("div",null,r)}const u=e(n,[["render",l]]);export{h as __pageData,u as default};

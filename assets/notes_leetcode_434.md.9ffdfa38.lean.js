@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"434. Number of Segments in a String","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/434.md"}'),t={name:"notes/leetcode/434.md"},o=l("",3),e=[o];function p(c,r,i,y,F,D){return n(),a("div",null,e)}const f=s(t,[["render",p]]);export{C as __pageData,f as default};
