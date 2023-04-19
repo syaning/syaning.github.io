@@ -23,7 +23,7 @@ export function loadPosts(dir) {
     .map(key => {
       return {
         text: key,
-        collapsible: true,
+        collapsed: false,
         items: groups[key]
       }
     })
