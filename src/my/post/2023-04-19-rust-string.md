@@ -45,8 +45,6 @@ fn main() {
 }
 ```
 
-## deref
-
 ## 参考
 
 - [String vs &str in Rust](https://blog.thoughtram.io/string-vs-str-in-rust/)

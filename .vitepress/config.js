@@ -11,7 +11,6 @@ const nav = [{
   text: '📒 Notes',
   items: [
     { text: 'Kubernetes', link: '/notes/kubernetes/' },
-    { text: 'Rust', link: '/notes/rust/' },
     { text: 'Leetcode', link: '/notes/leetcode/' },
     { text: 'Archived', link: '/notes/archived/' }
   ]
@@ -43,7 +42,10 @@ export default {
     footer: {
       copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`
     },
-    outline: [2, 3]
+    outline: [2, 3],
+    search: {
+      provider: 'local'
+    }
   },
   markdown: {
     config: (md) => {
