@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const A=JSON.parse('{"title":"55. Jump Game","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/55.md"}'),p={name:"notes/leetcode/55.md"},o=l("",3),t=[o];function e(c,r,y,F,D,i){return a(),n("div",null,t)}const f=s(p,[["render",e]]);export{A as __pageData,f as default};

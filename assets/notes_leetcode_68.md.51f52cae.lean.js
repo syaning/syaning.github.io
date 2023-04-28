@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"68. Text Justification","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/68.md"}'),p={name:"notes/leetcode/68.md"},o=l("",3),t=[o];function e(c,r,F,y,D,A){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{i as __pageData,d as default};

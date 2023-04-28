@@ -1,1 +1,0 @@
-import{_ as s,o as e,c as a,a as o}from"./app.c83dc632.js";const _=JSON.parse('{"title":"176. Second Highest Salary","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/176.md"}'),l={name:"notes/leetcode/176.md"},t=o("",3),n=[t];function p(c,r,d,i,C,y){return e(),a("div",null,n)}const A=s(l,[["render",p]]);export{_ as __pageData,A as default};

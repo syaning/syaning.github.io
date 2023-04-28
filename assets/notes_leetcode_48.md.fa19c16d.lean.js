@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"48. Rotate Image","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/48.md"}'),p={name:"notes/leetcode/48.md"},o=l("",3),t=[o];function e(c,r,y,F,D,C){return a(),n("div",null,t)}const f=s(p,[["render",e]]);export{i as __pageData,f as default};

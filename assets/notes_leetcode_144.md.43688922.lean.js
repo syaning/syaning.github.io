@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"144. Binary Tree Preorder Traversal","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/144.md"}'),p={name:"notes/leetcode/144.md"},o=l("",3),t=[o];function e(c,r,y,i,F,D){return n(),a("div",null,t)}const f=s(p,[["render",e]]);export{C as __pageData,f as default};

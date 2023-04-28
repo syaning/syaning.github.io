@@ -1,0 +1,1 @@
+import{_ as s,o as l,c as a,V as n}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"223. Rectangle Area","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/223.md"}'),o={name:"notes/leetcode/223.md"},t=n("",3),p=[t];function e(c,y,r,F,D,i){return l(),a("div",null,p)}const f=s(o,[["render",e]]);export{C as __pageData,f as default};

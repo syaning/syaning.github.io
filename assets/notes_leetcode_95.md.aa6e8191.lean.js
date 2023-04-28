@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.c83dc632.js";const C=JSON.parse('{"title":"95. Unique Binary Search Trees II","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/95.md"}'),p={name:"notes/leetcode/95.md"},o=l("",5),e=[o];function t(c,r,y,F,D,i){return n(),a("div",null,e)}const f=s(p,[["render",t]]);export{C as __pageData,f as default};

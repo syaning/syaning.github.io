@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.c83dc632.js";const i=JSON.parse('{"title":"892. Surface Area of 3D Shapes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/892.md"}'),p={name:"notes/leetcode/892.md"},o=l("",3),e=[o];function t(c,r,y,F,D,A){return a(),n("div",null,e)}const f=s(p,[["render",t]]);export{i as __pageData,f as default};
