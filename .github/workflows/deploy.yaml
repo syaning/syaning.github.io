@@ -21,9 +21,19 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Deploy
+      - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
           # cname: example.com # if wanna deploy to custom domain
+
+      - name: Deploy Aliyun OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+          accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: khronosyn-blog
+          endpoint: oss-cn-hongkong.aliyuncs.com
+          folder: .vitepress/dist
+          skipSetting: true
