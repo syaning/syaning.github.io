@@ -1,11 +1,8 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
-import { useData } from 'vitepress'
 import dayjs from 'dayjs'
 
 const { Layout } = DefaultTheme
-const { frontmatter } = useData()
-
 const formatDate = (date) => {
   if (typeof date === 'string') {
     date = date.replace(/-/g, '/')
@@ -16,11 +13,11 @@ const formatDate = (date) => {
 
 <template>
   <Layout>
-    <template #doc-before v-if="frontmatter.layout === 'post'">
+    <template #doc-before v-if="$frontmatter.layout === 'post'">
       <div class="vp-doc">
-        <h1>{{ frontmatter.title }}</h1>
+        <h1>{{ $frontmatter.title }}</h1>
         <div class="post-meta">
-          <time>{{ formatDate(frontmatter.date) }}</time>
+          <time>{{ formatDate($frontmatter.date) }}</time>
         </div>
       </div>
     </template>
