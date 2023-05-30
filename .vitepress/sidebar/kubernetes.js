@@ -1,13 +1,13 @@
 import { loadDirItems } from './helper'
 
 export default {
-  '/notes/kubernetes/': [{
+  '/note/kubernetes/': [{
     text: 'Resources',
     collapsed: false,
     items: [{
       text: '集群信息',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'node',
         'namespace',
         'component-status',
@@ -16,7 +16,7 @@ export default {
     }, {
       text: 'Controller',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'replica-set',
         'deployment',
         'stateful-set',
@@ -25,14 +25,14 @@ export default {
     }, {
       text: 'Pod',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'pod',
         'horizontal-pod-autoscaler',
       ])
     }, {
       text: '服务',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'service',
         'endpoints',
         'ingress',
@@ -40,14 +40,14 @@ export default {
     }, {
       text: '配置',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'configmap',
         'secret',
       ])
     }, {
       text: '存储',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'persistent-volume',
         'persistent-volume-claim',
         'storage-class',
@@ -55,21 +55,21 @@ export default {
     }, {
       text: '作业',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'job',
         'cronjob',
       ])
     }, {
       text: '资源管理',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'resource-quota',
         'pod-disruption-budget',
       ])
     }, {
       text: '权限管理',
       collapsed: true,
-      items: loadDirItems('/notes/kubernetes/resources', [
+      items: loadDirItems('/note/kubernetes/resources', [
         'service-account',
         'role',
         'cluster-role',
@@ -80,7 +80,7 @@ export default {
   }, {
     text: 'Guides',
     collapsed: false,
-    items: loadDirItems('/notes/kubernetes/guides', [
+    items: loadDirItems('/note/kubernetes/guides', [
       'components',
       'api',
       'pod-schedule',

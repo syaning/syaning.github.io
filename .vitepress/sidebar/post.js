@@ -30,5 +30,5 @@ export function loadPosts(dir) {
 }
 
 export default {
-  '/my/post/': loadPosts('/my/post')
+  '/post/': loadPosts('/post')
 }

@@ -4,15 +4,15 @@ import mathjax3 from 'markdown-it-mathjax3'
 const nav = [{
   text: '💻 My',
   items: [
-    { text: 'Posts', link: '/my/post/' },
-    { text: 'Speeches', link: '/my/speech/' }
+    { text: 'Posts', link: '/post/' },
+    { text: 'Speeches', link: '/speech/' }
   ]
 }, {
   text: '📒 Notes',
   items: [
-    { text: 'Kubernetes', link: '/notes/kubernetes/' },
-    { text: 'Leetcode', link: '/notes/leetcode/' },
-    { text: 'Archived', link: '/notes/archived/' }
+    { text: 'Kubernetes', link: '/note/kubernetes/' },
+    { text: 'Leetcode', link: '/note/leetcode/' },
+    { text: 'Archived', link: '/note/archived/' }
   ]
 }, {
   text: '❤️ Favorites',
