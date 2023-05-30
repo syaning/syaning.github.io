@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as l,V as n}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"58. Length of Last Word","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/58.md"}'),o={name:"note/leetcode/58.md"},t=n("",3),p=[t];function e(c,r,y,i,F,D){return a(),l("div",null,p)}const d=s(o,[["render",e]]);export{A as __pageData,d as default};

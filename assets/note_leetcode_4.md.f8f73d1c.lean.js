@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const i=JSON.parse('{"title":"4. Median of Two Sorted Arrays","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/4.md"}'),p={name:"note/leetcode/4.md"},o=l("",3),t=[o];function e(c,r,y,D,F,C){return n(),a("div",null,t)}const f=s(p,[["render",e]]);export{i as __pageData,f as default};

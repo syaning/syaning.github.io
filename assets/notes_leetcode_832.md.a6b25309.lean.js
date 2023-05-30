@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"832. Flipping an Image","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/832.md"}'),o={name:"notes/leetcode/832.md"},t=l("",3),p=[t];function e(c,r,i,y,F,D){return a(),n("div",null,p)}const f=s(o,[["render",e]]);export{C as __pageData,f as default};

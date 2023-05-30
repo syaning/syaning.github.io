@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as l,V as n}from"./chunks/framework.16eef3c0.js";const f=JSON.parse('{"title":"709. To Lower Case","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/709.md"}'),t={name:"note/leetcode/709.md"},o=n("",3),e=[o];function p(c,r,i,y,F,D){return a(),l("div",null,e)}const d=s(t,[["render",p]]);export{f as __pageData,d as default};

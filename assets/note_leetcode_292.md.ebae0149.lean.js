@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const f=JSON.parse('{"title":"292. Nim Game","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/292.md"}'),t={name:"note/leetcode/292.md"},o=l("",3),e=[o];function p(c,r,i,y,D,F){return a(),n("div",null,e)}const d=s(t,[["render",p]]);export{f as __pageData,d as default};

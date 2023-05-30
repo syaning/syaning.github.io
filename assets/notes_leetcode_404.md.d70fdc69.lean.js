@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"404. Sum of Left Leaves","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/404.md"}'),o={name:"notes/leetcode/404.md"},p=l("",3),e=[p];function t(c,r,y,F,i,D){return n(),a("div",null,e)}const f=s(o,[["render",t]]);export{C as __pageData,f as default};

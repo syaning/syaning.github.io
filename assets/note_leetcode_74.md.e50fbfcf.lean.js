@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"74. Search a 2D Matrix","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/74.md"}'),p={name:"note/leetcode/74.md"},o=l("",3),t=[o];function e(c,r,y,F,D,C){return a(),n("div",null,t)}const f=s(p,[["render",e]]);export{A as __pageData,f as default};

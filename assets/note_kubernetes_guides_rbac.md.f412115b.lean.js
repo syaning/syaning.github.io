@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"RBAC","description":"","frontmatter":{},"headers":[],"relativePath":"note/kubernetes/guides/rbac.md"}'),o={name:"note/kubernetes/guides/rbac.md"},p=l("",27),e=[p];function t(c,r,D,y,C,F){return a(),n("div",null,e)}const u=s(o,[["render",t]]);export{A as __pageData,u as default};

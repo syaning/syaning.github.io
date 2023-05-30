@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"811. Subdomain Visit Count","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/811.md"}'),o={name:"note/leetcode/811.md"},p=l("",3),t=[p];function e(c,r,y,F,D,i){return n(),a("div",null,t)}const d=s(o,[["render",e]]);export{C as __pageData,d as default};
