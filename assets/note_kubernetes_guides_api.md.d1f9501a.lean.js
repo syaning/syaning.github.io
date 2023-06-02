@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as t,V as r}from"./chunks/framework.16eef3c0.js";const f=JSON.parse('{"title":"API","description":"","frontmatter":{},"headers":[],"relativePath":"note/kubernetes/guides/api.md"}'),o={name:"note/kubernetes/guides/api.md"},s=r("",3),n=[s];function i(_,c,l,d,p,h){return a(),t("div",null,n)}const b=e(o,[["render",i]]);export{f as __pageData,b as default};

@@ -1,0 +1,1 @@
+import{_ as t,H as a,o,c as s,J as n}from"./chunks/framework.16eef3c0.js";const v=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"posts/index.md"}'),r={name:"posts/index.md"};function c(p,d,_,i,m,l){const e=a("NavPage");return o(),s("div",null,[n(e,{navPath:"/posts/"})])}const x=t(r,[["render",c]]);export{v as __pageData,x as default};

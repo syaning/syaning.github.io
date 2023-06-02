@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const i=JSON.parse('{"title":"31. Next Permutation","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/31.md"}'),p={name:"note/leetcode/31.md"},o=l("",3),t=[o];function e(c,r,y,F,D,A){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{i as __pageData,u as default};

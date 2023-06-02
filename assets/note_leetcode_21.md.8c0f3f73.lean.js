@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as l,V as a}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"21. Merge Two Sorted Lists","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/21.md"}'),p={name:"note/leetcode/21.md"},o=a("",3),t=[o];function e(c,y,r,i,D,F){return n(),l("div",null,t)}const f=s(p,[["render",e]]);export{A as __pageData,f as default};

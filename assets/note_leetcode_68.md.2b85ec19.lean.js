@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const i=JSON.parse('{"title":"68. Text Justification","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/68.md"}'),p={name:"note/leetcode/68.md"},o=l("",3),t=[o];function e(c,r,F,y,D,A){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{i as __pageData,d as default};

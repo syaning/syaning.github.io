@@ -1,1 +1,0 @@
-import{_ as s,o as e,c as a,V as o}from"./chunks/framework.16eef3c0.js";const _=JSON.parse('{"title":"176. Second Highest Salary","description":"","frontmatter":{},"headers":[],"relativePath":"note/leetcode/176.md"}'),l={name:"note/leetcode/176.md"},t=o("",3),n=[t];function c(p,r,d,i,C,y){return e(),a("div",null,n)}const A=s(l,[["render",c]]);export{_ as __pageData,A as default};
