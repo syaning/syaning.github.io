@@ -1,9 +1,9 @@
 import kubernetes from './kubernetes'
 import leetcode from './leetcode'
-import post from './post'
+import posts from './posts'
 
 export default {
   ...kubernetes,
   ...leetcode,
-  ...post,
+  ...posts,
 }

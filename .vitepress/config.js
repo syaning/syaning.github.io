@@ -4,20 +4,20 @@ import mathjax3 from 'markdown-it-mathjax3'
 const nav = [{
   text: '💻 My',
   items: [
-    { text: 'Posts', link: '/post/' },
-    { text: 'Speeches', link: '/speech/' }
+    { text: 'Posts', link: '/posts/' },
+    { text: 'Speeches', link: '/speeches/' }
   ]
 }, {
   text: '📒 Notes',
   items: [
-    { text: 'Kubernetes', link: '/note/kubernetes/' },
-    { text: 'Leetcode', link: '/note/leetcode/' },
-    { text: 'Archived', link: '/note/archived/' }
+    { text: 'Kubernetes', link: '/notes/kubernetes/' },
+    { text: 'Leetcode', link: '/notes/leetcode/' },
+    { text: 'Archived', link: '/notes/archived/' }
   ]
 }, {
   text: '❤️ Favorites',
   items: [
-    { text: 'Bookmarks', link: '/favorites/bookmark/' },
+    { text: 'Bookmarks', link: '/favorites/bookmarks/' },
     { text: 'macOS Apps', link: '/favorites/apps/' }
   ]
 }]

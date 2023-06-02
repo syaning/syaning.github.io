@@ -1,1 +1,0 @@
-<NavPage navPath="/note/kubernetes/" />
