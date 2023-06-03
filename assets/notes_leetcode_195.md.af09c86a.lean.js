@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a,V as s}from"./chunks/framework.16eef3c0.js";const u=JSON.parse('{"title":"195. Tenth Line","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/195.md"}'),n={name:"notes/leetcode/195.md"},l=s("",3),o=[l];function c(p,r,i,d,h,_){return t(),a("div",null,o)}const m=e(n,[["render",c]]);export{u as __pageData,m as default};
