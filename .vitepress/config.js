@@ -2,20 +2,20 @@ import sidebar from './sidebar'
 import mathjax3 from 'markdown-it-mathjax3'
 
 const nav = [{
-  text: '💻 My',
+  text: 'My',
   items: [
     { text: 'Posts', link: '/posts/' },
     { text: 'Speeches', link: '/speeches/' }
   ]
 }, {
-  text: '📒 Notes',
+  text: 'Notes',
   items: [
     { text: 'Kubernetes', link: '/notes/kubernetes/' },
     { text: 'Leetcode', link: '/notes/leetcode/' },
     { text: 'Archived', link: '/notes/archived/' }
   ]
 }, {
-  text: '❤️ Favorites',
+  text: 'Favorites',
   items: [
     { text: 'Bookmarks', link: '/favorites/bookmarks/' },
     { text: 'macOS Apps', link: '/favorites/apps/' }
