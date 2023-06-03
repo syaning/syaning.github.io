@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as l,V as n}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"28. Implement strStr()","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/28.md"}'),t={name:"notes/leetcode/28.md"},o=n("",3),e=[o];function p(c,r,i,y,F,D){return a(),l("div",null,e)}const f=s(t,[["render",p]]);export{C as __pageData,f as default};
