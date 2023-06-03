@@ -5,7 +5,8 @@ const nav = [{
   text: 'My',
   items: [
     { text: 'Posts', link: '/posts/' },
-    { text: 'Speeches', link: '/speeches/' }
+    { text: 'Speeches', link: '/speeches/' },
+    { text: 'Shells', link: '/shells/' },
   ]
 }, {
   text: 'Notes',

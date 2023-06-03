@@ -40,10 +40,16 @@ function tryExtractDate(params) {
     return new Date(frontmatter.date)
   }
 
-  const re = /^\d{4}-\d{2}-\d{2}/
-  const result = re.exec(filename)
+  const dateRe = /^\d{4}-\d{2}-\d{2}/
+  const monthRe = /^\d{4}-\d{2}/
+
+  let result = dateRe.exec(filename)
   if (result) {
     return new Date(result[0])
+  }
+  result = monthRe.exec(filename)
+  if (result) {
+    return new Date(`${result[0]}-01`)
   }
 
   return null

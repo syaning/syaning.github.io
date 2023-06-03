@@ -11,6 +11,12 @@ export default {
     cluster: clusters.byYear,
   }),
 
+  '/shells/': loadAllFiles('/shells', {
+    filter: filters.allMdButIndex,
+    sorter: sorters.byDateDesc,
+    cluster: clusters.byYear,
+  }),
+
   '/notes/leetcode/': [{
     text: 'Leetcode',
     items: loadAllFiles('/notes/leetcode', {
