@@ -1,5 +1,5 @@
-import sidebar from './sidebar'
 import mathjax3 from 'markdown-it-mathjax3'
+import sidebar from './sidebar'
 
 const nav = [{
   text: 'My',
