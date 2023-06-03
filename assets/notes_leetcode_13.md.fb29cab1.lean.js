@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const i=JSON.parse('{"title":"13. Roman to Integer","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/13.md"}'),p={name:"notes/leetcode/13.md"},o=l("",3),t=[o];function e(c,D,r,F,y,C){return n(),a("div",null,t)}const u=s(p,[["render",e]]);export{i as __pageData,u as default};
