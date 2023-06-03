@@ -123,3 +123,5 @@
 - [Postimages](https://postimages.org/) - 免费图片托管。
 - [TinEye](https://tineye.com/) - Reverse Image Search.
 - [m3u8 视频在线提取工具](http://blog.luckly-mjw.cn/tool-show/m3u8-downloader/index.html)
+- [regex101](https://regex101.com/) - Build, test, and debug regex.
+- [crontab guru](https://crontab.guru/) - The quick and simple editor for cron schedule expressions.
