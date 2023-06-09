@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"766. Toeplitz Matrix","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/766.md"}'),o={name:"notes/leetcode/766.md"},p=l("",3),t=[p];function e(c,r,y,F,i,D){return a(),n("div",null,t)}const f=s(o,[["render",e]]);export{A as __pageData,f as default};
