@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as a,V as t}from"./chunks/framework.16eef3c0.js";const u=JSON.parse('{"title":"197. Rising Temperature","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/197.md"}'),o={name:"notes/leetcode/197.md"},n=t("",3),r=[n];function l(p,c,i,d,_,C){return s(),a("div",null,r)}const y=e(o,[["render",l]]);export{u as __pageData,y as default};
