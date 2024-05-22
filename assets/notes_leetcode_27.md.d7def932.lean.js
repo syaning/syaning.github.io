@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as l,V as a}from"./chunks/framework.16eef3c0.js";const A=JSON.parse('{"title":"27. Remove Element","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/27.md"}'),o={name:"notes/leetcode/27.md"},p=a("",3),t=[p];function e(c,r,y,D,F,i){return n(),l("div",null,t)}const f=s(o,[["render",e]]);export{A as __pageData,f as default};
