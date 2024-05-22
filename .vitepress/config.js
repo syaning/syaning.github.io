@@ -6,7 +6,6 @@ const nav = [{
   items: [
     { text: 'Posts', link: '/posts/' },
     { text: 'Speeches', link: '/speeches/' },
-    { text: 'Shells', link: '/shells/' },
   ]
 }, {
   text: 'Notes',
