@@ -1,26 +1,34 @@
 import mathjax3 from 'markdown-it-mathjax3'
 import sidebar from './sidebar'
 
-const nav = [{
-  text: 'My',
-  items: [
-    { text: 'Posts', link: '/posts/' },
-    { text: 'Speeches', link: '/speeches/' },
-  ]
-}, {
-  text: 'Notes',
-  items: [
-    { text: 'Kubernetes', link: '/notes/kubernetes/' },
-    { text: 'Leetcode', link: '/notes/leetcode/' },
-    { text: 'Archived', link: '/notes/archived/' }
-  ]
-}, {
-  text: 'Favorites',
-  items: [
-    { text: 'Bookmarks', link: '/favorites/bookmarks/' },
-    { text: 'macOS Apps', link: '/favorites/apps/' }
-  ]
-}]
+const nav = [
+  {
+    text: 'Tech',
+    items: [
+      { text: 'Posts', link: '/posts/' },
+      { text: 'Speeches', link: '/speeches/' },
+      {
+        text: 'Notes',
+        items: [
+          { text: 'Kubernetes', link: '/notes/kubernetes/' },
+          { text: 'Leetcode', link: '/notes/leetcode/' },
+          { text: 'Archived', link: '/notes/archived/' }
+        ]
+      }
+    ]
+  },
+  {
+    text: 'Essay',
+    link: '/essay/',
+  },
+  {
+    text: 'Favorites',
+    items: [
+      { text: 'Bookmarks', link: '/favorites/bookmarks/' },
+      { text: 'macOS Apps', link: '/favorites/apps/' }
+    ]
+  }
+]
 
 export default {
   title: '🌵',

@@ -37,3 +37,13 @@ jobs:
           endpoint: oss-cn-hongkong.aliyuncs.com
           folder: .vitepress/dist
           skipSetting: true
+
+      - name: Deploy Aliyun OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+          accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: khronosyn
+          endpoint: oss-cn-hongkong.aliyuncs.com
+          folder: .vitepress/dist
+          skipSetting: true
