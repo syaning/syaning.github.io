@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   DeepLearning笔记(19)——机器学习策略2
 date:    2018-05-29 18:50:00 +0800
 ---

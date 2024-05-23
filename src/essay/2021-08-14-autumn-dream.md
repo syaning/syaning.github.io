@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  秋宵梦觉
-date:   2021-08-14 23:00:00 +0800
+doctype: post
+title:   秋宵梦觉
+date:    2021-08-14 23:00:00 +0800
 ---
 
 ## 一

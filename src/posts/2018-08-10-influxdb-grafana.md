@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   InfluxDB+Grafana搭建监控系统
 date:    2018-08-10 00:30:00 +0800
 ---

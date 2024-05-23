@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  查询Mysql中某个DB下的表大小
-date:   2020-11-27 12:00:00 +0800
+doctype: post
+title:   查询Mysql中某个DB下的表大小
+date:    2020-11-27 12:00:00 +0800
 ---
 
 使用如下语句即可：

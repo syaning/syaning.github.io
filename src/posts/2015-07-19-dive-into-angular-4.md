@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  AngularJS深入(4)——模块加载
-date:   2015-07-19 15:00:00 +0800
+doctype: post
+title:   AngularJS深入(4)——模块加载
+date:    2015-07-19 15:00:00 +0800
 ---
 
 在AngularJS模块化和依赖注入的基础上，来分析模块加载的详细过程。以如下代码为例：

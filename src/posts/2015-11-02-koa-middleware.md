@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  koa的中间件机制
-date:   2015-11-02 12:00:00 +0800
+doctype: post
+title:   koa的中间件机制
+date:    2015-11-02 12:00:00 +0800
 ---
 
 ::: tip

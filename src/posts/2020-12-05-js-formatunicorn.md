@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  JS formatUnicorn
-date:   2020-12-05 12:00:00 +0800
+doctype: post
+title:   JS formatUnicorn
+date:    2020-12-05 12:00:00 +0800
 ---
 
 ```js

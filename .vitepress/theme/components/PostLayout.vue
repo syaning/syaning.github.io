@@ -9,11 +9,12 @@ const formatDate = (date) => {
   }
   return dayjs(date).format('YYYY-MM-DD')
 }
+console.log('===== xx')
 </script>
 
 <template>
   <Layout>
-    <template #doc-before v-if="$frontmatter.layout === 'post'">
+    <template #doc-before v-if="$frontmatter.doctype === 'post'">
       <div class="vp-doc">
         <h1>{{ $frontmatter.title }}</h1>
         <div class="post-meta">
@@ -21,6 +22,7 @@ const formatDate = (date) => {
         </div>
       </div>
     </template>
+    xxx
   </Layout>
 </template>
 

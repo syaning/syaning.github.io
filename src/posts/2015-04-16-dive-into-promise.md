@@ -1,8 +1,7 @@
 ---
-layout:      post
-title:       深入理解promise
-date:        2015-04-16 14:50:00 +0800
-update_date: 2015-04-18 12:18:00 +0800
+doctype: post
+title:   深入理解promise
+date:    2015-04-16 14:50:00 +0800
 ---
 
 一直以来，对promise也只是有所耳闻，但是并未有过深入的学习和理解。昨天看到了[这篇文章](http://blog.csdn.net/aimingoo/article/details/45014325)，又想到ES6中都提供原生Promise了，因此很有必要深入理解下。

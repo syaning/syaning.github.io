@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  Goroutine的一些使用技巧
-date:   2023-06-09 22:00:00 +0800
+doctype: post
+title:   Goroutine的一些使用技巧
+date:    2023-06-09 22:00:00 +0800
 ---
 
 ## 等待第一个goroutine结束

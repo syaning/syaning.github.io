@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   Stanford机器学习笔记——Neural Network
 date:    2017-09-12 16:55:00 +0800
 ---

@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   Stanford机器学习笔记——SVM
 date:    2017-09-14 10:45:00 +0800
 ---

@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   Stanford机器学习笔记——PCA
 date:    2017-09-15 17:50:00 +0800
 ---

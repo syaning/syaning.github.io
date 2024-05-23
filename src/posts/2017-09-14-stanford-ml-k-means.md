@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   Stanford机器学习笔记——K-Means
 date:    2017-09-14 16:25:00 +0800
 ---

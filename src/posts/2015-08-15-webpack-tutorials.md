@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  webpack入门教程
-date:   2015-08-15 21:00:00 +0800
+doctype: post
+title:   webpack入门教程
+date:    2015-08-15 21:00:00 +0800
 ---
 
 ::: tip

@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  d3力场图中事件冲突解决方法
-date:   2016-02-01 11:30:00 +0800
+doctype: post
+title:   d3力场图中事件冲突解决方法
+date:    2016-02-01 11:30:00 +0800
 ---
 
 通过使用[d3.js](http://d3js.org/)，可以非常方便地创建[力场图(force layout graph)](https://github.com/mbostock/d3/wiki/Force-Layout)。在力场图的交互中，常会涉及到多种事件，例如：缩放，拖动，点击（单击、双击、右键）等。在有些情况下，事件之间会产生冲突。

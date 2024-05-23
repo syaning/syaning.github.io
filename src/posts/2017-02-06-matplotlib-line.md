@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  matplotlib绘图——折线图
-date:   2017-02-06 17:20:00 +0800
+doctype: post
+title:   matplotlib绘图——折线图
+date:    2017-02-06 17:20:00 +0800
 ---
 
 ## 1. line chart

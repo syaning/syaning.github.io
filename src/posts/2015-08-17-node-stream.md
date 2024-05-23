@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  Node中的stream
-date:   2015-08-17 14:15:00 +0800
+doctype: post
+title:   Node中的stream
+date:    2015-08-17 14:15:00 +0800
 ---
 
 ## 1. 什么是stream

@@ -16,3 +16,7 @@ mjx-container.MathJax {
 mjx-container > svg {
   margin: auto;
 }
+
+.vp-doc a {
+  text-decoration: none;
+}

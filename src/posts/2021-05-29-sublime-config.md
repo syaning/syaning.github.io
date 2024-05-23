@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  Sublime Text开发环境配置
-date:   2021-05-29 14:30:00 +0800
+doctype: post
+title:   Sublime Text开发环境配置
+date:    2021-05-29 14:30:00 +0800
 ---
 
 ## 安装

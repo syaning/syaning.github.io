@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   DeepLearning笔记(5)——超参数调试、BN、Softmax
 date:    2018-03-12 18:30:00 +0800
 ---

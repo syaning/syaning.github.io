@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  Go Template使用
-date:   2021-07-18 21:00:00 +0800
+doctype: post
+title:   Go Template使用
+date:    2021-07-18 21:00:00 +0800
 ---
 
 ::: tip

@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  AngularJS深入(6)——指令
-date:   2015-07-28 20:55:00 +0800
+doctype: post
+title:   AngularJS深入(6)——指令
+date:    2015-07-28 20:55:00 +0800
 ---
 
 ::: tip

@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   Stanford机器学习笔记——Regularization
 date:    2017-09-10 10:30:00 +0800
 ---

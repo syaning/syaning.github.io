@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   DeepLearning笔记(12)——风格迁移
 date:    2018-04-03 14:30:00 +0800
 ---

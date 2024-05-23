@@ -1,5 +1,5 @@
 ---
-layout:  post
+doctype: post
 title:   DeepLearning笔记(7)——经典网络
 date:    2018-03-15 23:30:00 +0800
 ---
