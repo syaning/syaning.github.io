@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,V as l}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"706. Design HashMap","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/706.md"}'),p={name:"notes/leetcode/706.md"},t=l("",3),o=[t];function e(c,y,i,r,D,F){return a(),n("div",null,o)}const f=s(p,[["render",e]]);export{C as __pageData,f as default};

@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as a,V as t}from"./chunks/framework.16eef3c0.js";const u=JSON.parse('{"title":"macOS Apps","description":"","frontmatter":{},"headers":[],"relativePath":"favorites/apps/index.md"}'),i={name:"favorites/apps/index.md"},l=t("",15),o=[l];function n(s,h,c,p,f,m){return r(),a("div",null,o)}const b=e(i,[["render",n]]);export{u as __pageData,b as default};

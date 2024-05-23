@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.16eef3c0.js";const C=JSON.parse('{"title":"705. Design HashSet","description":"","frontmatter":{},"headers":[],"relativePath":"notes/leetcode/705.md"}'),t={name:"notes/leetcode/705.md"},o=l("",3),p=[o];function e(c,y,i,r,F,D){return n(),a("div",null,p)}const f=s(t,[["render",e]]);export{C as __pageData,f as default};
