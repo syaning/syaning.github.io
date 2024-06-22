@@ -20,3 +20,9 @@ mjx-container > svg {
 .vp-doc a {
   text-decoration: none;
 }
+
+@media (max-width: 640px) {
+  .vp-doc .VPTeamMembers.small.count-1 .container {
+    max-width: 100% !important;
+  }
+}

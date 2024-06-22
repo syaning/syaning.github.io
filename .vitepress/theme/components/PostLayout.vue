@@ -9,7 +9,6 @@ const formatDate = (date) => {
   }
   return dayjs(date).format('YYYY-MM-DD')
 }
-console.log('===== xx')
 </script>
 
 <template>
