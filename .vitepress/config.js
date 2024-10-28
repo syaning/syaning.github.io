@@ -36,7 +36,7 @@ export default {
   description: 'Alex Sun\'s homepage, blog and notes.',
   base: '/',
   srcDir: 'src',
-  lastUpdated: false,
+  lastUpdated: true,
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
   ],
@@ -54,6 +54,9 @@ export default {
     search: {
       provider: 'local'
     }
+  },
+  sitemap: {
+    hostname: 'https://khronosyn.com'
   },
   markdown: {
     config: (md) => {
