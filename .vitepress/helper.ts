@@ -5,7 +5,7 @@ import * as matter from 'gray-matter'
 /**
  * Try extract frontmatter.
  */
-function tryExtractFrontmatter(content) {
+function tryExtractFrontmatter(content: string) {
   return matter.default(content).data || {}
 }
 
@@ -65,7 +65,7 @@ export const sorters = {
 }
 
 export const clusters = {
-  byYear(posts, mapper) {
+  byYear: (posts, mapper) => {
     const groups = posts.reduce((ret, post) => {
       const year = post.date.getFullYear()
       ret[year] = ret[year] || []
@@ -86,17 +86,17 @@ export const mappers = {
   default: (post) => ({ text: post.title, link: post.link })
 }
 
-/**
- * @param  {String}   dir
- * @param  {Object}   options
- * @param  {Array}    files
- * @param  {Function} options.filter
- * @param  {Function} options.sorter
- * @param  {Function} options.cluster
- * @param  {Function} options.mapper
- */
-export function loadAllFiles(dir, options = {}) {
+interface LoadFileOptions {
+  files?: Array<string>
+  filter?: () => boolean
+  sorter?: () => any
+  cluster?: () => any
+  mapper?: () => any
+}
+
+export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   const {
+    title,
     files,
     filter,
     sorter,
@@ -133,5 +133,14 @@ export function loadAllFiles(dir, options = {}) {
     return cluster(posts, mapper)
   }
 
-  return posts.map(mapper)
+  return [{
+    text: title || dir,
+    items: posts.map(mapper),
+  }]
+}
+
+export function genSidebar(dir: string, options: LoadFileOptions) {
+  return {
+    [dir]: loadAllFiles(dir, options)
+  }
 }

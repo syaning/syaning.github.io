@@ -1,5 +1,5 @@
 import mathjax3 from 'markdown-it-mathjax3'
-import sidebar from './sidebar'
+import { filters, sorters, clusters, genSidebar } from './helper'
 
 const nav = [
   {
@@ -7,36 +7,41 @@ const nav = [
     items: [
       { text: 'Posts', link: '/posts/' },
       { text: 'Speeches', link: '/speeches/' },
-      {
-        text: 'Notes',
-        items: [
-          { text: 'Kubernetes', link: '/notes/kubernetes/' },
-          { text: 'Leetcode', link: '/notes/leetcode/' },
-          { text: 'Archived', link: '/notes/archived/' }
-        ]
-      }
+      { text: 'Leetcode', link: '/leetcode/' },
     ]
   },
-  {
-    text: 'Essay',
-    link: '/essay/',
-  },
-  {
-    text: 'Favorites',
-    items: [
-      { text: 'Bookmarks', link: '/favorites/bookmarks/' },
-      { text: 'macOS Apps', link: '/favorites/apps/' }
-    ]
-  }
+  { text: 'Essay', link: '/essay/' },
+  { text: 'Collections', link: '/collections/apps' }
 ]
+
+const sidebar = {
+  ...genSidebar('/posts/', {
+    filter: filters.allMdButIndex,
+    sorter: sorters.byDateDesc,
+    cluster: clusters.byYear,
+  }),
+  ...genSidebar('/essay/', {
+    filter: filters.allMdButIndex,
+    sorter: sorters.byDateDesc,
+    cluster: clusters.byYear,
+  }),
+  ...genSidebar('/leetcode/', {
+    title: 'LeetCode',
+    filter: filters.allMdButIndex,
+    sorter: sorters.byFilenameIndex,
+  }),
+  ...genSidebar('/collections/', {
+    title: 'Collections',
+  })
+}
 
 export default {
   title: '🌵',
-  titleTemplate: 'Alex Sun\'s Homepage',
+  titleTemplate: 'khronosyn',
   description: 'Alex Sun\'s homepage, blog and notes.',
   base: '/',
   srcDir: 'src',
-  lastUpdated: true,
+  lastUpdated: false,
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
   ],

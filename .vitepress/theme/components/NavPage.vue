@@ -4,12 +4,10 @@ import { useData } from 'vitepress'
 
 const data = useData()
 
-const props = defineProps({
-  navPath: String
-})
-
 const collections = computed(() => {
-  return data.theme.value.sidebar[props.navPath] || []
+  const dirPath = data.page.value.filePath.replace(/index\.md$/, '')
+  const navPath = `/${dirPath}`
+  return data.theme.value.sidebar[navPath] || []
 })
 </script>
 

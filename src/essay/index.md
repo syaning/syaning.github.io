@@ -4,4 +4,4 @@
 </div>
 :::
 
-<NavPage navPath="/essay/" />
+<NavPage />

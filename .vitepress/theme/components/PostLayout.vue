@@ -21,7 +21,6 @@ const formatDate = (date) => {
         </div>
       </div>
     </template>
-    xxx
   </Layout>
 </template>
 
