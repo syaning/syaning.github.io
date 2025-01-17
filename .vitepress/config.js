@@ -43,7 +43,9 @@ export default {
   srcDir: 'src',
   lastUpdated: false,
   head: [
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    // see https://github.com/chawyehsu/lxgw-wenkai-webfont
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css' }]
   ],
   themeConfig: {
     logo: '/logo.svg',
