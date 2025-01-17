@@ -17,6 +17,7 @@ const formatDate = (date) => {
       <div class="vp-doc">
         <h1>{{ $frontmatter.title }}</h1>
         <div class="post-meta">
+          <IconCalendar />
           <time>{{ formatDate($frontmatter.date) }}</time>
         </div>
       </div>
@@ -29,5 +30,13 @@ const formatDate = (date) => {
   color: var(--vp-c-text-2);
   font-size: small;
   margin: 1rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.post-meta > svg {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
 }
 </style>
