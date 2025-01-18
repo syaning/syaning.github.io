@@ -1,18 +1,12 @@
 <script setup>
-import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { useSidebar } from 'vitepress/theme'
 
-const data = useData()
-
-const collections = computed(() => {
-  const dirPath = data.page.value.filePath.replace(/index\.md$/, '')
-  const navPath = `/${dirPath}`
-  return data.theme.value.sidebar[navPath] || []
-})
+const { sidebar } = useSidebar()
 </script>
 
 <template>
-  <div v-for="{ text, items } in collections">
+  <div v-for="{ text, items } in sidebar">
     <h1>{{ text }}</h1>
     <ul>
       <li v-for="item in items">

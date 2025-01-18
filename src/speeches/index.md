@@ -41,15 +41,15 @@ const speeches = [{
     </figure>
     <div class="speech-meta">
       <div>
-        <IconCalendar />
+        <Icon icon="ep:calendar" />
         <span>{{ speech.date }}</span>
       </div>
       <div>
-        <IconUsers />
+        <Icon icon="ph:users-three-light" />
         <span>{{ speech.conference }}</span>
       </div>
       <div>
-        <IconLocation />
+        <Icon icon="ep:location" />
         <span>{{ speech.location }}</span>
       </div>
     </div>

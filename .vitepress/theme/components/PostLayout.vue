@@ -17,7 +17,7 @@ const formatDate = (date) => {
       <div class="vp-doc">
         <h1>{{ $frontmatter.title }}</h1>
         <div class="post-meta">
-          <IconCalendar />
+          <Icon icon="ep:calendar" />
           <time>{{ formatDate($frontmatter.date) }}</time>
         </div>
       </div>

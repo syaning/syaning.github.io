@@ -1,4 +1,3 @@
-import mathjax3 from 'markdown-it-mathjax3'
 import { filters, sorters, clusters, genSidebar } from './helper'
 
 const nav = [
@@ -36,8 +35,8 @@ const sidebar = {
 }
 
 export default {
-  title: '🌵',
-  titleTemplate: 'khronosyn',
+  title: 'khronosyn',
+  titleTemplate: false,
   description: 'Alex Sun\'s homepage, blog and notes.',
   base: '/',
   srcDir: 'src',
@@ -51,9 +50,9 @@ export default {
     logo: '/logo.svg',
     nav,
     sidebar,
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
-    ],
+    // socialLinks: [
+    //   { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
+    // ],
     footer: {
       copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`
     },
@@ -66,8 +65,6 @@ export default {
     hostname: 'https://khronosyn.com'
   },
   markdown: {
-    config: (md) => {
-      md.use(mathjax3)
-    },
+    math: true
   },
 }
