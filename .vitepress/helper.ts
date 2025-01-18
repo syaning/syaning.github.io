@@ -87,7 +87,7 @@ export const mappers = {
 }
 
 interface LoadFileOptions {
-  files?: Array<string>
+  title?: string
   filter?: () => boolean
   sorter?: () => any
   cluster?: () => any
@@ -97,7 +97,6 @@ interface LoadFileOptions {
 export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   const {
     title,
-    files,
     filter,
     sorter,
     cluster,
@@ -105,7 +104,7 @@ export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   } = options
 
   const realDir = path.join('./src', dir)
-  const posts = (files || fs.readdirSync(realDir))
+  const posts = fs.readdirSync(realDir)
     .filter(f => filter ? filter(f) : true)
     .map(f => {
       const filename = path.parse(f).name

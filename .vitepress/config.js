@@ -10,6 +10,7 @@ const nav = [
     ]
   },
   { text: 'Essay', link: '/essay/' },
+  { text: 'Rambles', link: '/rambles/' },
   { text: 'Collections', link: '/collections/apps' }
 ]
 
@@ -19,15 +20,20 @@ const sidebar = {
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   }),
+  ...genSidebar('/leetcode/', {
+    title: 'LeetCode',
+    filter: filters.allMdButIndex,
+    sorter: sorters.byFilenameIndex,
+  }),
   ...genSidebar('/essay/', {
     filter: filters.allMdButIndex,
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   }),
-  ...genSidebar('/leetcode/', {
-    title: 'LeetCode',
+  ...genSidebar('/rambles/', {
+    title: 'Rambles',
     filter: filters.allMdButIndex,
-    sorter: sorters.byFilenameIndex,
+    sorter: sorters.byDateDesc,
   }),
   ...genSidebar('/collections/', {
     title: 'Collections',
