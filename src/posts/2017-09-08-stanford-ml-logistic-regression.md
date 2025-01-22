@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Stanford机器学习笔记——Logistic Regression
-date:    2017-09-08 17:30:00 +0800
+layout: post
+title:  Stanford机器学习笔记——Logistic Regression
+date:   2017-09-08 17:30:00 +0800
 ---
 
 ## 1. Sigmoid
@@ -20,7 +20,7 @@ $$
 \begin{array}{}
 y = \begin{cases}
 1 & {\text{if}}\ f_\theta(x)\geq0 \\
-0 & {\text{if}}\ f_\theta(x)<0 \\ 
+0 & {\text{if}}\ f_\theta(x)<0 \\
 \end{cases}
 \end{array}
 $$
@@ -39,7 +39,7 @@ $$
 \begin{array}{}
 y = \begin{cases}
 1 & {\text{if}}\ h_\theta(x)\geq0.5 \\
-0 & {\text{if}}\ h_\theta(x)<0.5 \\ 
+0 & {\text{if}}\ h_\theta(x)<0.5 \\
 \end{cases}
 \end{array}
 $$
@@ -52,7 +52,7 @@ $$
 \begin{array}{}
 Cost(h_\theta(x),y) = \begin{cases}
 -log(h_\theta(x)) & {\text{if}}\ y=1 \\
--log(1-h_\theta(x)) & {\text{if}}\ y=0 \\ 
+-log(1-h_\theta(x)) & {\text{if}}\ y=0 \\
 \end{cases}
 \end{array}
 $$
@@ -118,5 +118,3 @@ $$ \theta_j:=\theta_j-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})
 $$ h_\theta^{(i)}(x)=P(y=i|x;\theta)\space\space\space\space\space\space(i=1,2,...,k) $$
 
 对于一个样本 $x$，选取最大的 $h_\theta^{(i)}(x)$，则该样本属于第 $i$ 类。
-
-

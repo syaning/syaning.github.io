@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   深入理解Express(2)
-date:    2015-06-16 14:40:00 +0800
+layout: post
+title:  深入理解Express(2)
+date:   2015-06-16 14:40:00 +0800
 ---
 
 ## 5. 中间件

@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Express深入解读
-date:    2015-10-22 12:00:00 +0800
+layout: post
+title:  Express深入解读
+date:   2015-10-22 12:00:00 +0800
 ---
 
 ::: tip
@@ -344,7 +344,7 @@ app.param('name', function(req, res, next, val) {
 |     --------------------       ---------------------     |
 |               ↓ No                       | Yes           |
 |     --------------------                 |               |
-|     |  process params  |<-----------------               |    
+|     |  process params  |<-----------------               |
 |     --------------------                                 |
 |               ↓                                          |
 |     --------------------                                 |

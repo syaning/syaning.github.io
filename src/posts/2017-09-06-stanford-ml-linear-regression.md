@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Stanford机器学习笔记——Linear Regression
-date:    2017-09-06 23:30:00 +0800
+layout: post
+title:  Stanford机器学习笔记——Linear Regression
+date:   2017-09-06 23:30:00 +0800
 ---
 
 ## 1. 单一变量线性回归

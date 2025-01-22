@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   理解Vue响应式原理
-date:    2018-12-16 23:00:00 +0800
+layout: post
+title:  理解Vue响应式原理
+date:   2018-12-16 23:00:00 +0800
 ---
 
 ## 一、基本实现
@@ -236,7 +236,7 @@ function defineReactive(obj, key) {
   // 如果val不是Object，直接返回
   // 否则会递归对嵌套对象的属性进行观察
   observe(val)
-  
+
   Object.defineProperty(obj, key, {
     // ...
   })

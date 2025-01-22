@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   DeepLearning笔记(10)——对象检测
-date:    2018-03-25 22:45:00 +0800
+layout: post
+title:  DeepLearning笔记(10)——对象检测
+date:   2018-03-25 22:45:00 +0800
 ---
 
 ## 1. 目标定位

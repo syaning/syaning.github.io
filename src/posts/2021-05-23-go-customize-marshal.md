@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Go自定义MarshalJSON方法
-date:    2021-05-23 17:30:00 +0800
+layout: post
+title:  Go自定义MarshalJSON方法
+date:   2021-05-23 17:30:00 +0800
 ---
 
 在 Go 中，JSON 的序列化和反序列化并不总是能够很好满足我们的需求。例如有如下结构：

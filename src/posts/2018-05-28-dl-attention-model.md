@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   DeepLearning笔记(16)——注意力模型
-date:    2018-05-28 16:20:00 +0800
+layout: post
+title:  DeepLearning笔记(16)——注意力模型
+date:   2018-05-28 16:20:00 +0800
 ---
 
 ![](./img/2018/05/28/16-1.png)

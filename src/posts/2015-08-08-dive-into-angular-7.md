@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   AngularJS深入(7)——scope
-date:    2015-08-08 21:00:00 +0800
+layout: post
+title:  AngularJS深入(7)——scope
+date:   2015-08-08 21:00:00 +0800
 ---
 
 ## 1. $RootScopeProvider

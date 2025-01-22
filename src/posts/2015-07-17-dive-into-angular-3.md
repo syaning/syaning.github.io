@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   AngularJS深入(3)——依赖注入
-date:    2015-07-17 13:35:00 +0800
+layout: post
+title:  AngularJS深入(3)——依赖注入
+date:   2015-07-17 13:35:00 +0800
 ---
 
 AngularJS的一个强大之处就在于依赖注入。在调用`bootstrap`的时候，会调用`createInjector`来创建一个注射器进行注入。该方法的代码简化如下：
@@ -242,7 +242,7 @@ angular.module('MyModule', [])
     .controller('ctrl', ['$scope', '$injector', function($scope, $injector) {
         console.log($injector.annotate(function(arg1, arg2, arg3) {}));
         // ["arg1", "arg2", "arg3"]
-        
+
         console.log($injector.annotate(['service', function(arg1) {}]));
         // ["service"]
     }]);

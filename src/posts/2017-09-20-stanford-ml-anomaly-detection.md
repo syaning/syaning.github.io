@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Stanford机器学习笔记——异常检测
-date:    2017-09-20 14:55:00 +0800
+layout: post
+title:  Stanford机器学习笔记——异常检测
+date:   2017-09-20 14:55:00 +0800
 ---
 
 ## 1. 正态分布（高斯分布）

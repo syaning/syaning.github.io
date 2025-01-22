@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Node核心模块之buffer
-date:    2016-02-29 11:00:00 +0800
+layout: post
+title:  Node核心模块之buffer
+date:   2016-02-29 11:00:00 +0800
 ---
 
 ::: tip
@@ -27,7 +27,7 @@ TypedArray和DataView的区别是：TypedArray只能是同一种类型的数据�
 Buffer的[API文档](https://nodejs.org/dist/latest/docs/api/buffer.html)里提到：
 
 > Prior to the introduction of `TypedArray` in ECMAScript 2015 (ES6), the JavaScript language had no mechanism for reading or manipulating streams of binary data. The `Buffer` class was introduced as part of the Node.js API to make it possible to interact with octet streams in the context of things like TCP streams and file system operations.
-> 
+>
 > Now that `TypedArray` has been added in ES6, the `Buffer` class implements the `Uint8Array` API in a manner that is more optimized and suitable for Node.js' use cases.
 
 因此，目前Buffer的实现是基于Uint8Array的，但是对接口和操作进行了优化，使用起来会更加便捷。

@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   DeepLearning笔记(18)——机器学习策略1
-date:    2018-05-29 15:40:00 +0800
+layout: post
+title:  DeepLearning笔记(18)——机器学习策略1
+date:   2018-05-29 15:40:00 +0800
 ---
 
 ## 1. 为什么需要策略
@@ -218,7 +218,7 @@ $$
 $$
 w^{(i)}=\begin{cases}
 1 & \text{if }x^{(i)}\text{ is non-pornographic} \\
-10 & \text{if }x^{(i)}\text{ is pornographic} 
+10 & \text{if }x^{(i)}\text{ is pornographic}
 \end{cases}
 $$
 

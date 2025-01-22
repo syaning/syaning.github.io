@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Node核心模块之crypto
-date:    2016-09-27 18:00:00 +0800
+layout: post
+title:  Node核心模块之crypto
+date:   2016-09-27 18:00:00 +0800
 ---
 
 ## Hash

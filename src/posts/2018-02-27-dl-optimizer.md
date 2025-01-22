@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   DeepLearning笔记(4)——优化算法
-date:    2018-02-27 20:00:00 +0800
+layout: post
+title:  DeepLearning笔记(4)——优化算法
+date:   2018-02-27 20:00:00 +0800
 ---
 
 ## 1. BGD

@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   matplotlib绘图——柱状图
-date:    2017-02-07 18:00:00 +0800
+layout: post
+title:  matplotlib绘图——柱状图
+date:   2017-02-07 18:00:00 +0800
 ---
 
 ## 1. 基本的柱状图

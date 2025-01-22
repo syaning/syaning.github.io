@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Redux入门
-date:    2016-03-23 11:40:00 +0800
+layout: post
+title:  Redux入门
+date:   2016-03-23 11:40:00 +0800
 ---
 
 ## 1. Redux的核心组成

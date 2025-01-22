@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Redux中间件
-date:    2016-03-25 13:40:00 +0800
+layout: post
+title:  Redux中间件
+date:   2016-03-25 13:40:00 +0800
 ---
 
 Redux也有Middleware的概念，类似于[Express](http://expressjs.com/)或者[Koa](http://koajs.com/)。事实上，Redux的中间件模型更接近Koa的，都是洋葱模型，而Express的中间件模型则是瀑布流模型。

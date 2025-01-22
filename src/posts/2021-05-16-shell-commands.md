@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   一些常用的Shell命令总结
-date:    2021-05-16 10:30:00 +0800
+layout: post
+title:  一些常用的Shell命令总结
+date:   2021-05-16 10:30:00 +0800
 ---
 
 ## 格式化输出
@@ -35,7 +35,7 @@ fi
 参考 [bash generate random alphanumeric string](https://gist.github.com/earthgecko/3089509).
 
 ```shell
-# bash generate random 32 character alphanumeric string (upper and lowercase) and 
+# bash generate random 32 character alphanumeric string (upper and lowercase) and
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
 # bash generate random 32 character alphanumeric string (lowercase only)

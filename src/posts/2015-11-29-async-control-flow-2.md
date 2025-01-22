@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   JS异步控制流及async实现细节分析(2)
-date:    2015-11-29 19:15:00 +0800
+layout: post
+title:  JS异步控制流及async实现细节分析(2)
+date:   2015-11-29 19:15:00 +0800
 ---
 
 ## 4. map/filter/reject
@@ -43,7 +43,7 @@ function map(arr, fn, callback) {
 	calback = once(callback || function() {});
 	arr = arr || [];
 	var result = Array.isArray(arr) ? [] : {};
-	
+
 	async.eachOf(arr, function(val, key, callback) {
 		fn(val, function(err, data) {
 			result[key] = data;

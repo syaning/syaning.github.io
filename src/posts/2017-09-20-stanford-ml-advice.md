@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Stanford机器学习笔记——机器学习建议
-date:    2017-09-20 00:25:00 +0800
+layout: post
+title:  Stanford机器学习笔记——机器学习建议
+date:   2017-09-20 00:25:00 +0800
 ---
 
 ## 1. 模型选择

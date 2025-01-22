@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   JS formatUnicorn
-date:    2020-12-05 12:00:00 +0800
+layout: post
+title:  JS formatUnicorn
+date:   2020-12-05 12:00:00 +0800
 ---
 
 ```js
@@ -13,7 +13,7 @@ date:    2020-12-05 12:00:00 +0800
  * formatUnicorn('{0} {1}', 'hello', 'world')       // hello world
  * formatUnicorn('{0} {1}', ['hello', 'world'])     // hello world
  * formatUnicorn('hello {name}', { name: 'world' }) // hello world
- * 
+ *
  * @param  {String} str
  * @param  {...Any} args
  * @return {String}

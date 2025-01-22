@@ -1,8 +1,7 @@
 <script setup>
-import DefaultTheme from 'vitepress/theme'
 import dayjs from 'dayjs'
+import VPDoc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 
-const { Layout } = DefaultTheme
 const formatDate = (date) => {
   if (typeof date === 'string') {
     date = date.replace(/-/g, '/')
@@ -12,8 +11,8 @@ const formatDate = (date) => {
 </script>
 
 <template>
-  <Layout>
-    <template #doc-before v-if="$frontmatter.doctype === 'post'">
+  <VPDoc>
+    <template #doc-before>
       <div class="vp-doc">
         <h1>{{ $frontmatter.title }}</h1>
         <div class="post-meta">
@@ -22,7 +21,7 @@ const formatDate = (date) => {
         </div>
       </div>
     </template>
-  </Layout>
+  </VPDoc>
 </template>
 
 <style>

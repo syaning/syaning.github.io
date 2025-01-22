@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   猫与宿命
-date:    2023-02-25 01:00:00 +0800
+layout: post
+title:  猫与宿命
+date:   2023-02-25 01:00:00 +0800
 ---
 
 ## 一

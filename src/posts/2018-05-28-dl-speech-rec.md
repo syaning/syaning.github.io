@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   DeepLearning笔记(17)——语音识别、关键字检测
-date:    2018-05-28 17:30:00 +0800
+layout: post
+title:  DeepLearning笔记(17)——语音识别、关键字检测
+date:   2018-05-28 17:30:00 +0800
 ---
 
 ## 1. 语音识别

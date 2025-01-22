@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   Stanford机器学习笔记——Regularization
-date:    2017-09-10 10:30:00 +0800
+layout: post
+title:  Stanford机器学习笔记——Regularization
+date:   2017-09-10 10:30:00 +0800
 ---
 
 ## 1. 过拟合
@@ -25,7 +25,7 @@ $$
 \begin{array}{}
 \begin{cases}
   \theta_0:=\theta_0-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_0^{(i)} \\
-  \theta_j:=\theta_j-\alpha[\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}+\frac{\lambda}{m}\theta_j] & j=1,2,...,n \\ 
+  \theta_j:=\theta_j-\alpha[\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}+\frac{\lambda}{m}\theta_j] & j=1,2,...,n \\
 \end{cases}
 \end{array}
 $$
@@ -60,7 +60,7 @@ $$
 \begin{array}{}
 \begin{cases}
   \theta_0:=\theta_0-\alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_0^{(i)} \\
-  \theta_j:=\theta_j-\alpha[\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}+\frac{\lambda}{m}\theta_j] & j=1,2,...,n \\ 
+  \theta_j:=\theta_j-\alpha[\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}+\frac{\lambda}{m}\theta_j] & j=1,2,...,n \\
 \end{cases}
 \end{array}
 $$

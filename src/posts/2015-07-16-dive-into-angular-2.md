@@ -1,7 +1,7 @@
 ---
-doctype: post
-title:   AngularJS深入(2)——模块化
-date:    2015-07-16 22:50:00 +0800
+layout: post
+title:  AngularJS深入(2)——模块化
+date:   2015-07-16 22:50:00 +0800
 ---
 
 ## 1. setupModuleLoader
@@ -72,7 +72,7 @@ function module(name, requires, configFn) {
 	if (requires && modules.hasOwnProperty(name)) {
 		modules[name] = null;
 	}
-	
+
 	return ensure(modules, name, function() {
 		// ... ...
 	});
