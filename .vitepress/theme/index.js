@@ -9,6 +9,6 @@ export default {
   enhanceApp({ app }) {
     app.component('Icon', Icon)
     app.component('NavPage', NavPage)
-    app.component('post', PostLayout)
+    app.component('Post', PostLayout)
   }
 }
