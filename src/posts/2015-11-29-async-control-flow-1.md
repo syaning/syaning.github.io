@@ -2,6 +2,7 @@
 layout: post
 title:  JS异步控制流及async实现细节分析(1)
 date:   2015-11-29 11:30:00 +0800
+tags:   JavaScript
 ---
 
 ::: tip

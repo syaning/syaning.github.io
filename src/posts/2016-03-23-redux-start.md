@@ -2,6 +2,7 @@
 layout: post
 title:  Redux入门
 date:   2016-03-23 11:40:00 +0800
+tags:   JavaScript
 ---
 
 ## 1. Redux的核心组成

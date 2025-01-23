@@ -2,6 +2,7 @@
 layout: post
 title:  AngularJS深入(7)——scope
 date:   2015-08-08 21:00:00 +0800
+tags:   JavaScript Angular
 ---
 
 ## 1. $RootScopeProvider

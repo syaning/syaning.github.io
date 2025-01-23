@@ -2,6 +2,7 @@
 layout: post
 title:  理解Vue响应式原理
 date:   2018-12-16 23:00:00 +0800
+tags:   JavaScript Vue
 ---
 
 ## 一、基本实现

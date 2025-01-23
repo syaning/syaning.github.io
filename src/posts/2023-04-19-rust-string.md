@@ -2,6 +2,7 @@
 layout: post
 title:  Rust中的字符串
 date:   2023-04-19 23:00:00 +0800
+tags:   Rust
 ---
 
 ## 1. String、&String、str、&str

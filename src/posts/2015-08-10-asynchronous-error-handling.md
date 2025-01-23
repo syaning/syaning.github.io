@@ -2,6 +2,7 @@
 layout: post
 title:  异步编程中的异常处理
 date:   2015-08-10 14:15:00 +0800
+tags:   JavaScript
 ---
 
 一般情况下，我们会使用`try..catch..`来进行异常处理，例如：

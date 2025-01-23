@@ -2,6 +2,7 @@
 layout: post
 title:  JS异步控制流及async实现细节分析(2)
 date:   2015-11-29 19:15:00 +0800
+tags:   JavaScript
 ---
 
 ## 4. map/filter/reject

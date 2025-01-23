@@ -2,6 +2,7 @@
 layout: post
 title:  ServiceMesh——Istio从入门到放弃
 date:   2019-11-08 12:30:00 +0800
+tags:   k8s
 ---
 
 ## PPT

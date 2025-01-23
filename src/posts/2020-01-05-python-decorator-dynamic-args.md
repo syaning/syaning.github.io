@@ -2,6 +2,7 @@
 layout: post
 title:  Python decorator实现动态参数
 date:   2020-01-05 12:00:00 +0800
+tags:   Python
 ---
 
 例如实现一个 decorator 用来鉴权，支持如下使用方式:

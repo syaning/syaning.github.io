@@ -2,6 +2,7 @@
 layout: post
 title:  Node中的stream
 date:   2015-08-17 14:15:00 +0800
+tags:   Node.js
 ---
 
 ## 1. 什么是stream

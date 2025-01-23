@@ -2,6 +2,7 @@
 layout: post
 title:  Go交叉编译
 date:   2021-05-10 23:30:00 +0800
+tags:   Go
 ---
 
 通过 `go tool dist list` 可以获取到 `${GOOS}/${GOARCH}` 列表，例如：

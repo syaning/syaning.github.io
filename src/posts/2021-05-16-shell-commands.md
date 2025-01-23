@@ -2,6 +2,7 @@
 layout: post
 title:  一些常用的Shell命令总结
 date:   2021-05-16 10:30:00 +0800
+tags:   Shell
 ---
 
 ## 格式化输出

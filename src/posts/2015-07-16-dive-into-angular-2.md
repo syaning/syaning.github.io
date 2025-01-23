@@ -2,6 +2,7 @@
 layout: post
 title:  AngularJS深入(2)——模块化
 date:   2015-07-16 22:50:00 +0800
+tags:   JavaScript Angular
 ---
 
 ## 1. setupModuleLoader

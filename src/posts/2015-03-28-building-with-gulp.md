@@ -2,6 +2,7 @@
 layout: post
 title:  基于gulp的自动化构建
 date:   2015-03-28 00:00:00 +0800
+tags:   JavaScript
 ---
 
 [gulp](http://gulpjs.com/)是一个前端的自动化项目构建工具，与[grunt](http://gruntjs.com/)

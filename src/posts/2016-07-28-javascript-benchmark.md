@@ -2,6 +2,7 @@
 layout: post
 title:  JavaScript Benchmark
 date:   2016-07-28 15:00:00 +0800
+tags:   JavaScript
 ---
 
 benchmark意为基准测试，常用来比较程序的性能。例如，比较不同方式拼接字符串的效率：

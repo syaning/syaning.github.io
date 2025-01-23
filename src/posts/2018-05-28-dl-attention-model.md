@@ -2,6 +2,7 @@
 layout: post
 title:  DeepLearning笔记(16)——注意力模型
 date:   2018-05-28 16:20:00 +0800
+tags:   MachineLearning
 ---
 
 ![](./img/2018/05/28/16-1.png)

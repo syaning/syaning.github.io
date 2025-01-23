@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  DeepLearning笔记(12)——风格迁移
-date:   2018-04-03 14:30:00 +0800
+date:   2018-04-03 17:30:00 +0800
+tags:   MachineLearning
 ---
 
 ## 1. 风格迁移

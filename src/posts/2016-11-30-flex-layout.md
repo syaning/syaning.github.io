@@ -2,6 +2,7 @@
 layout: post
 title:  Flex Layout 思维导图
 date:   2016-11-30 14:00:00 +0800
+tags:   CSS
 ---
 
 ![Flex Layout](./img/2016/11/30/flex-layout.svg)

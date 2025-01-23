@@ -2,6 +2,7 @@
 layout: post
 title:  Stanford机器学习笔记——Logistic Regression
 date:   2017-09-08 17:30:00 +0800
+tags:   MachineLearning
 ---
 
 ## 1. Sigmoid

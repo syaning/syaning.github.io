@@ -2,6 +2,7 @@
 layout: post
 title:  DeepLearning笔记(18)——机器学习策略1
 date:   2018-05-29 15:40:00 +0800
+tags:   MachineLearning
 ---
 
 ## 1. 为什么需要策略

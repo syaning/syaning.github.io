@@ -2,6 +2,7 @@
 layout: post
 title:  Docker减小构建的镜像大小
 date:   2020-08-22 12:00:00 +0800
+tags:   Docker
 ---
 
 ## 简介
