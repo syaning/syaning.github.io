@@ -19,20 +19,15 @@ const sidebar = {
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   }),
-  ...genSidebar('/leetcode/', {
-    title: 'LeetCode',
-    filter: filters.allMdButIndex,
-    sorter: sorters.byFilenameIndex,
-  }),
   ...genSidebar('/essay/', {
     filter: filters.allMdButIndex,
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   }),
-  ...genSidebar('/rambles/', {
-    title: 'Rambles',
+  ...genSidebar('/leetcode/', {
+    title: 'LeetCode',
     filter: filters.allMdButIndex,
-    sorter: sorters.byDateDesc,
+    sorter: sorters.byFilenameIndex,
   }),
   ...genSidebar('/collections/', {
     title: 'Collections',
