@@ -1,17 +1,16 @@
 import { filters, sorters, clusters, genSidebar } from './helper'
 
 const nav = [
+  { text: 'Posts', link: '/posts/' },
+  { text: 'Essay', link: '/essay/' },
   {
-    text: 'Tech',
+    text: 'Misc',
     items: [
-      { text: 'Posts', link: '/posts/' },
+      { text: 'Collections', link: '/collections/apps' },
       { text: 'Speeches', link: '/speeches/' },
       { text: 'Leetcode', link: '/leetcode/' },
-    ]
+    ],
   },
-  { text: 'Essay', link: '/essay/' },
-  { text: 'Rambles', link: '/rambles/' },
-  { text: 'Collections', link: '/collections/apps' }
 ]
 
 const sidebar = {
@@ -37,7 +36,7 @@ const sidebar = {
   }),
   ...genSidebar('/collections/', {
     title: 'Collections',
-  })
+  }),
 }
 
 export default {
@@ -50,7 +49,13 @@ export default {
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     // see https://github.com/chawyehsu/lxgw-wenkai-webfont
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css' }]
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css',
+      },
+    ],
   ],
   themeConfig: {
     logo: '/logo.svg',
@@ -60,17 +65,17 @@ export default {
     //   { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
     // ],
     footer: {
-      copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`
+      copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`,
     },
     outline: [2, 3],
     search: {
-      provider: 'local'
-    }
+      provider: 'local',
+    },
   },
   sitemap: {
-    hostname: 'https://khronosyn.com'
+    hostname: 'https://khronosyn.com',
   },
   markdown: {
-    math: true
+    math: true,
   },
 }
