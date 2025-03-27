@@ -1,13 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import * as matter from 'gray-matter'
-
-/**
- * Try extract frontmatter.
- */
-function tryExtractFrontmatter(content: string) {
-  return matter.default(content).data || {}
-}
+import matter from 'gray-matter'
 
 /**
  * Try extract title with the following order:
@@ -109,8 +102,8 @@ export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
     .map(f => {
       const filename = path.parse(f).name
       const link = path.join(dir, filename)
-      const content = fs.readFileSync(path.join(realDir, f), 'utf8')
-      const frontmatter = tryExtractFrontmatter(content)
+      const src = fs.readFileSync(path.join(realDir, f), 'utf8')
+      const { data: frontmatter, content } = matter(src)
       const params = { frontmatter, content, filename }
       const title = tryExtractTitle(params)
       const date = tryExtractDate(params)
