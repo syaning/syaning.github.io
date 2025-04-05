@@ -12,11 +12,11 @@ const {
 <template>
   <div class="tag-group">
     <span
-      v-for="({tag, cnt}) in tags"
+      v-for="({ tag, cnt }) in tags"
       :class="{ tag: true, active: activeTags.indexOf(tag) >= 0 }"
       @click="onToggle(tag)"
     >
-      {{tag}}({{cnt}})
+      {{ tag }}({{ cnt }})
     </span>
   </div>
 </template>
@@ -31,7 +31,7 @@ const {
     background: var(--vp-c-gray-soft);
     font-size: 12px;
     line-height: 16px;
-    padding: 4px 8px;
+    padding: 2px 8px 3px 8px;
     border-radius: 50px;
     cursor: pointer;
 

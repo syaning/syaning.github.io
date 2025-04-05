@@ -39,29 +39,29 @@ const formatDate = (date) => {
   </VPDoc>
 </template>
 
-<style>
+<style scoped lang="less">
 .post-meta {
   color: var(--vp-c-text-2);
   font-size: small;
   margin: 1rem 0 2rem 0;
-}
 
-.post-date {
-  display: flex;
-  align-items: center;
-}
+  .post-date {
+    display: flex;
+    align-items: center;
 
-.post-date > svg {
-  width: 12px;
-  height: 12px;
-  margin-right: 5px;
-}
+    > svg {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+  }
 
-.post-tags {
-  margin: 0 !important;
-}
+  .post-tags {
+    margin: 0 !important;
 
-.post-tags > span {
-  margin-right: 8px;
+    > span {
+      margin-right: 8px;
+    }
+  }
 }
 </style>
