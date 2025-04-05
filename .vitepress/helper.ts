@@ -76,7 +76,18 @@ export const clusters = {
 }
 
 export const mappers = {
-  default: (post) => ({ text: post.title, link: post.link })
+  default: (post) => {
+    const tags = (post.frontmatter.tags || '')
+      .trim()
+      .split(/\s+/)
+      .filter((tag) => tag !== '')
+
+    return {
+      text: post.title,
+      link: post.link,
+      tags,
+    }
+  }
 }
 
 interface LoadFileOptions {

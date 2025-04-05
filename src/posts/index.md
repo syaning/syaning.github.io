@@ -1,1 +1,1 @@
-<NavPage />
+<NavPage showTags />

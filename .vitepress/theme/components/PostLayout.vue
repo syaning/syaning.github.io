@@ -5,7 +5,6 @@ import VPDoc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 import dayjs from 'dayjs'
 
 const { frontmatter } = useData()
-
 const tags = computed(() => {
   return (frontmatter.value.tags || '')
       .trim()
