@@ -13,26 +13,23 @@ const nav = [
   },
 ]
 
-const sidebar = {
-  ...genSidebar('/posts/', {
-    filter: filters.allMdButIndex,
+const sidebar = genSidebar({
+  '/posts/': {
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
-  }),
-  ...genSidebar('/essay/', {
-    filter: filters.allMdButIndex,
+  },
+  '/essay/': {
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
-  }),
-  ...genSidebar('/leetcode/', {
+  },
+  '/leetcode/': {
     title: 'LeetCode',
-    filter: filters.allMdButIndex,
     sorter: sorters.byFilenameIndex,
-  }),
-  ...genSidebar('/collections/', {
+  },
+  '/collections/': {
     title: 'Collections',
-  }),
-}
+  }
+})
 
 export default {
   title: 'khronosyn',

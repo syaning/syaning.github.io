@@ -2,6 +2,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
 
+const srcDir = './src'
+
 /**
  * Try extract title with the following order:
  * 1. front matter
@@ -101,13 +103,13 @@ interface LoadFileOptions {
 export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   const {
     title,
-    filter,
+    filter = filters.allMdButIndex,
     sorter,
     cluster,
     mapper = mappers.default
   } = options
 
-  const realDir = path.join('./src', dir)
+  const realDir = path.join(srcDir, dir)
   const posts = fs.readdirSync(realDir)
     .filter(f => filter ? filter(f) : true)
     .map(f => {
@@ -142,8 +144,9 @@ export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   }]
 }
 
-export function genSidebar(dir: string, options: LoadFileOptions) {
-  return {
-    [dir]: loadAllFiles(dir, options)
-  }
+export function genSidebar(conf: Record<string, LoadFileOptions>) {
+  return Object.keys(conf).reduce((ret, dir) => {
+    ret[dir] = loadAllFiles(dir, conf[dir])
+    return ret
+  }, {})
 }
