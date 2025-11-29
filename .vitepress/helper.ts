@@ -100,7 +100,7 @@ interface LoadFileOptions {
   mapper?: () => any
 }
 
-export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
+export function loadFlatFiles(dir: string, options: LoadFileOptions = {}) {
   const {
     title,
     filter = filters.allMdButIndex,
@@ -144,9 +144,24 @@ export function loadAllFiles(dir: string, options: LoadFileOptions = {}) {
   }]
 }
 
+function loadHierarchyFiles(dir: string, subdirs: any[], options: LoadFileOptions = {}) {
+  return subdirs.reduce((result, item) => {
+    const subdir = typeof item === 'string' ? item : item.dir
+    const title = typeof item === 'string' ? item : item.title
+    const newOptions = { ...options, title }
+    return [
+      ...result,
+      ...loadFlatFiles(path.join(dir, subdir), newOptions)
+    ]
+  }, [])
+}
+
 export function genSidebar(conf: Record<string, LoadFileOptions>) {
   return Object.keys(conf).reduce((ret, dir) => {
-    ret[dir] = loadAllFiles(dir, conf[dir])
+    const { dirs = [], ...options } = conf[dir]
+    ret[dir] = dirs.length > 0
+      ? loadHierarchyFiles(dir, dirs, options)
+      : loadFlatFiles(dir, options)
     return ret
   }, {})
 }
