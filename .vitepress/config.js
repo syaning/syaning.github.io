@@ -1,33 +1,33 @@
 import { filters, sorters, clusters, genSidebar } from './helper'
 
 const nav = [
-  { text: 'Posts', link: '/posts/' },
-  { text: 'Essay', link: '/essay/' },
   {
-    text: 'Misc',
+    text: 'Tech',
     items: [
-      { text: 'Collections', link: '/collections/apps' },
-      { text: 'Speeches', link: '/speeches/' },
-      { text: 'Leetcode', link: '/leetcode/' },
-    ],
+      { text: 'Posts', link: '/tech/posts/' },
+      { text: 'Talks', link: '/tech/talks/' },
+      { text: 'Leetcode', link: '/tech/leetcode/' },
+    ]
   },
+  { text: 'Writing', link: '/writing/' },
+  { text: 'Links', link: '/links/apps' },
 ]
 
 const sidebar = genSidebar({
-  '/posts/': {
+  '/tech/posts/': {
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   },
-  '/essay/': {
-    sorter: sorters.byDateDesc,
-    cluster: clusters.byYear,
-  },
-  '/leetcode/': {
+  '/tech/leetcode/': {
     title: 'LeetCode',
     sorter: sorters.byFilenameIndex,
   },
-  '/collections/': {
-    title: 'Collections',
+  '/writing/': {
+    sorter: sorters.byDateDesc,
+    cluster: clusters.byYear,
+  },
+  '/links/': {
+    title: 'Links',
   }
 })
 
