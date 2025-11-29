@@ -8,7 +8,7 @@ import tid2022 from './img/2022-09-09-tid.jpg'
 import gnsec2022 from './img/2022-04-26-gnsec.jpg'
 import qecon2021 from './img/2021-09-15-qecon.jpg'
 
-const speeches = [{
+const talks = [{
   cover: tid2022,
   date: '2022-09-09',
   conference: 'TiD',
@@ -32,35 +32,35 @@ const speeches = [{
 }]
 </script>
 
-# Speeches
+# Talks
 
-<div class="speeches">
-  <div class="speech" v-for="speech in speeches">
+<div class="talks">
+  <div class="talk" v-for="talk in talks">
     <figure>
-      <img class="speech-cover" :src="speech.cover" alt="">
+      <img class="talk-cover" :src="talk.cover" alt="">
     </figure>
-    <div class="speech-meta">
+    <div class="talk-meta">
       <div>
         <Icon icon="ep:calendar" />
-        <span>{{ speech.date }}</span>
+        <span>{{ talk.date }}</span>
       </div>
       <div>
         <Icon icon="ph:users-three-light" />
-        <span>{{ speech.conference }}</span>
+        <span>{{ talk.conference }}</span>
       </div>
       <div>
         <Icon icon="ep:location" />
-        <span>{{ speech.location }}</span>
+        <span>{{ talk.location }}</span>
       </div>
     </div>
-    <div class="speech-title">
-      <a :href="speech.link" target="_blank" rel="noreferrer">{{ speech.title }}</a>
+    <div class="talk-title">
+      <a :href="talk.link" target="_blank" rel="noreferrer">{{ talk.title }}</a>
     </div>
   </div>
 </div>
 
 <style scoped>
-.speeches {
+.talks {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -68,7 +68,7 @@ const speeches = [{
   margin: 20px 0;
 }
 
-.speech {
+.talk {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -77,17 +77,17 @@ const speeches = [{
 }
 
 @media (min-width: 720px) {
-  .speech {
+  .talk {
     width: calc(50% - 10px);
   }
 }
 
-.speech-cover {
+.talk-cover {
   width: 100%;
   border-radius: 12px 12px 0 0;
 }
 
-.speech-meta {
+.talk-meta {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -97,18 +97,18 @@ const speeches = [{
   border-bottom: 2px solid var(--vp-c-bg);
 }
 
-.speech-meta > div {
+.talk-meta > div {
   display: flex;
   align-items: center;
 }
 
-.speech-meta svg {
+.talk-meta svg {
   width: 16px;
   height: 16px;
   margin-right: 8px;
 }
 
-.speech-title {
+.talk-title {
   padding: 10px 12px;
   display: flex;
   justify-content: center;
