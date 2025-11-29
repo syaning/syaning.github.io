@@ -10,8 +10,8 @@ Redux也有Middleware的概念，类似于[Express](http://expressjs.com/)或者
 ::: tip
 关于Express和Koa的中间件机制，可以参考我之前的文章：
 
-- [Express深入解读](./2015-10-22-express-in-depth)
-- [koa的中间件机制](./2015-11-02-koa-middleware)
+- [Express深入解读](../2015/2015-10-22-express-in-depth)
+- [koa的中间件机制](../2015/2015-11-02-koa-middleware)
 :::
 
 [官方文档](http://redux.js.org/docs/advanced/Middleware.html)对中间件已经有了比较详细的解释。或者参考这个[非常简单的例子](https://github.com/simplest-demos/simplest-redux-middleware-demo)来初步了解Redux中间件的使用。
