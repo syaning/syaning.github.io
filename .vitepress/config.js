@@ -10,7 +10,7 @@ const nav = [
     ]
   },
   { text: 'Writing', link: '/writing/' },
-  { text: 'Links', link: '/links/apps' },
+  { text: 'Links', link: '/links/' },
 ]
 
 const sidebar = genSidebar({
@@ -29,9 +29,6 @@ const sidebar = genSidebar({
     sorter: sorters.byDateDesc,
     cluster: clusters.byYear,
   },
-  '/links/': {
-    title: 'Links',
-  }
 })
 
 export default {
