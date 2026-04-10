@@ -25,6 +25,10 @@ mjx-container > svg {
   text-align: justify;
 }
 
+.vp-doc ul {
+  list-style: circle;
+}
+
 @media (max-width: 640px) {
   .vp-doc .VPTeamMembers.small.count-1 .container {
     max-width: 100% !important;
