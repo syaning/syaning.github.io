@@ -1,4 +1,4 @@
-import { filters, sorters, clusters, genSidebar } from './helper'
+import { sorters, clusters, genSidebar } from './helper'
 
 const nav = [
   {
@@ -16,10 +16,7 @@ const nav = [
 const sidebar = genSidebar({
   '/tech/posts/': {
     sorter: sorters.byDateDesc,
-    dirs: [
-      '2026', '2025', '2023', '2022', '2021', '2020',
-      '2019', '2018', '2017', '2016', '2015',
-    ],
+    recursive: true,
   },
   '/tech/leetcode/': {
     title: 'LeetCode',

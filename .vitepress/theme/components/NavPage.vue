@@ -57,7 +57,7 @@ const visibleSidebar = computed(() => {
     />
   </div>
   <div v-for="{ text, items } in visibleSidebar">
-    <h1>{{ text }}</h1>
+    <h3>{{ text }}</h3>
     <ul>
       <li v-for="item in items">
         <a v-if="item.link" :href="item.link">{{ item.text }}</a>
