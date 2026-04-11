@@ -7,7 +7,7 @@ aside: false
 import { computed } from 'vue'
 import { data as momentsData } from './moments.data.js'
 
-const images = import.meta.glob('./img/*.webp', {
+const images = import.meta.glob('./img/*.{webp,jpeg,jpg}', {
   eager: true,
   import: 'default',
 })
