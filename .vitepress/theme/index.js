@@ -3,6 +3,7 @@ import { Icon } from '@iconify/vue'
 import NavPage from './components/NavPage.vue'
 import PostLayout from './components/PostLayout.vue'
 import TagGroup from './components/TagGroup.vue'
+import Talks from './components/Talks.vue'
 import './styles/custom.css'
 
 export default {
@@ -12,5 +13,6 @@ export default {
     app.component('NavPage', NavPage)
     app.component('Post', PostLayout)
     app.component('TagGroup', TagGroup)
+    app.component('Talks', Talks)
   }
 }
