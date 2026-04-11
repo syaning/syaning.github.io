@@ -8,6 +8,7 @@ const data = useData()
 const pointerStart = ref(null)
 const eagerImageCount = 6
 const loadedImages = ref({})
+const momentImageElements = ref([])
 
 const props = defineProps({
   moments: {
@@ -66,6 +67,16 @@ const getLoadingMode = (index) => (index < eagerImageCount ? 'eager' : 'lazy')
 
 const onMomentImageLoaded = (index) => {
   loadedImages.value[index] = true
+}
+
+const setMomentImageRef = (element, index) => {
+  if (!element) {
+    return
+  }
+  momentImageElements.value[index] = element
+  if (element.complete) {
+    onMomentImageLoaded(index)
+  }
 }
 
 const hideDetail = () => {
@@ -143,11 +154,11 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="moments">
-    <img v-for="(moment, index) in moments" :key="moment.img || index" :src="transform(moment.img)" :class="{ 'is-loading': !loadedImages[index] }" alt=""
-      :loading="getLoadingMode(index)" :fetchpriority="index < 2 ? 'high' : 'auto'" decoding="async" width="100" height="100"
-      @load="onMomentImageLoaded(index)"
-      @error="onMomentImageLoaded(index)"
-      @click="() => showDetail(index)"
+    <img v-for="(moment, index) in moments" :key="moment.img || index" :ref="(element) => setMomentImageRef(element, index)"
+      :class="{ 'is-loading': !loadedImages[index] }"
+      :src="transform(moment.img)" alt="" width="100" height="100"
+      :loading="getLoadingMode(index)" :fetchpriority="index < 2 ? 'high' : 'auto'" decoding="async"
+      @click="showDetail(index)" @load="onMomentImageLoaded(index)" @error="onMomentImageLoaded(index)"
     />
     <a href="/moments" v-if="shouldLimit">
       <div class="moments-more">
