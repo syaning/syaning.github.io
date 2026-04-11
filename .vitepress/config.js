@@ -10,6 +10,7 @@ const nav = [
     ]
   },
   { text: 'Writing', link: '/writing/' },
+  { text: 'Moments', link: '/moments/' },
   { text: 'Links', link: '/links/' },
 ]
 
