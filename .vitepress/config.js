@@ -1,4 +1,7 @@
 import { sorters, genSidebar } from './helper'
+import { buildRss } from './rss'
+
+const hostname = 'https://khronosyn.com'
 
 const nav = [
   {
@@ -37,6 +40,7 @@ export default {
   appearance: true,
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'khronosyn', href: `${hostname}/feed.xml` }],
     ['link', { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: '' }],
     // see https://github.com/chawyehsu/lxgw-wenkai-webfont
     [
@@ -76,7 +80,10 @@ export default {
     }
   },
   sitemap: {
-    hostname: 'https://khronosyn.com',
+    hostname,
+  },
+  async buildEnd(siteConfig) {
+    await buildRss(siteConfig)
   },
   markdown: {
     math: true,
