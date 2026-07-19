@@ -25,11 +25,12 @@ const transformations = {
   oss: (imgSrc) => `${imgSrc}?x-oss-process=image/resize,m_mfit,s_200`,
   cloudflare: (imgSrc) => `/cdn-cgi/image/width=200,quality=75,format=auto${imgSrc}`,
   local: (imgSrc) => imgSrc,
+  github: (imgSrc) => imgSrc,
 }
 
 const transform = computed(() => {
-  const transformation = import.meta.env.VITE_IMAGE_TRANSFORMATION
-  return transformations[transformation] || transformations.local
+  const platform = import.meta.env.VITE_PLATFORM
+  return transformations[platform] || transformations.local
 })
 
 const sourceMoments = computed(() => {

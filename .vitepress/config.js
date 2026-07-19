@@ -1,7 +1,14 @@
 import { sorters, genSidebar } from './helper'
 import { buildRss } from './rss'
 
-const hostname = 'https://khronosyn.com'
+// VITE_PLATFORM: local | github | cloudflare | oss
+const hostnames = {
+  local: 'http://localhost:4173',
+  github: 'https://syaning.github.io',
+  cloudflare: 'https://khronosyn.com',
+  oss: 'https://khronosyn.com',
+}
+const hostname = hostnames[process.env.VITE_PLATFORM] || hostnames.local
 
 const nav = [
   {
@@ -83,7 +90,10 @@ export default {
     hostname,
   },
   async buildEnd(siteConfig) {
-    await buildRss(siteConfig)
+    await buildRss({
+      outDir: siteConfig.outDir,
+      hostname,
+    })
   },
   markdown: {
     math: true,
