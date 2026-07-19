@@ -12,11 +12,11 @@ Hi, I’m Alex.
 
 ### Experience
 
-- 2020.06~Present, [Alibaba Cloud](https://www.aliyun.com/)
-- 2018.07~2020.06, [YITU](http://www.yitutech.com/)
-- 2017.04~2018.06, [Eleme](https://www.ele.me/)
-- 2015.07~2017.03, [SAP Labs China](https://www.sap.com/china/index.html)
-- 2011.09~2015.06, [Software School](http://www.software.fudan.edu.cn/), [Fudan University](https://www.fudan.edu.cn/)
+- 2020~now&nbsp; · [Alibaba Cloud](https://www.aliyun.com/)
+- 2018~2020 · [YITU](http://www.yitutech.com/)
+- 2017~2018 · [Eleme](https://www.ele.me/)
+- 2015~2017 · [SAP Labs China](https://www.sap.com/china/index.html)
+- 2011~2015 · [Software School](http://www.software.fudan.edu.cn/), [Fudan University](https://www.fudan.edu.cn/)
 
 ### Find me
 

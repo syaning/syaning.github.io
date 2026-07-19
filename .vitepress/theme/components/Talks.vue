@@ -15,28 +15,22 @@ const { talks } = defineProps<{
 
 <template>
   <div class="talks">
-    <div class="talk" v-for="talk in talks">
-      <figure>
-        <img class="talk-cover" :src="talk.cover" alt="">
-      </figure>
-      <div class="talk-meta">
-        <div>
-          <Icon icon="ep:calendar" />
-          <span>{{ talk.date }}</span>
-        </div>
-        <div>
-          <Icon icon="ph:users-three-light" />
-          <span>{{ talk.conference }}</span>
-        </div>
-        <div>
-          <Icon icon="ep:location" />
-          <span>{{ talk.location }}</span>
+    <a
+      v-for="talk in talks"
+      :key="talk.link"
+      class="talk"
+      :href="talk.link"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img class="talk-cover" :src="talk.cover" alt="" loading="lazy" decoding="async" />
+      <div class="talk-body">
+        <div class="talk-title">{{ talk.title }}</div>
+        <div class="talk-meta">
+          {{ talk.date }} · {{ talk.conference }} · {{ talk.location }}
         </div>
       </div>
-      <div class="talk-title">
-        <a :href="talk.link" target="_blank" rel="noreferrer">{{ talk.title }}</a>
-      </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -44,58 +38,61 @@ const { talks } = defineProps<{
 <style scoped>
 .talks {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 28px;
+  margin: 24px 0;
 }
 
 .talk {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
-  background-color: var(--vp-c-bg-soft);
+  gap: 12px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: opacity 0.15s ease;
 }
 
-@media (min-width: 720px) {
-  .talk {
-    width: calc(50% - 10px);
-  }
+.talk:hover {
+  opacity: 0.72;
+}
+
+.talk:hover .talk-title {
+  color: var(--vp-c-brand-1);
 }
 
 .talk-cover {
   width: 100%;
-  border-radius: 12px 12px 0 0;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 2px;
+  background-color: var(--vp-c-bg-soft);
 }
 
-.talk-meta {
+.talk-body {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 12px;
-  font-size: 14px;
-  color: var(--vp-c-text-2);
-  border-bottom: 2px solid var(--vp-c-bg);
-}
-
-.talk-meta > div {
-  display: flex;
-  align-items: center;
-}
-
-.talk-meta svg {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .talk-title {
-  padding: 10px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--vp-c-text-1);
+  transition: color 0.15s ease;
+}
+
+.talk-meta {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 720px) {
+  .talks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 28px;
+  }
 }
 </style>

@@ -41,26 +41,29 @@ const formatDate = (date) => {
 
 <style scoped lang="less">
 .post-meta {
-  color: var(--vp-c-text-2);
-  font-size: small;
-  margin: 1rem 0 2rem 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.85rem;
+  margin: 0.75rem 0 2.25rem 0;
+  letter-spacing: 0.02em;
 
   .post-date {
     display: flex;
     align-items: center;
+    gap: 6px;
 
     > svg {
       width: 12px;
       height: 12px;
-      margin-right: 5px;
+      opacity: 0.7;
     }
   }
 
   .post-tags {
-    margin: 0 !important;
+    margin: 0.35rem 0 0 !important;
 
     > span {
-      margin-right: 8px;
+      margin-right: 10px;
+      color: var(--vp-c-text-3);
     }
   }
 }

@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
 .moments > img {
   width: 100px;
   height: 100px;
-  border-radius: 4px;
+  border-radius: 2px;
   object-fit: cover;
   background-color: var(--vp-c-bg-soft);
   cursor: pointer;
@@ -237,7 +237,7 @@ onBeforeUnmount(() => {
 .moments-more {
   width: 100px;
   height: 100px;
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: var(--vp-c-bg-soft);
   display: flex;
   justify-content: center;

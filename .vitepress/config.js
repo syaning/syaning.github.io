@@ -34,8 +34,10 @@ export default {
   base: '/',
   srcDir: 'src',
   lastUpdated: false,
+  appearance: true,
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    ['link', { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: '' }],
     // see https://github.com/chawyehsu/lxgw-wenkai-webfont
     [
       'link',
@@ -47,6 +49,7 @@ export default {
   ],
   themeConfig: {
     logo: '/logo.svg',
+    siteTitle: false,
     nav,
     sidebar,
     // socialLinks: [
@@ -55,10 +58,22 @@ export default {
     footer: {
       copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`,
     },
+    docFooter: {
+      prev: 'Prev',
+      next: 'Next',
+    },
     outline: [2, 3],
     search: {
       provider: 'local',
     },
+  },
+  transformPageData(pageData) {
+    const path = pageData.relativePath || ''
+    if (path.startsWith('writing/') && path !== 'writing/index.md') {
+      pageData.frontmatter.sidebar = false
+      pageData.frontmatter.aside = false
+      pageData.frontmatter.outline = false
+    }
   },
   sitemap: {
     hostname: 'https://khronosyn.com',

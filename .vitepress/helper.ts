@@ -20,7 +20,11 @@ type PostMapper = (post: PostMeta) => Record<string, any>
 type PostCluster = (posts: PostMeta[], mapper: PostMapper) => any[]
 type DirSorter = (a: string, b: string) => number
 type DirConfig = string | { dir: string, title?: string }
-type SidebarSection = { text: string, items: any[] }
+interface SidebarSection {
+  text: string
+  items: any[]
+  collapsed?: boolean
+}
 
 interface LoadFileOptions {
   title?: string
@@ -132,9 +136,9 @@ export const clusters = {
     }, {})
     return Object.keys(groups)
       .sort((a, b) => Number(b) - Number(a))
-      .map(key => ({
+      .map((key, index) => ({
         text: key,
-        collapsed: false,
+        collapsed: index > 0,
         items: groups[key].map(mapper)
       }))
   }
@@ -251,16 +255,20 @@ function discoverMarkdownDirs(
 }
 
 function loadHierarchyFiles(dir: string, subdirs: DirConfig[], options: LoadFileOptions = {}) {
-  return subdirs.reduce<SidebarSection[]>((result, item) => {
+  return subdirs.reduce<SidebarSection[]>((result, item, index) => {
     const subdir = typeof item === 'string' ? item : item.dir
     const title = typeof item === 'string'
       ? (subdir ? path.basename(subdir) : options.title)
       : item.title
     const newOptions = { ...options, title }
     const targetDir = subdir ? path.join(dir, subdir) : dir
+    const sections = loadFlatFiles(targetDir, newOptions).map((section) => ({
+      ...section,
+      collapsed: index > 0,
+    }))
     return [
       ...result,
-      ...loadFlatFiles(targetDir, newOptions)
+      ...sections
     ]
   }, [])
 }
