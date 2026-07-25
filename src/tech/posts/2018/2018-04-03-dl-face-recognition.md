@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  DeepLearning笔记(11)——人脸识别
-date:   2018-04-03 14:30:00 +0800
-tags:   MachineLearning
+title: DeepLearning笔记(11)——人脸识别
+date:  2018-04-03 14:30:00 +0800
+tags:  MachineLearning
 ---
 
 ## 1. 人脸验证和人脸识别

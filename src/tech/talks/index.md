@@ -32,6 +32,4 @@ const talks = [{
 }]
 </script>
 
-# Talks
-
 <Talks :talks="talks" />

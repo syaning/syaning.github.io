@@ -21,5 +21,5 @@ Hi, I’m Alex.
 ### Find me
 
 - Github: [syaning](https://github.com/syaning)
-- Email: syaningv<Icon icon="f7:at" width="16" height="16" style="display: inline; vertical-align: middle;" />gmail.com
+- Email: syaningv<span class="mail-at"></span>gmail.com
 - WeChat Official Account: khronosyn

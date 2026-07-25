@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  图解大模型读书笔记——记忆、Agent、RAG、多模态
-date:   2025-12-13 15:00:00 +0800
-tags:   LLM
+title: 图解大模型读书笔记——记忆、Agent、RAG、多模态
+date:  2025-12-13 15:00:00 +0800
+tags:  LLM
 ---
 
 ## 记忆

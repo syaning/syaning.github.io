@@ -2,21 +2,19 @@
   "name": "syaning",
   "version": "2.0.0",
   "description": "My homepage.",
-  "main": "./vitepress/dist/index.html",
+  "main": "./.vitepress/dist/index.html",
   "repository": "https://github.com/syaning/syaning.github.io.git",
   "author": "Alex Sun",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "NODE_OPTIONS=--max_old_space_size=8192 vitepress build",
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@iconify/vue": "^4.3.0",
-    "dayjs": "^1.11.13",
-    "gray-matter": "^4.0.3",
-    "less": "^4.2.2",
     "markdown-it-mathjax3": "^4.3.2",
+    "vite-imagetools": "7.1.1",
     "vitepress": "^1.6.3",
     "vue": "^3.5.13"
   }

@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  Stanford机器学习笔记——Neural Network
-date:   2017-09-12 16:55:00 +0800
-tags:   MachineLearning
+title: Stanford机器学习笔记——Neural Network
+date:  2017-09-12 16:55:00 +0800
+tags:  MachineLearning
 ---
 
 ## 1. Neural Network

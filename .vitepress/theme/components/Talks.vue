@@ -23,37 +23,59 @@ const { talks } = defineProps<{
       target="_blank"
       rel="noreferrer"
     >
-      <img class="talk-cover" :src="talk.cover" alt="" loading="lazy" decoding="async" />
-      <div class="talk-body">
-        <div class="talk-title">{{ talk.title }}</div>
-        <div class="talk-meta">
-          {{ talk.date }} · {{ talk.conference }} · {{ talk.location }}
-        </div>
+      <div class="talk-head">
+        <span class="talk-date">{{ talk.date }}</span>
+        <span class="talk-conference">{{ talk.conference }}</span>
+        <span v-if="talk.location" class="talk-location">{{ talk.location }}</span>
       </div>
+      <div class="talk-title">{{ talk.title }}</div>
+      <img
+        class="talk-cover"
+        :src="talk.cover"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
     </a>
   </div>
 </template>
-
 
 <style scoped>
 .talks {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  margin: 24px 0;
+  gap: 2.25rem;
+  margin: 16px 0 40px;
 }
 
 .talk {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: block;
   text-decoration: none !important;
   color: inherit;
-  transition: opacity 0.15s ease;
 }
 
-.talk:hover {
-  opacity: 0.72;
+.talk-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.65rem;
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--vp-c-text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.talk-location {
+  opacity: 0.75;
+}
+
+.talk-title {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--vp-c-text-1);
+  transition: color 0.15s ease;
 }
 
 .talk:hover .talk-title {
@@ -61,38 +83,17 @@ const { talks } = defineProps<{
 }
 
 .talk-cover {
-  width: 100%;
   display: block;
+  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 2px;
   background-color: var(--vp-c-bg-soft);
+  opacity: 0.92;
+  transition: opacity 0.15s ease;
 }
 
-.talk-body {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.talk-title {
-  font-size: 1.05rem;
-  line-height: 1.45;
-  color: var(--vp-c-text-1);
-  transition: color 0.15s ease;
-}
-
-.talk-meta {
-  font-size: 0.85rem;
-  color: var(--vp-c-text-3);
-  letter-spacing: 0.01em;
-}
-
-@media (min-width: 720px) {
-  .talks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 28px;
-  }
+.talk:hover .talk-cover {
+  opacity: 1;
 }
 </style>

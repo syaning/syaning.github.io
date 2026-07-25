@@ -1,8 +1,6 @@
 :root {
   /* Mono first for alignment; WenKai for CJK fallback */
-  --vp-font-family-base: Courier, 'LXGW WenKai', 'Inter var experimental', 'Inter var', 'Inter',
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif,
+  --vp-font-family-base: Courier, 'LXGW WenKai', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Accent from logo cactus green (#22b573), slightly deeper for link contrast */
@@ -64,12 +62,26 @@
   z-index: 1;
 }
 
-mjx-container.MathJax {
+/* VitePress sets overflow-x:auto on all mjx-container, which breaks
+   inline baseline alignment. Keep scroll only for display math. */
+.vp-doc mjx-container:not([display="true"]) {
   display: inline-block;
+  overflow: visible;
+  vertical-align: middle;
+  margin: 0 0.08em;
 }
 
-mjx-container > svg {
-  margin: auto;
+.vp-doc mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.vp-doc mjx-container[display="true"] > svg {
+  display: block;
+  margin: 0 auto;
 }
 
 .vp-doc a {
@@ -89,6 +101,11 @@ mjx-container > svg {
 
 .vp-doc ul {
   list-style: circle;
+}
+
+/* Obfuscate email @ for casual scrapers */
+.mail-at::before {
+  content: '@';
 }
 
 /* Reading measure for prose pages without sidebar */

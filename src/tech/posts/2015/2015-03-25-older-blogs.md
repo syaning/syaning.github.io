@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  之前的博客
-date:   2015-03-25 12:00:00 +0800
+title: 之前的博客
+date:  2015-03-25 12:00:00 +0800
 ---
 
 之前的博客在[https://github.com/syaning/older-blogs](https://github.com/syaning/older-blogs)，其中：

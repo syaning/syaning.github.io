@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  DeepLearning笔记(9)——Inception
-date:   2018-03-18 20:30:00 +0800
-tags:   MachineLearning
+title: DeepLearning笔记(9)——Inception
+date:  2018-03-18 20:30:00 +0800
+tags:  MachineLearning
 ---
 
 ## 1. 论文

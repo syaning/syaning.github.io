@@ -7,6 +7,11 @@ export interface BuildRssOptions {
   outDir: string
   /** Site origin, e.g. https://khronosyn.com or http://localhost:4173 */
   hostname: string
+  title: string
+  description: string
+  author: string
+  language: string
+  copyrightStartYear: number
   /**
    * Max number of posts in the feed.
    * -1 = unlimited. Default: 10.
@@ -136,7 +141,16 @@ function loadBuiltContent(outDir: string, url: string, hostname: string): string
  * Available after `vitepress build` / `vitepress serve`, not in `dev`.
  */
 export async function buildRss(options: BuildRssOptions): Promise<void> {
-  const { outDir, hostname, limit = 10 } = options
+  const {
+    outDir,
+    hostname,
+    title: siteTitle,
+    description: siteDescription,
+    author,
+    language,
+    copyrightStartYear,
+    limit = 10,
+  } = options
   const { createContentLoader } = await import('vitepress')
 
   const [techPosts, writingPosts] = await Promise.all([
@@ -182,12 +196,12 @@ export async function buildRss(options: BuildRssOptions): Promise<void> {
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>khronosyn</title>
-    <link>${hostname}</link>
-    <description>Alex Sun's homepage, blog and notes.</description>
-    <language>en</language>
-    <copyright>Copyright © 2013–${year} Alex Sun</copyright>
-    <atom:link href="${hostname}/feed.xml" rel="self" type="application/rss+xml"/>
+    <title>${escapeXml(siteTitle)}</title>
+    <link>${escapeXml(hostname)}</link>
+    <description>${escapeXml(siteDescription)}</description>
+    <language>${language}</language>
+    <copyright>Copyright © ${copyrightStartYear}–${year} ${escapeXml(author)}</copyright>
+    <atom:link href="${escapeXml(`${hostname}/feed.xml`)}" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>
 </rss>

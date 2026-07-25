@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  Node核心模块之buffer
-date:   2016-02-29 11:00:00 +0800
-tags:   Node.js
+title: Node核心模块之buffer
+date:  2016-02-29 11:00:00 +0800
+tags:  Node.js
 ---
 
 ::: tip

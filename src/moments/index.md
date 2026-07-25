@@ -4,24 +4,7 @@ aside: false
 ---
 
 <script setup>
-import { computed } from 'vue'
-import { data as momentsData } from './moments.data.js'
-
-const images = import.meta.glob('./img/*.{webp,jpeg,jpg}', {
-  eager: true,
-  import: 'default',
-})
-
-const moments = computed(() => {
-  return momentsData
-    .map((item) => ({
-      ...item,
-      img: images[`./img/${item.file}`] || '',
-    }))
-    .filter((item) => item.img)
-})
+import { moments, ensureMomentImage } from './moments'
 </script>
 
-# Moments
-
-<Moments :moments="moments" />
+<Moments :moments="moments" :resolve-image="ensureMomentImage" />

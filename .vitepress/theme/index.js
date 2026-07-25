@@ -1,20 +1,34 @@
 import DefaultTheme from 'vitepress/theme'
-import { Icon } from '@iconify/vue'
-import NavPage from './components/NavPage.vue'
-import PostLayout from './components/PostLayout.vue'
-import TagGroup from './components/TagGroup.vue'
+import { h } from 'vue'
+import Archive from './components/Archive.vue'
+import PostMeta from './components/PostMeta.vue'
 import Talks from './components/Talks.vue'
 import Moments from './components/Moments.vue'
+import { data as archiveData } from './archive.data'
+import { toArchiveSidebars } from './archive'
 import './styles/custom.css'
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.component('Icon', Icon)
-    app.component('NavPage', NavPage)
-    app.component('Post', PostLayout)
-    app.component('TagGroup', TagGroup)
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      'doc-before': () => h(PostMeta),
+    })
+  },
+  enhanceApp({ app, siteData }) {
+    // Dev wraps @siteData in readonly(), so nested mutation is ignored.
+    // Replace the ref value with a plain copy that includes real sidebars.
+    const current = siteData.value
+    siteData.value = {
+      ...current,
+      themeConfig: {
+        ...current.themeConfig,
+        sidebar: toArchiveSidebars(archiveData),
+      },
+    }
+
+    app.component('Archive', Archive)
     app.component('Talks', Talks)
     app.component('Moments', Moments)
-  }
+  },
 }

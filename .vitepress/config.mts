@@ -1,5 +1,13 @@
-import { sorters, genSidebar } from './helper'
 import { buildRss } from './rss'
+import { imagetools } from 'vite-imagetools'
+
+const site = {
+  title: 'khronosyn',
+  description: "Alex Sun's homepage, blog and notes.",
+  author: 'Alex Sun',
+  language: 'zh-CN',
+  copyrightStartYear: 2013,
+}
 
 // VITE_PLATFORM: local | github | cloudflare | oss
 const hostnames = {
@@ -21,33 +29,19 @@ const nav = [
   },
   { text: 'Writing', link: '/writing/' },
   { text: 'Moments', link: '/moments/' },
-  { text: 'Links', link: '/links/' },
 ]
 
-const sidebar = genSidebar({
-  '/tech/posts/': {
-    sorter: sorters.byDateDesc,
-  },
-  '/tech/leetcode/': {
-    title: 'LeetCode',
-    sorter: sorters.byFilenameIndex,
-  },
-  '/writing/': {
-    sorter: sorters.byDateDesc,
-  },
-})
-
 export default {
-  title: 'khronosyn',
+  title: site.title,
   titleTemplate: false,
-  description: 'Alex Sun\'s homepage, blog and notes.',
+  description: site.description,
   base: '/',
   srcDir: 'src',
   lastUpdated: false,
   appearance: true,
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'khronosyn', href: `${hostname}/feed.xml` }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: site.title, href: `${hostname}/feed.xml` }],
     ['link', { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: '' }],
     // see https://github.com/chawyehsu/lxgw-wenkai-webfont
     [
@@ -62,24 +56,22 @@ export default {
     logo: '/logo.svg',
     siteTitle: false,
     nav,
-    sidebar,
-    // socialLinks: [
-    //   { icon: 'github', link: 'https://github.com/syaning/syaning.github.io' },
-    // ],
-    footer: {
-      copyright: `Copyright &copy; 2013~${new Date().getFullYear()} Alex Sun`,
-    },
+    // Sidebar is supplied from archive.data in theme enhanceApp
     docFooter: {
       prev: 'Prev',
       next: 'Next',
     },
     outline: [2, 3],
-    search: {
-      provider: 'local',
-    },
   },
   transformPageData(pageData) {
     const path = pageData.relativePath || ''
+    const { title, date } = pageData.frontmatter
+    const isPostArticle = !!title && date != null && date !== ''
+
+    if (isPostArticle) {
+      pageData.frontmatter.postMeta = true
+    }
+
     if (path.startsWith('writing/') && path !== 'writing/index.md') {
       pageData.frontmatter.sidebar = false
       pageData.frontmatter.aside = false
@@ -93,9 +85,17 @@ export default {
     await buildRss({
       outDir: siteConfig.outDir,
       hostname,
+      title: site.title,
+      description: site.description,
+      author: site.author,
+      language: site.language,
+      copyrightStartYear: site.copyrightStartYear,
     })
   },
   markdown: {
     math: true,
+  },
+  vite: {
+    plugins: [imagetools()],
   },
 }

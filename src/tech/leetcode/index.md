@@ -5,4 +5,4 @@ prev: false
 next: false
 ---
 
-<NavPage showTags />
+<Archive source="/tech/leetcode/" showTags />

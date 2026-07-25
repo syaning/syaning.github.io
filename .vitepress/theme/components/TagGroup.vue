@@ -1,12 +1,13 @@
 <script setup>
-const {
-  activeTags = [],
-  onToggle = (tag) => {},
-} = defineProps({
+defineProps({
   tags: Array,
-  activeTags: Array,
-  onToggle: Function
+  activeTags: {
+    type: Array,
+    default: () => [],
+  },
 })
+
+const emit = defineEmits(['toggle'])
 </script>
 
 <template>
@@ -16,7 +17,7 @@ const {
       :key="tag"
       type="button"
       :class="{ tag: true, active: activeTags.indexOf(tag) >= 0 }"
-      @click="onToggle(tag)"
+      @click="emit('toggle', tag)"
     >
       <span class="tag-name">{{ tag }}</span>
       <span class="tag-cnt">{{ cnt }}</span>
@@ -24,7 +25,7 @@ const {
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped>
 .tag-group {
   display: flex;
   flex-wrap: wrap;
@@ -43,16 +44,16 @@ const {
   line-height: 1.6;
   color: var(--vp-c-text-2);
   transition: color 0.15s ease;
+}
 
-  &:hover {
-    color: var(--vp-c-brand-1);
-  }
+.tag:hover {
+  color: var(--vp-c-brand-1);
+}
 
-  &.active {
-    color: var(--vp-c-brand-1);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+.tag.active {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .tag-cnt {

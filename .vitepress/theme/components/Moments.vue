@@ -1,352 +1,514 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useData } from 'vitepress'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
-const visible = ref(false)
-const currentIndex = ref(0)
-const data = useData()
-const pointerStart = ref(null)
-const eagerImageCount = 6
-const loadedImages = ref({})
-const momentImageElements = ref([])
+const eagerImageCount = 4
+const expandedIndex = ref(-1)
+const activeYear = ref('')
+const revealed = shallowRef(new Set())
+const rootEl = ref(null)
+const prefetched = new Set()
+let yearObserver = null
 
 const props = defineProps({
   moments: {
     type: Array,
+    default: () => [],
+  },
+  /** Lazy full-image resolver: (file) => Promise<string> */
+  resolveImage: {
+    type: Function,
     default: null,
   },
-  limit: {
-    type: Number,
-    default: -1,
-  }
 })
 
-const transformations = {
-  oss: (imgSrc) => `${imgSrc}?x-oss-process=image/resize,m_mfit,s_200`,
-  cloudflare: (imgSrc) => `/cdn-cgi/image/width=200,quality=75,format=auto${imgSrc}`,
-  local: (imgSrc) => imgSrc,
-  github: (imgSrc) => imgSrc,
+const yearAnchorId = (year) => `moment-year-${year}`
+
+const items = computed(() => {
+  const list = Array.isArray(props.moments) ? props.moments : []
+  return list.map((moment, index) => {
+    const year = String(moment.time || '').slice(0, 4) || ''
+    const prevYear = index > 0 ? String(list[index - 1].time || '').slice(0, 4) : ''
+    const meta = [moment.time, moment.location].filter(Boolean).join(' · ')
+    return {
+      moment,
+      index,
+      year,
+      isYearStart: index === 0 || year !== prevYear,
+      meta,
+      alt: moment.desc || meta,
+    }
+  })
+})
+
+const years = computed(() => {
+  return items.value.filter((item) => item.isYearStart && item.year).map((item) => item.year)
+})
+
+const markThumbReady = (event) => {
+  event.currentTarget.classList.add('is-ready')
 }
 
-const transform = computed(() => {
-  const platform = import.meta.env.VITE_PLATFORM
-  return transformations[platform] || transformations.local
-})
-
-const sourceMoments = computed(() => {
-  if (props.moments && Array.isArray(props.moments)) {
-    return props.moments
-  }
-  return data.theme.value.moments || []
-})
-
-const moments = computed(() => {
-  if (props.limit > 0) {
-    return sourceMoments.value.slice(0, props.limit)
-  }
-  return sourceMoments.value
-})
-
-const shouldLimit = computed(() => {
-  return props.limit > 0 && sourceMoments.value.length > props.limit
-})
-
-const current = computed(() => {
-  if (currentIndex.value < moments.value.length) {
-    return moments.value[currentIndex.value]
-  }
-  return null
-})
-
-const showDetail = (index) => {
-  currentIndex.value = index
-  visible.value = true
-  document.body.classList.add('noscroll')
-}
-
-const getLoadingMode = (index) => (index < eagerImageCount ? 'eager' : 'lazy')
-
-const onMomentImageLoaded = (index) => {
-  loadedImages.value[index] = true
-}
-
-const setMomentImageRef = (element, index) => {
-  if (!element) {
+const prefetchFull = (src) => {
+  if (!src || prefetched.has(src)) {
     return
   }
-  momentImageElements.value[index] = element
-  if (element.complete) {
-    onMomentImageLoaded(index)
+  prefetched.add(src)
+  const img = new Image()
+  img.decoding = 'async'
+  img.src = src
+}
+
+const resolveFull = async (moment) => {
+  if (!moment) {
+    return ''
   }
-}
-
-const hideDetail = () => {
-  document.body.classList.remove('noscroll')
-  visible.value = false
-}
-
-const prev = () => {
-  if (currentIndex.value > 0) {
-    currentIndex.value--
+  if (moment.img) {
+    return moment.img
   }
-}
-
-const next = () => {
-  if (currentIndex.value < moments.value.length - 1) {
-    currentIndex.value++
+  if (!props.resolveImage || !moment.file) {
+    return ''
   }
+  return props.resolveImage(moment.file)
 }
 
-const onPointerDown = (event) => {
-  if (event.pointerType !== 'touch') {
+/** Start transform early (hover / focus) so click rarely waits. */
+const warmFull = (moment) => {
+  if (!moment?.file || moment.img) {
     return
   }
-  pointerStart.value = {
-    pointerId: event.pointerId,
-    x: event.clientX,
-    y: event.clientY,
-  }
+  resolveFull(moment).then(prefetchFull)
 }
 
-const onPointerUp = (event) => {
-  if (!pointerStart.value || event.pointerType !== 'touch') {
+const reveal = (index) => {
+  if (revealed.value.has(index)) {
     return
   }
-  if (pointerStart.value.pointerId !== event.pointerId) {
+  const next = new Set(revealed.value)
+  next.add(index)
+  revealed.value = next
+}
+
+const toggle = (index) => {
+  if (expandedIndex.value === index) {
+    expandedIndex.value = -1
     return
   }
 
-  const dx = event.clientX - pointerStart.value.x
-  const dy = event.clientY - pointerStart.value.y
-  pointerStart.value = null
+  // Expand immediately; full image swaps in when ready.
+  expandedIndex.value = index
+  reveal(index)
 
-  const swipeThreshold = 30
-  const isHorizontalSwipe = Math.abs(dx) > Math.abs(dy)
-  if (!isHorizontalSwipe || Math.abs(dx) < swipeThreshold) {
+  const current = items.value[index]?.moment
+  resolveFull(current).then((src) => {
+    prefetchFull(src)
+  })
+
+  const next = items.value[index + 1]?.moment
+  if (next) {
+    resolveFull(next).then(prefetchFull)
+  }
+}
+
+const jumpToYear = async (year) => {
+  activeYear.value = year
+  await nextTick()
+  const el = rootEl.value?.querySelector(`#${yearAnchorId(year)}`)
+  if (!el) {
+    return
+  }
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  history.replaceState(null, '', `#${yearAnchorId(year)}`)
+}
+
+const setupYearObserver = async () => {
+  yearObserver?.disconnect()
+  yearObserver = null
+
+  if (typeof IntersectionObserver === 'undefined' || years.value.length === 0) {
     return
   }
 
-  if (dx < 0) {
-    next()
-  } else {
-    prev()
+  await nextTick()
+
+  const nodes = rootEl.value?.querySelectorAll('.moment[data-year]')
+  if (!nodes?.length) {
+    return
   }
+
+  const ratios = new Map()
+  yearObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const year = entry.target.getAttribute('data-year')
+        if (!year) {
+          continue
+        }
+        ratios.set(year, entry.isIntersecting ? entry.intersectionRatio : 0)
+      }
+
+      let bestYear = activeYear.value || years.value[0]
+      let bestRatio = -1
+      for (const year of years.value) {
+        const ratio = ratios.get(year) || 0
+        if (ratio > bestRatio) {
+          bestRatio = ratio
+          bestYear = year
+        }
+      }
+      if (bestRatio > 0) {
+        activeYear.value = bestYear
+      }
+    },
+    {
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+    },
+  )
+
+  nodes.forEach((node) => yearObserver.observe(node))
 }
 
-const onPointerCancel = () => {
-  pointerStart.value = null
-}
-
-const onWindowKeydown = (event) => {
-  if (event.key === 'Escape' && visible.value) {
-    hideDetail()
-  }
-}
+watch(
+  items,
+  () => {
+    if (!activeYear.value) {
+      activeYear.value = years.value[0] || ''
+    }
+    setupYearObserver()
+  },
+  { flush: 'post' },
+)
 
 onMounted(() => {
-  window.addEventListener('keydown', onWindowKeydown)
+  if (!activeYear.value) {
+    activeYear.value = years.value[0] || ''
+  }
+  setupYearObserver()
+
+  const match = location.hash.match(/^#moment-year-(\d{4})$/)
+  if (match) {
+    jumpToYear(match[1])
+  }
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('keydown', onWindowKeydown)
-  document.body.classList.remove('noscroll')
+  yearObserver?.disconnect()
+  yearObserver = null
 })
 </script>
 
 <template>
-  <div class="moments">
-    <img v-for="(moment, index) in moments" :key="moment.img || index" :ref="(element) => setMomentImageRef(element, index)"
-      :class="{ 'is-loading': !loadedImages[index] }"
-      :src="transform(moment.img)" alt="" width="100" height="100"
-      :loading="getLoadingMode(index)" :fetchpriority="index < 2 ? 'high' : 'auto'" decoding="async"
-      @click="showDetail(index)" @load="onMomentImageLoaded(index)" @error="onMomentImageLoaded(index)"
-    />
-    <a href="/moments" v-if="shouldLimit">
-      <div class="moments-more">
-        <Icon icon="ep:more" />
-      </div>
-    </a>
-  </div>
+  <div ref="rootEl" class="moments">
+    <div class="moments-main">
+      <div class="moments-timeline">
+        <article
+          v-for="item in items"
+          :id="item.isYearStart ? yearAnchorId(item.year) : undefined"
+          :key="item.moment.file || item.index"
+          class="moment"
+          :class="{ 'is-expanded': expandedIndex === item.index }"
+          :data-year="item.year || undefined"
+        >
+          <div class="moment-rail" aria-hidden="true">
+            <span class="moment-dot" />
+          </div>
+          <div class="moment-body">
+            <div class="moment-head">
+              <span class="moment-date">{{ item.moment.time }}</span>
+              <span v-if="item.moment.location" class="moment-location">{{ item.moment.location }}</span>
+            </div>
 
-  <div v-if="visible" class="moment" tabindex="0"
-    @keyup.left="prev"
-    @keyup.right="next"
-  >
-    <div class="moment-op">
-      <Icon icon="ep:close" @click="hideDetail" />
+            <button
+              type="button"
+              class="moment-media"
+              :class="{
+                'is-expanded': expandedIndex === item.index,
+                'is-loading': expandedIndex === item.index && !item.moment.img,
+              }"
+              :aria-expanded="expandedIndex === item.index"
+              :aria-busy="expandedIndex === item.index && !item.moment.img"
+              :aria-label="expandedIndex === item.index ? 'Collapse photo' : 'Expand photo'"
+              @pointerenter="warmFull(item.moment)"
+              @focus="warmFull(item.moment)"
+              @click="toggle(item.index)"
+            >
+              <img
+                v-if="item.moment.thumb"
+                class="moment-thumb"
+                :src="item.moment.thumb"
+                :alt="item.alt"
+                width="200"
+                height="200"
+                :loading="item.index < eagerImageCount ? 'eager' : 'lazy'"
+                :fetchpriority="item.index < 2 ? 'high' : 'auto'"
+                decoding="async"
+                @load="markThumbReady"
+                @error="markThumbReady"
+              />
+              <span
+                v-else
+                class="moment-thumb"
+                aria-hidden="true"
+              />
+              <img
+                v-if="revealed.has(item.index) && item.moment.img"
+                class="moment-full"
+                :src="item.moment.img"
+                :alt="item.alt"
+                decoding="async"
+              />
+            </button>
+
+            <p v-if="item.moment.desc" class="moment-desc">{{ item.moment.desc }}</p>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="moment-img"
-      @pointerdown="onPointerDown"
-      @pointerup="onPointerUp"
-      @pointercancel="onPointerCancel"
+
+    <nav
+      v-if="years.length > 1"
+      class="moments-toc"
+      aria-label="Years"
     >
-      <div class="moment-img-btn-bar">
-        <div v-if="currentIndex > 0" class="moment-img-btn" @click="prev">
-          <Icon icon="ep:arrow-left" />
-        </div>
-      </div>
-      <div class="moment-img-wrapper">
-        <img v-if="current" :src="current.img" alt="">
-      </div>
-      <div class="moment-img-btn-bar">
-        <div v-if="currentIndex < moments.length - 1" class="moment-img-btn" @click="next">
-          <Icon icon="ep:arrow-right" />
-        </div>
-      </div>
-    </div>
-    <div v-if="current" class="moment-detail">
-      <div v-if="current.time || current.location" class="moment-meta">
-        <div v-if="current.time">
-          <Icon icon="ep:calendar" />
-          {{ current.time }}
-        </div>
-        <div v-if="current.location">
-          <Icon icon="ep:location" />
-          {{ current.location }}
-        </div>
-      </div>
-      <div v-if="current.desc">
-        {{ current.desc }}
-      </div>
-    </div>
+      <button
+        v-for="year in years"
+        :key="year"
+        type="button"
+        class="moments-toc-link"
+        :class="{ 'is-active': activeYear === year }"
+        @click="jumpToYear(year)"
+      >
+        {{ year }}
+      </button>
+    </nav>
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped>
 .moments {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 8px;
-  margin: 16px 0;
+  --moments-toc-width: 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--moments-toc-width);
+  gap: 28px;
+  margin: 16px 0 40px;
+  align-items: start;
 }
 
-.moments > img {
-  width: 100px;
-  height: 100px;
-  border-radius: 2px;
-  object-fit: cover;
-  background-color: var(--vp-c-bg-soft);
-  cursor: pointer;
-  transition: opacity .2s ease;
-
-  &.is-loading {
-    opacity: .35;
-  }
+.moments-main {
+  min-width: 0;
 }
 
-.moments-more {
-  width: 100px;
-  height: 100px;
-  border-radius: 2px;
-  background-color: var(--vp-c-bg-soft);
+.moments-toc {
+  position: sticky;
+  top: calc(var(--vp-nav-height, 56px) + 24px);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 2px;
+}
+
+.moments-toc-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--vp-c-text-3);
-  font-size: 32px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-align: right;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.moments-toc-link:hover {
+  color: var(--vp-c-text-2);
+}
+
+.moments-toc-link.is-active {
+  color: var(--vp-c-brand-1);
+}
+
+.moments-timeline {
+  position: relative;
 }
 
 .moment {
-  position: fixed;
-  left: 0;
-  top: 0;
+  --moment-meta-size: 0.85rem;
+  --moment-meta-lh: 1.4;
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 22px;
+  scroll-margin-top: calc(var(--vp-nav-height, 56px) + 16px);
+}
+
+.moment:last-child {
+  padding-bottom: 0;
+}
+
+.moment-rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.moment-rail::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--moment-meta-size) * var(--moment-meta-lh) / 2);
+  bottom: -22px;
+  left: 50%;
+  width: 1px;
+  background: color-mix(in srgb, var(--vp-c-divider) 85%, var(--vp-c-text-3));
+  transform: translateX(-50%);
+}
+
+.moment:last-child .moment-rail::before {
+  display: none;
+}
+
+.moment-dot {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  margin-top: calc((var(--moment-meta-size) * var(--moment-meta-lh) - 7px) / 2);
+  border: 1px solid color-mix(in srgb, var(--vp-c-text-3) 70%, transparent);
+  border-radius: 50%;
+  /* Opaque page bg masks the rail so the line stops at the ring. */
+  background: var(--vp-c-bg);
+}
+
+.moment.is-expanded .moment-dot {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg);
+}
+
+.moment-body {
+  min-width: 0;
+}
+
+.moment-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.65rem;
+  margin: 0 0 8px;
+  min-height: calc(var(--moment-meta-size) * var(--moment-meta-lh));
+}
+
+.moment-date {
+  color: var(--vp-c-text-3);
+  font-size: var(--moment-meta-size);
+  line-height: var(--moment-meta-lh);
+  font-variant-numeric: tabular-nums;
+}
+
+.moment-location {
+  color: var(--vp-c-text-3);
+  font-size: 0.8rem;
+  line-height: var(--moment-meta-lh);
+  opacity: 0.75;
+}
+
+.moment-media {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.moment-thumb,
+.moment-full {
+  display: block;
+  border-radius: 2px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.moment-thumb {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.moment-thumb.is-ready {
+  opacity: 1;
+}
+
+.moment-media.is-expanded:not(.is-loading) .moment-thumb {
+  display: none;
+}
+
+.moment-media.is-loading .moment-thumb {
+  opacity: 0.55;
+}
+
+.moment-full {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .95);
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  outline: none;
+  height: auto;
+  max-height: min(70vh, 720px);
+  object-fit: contain;
 }
 
-.moment-op {
-  flex: 0 0 50px;
-  height: 50px;
-  color: #fff;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 10px;
-  font-size: 24px;
+.moment-media:not(.is-expanded) .moment-full {
+  display: none;
+}
 
-  svg {
-    cursor: pointer;
+.moment-desc {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+@media (max-width: 960px) {
+  .moments {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
-}
 
-.moment-img {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  touch-action: pan-y;
-}
+  .moments-toc {
+    order: -1;
+    position: sticky;
+    top: var(--vp-nav-height, 56px);
+    z-index: 5;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.85rem;
+    margin: 0 -12px 8px;
+    padding: 10px 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    background: color-mix(in srgb, var(--vp-c-bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
 
-.moment-img-btn-bar {
-  width: 40px;
-  margin: 0 16px;
-
-  @media (max-width: 720px) {
+  .moments-toc::-webkit-scrollbar {
     display: none;
   }
-}
 
-.moment-img-btn {
-  padding: 10px;
-  border-radius: 50%;
-  color: var(--vp-c-gray-3);
-  cursor: pointer;
-  transition: all linear .35s;
-
-  &:hover {
-    color: var(--vp-c-white);
-    background-color: var(--vp-c-black-mute);
-  }
-
-  > svg {
-    width: 20px;
-    height: 20px;
+  .moments-toc-link {
+    flex: 0 0 auto;
+    text-align: left;
   }
 }
 
-.moment-img-wrapper {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-
-  > img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-.moment-detail {
-  flex: 0 0 auto;
-  color: var(--vp-c-white);
-  padding: 16px;
-  font-size: 14px;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-  }
-}
-
-.moment-meta {
-  display: flex;
-
-  > div {
-    display: flex;
-    align-items: center;
-
-    &:not(:last-child) {
-      margin-right: 32px;
-    }
+@media (max-width: 640px) {
+  .moment-thumb {
+    width: 160px;
+    height: 160px;
   }
 }
 </style>
