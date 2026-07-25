@@ -55,6 +55,11 @@ function patchMoment(file: string, patch: Partial<MomentItem>) {
 /** Resolve full-size image URL on demand and patch `moments` (cached). */
 export function ensureMomentImage(file: string) {
   const key = keyFor(file)
+  const existing = moments.value.find((item) => item.file === file)?.img
+  if (existing) {
+    return Promise.resolve(existing)
+  }
+
   let pending = imageCache.get(key)
   if (!pending) {
     const loader = imageLoaders[key]
@@ -78,6 +83,9 @@ export function prefetchMomentImages(files: string[]) {
   let chain = Promise.resolve()
   for (const file of files) {
     if (!file || imageCache.has(keyFor(file))) {
+      continue
+    }
+    if (moments.value.find((item) => item.file === file)?.img) {
       continue
     }
     chain = chain.then(() => ensureMomentImage(file)).then(() => undefined)
@@ -106,7 +114,7 @@ function scheduleIdle(task: () => void) {
   setTimeout(task, 200)
 }
 
-/** Progressive thumb hydration — must not block route module evaluation. */
+/** Progressive thumb hydration — client only (SSR cannot dynamic-import imagetools). */
 async function hydrateThumbs() {
   const files = moments.value.map((item) => item.file)
   const batchSize = 4
@@ -129,10 +137,11 @@ async function hydrateThumbs() {
     })
   }
 
-  // After thumbs are ready, quietly warm full-size transforms.
   scheduleIdle(() => {
     prefetchMomentImages(files)
   })
 }
 
-hydrateThumbs()
+if (!import.meta.env.SSR) {
+  hydrateThumbs()
+}
