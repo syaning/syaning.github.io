@@ -24,6 +24,7 @@ const nav = [
     items: [
       { text: 'Posts', link: '/tech/posts/' },
       { text: 'Talks', link: '/tech/talks/' },
+      { text: 'Projects', link: '/tech/projects/' },
       { text: 'Leetcode', link: '/tech/leetcode/' },
     ]
   },

@@ -3,6 +3,7 @@ import { h } from 'vue'
 import Archive from './components/Archive.vue'
 import PostMeta from './components/PostMeta.vue'
 import Talks from './components/Talks.vue'
+import Projects from './components/Projects.vue'
 import Moments from './components/Moments.vue'
 import { data as archiveData } from './archive.data'
 import { toArchiveSidebars } from './archive'
@@ -29,6 +30,7 @@ export default {
 
     app.component('Archive', Archive)
     app.component('Talks', Talks)
+    app.component('Projects', Projects)
     app.component('Moments', Moments)
   },
 }
