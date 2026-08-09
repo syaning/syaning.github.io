@@ -1,17 +1,20 @@
 <script setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { parseTags } from '../archive'
 
 const { frontmatter } = useData()
 
 const enabled = computed(() => frontmatter.value.postMeta === true)
 
-const tags = computed(() => {
-  return String(frontmatter.value.tags || '')
-    .trim()
-    .split(/\s+/)
-    .filter((tag) => !!tag)
+const tags = computed(() => parseTags(frontmatter.value.tags))
+
+const hasDate = computed(() => {
+  const date = frontmatter.value.date
+  return date != null && date !== ''
 })
+
+const hasMeta = computed(() => hasDate.value || tags.value.length > 0)
 
 const formatDate = (value) => {
   if (!value) {
@@ -31,12 +34,13 @@ const formatDate = (value) => {
 </script>
 
 <template>
-  <div v-if="enabled" class="vp-doc post-header">
+  <div v-if="enabled" class="vp-doc post-header" :class="{ 'has-meta': hasMeta }">
     <h1>{{ frontmatter.title }}</h1>
-    <div class="post-meta">
-      <div v-if="frontmatter.date" class="post-date">
+    <div v-if="hasMeta" class="post-meta">
+      <div v-if="hasDate" class="post-date">
         <time>{{ formatDate(frontmatter.date) }}</time>
       </div>
+      <span v-if="hasDate && tags.length > 0" class="post-meta-sep" aria-hidden="true">·</span>
       <p v-if="tags.length > 0" class="post-tags">
         <span v-for="tag in tags" :key="tag">#{{ tag }}</span>
       </p>
@@ -45,19 +49,38 @@ const formatDate = (value) => {
 </template>
 
 <style scoped>
+.post-header h1 {
+  margin-bottom: 0;
+}
+
+.post-header:not(.has-meta) {
+  margin-bottom: 1.5rem;
+}
+
 .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
   color: var(--vp-c-text-3);
   font-size: 0.85rem;
-  margin: 0.75rem 0 2.25rem;
+  margin: 0.5rem 0 1.5rem;
   letter-spacing: 0.02em;
 }
 
+.post-meta-sep {
+  user-select: none;
+}
+
 .post-tags {
-  margin: 0.35rem 0 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 !important;
 }
 
 .post-tags > span {
-  margin-right: 10px;
   color: var(--vp-c-text-3);
 }
 </style>

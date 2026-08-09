@@ -8,7 +8,6 @@ import {
 
 type ArchiveSourceConfig = {
   glob: string
-  includeSrc?: boolean
   flat?: boolean
   transform: (raw: ContentData[]) => ArchiveSection[]
 }
@@ -24,7 +23,6 @@ const archiveSources = {
   },
   '/tech/leetcode/': {
     glob: 'tech/leetcode/*.md',
-    includeSrc: true,
     flat: true,
     transform: (raw: ContentData[]) => toIndexSection(raw, 'LeetCode'),
   },
@@ -37,8 +35,8 @@ export { data }
 
 const loaders = Object.fromEntries(
   Object.entries(archiveSources).map(([key, source]) => {
-    const { glob, includeSrc, transform } = source as ArchiveSourceConfig
-    return [key, createContentLoader(glob, { includeSrc, transform })]
+    const { glob, transform } = source as ArchiveSourceConfig
+    return [key, createContentLoader(glob, { transform })]
   }),
 ) as Record<ArchiveSource, ReturnType<typeof createContentLoader>>
 

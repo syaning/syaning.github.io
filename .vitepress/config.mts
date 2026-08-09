@@ -66,10 +66,8 @@ export default {
   },
   transformPageData(pageData) {
     const path = pageData.relativePath || ''
-    const { title, date } = pageData.frontmatter
-    const isPostArticle = !!title && date != null && date !== ''
 
-    if (isPostArticle) {
+    if (pageData.frontmatter.title) {
       pageData.frontmatter.postMeta = true
     }
 
