@@ -13,16 +13,11 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@braintree/sanitize-url": "^7.1.2",
-    "cytoscape": "^3.34.1",
-    "cytoscape-cose-bilkent": "^4.1.0",
-    "dayjs": "^1.11.22",
-    "debug": "^4.4.3",
     "markdown-it-mathjax3": "^4.3.2",
     "mermaid": "^11.16.1",
     "vite-imagetools": "7.1.1",
     "vitepress": "^1.6.3",
-    "vitepress-plugin-mermaid": "^2.0.17",
+    "vitepress-plugin-mermaid-viewer": "^0.1.2",
     "vue": "^3.5.13"
   }
 }

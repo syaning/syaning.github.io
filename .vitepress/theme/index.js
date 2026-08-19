@@ -5,6 +5,7 @@ import PostMeta from './components/PostMeta.vue'
 import Talks from './components/Talks.vue'
 import Projects from './components/Projects.vue'
 import Moments from './components/Moments.vue'
+import { enhanceMermaid } from 'vitepress-plugin-mermaid-viewer/client'
 import { data as archiveData } from './archive.data'
 import { toArchiveSidebars } from './archive'
 import './styles/custom.css'
@@ -32,5 +33,6 @@ export default {
     app.component('Talks', Talks)
     app.component('Projects', Projects)
     app.component('Moments', Moments)
+    enhanceMermaid(app)
   },
 }

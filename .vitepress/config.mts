@@ -1,6 +1,6 @@
 import { buildRss } from './rss'
+import { mermaidMarkdown, mermaidPlugin } from 'vitepress-plugin-mermaid-viewer'
 import { imagetools } from 'vite-imagetools'
-import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const site = {
   title: 'khronosyn',
@@ -33,7 +33,7 @@ const nav = [
   { text: 'Moments', link: '/moments/' },
 ]
 
-export default withMermaid({
+export default {
   title: site.title,
   titleTemplate: false,
   description: site.description,
@@ -94,15 +94,11 @@ export default withMermaid({
   },
   markdown: {
     math: true,
+    config(md) {
+      mermaidMarkdown(md)
+    },
   },
   vite: {
-    plugins: [imagetools()],
-    optimizeDeps: {
-      include: ['mermaid'],
-    },
-    ssr: {
-      noExternal: ['mermaid', 'vitepress-plugin-mermaid'],
-    },
+    plugins: [imagetools(), mermaidPlugin()],
   },
-  mermaid: {},
-})
+}
