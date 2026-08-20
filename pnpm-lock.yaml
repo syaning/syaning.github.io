@@ -21,8 +21,8 @@ importers:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.20.0)(less@4.2.2)(markdown-it-mathjax3@4.3.2)(postcss@8.5.1)(search-insights@2.17.3)
       vitepress-plugin-mermaid-viewer:
-        specifier: ^0.1.2
-        version: 0.1.2(mermaid@11.16.1)(vite@5.4.14(less@4.2.2))(vitepress@1.6.3(@algolia/client-search@5.20.0)(less@4.2.2)(markdown-it-mathjax3@4.3.2)(postcss@8.5.1)(search-insights@2.17.3))(vue@3.5.13)
+        specifier: ^0.1.3
+        version: 0.1.3(mermaid@11.16.1)(vite@5.4.14(less@4.2.2))(vitepress@1.6.3(@algolia/client-search@5.20.0)(less@4.2.2)(markdown-it-mathjax3@4.3.2)(postcss@8.5.1)(search-insights@2.17.3))(vue@3.5.13)
       vue:
         specifier: ^3.5.13
         version: 3.5.13
@@ -1517,8 +1517,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-plugin-mermaid-viewer@0.1.2:
-    resolution: {integrity: sha512-cWCF4wxTVWAFyBh3MqRdaqaAXk7h3zoir1c7lrAbRgB7ADRQliG3rbyros7czh8LBtbLfvKBRc3Op6/EKE8CqA==}
+  vitepress-plugin-mermaid-viewer@0.1.3:
+    resolution: {integrity: sha512-Cr52yMB78Q6jOmTWu3KX6fo6/PbIwGxxWlyzVFnCP9U8JtVmGTz/OI/DSJjGzwJ0j9DPbdv4/zwL2QpaMCWsXg==}
     peerDependencies:
       mermaid: '>=11'
       vite: '>=5'
@@ -3083,7 +3083,7 @@ snapshots:
       fsevents: 2.3.3
       less: 4.2.2
 
-  vitepress-plugin-mermaid-viewer@0.1.2(mermaid@11.16.1)(vite@5.4.14(less@4.2.2))(vitepress@1.6.3(@algolia/client-search@5.20.0)(less@4.2.2)(markdown-it-mathjax3@4.3.2)(postcss@8.5.1)(search-insights@2.17.3))(vue@3.5.13):
+  vitepress-plugin-mermaid-viewer@0.1.3(mermaid@11.16.1)(vite@5.4.14(less@4.2.2))(vitepress@1.6.3(@algolia/client-search@5.20.0)(less@4.2.2)(markdown-it-mathjax3@4.3.2)(postcss@8.5.1)(search-insights@2.17.3))(vue@3.5.13):
     dependencies:
       mermaid: 11.16.1
       vite: 5.4.14(less@4.2.2)
