@@ -2,6 +2,7 @@ import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import Archive from './components/Archive.vue'
 import PostMeta from './components/PostMeta.vue'
+import Giscus from './components/Giscus.vue'
 import Talks from './components/Talks.vue'
 import Projects from './components/Projects.vue'
 import Moments from './components/Moments.vue'
@@ -15,6 +16,7 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       'doc-before': () => h(PostMeta),
+      'doc-after': () => h(Giscus),
     })
   },
   enhanceApp({ app, siteData }) {

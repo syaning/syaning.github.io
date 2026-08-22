@@ -64,6 +64,24 @@ export default {
       next: 'Next',
     },
     outline: [2, 3],
+    giscus: {
+      enabled: true,
+      paths: [
+        '^/tech/posts/.+',
+      ],
+      repo: 'syaning/syaning.github.io',
+      repoId: 'MDEwOlJlcG9zaXRvcnkzMjM3MjU0Nw==',
+      category: 'Blog Comments',
+      categoryId: 'DIC_kwDOAe33Q84DD8OL',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'bottom',
+      themeLight: 'noborder_light',
+      themeDark: 'noborder_dark',
+      lang: 'en',
+    },
   },
   transformPageData(pageData) {
     const path = pageData.relativePath || ''
@@ -72,7 +90,7 @@ export default {
       pageData.frontmatter.postMeta = true
     }
 
-    if (path.startsWith('writing/') && path !== 'writing/index.md') {
+    if (path.startsWith('writing/')) {
       pageData.frontmatter.sidebar = false
       pageData.frontmatter.aside = false
       pageData.frontmatter.outline = false
