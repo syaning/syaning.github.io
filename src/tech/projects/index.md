@@ -5,7 +5,7 @@ sidebar: false
 ---
 
 <script setup>
-import teaCover from './img/tea-idle.png'
+import teaCover from './img/tea-idle.webp'
 import slimCover from './img/slim-demo.png'
 
 const projects = [
