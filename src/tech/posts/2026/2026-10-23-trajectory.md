@@ -121,7 +121,7 @@ Harness 或其他日志组件可以在循环中记录模型回复和工具结果
 
 例如，输入“在仓库里创建 hello.txt，写入 Hello”后，截取到的会话记录如下：
 
-```
+```jsonl
 {"role":"user","message":{"content":[{"type":"text","text":"<timestamp>Saturday, Oct 24, 2026, 5:32 PM (UTC+8)</timestamp>\n<user_query>\n在仓库里创建 hello.txt，写入 Hello\n</user_query>"}]}}
 {"role":"assistant","message":{"content":[{"type":"text","text":"我来在仓库里创建 `hello.txt`，内容为 Hello。"},{"type":"tool_use","name":"Write","input":{"path":"/some-path/hello.txt","contents":"Hello\n"}}]}}
 {"role":"assistant","message":{"content":[{"type":"text","text":"已在仓库根目录创建 `hello.txt`，内容为 `Hello`。"}]}}
