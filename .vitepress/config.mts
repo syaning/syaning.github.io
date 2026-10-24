@@ -19,6 +19,44 @@ const hostnames = {
 }
 const hostname = hostnames[process.env.VITE_PLATFORM] || hostnames.local
 
+const outline = [2, 3]
+
+function outlineBounds(value) {
+  if (value === false) {
+    return null
+  }
+  const levels =
+    value && typeof value === 'object' && !Array.isArray(value) ? value.level : value
+  const resolved = levels || 2
+  if (typeof resolved === 'number') {
+    return [resolved, resolved]
+  }
+  if (resolved === 'deep') {
+    return [2, 6]
+  }
+  return resolved
+}
+
+function hasOutlineHeaders(headers, value) {
+  const bounds = outlineBounds(value)
+  if (!bounds) {
+    return false
+  }
+  const [min, max] = bounds
+  const visit = (nodes) => {
+    for (const node of nodes || []) {
+      if (node.level >= min && node.level <= max) {
+        return true
+      }
+      if (visit(node.children)) {
+        return true
+      }
+    }
+    return false
+  }
+  return visit(headers)
+}
+
 const nav = [
   {
     text: 'Tech',
@@ -63,7 +101,7 @@ export default {
       prev: 'Prev',
       next: 'Next',
     },
-    outline: [2, 3],
+    outline,
     giscus: {
       enabled: true,
       paths: [
@@ -90,10 +128,12 @@ export default {
       pageData.frontmatter.postMeta = true
     }
 
-    if (path.startsWith('writing/')) {
+    if (path.startsWith('tech/posts/') || path.startsWith('writing/')) {
       pageData.frontmatter.sidebar = false
-      pageData.frontmatter.aside = false
-      pageData.frontmatter.outline = false
+      const pageOutline = pageData.frontmatter.outline ?? outline
+      if (!hasOutlineHeaders(pageData.headers, pageOutline)) {
+        pageData.frontmatter.aside = false
+      }
     }
   },
   sitemap: {
@@ -111,6 +151,8 @@ export default {
     })
   },
   markdown: {
+    // Without this, pageData.headers stays empty and every post looks outline-less.
+    headers: true,
     math: true,
     config(md) {
       mermaidMarkdown(md)
