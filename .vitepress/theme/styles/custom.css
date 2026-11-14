@@ -103,6 +103,10 @@
   list-style: circle;
 }
 
+.mermaid p {
+  line-height: 1.5;
+}
+
 /* Obfuscate email @ for casual scrapers */
 .mail-at::before {
   content: '@';
